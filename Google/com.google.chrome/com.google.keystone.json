@@ -15,7 +15,6 @@
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
                             "type": "integer",
-                            "pattern": "[0-3]",
                             "enum": [
                                 0,
                                 1,
@@ -63,7 +62,6 @@
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
                             "type": "integer",
-                            "pattern": "[0-3]",
                             "enum": [
                                 0,
                                 1,
@@ -93,7 +91,6 @@
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
                             "type": "integer",
-                            "pattern": "[0-3]",
                             "enum": [
                                 0,
                                 1,
