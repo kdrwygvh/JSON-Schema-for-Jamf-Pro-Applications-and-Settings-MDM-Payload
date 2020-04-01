@@ -14,7 +14,21 @@
                         "UpdateDefault": {
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
-                            "type": "integer"
+                            "type": "integer",
+                            "pattern": "[0-3]",
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "enum_titles": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "default": 0
                         },
                         "ComponentUpdatesEnabled": {
                             "title": "Component Updates Enabled",
@@ -24,12 +38,15 @@
                         "UpdatesSuppressedStartHour": {
                             "title": "Start Hour",
                             "description": "The time, in 24-hour clock format, that auto-updates start. Use a value between 0 (midnight) and 23",
-                            "type": "integer"
+                            "type": "integer",
+                            "pattern": "[0-23]",
+                            "default": 0
                         },
                         "UpdatesSuppressedStartMin": {
                             "title": "Start Minute",
                             "description": "The minute, within the starting hour, that auto-updates start. Use a value between 0 and 59",
-                            "type": "integer"
+                            "type": "integer",
+                            "pattern": "[0-59]"
                         },
                         "UpdatesSuppressedDurationMin": {
                             "title": "Duration",
@@ -45,7 +62,21 @@
                         "UpdateDefault": {
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
-                            "type": "integer"
+                            "type": "integer",
+                            "pattern": "[0-3]",
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "enum_titles": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "default": 0
                         },
                         "TargetVersionPrefix": {
                             "title": "Target Version Prefix",
@@ -61,7 +92,21 @@
                         "UpdateDefault": {
                             "title": "Update Default",
                             "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
-                            "type": "integer"
+                            "type": "integer",
+                            "pattern": "[0-3]",
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "enum_titles": [
+                                0,
+                                1,
+                                2,
+                                3
+                            ],
+                            "default": 0
                         },
                         "TargetVersionPrefix": {
                             "title": "Target Version Prefix",
