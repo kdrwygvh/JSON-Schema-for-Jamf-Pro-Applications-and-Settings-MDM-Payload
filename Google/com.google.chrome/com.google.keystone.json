@@ -1,0 +1,76 @@
+{
+    "title": "com.google.Keystone",
+    "description": "Google Keystone preferences to set Auto Update behavior for Google Apps",
+    "type": "object",
+    "properties": {
+        "updatePolicies": {
+            "title": "Update Policies",
+            "type": "object",
+            "properties": {
+                "global": {
+                    "type": "object",
+                    "title": "Global",
+                    "properties": {
+                        "UpdateDefault": {
+                            "title": "Update Default",
+                            "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
+                            "type": "integer"
+                        },
+                        "ComponentUpdatesEnabled": {
+                            "title": "Component Updates Enabled",
+                            "description": "Sets whether components (Flash etc...) are auto updated",
+                            "type": "boolean"
+                        },
+                        "UpdatesSuppressedStartHour": {
+                            "title": "Start Hour",
+                            "description": "The time, in 24-hour clock format, that auto-updates start. Use a value between 0 (midnight) and 23",
+                            "type": "integer"
+                        },
+                        "UpdatesSuppressedStartMin": {
+                            "title": "Start Minute",
+                            "description": "The minute, within the starting hour, that auto-updates start. Use a value between 0 and 59",
+                            "type": "integer"
+                        },
+                        "UpdatesSuppressedDurationMin": {
+                            "title": "Duration",
+                            "description": "The length of time, in minutes, that auto-updates can be made. If you set this value to 0, the system behaves as if no update window is specified",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "com.google.Chrome": {
+                    "type": "object",
+                    "title": "Google Chrome",
+                    "properties": {
+                        "UpdateDefault": {
+                            "title": "Update Default",
+                            "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
+                            "type": "integer"
+                        },
+                        "TargetVersionPrefix": {
+                            "title": "Target Version Prefix",
+                            "description": "Set the version of Chrome to pin to (ex. 80.)",
+                            "type": "string"
+                        }
+                    }
+                },
+                "com.google.drivefs": {
+                    "type": "object",
+                    "title": "Google Drive File Stream",
+                    "properties": {
+                        "UpdateDefault": {
+                            "title": "Update Default",
+                            "description": "Default Update Policy. 0 = Enable Auto Updates 1 = Updates determined by schedule 2 = Auto updates disabled 3 = Auto updates turned off completely",
+                            "type": "integer"
+                        },
+                        "TargetVersionPrefix": {
+                            "title": "Target Version Prefix",
+                            "description": "Set the version of Drive File Stream to pin to (ex. 80.)",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
