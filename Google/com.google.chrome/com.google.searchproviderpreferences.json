@@ -1,0 +1,207 @@
+{
+    "title": "com.google.chrome.searchprovider",
+    "description": "Google Chrome Search Provider Preferences",
+    "properties": {
+        "DefaultSearchProviderAlternateURLs": {
+            "title": "List of alternate URLs for the default search provider",
+            "description": "Specifies a list of alternate URLs that can be used to extract search terms from the search engine. The URLs should contain the string '{searchTerms}', which will be used to extract the search terms",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "DefaultSearchProviderEnabled": {
+            "title": "Enable the default search provider",
+            "description": "Enables the use of a default search provider. If you enable this setting, a default search is performed when the user types text in the omnibox that is not a URL",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DefaultSearchProviderEncodings": {
+            "title": "Default search provider encodings",
+            "description": "Specifies the character encodings supported by the search provider. Encodings are code page names like UTF-8, GB2312, and ISO-8859-1. They are tried in the order provided",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "DefaultSearchProviderIconURL": {
+            "title": "Default search provider icon",
+            "description": "Specifies the favorite icon URL of the default search provider",
+            "property_order": 4,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderImageURL": {
+            "title": "Parameter providing search-by-image feature for the default search provider",
+            "description": "Specifies the URL of the search engine used to provide image search",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderImageURLPostParams": {
+            "title": "Parameters for image URL which uses POST",
+            "description": "Specifies the parameters used when doing image search with POST. It consists of comma-separated name/value pairs. If a value is a template parameter, like {imageThumbnail} in above example, it will be replaced with real image thumbnail data",
+            "property_order": 6,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderKeyword": {
+            "title": "Default search provider keyword",
+            "description": "Specifies the keyword, which is the shortcut used in the omnibox to trigger the search for this provider",
+            "property_order": 7,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderName": {
+            "title": "Default search provider name",
+            "description": "Specifies the name of the default search provider",
+            "property_order": 8,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderNewTabURL": {
+            "title": "Default search provider new tab page URL",
+            "description": "Specifies the URL that a search engine uses to provide a new tab page",
+            "property_order": 9,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSearchURL": {
+            "title": "Default search provider search URL",
+            "description": "Specifies the URL of the search engine used when doing a default search. The URL should contain the string '{searchTerms}', which will be replaced at query time by the terms the user is searching for",
+            "property_order": 10,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSearchURLPostParams": {
+            "title": "Parameters for search URL which uses POST",
+            "description": "Specifies the parameters used when searching a URL with POST. It consists of comma-separated name/value pairs",
+            "property_order": 11,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSuggestURL": {
+            "title": "Default search provider suggest URL",
+            "description": "Specifies the URL of the search engine used to provide search suggestions. The URL should contain the string '{searchTerms}', which will be replaced at query time by the text the user has entered so far",
+            "property_order": 12,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSuggestURLPostParams": {
+            "title": "Parameters for suggest URL which uses POST",
+            "description": "Specifies the parameters used when doing suggestion search with POST. It consists of comma-separated name/value pairs",
+            "property_order": 13,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

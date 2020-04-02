@@ -1,0 +1,36 @@
+{
+    "title": "com.google.chrome.startup",
+    "description": "Google Chrome Startup Preferences",
+    "properties": {
+        "NewTabPageLocation": {
+            "title": "Landing Home Page for new Tabs",
+            "description": "Configures the default New Tab page URL and prevents users from changing it",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ShowHomeButton": {
+            "title": "Show Home button on toolbar",
+            "description": "Shows the Home button on Google Chrome's toolbar",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

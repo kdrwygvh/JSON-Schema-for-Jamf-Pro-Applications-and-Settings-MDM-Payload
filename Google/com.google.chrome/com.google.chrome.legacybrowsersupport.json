@@ -1,0 +1,150 @@
+{
+    "title": "com.google.chrome.legacybrowsersupport",
+    "description": "Google Chrome Legacy Browser Support",
+    "properties": {
+        "AlternativeBrowserParameters": {
+            "title": "Command-line parameters for the alternative browser",
+            "description": "This policy controls command-line parameters to launch to the alternative browser. When this policy is left unset, only the URL is passed as a command-line parameters. https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AlternativeBrowserParameters",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "AlternativeBrowserPath": {
+            "title": "Alternative browser to launch for configured websites",
+            "description": "This policy controls which command to use to open URLs in an alternative browser. When this policy is left unset, a platform-specific default is used: Internet Explorer for Windows, or Safari for macOS",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BrowserSwitcherDelay": {
+            "title": "Delay before launching alternative browser (milliseconds)",
+            "description": "This policy controls how long to wait before launching an alternative browser, in milliseconds",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "BrowserSwitcherEnabled": {
+            "title": "Enable the Legacy Browser Support feature",
+            "description": "This policy controls whether to enable Legacy Browser Support. When this policy is left unset, or is set to false, Chrome will not attempt to launch designated URLs in an alternate browser",
+            "property_order": 4,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BrowserSwitcherExternalGreylistUrl": {
+            "title": "URL of an XML file that contains URLs that should never trigger a browser switch",
+            "description": "This policy is a URL, that points to an XML file in the same format as Internet Explorer's SiteList policy. This loads rules from an XML file, without sharing those rules with Internet Explorer. https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/what-is-enterprise-mode",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BrowserSwitcherExternalSitelistUrl": {
+            "title": "URL of an XML file that contains URLs to load in an alternative browser",
+            "description": "This policy is a URL, that points to an XML file in the same format as Internet Explorer's SiteList policy. This loads rules from an XML file, without sharing those rules with Internet Explorer. https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/what-is-enterprise-mode",
+            "property_order": 6,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BrowserSwitcherKeepLastChromeTab": {
+            "title": "Keep last tab open in Chrome",
+            "description": "This policy controls whether to close Chrome completely when the last tab would switch to another browser. When this policy is left unset, or is set to true, Chrome will keep at least one tab open, after switching to an alternate browser",
+            "property_order": 7,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BrowserSwitcherUrlGreylist": {
+            "title": "Websites that should never trigger a browser switch",
+            "description": "This policy controls the list of websites that will never cause a browser switch. Note that elements can also be added to this list through the BrowserSwitcherExternalGreylistUrl policy",
+            "property_order": 8,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "BrowserSwitcherUrlList": {
+            "title": "Websites to open in alternative browser",
+            "description": "This policy controls the list of websites to open in an alternative browser. Note that elements can also be added to this list through the BrowserSwitcherUseIeSitelist and BrowserSwitcherExternalSitelistUrl policies",
+            "property_order": 9,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}
