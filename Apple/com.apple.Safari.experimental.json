@@ -1,0 +1,17 @@
+{
+    "title": "com.apple.Safari.experimental",
+    "description": "Experimental Settings for the Safari Web Browser",
+    "properties": {
+    	"ExperimentalHTTPSUpgradeEnabled": {
+			"title": "Enable Automatic Upgrade of all websits to HTTPS",
+			"description": "Enables automatic redirect to the encrypted version of a website if available",
+			"anyOf": [
+				{"type": "null", "title": "Not Configured"},
+				{
+					"title": "Configured",
+					"type": "boolean"
+				}
+			]
+		}
+	}
+}

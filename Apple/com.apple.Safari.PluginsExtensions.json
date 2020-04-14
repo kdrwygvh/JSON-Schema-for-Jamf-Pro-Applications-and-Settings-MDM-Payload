@@ -1,0 +1,106 @@
+{
+    "title": "com.apple.Safari.PluginsExtensions",
+    "description": "Extensions and Plug-ins Preferences for the Safari Web Browser",
+    "properties": {
+        "ExtensionsEnabled": {
+            "title": "Enable Extensions",
+            "description": "Enables or disables the use of Extensions",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitPreferences.plugInsEnabled": {
+            "title": "Enable Plug-Ins",
+            "description": "Sets whether plug-ins are enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "InstallExtensionUpdatesAutomatically": {
+            "title": "Install Extension Updates Automatically",
+            "description": "Sets whether extension updates are installed automatically",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipLoadingEnabledAppExtensionsAtLaunch": {
+            "title": "Skip Loading of Enabled App Extensions at Launch",
+            "description": "Sets whether to skip the loading of enabled extensions at launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipLoadingEnabledContentBlockersAtLaunch": {
+            "title": "Skip Loading of Enabled Content Blockers at Launch",
+            "description": "Sets whether to skip the loading of enabled content blockers at launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipLoadingExtensionsAtLaunch": {
+            "title": "Skip Loading Extensions at Launch",
+            "description": "Sets whether to skip the loading of extensions at launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitPreferences.asynchronousPluginInitializationEnabled": {
+            "title": "Enable asynchronous plugin initialization",
+            "description": "Sets whether to enable asynchronous initialization of plugins",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
