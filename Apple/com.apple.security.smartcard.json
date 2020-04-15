@@ -1,20 +1,30 @@
 {
-	"title": "com.apple.security.smartcard",
-	"description": "macOS SmartCard Services",
-	"properties": {
+    "title": "com.apple.security.smartcard",
+    "description": "macOS SmartCard Services",
+    "__preferencedomain": "com.apple.security.smartcard",
+    "properties": {
         "allowUnmappedUsers": {
             "title": "Allow Unpaired SmartCard Users",
             "description": "Allows users not yet paired to a smart card to continue logging in with a password",
             "property_order": 5,
             "anyOf": [
-                {"type": "null", "title": "Not Configured"},
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
                 {
                     "title": "Configured",
                     "type": "integer",
                     "options": {
-                        "enum_titles": ["Allow", "Disallow"]
+                        "enum_titles": [
+                            "Allow",
+                            "Disallow"
+                        ]
                     },
-                    "enum": [1,0]
+                    "enum": [
+                        1,
+                        0
+                    ]
                 }
             ]
         },
@@ -23,7 +33,10 @@
             "description": "Enforces mandatory use of Smart Cards for macOS users",
             "property_order": 10,
             "anyOf": [
-                {"type": "null", "title": "Not Configured"},
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
                 {
                     "title": "Configured",
                     "type": "boolean"
@@ -35,12 +48,15 @@
             "description": "Enforces pairing requests between a local user account and a CAC card",
             "property_order": 15,
             "anyOf": [
-                {"type": "null", "title": "Not Configured"},
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
                 {
                     "title": "Configured",
                     "type": "boolean"
                 }
             ]
         }
-	}
+    }
 }
