@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.misc",
     "description": "Google Chrome Miscellaneous Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "AbusiveExperienceInterventionEnforce": {
             "title": "Abusive Experience Intervention Enforce",
@@ -504,51 +505,6 @@
             "title": "Enable the Click to Call Feature",
             "description": "Enable the Click to Call feature which allows users to send phone numbers from Chrome Desktops to an Android device when the user is Signed-in. For more information, see help center article: https://support.google.com/chrome/answer/9430554?hl=en",
             "property_order": 31,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "CloudManagementEnrollmentMandatory": {
-            "title": "Enable mandatory cloud management enrollment",
-            "description": "If this policy is set to True, cloud management enrollment is mandatory and blocks Chrome launch process if failed",
-            "property_order": 32,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "CloudManagementEnrollmentToken": {
-            "title": "The enrollment token of cloud policy on desktop",
-            "description": "If this policy is set, Google Chrome will try to register itself and apply associated cloud policy for all profiles",
-            "property_order": 33,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "string"
-                }
-            ]
-        },
-        "CloudPolicyOverridesPlatformPolicy": {
-            "title": "Google Chrome cloud policy overrides Platform policy",
-            "description": "If the policy is set to true, cloud policy takes precedence if it conflicts with platform policy. If the policy is set to false or not configured, platform policy takes precedence if it conflicts with cloud policy",
-            "property_order": 34,
             "anyOf": [
                 {
                     "type": "null",

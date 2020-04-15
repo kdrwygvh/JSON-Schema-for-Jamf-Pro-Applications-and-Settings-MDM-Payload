@@ -1,0 +1,52 @@
+{
+    "title": "com.google.chrome.cloudmanagement",
+    "description": "Google Chrome Cloud Management Settings",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "CloudManagementEnrollmentMandatory": {
+            "title": "Enable mandatory cloud management enrollment",
+            "description": "If this policy is set to True, cloud management enrollment is mandatory and blocks Chrome launch process if failed",
+            "property_order": 32,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CloudManagementEnrollmentToken": {
+            "title": "The enrollment token of cloud policy on desktop",
+            "description": "If this policy is set, Google Chrome will try to register itself and apply associated cloud policy for all profiles",
+            "property_order": 33,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "CloudPolicyOverridesPlatformPolicy": {
+            "title": "Google Chrome cloud policy overrides Platform policy",
+            "description": "If the policy is set to true, cloud policy takes precedence if it conflicts with platform policy. If the policy is set to false or not configured, platform policy takes precedence if it conflicts with cloud policy",
+            "property_order": 34,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
