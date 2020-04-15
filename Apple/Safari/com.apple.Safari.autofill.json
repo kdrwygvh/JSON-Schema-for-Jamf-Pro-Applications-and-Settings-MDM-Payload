@@ -1,6 +1,7 @@
 {
     "title": "Safari Autofill Settings",
     "description": "Autofill Preferences for the Safari Web Browser",
+    "__preferencedomain": "com.apple.Safari",
     "properties": {
         "AutoFillCreditCardData": {
             "title": "Enforce Credit Card Autofill Settings",

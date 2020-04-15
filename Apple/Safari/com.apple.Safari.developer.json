@@ -1,6 +1,7 @@
 {
     "title": "com.apple.Safari.Developer",
     "description": "Developer options for the Safari Web Browser",
+    "__preferencedomain": "com.apple.Safari",
     "properties": {
         "IncludeDevelopMenu": {
             "title": "Include Develop Menu",
