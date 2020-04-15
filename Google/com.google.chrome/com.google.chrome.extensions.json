@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.extensions",
     "description": "Google Chrome Extensions Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "BlockExternalExtensions": {
             "title": "Blocks external extensions from being installed",

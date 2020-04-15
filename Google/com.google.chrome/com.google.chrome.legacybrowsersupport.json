@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.legacybrowsersupport",
     "description": "Google Chrome Legacy Browser Support",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "AlternativeBrowserParameters": {
             "title": "Command-line parameters for the alternative browser",
