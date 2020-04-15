@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.searchprovider",
     "description": "Google Chrome Search Provider Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "DefaultSearchProviderAlternateURLs": {
             "title": "List of alternate URLs for the default search provider",

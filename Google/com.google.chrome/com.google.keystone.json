@@ -1,6 +1,7 @@
 {
     "title": "com.google.Keystone",
     "description": "Google Keystone preferences to set Auto Update behavior for Google Apps",
+    "__preferencedomain": "com.google.Keystone",
     "type": "object",
     "properties": {
         "updatePolicies": {

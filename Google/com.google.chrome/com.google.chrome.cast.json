@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.cast",
     "description": "Google Chrome Casting Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "EnableMediaRouter": {
             "title": "Enable Google Cast",

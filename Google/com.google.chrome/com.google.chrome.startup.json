@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.startup",
     "description": "Google Chrome Startup Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "NewTabPageLocation": {
             "title": "Landing Home Page for new Tabs",

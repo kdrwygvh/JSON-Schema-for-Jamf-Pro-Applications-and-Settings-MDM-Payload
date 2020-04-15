@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.httpauthentication",
     "description": "Google Chrome HTTP Authentication Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "AllowCrossOriginAuthPrompt": {
             "title": "Cross-origin HTTP Basic Auth prompts",

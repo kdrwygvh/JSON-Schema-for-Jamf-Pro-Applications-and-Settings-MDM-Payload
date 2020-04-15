@@ -1,6 +1,7 @@
 {
     "title": "com.google.chrome.contentpreferences",
     "description": "Google Chrome Content Preferences",
+    "__preferencedomain": "com.google.Chrome",
     "properties": {
         "AutoSelectCertificateForUrls": {
             "title": "Automatically select client certificates for these sites",
