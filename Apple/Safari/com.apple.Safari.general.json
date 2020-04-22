@@ -1,364 +1,426 @@
 {
-    "title": "com.apple.Safari",
-    "description": "General Settings for the Safari Web Browser",
-    "__preferencedomain": "com.apple.Safari",
-    "properties": {
-        "AutoOpenSafeDownloads": {
-            "title": "Auto open safe downloads",
-            "description": "Enables the opening of certain file types automatically using the default application for that file type",
-            "property_order": 1,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
+  "title": "com.apple.Safari",
+  "description": "General Settings for the Safari Web Browser",
+  "__preferencedomain": "com.apple.Safari",
+  "properties": {
+    "AutoOpenSafeDownloads": {
+      "title": "Auto open safe downloads",
+      "description": "Enables the opening of certain file types automatically using the default application for that file type",
+      "property_order": 1,
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
         },
-        "HomePage": {
-            "title": "Home Page",
-            "description": "Set the default page for new browser windows",
-            "property_order": 3,
-            "options": {
-                "inputAttributes": {
-                    "placeholder": "https://apple.com"
-                }
-            },
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "string"
-                }
-            ]
-        },
-        "LocalFileRestrictionsEnabled": {
-            "title": "Local File Restrictions Enabled",
-            "description": "Enforces the Safari application sandbox",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ReadingListSaveArticlesOfflineAutomatically": {
-            "title": "Save Reading Lost Articles for Offline Reading",
-            "description": "Enables offline caching of articles saved to the reading list",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ShowFavoritesBar": {
-            "title": "Show Favorites Bar",
-            "description": "Shows the Favorites bar if set to true",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ShowIconsInTabs": {
-            "title": "Show Icons in Tabs",
-            "description": "Sets whether to show website favicons in tabs",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ShowSidebarInNewWindows": {
-            "title": "Show Sidebar in New Windows",
-            "description": "Sets whether to show the sidebar in new browser windows",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "ShowSidebarInTopSites": {
-            "title": "Show Sidebar in Top Sites",
-            "description": "Sets whether to show the sidebar in Top Sites",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WarnAboutFraudulentWebsites": {
-            "title": "Warn about Fraudulent Websites",
-            "description": "Sets whether to warn the user about fraudulent websites",
-            "property_order": 3,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebAutomaticSpellingCorrectionEnabled": {
-            "title": "Automatic Spell Correction Enabled",
-            "description": "Sets whether to enable automatic spelling correction",
-            "property_order": 100,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebContinuousSpellCheckingEnabled": {
-            "title": "Continuous Spell Checking Enabled",
-            "description": "Sets whether to enable continuous spell checking",
-            "property_order": 105,
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitMinimumFontSize": {
-            "title": "Minimum Font Size",
-            "description": "Sets the minimum font size for web pages",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "integer",
-                    "pattern": "[9-24]",
-                    "enum": [
-                        9,
-                        10,
-                        11,
-                        12,
-                        14,
-                        18,
-                        24
-                    ],
-                    "default": 9
-                }
-            ]
-        },
-        "WebKitPreferences.aggressiveTileRetentionEnabled": {
-            "title": "Enable Aggressive Tile Retention",
-            "description": "Sets whether to enable aggressive tile retention",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.allowsPictureInPictureMediaPlayback": {
-            "title": "Enable Picture in Picture Playback",
-            "description": "Sets whether to enable Picture in Picture playback of video",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.backspaceKeyNavigationEnabled": {
-            "title": "Enable Backspace Key Navigation",
-            "description": "Sets whether to enable backspace key navigation",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.dnsPrefetchingEnabled": {
-            "title": "Enable DNS Prefetching",
-            "description": "Sets whether to enabld DNS prefetching",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.fullScreenEnabled": {
-            "title": "Enable Full Screen",
-            "description": "Sets whether full screen is allowed to be set",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.invisibleMediaAutoplayNotPermitted": {
-            "title": "Enable autoplay of hidden content",
-            "description": "Sets whether hidden content can be autoplayed",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.javaEnabled": {
-            "title": "Enable Java",
-            "description": "Sets whether Java is enabled",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.javaScriptCanOpenWindowsAutomatically": {
-            "title": "Allow Javascript to automatically Open Windows",
-            "description": "Allows popup windows to be instantiated via Javascript",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.mediaDevicesEnabled": {
-            "title": "Enable Media Devices",
-            "description": "Sets whether media devices are enabled",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.showsToolTipOverTruncatedText": {
-            "title": "Enable Tooltips over Truncated Text",
-            "description": "Sets whether to show tooltips over truncated text",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.telephoneNumberDetectionIsEnabled": {
-            "title": "Enable Telephone Number Detection",
-            "description": "Sets whether telephone number detection is enabled",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "WebKitPreferences.usesPageCache": {
-            "title": "Use Page Cache when Available",
-            "description": "Sets whether to use cached page content",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
+        {
+          "title": "Configured",
+          "type": "boolean"
         }
+      ]
+    },
+    "DownloadsPath": {
+      "title": "Downloads Path",
+      "description": "Path to where downloads are kept",
+      "property_order": 2,
+      "options": {
+        "inputAttributes": {
+          "placeholder": "~/Downloads"
+        }
+      },
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "string"
+        }
+      ]
+    },
+    "HomePage": {
+      "title": "Home Page",
+      "description": "Set the default page for new browser windows",
+      "property_order": 3,
+      "options": {
+        "inputAttributes": {
+          "placeholder": "https://apple.com"
+        }
+      },
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "string"
+        }
+      ]
+    },
+    "LocalFileRestrictionsEnabled": {
+      "title": "Local File Restrictions Enabled",
+      "description": "Enforces the Safari application sandbox",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ReadingListSaveArticlesOfflineAutomatically": {
+      "title": "Save Reading Lost Articles for Offline Reading",
+      "description": "Enables offline caching of articles saved to the reading list",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "CanPromptForPushNotifications": {
+      "title": "Allow Web Sites to Prompt User to Allow Push Notifications",
+      "description": "Allow Web Sites to Prompt User to Allow Push Notifications",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "AskBeforeSubmittingInsecureForms": {
+      "title": "Enable Ask Before Submitting Insecure Forms",
+      "description": "Prompts the user to confirm insecure form submissions",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "PrintHeadersAndFooters": {
+      "title": "Enable Printing of Header and Footer",
+      "description": "Enable Printing of Header and Footer",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ShowFavoritesBar": {
+      "title": "Show Favorites Bar",
+      "description": "Shows the Favorites bar if set to true",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ShowIconsInTabs": {
+      "title": "Show Icons in Tabs",
+      "description": "Sets whether to show website favicons in tabs",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ShowSidebarInNewWindows": {
+      "title": "Show Sidebar in New Windows",
+      "description": "Sets whether to show the sidebar in new browser windows",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ShowSidebarInTopSites": {
+      "title": "Show Sidebar in Top Sites",
+      "description": "Sets whether to show the sidebar in Top Sites",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WarnAboutFraudulentWebsites": {
+      "title": "Warn about Fraudulent Websites",
+      "description": "Sets whether to warn the user about fraudulent websites",
+      "property_order": 3,
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebAutomaticSpellingCorrectionEnabled": {
+      "title": "Automatic Spell Correction Enabled",
+      "description": "Sets whether to enable automatic spelling correction",
+      "property_order": 100,
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebContinuousSpellCheckingEnabled": {
+      "title": "Continuous Spell Checking Enabled",
+      "description": "Sets whether to enable continuous spell checking",
+      "property_order": 105,
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitMinimumFontSize": {
+      "title": "Minimum Font Size",
+      "description": "Sets the minimum font size for web pages",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "integer",
+          "pattern": "[9-24]",
+          "enum": [
+            9,
+            10,
+            11,
+            12,
+            14,
+            18,
+            24
+          ],
+          "default": 9
+        }
+      ]
+    },
+    "WebKitPreferences.aggressiveTileRetentionEnabled": {
+      "title": "Enable Aggressive Tile Retention",
+      "description": "Sets whether to enable aggressive tile retention",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.allowsPictureInPictureMediaPlayback": {
+      "title": "Enable Picture in Picture Playback",
+      "description": "Sets whether to enable Picture in Picture playback of video",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.backspaceKeyNavigationEnabled": {
+      "title": "Enable Backspace Key Navigation",
+      "description": "Sets whether to enable backspace key navigation",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.dnsPrefetchingEnabled": {
+      "title": "Enable DNS Prefetching",
+      "description": "Sets whether to enabld DNS prefetching",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.fullScreenEnabled": {
+      "title": "Enable Full Screen",
+      "description": "Sets whether full screen is allowed to be set",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.invisibleMediaAutoplayNotPermitted": {
+      "title": "Enable autoplay of hidden content",
+      "description": "Sets whether hidden content can be autoplayed",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.javaEnabled": {
+      "title": "Enable Java",
+      "description": "Sets whether Java is enabled",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.javaScriptCanOpenWindowsAutomatically": {
+      "title": "Allow Javascript to automatically Open Windows",
+      "description": "Allows popup windows to be instantiated via Javascript",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.mediaDevicesEnabled": {
+      "title": "Enable Media Devices",
+      "description": "Sets whether media devices are enabled",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.showsToolTipOverTruncatedText": {
+      "title": "Enable Tooltips over Truncated Text",
+      "description": "Sets whether to show tooltips over truncated text",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.telephoneNumberDetectionIsEnabled": {
+      "title": "Enable Telephone Number Detection",
+      "description": "Sets whether telephone number detection is enabled",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "WebKitPreferences.usesPageCache": {
+      "title": "Use Page Cache when Available",
+      "description": "Sets whether to use cached page content",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
     }
+  }
 }
