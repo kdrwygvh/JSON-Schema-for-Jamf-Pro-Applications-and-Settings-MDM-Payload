@@ -1,0 +1,63 @@
+{
+    "title": "com.apple.Safari.Developer",
+    "description": "Developer options for the Safari Web Browser",
+    "__preferencedomain": "com.apple.SafariTechnologyPreview",
+    "properties": {
+        "IncludeDevelopMenu": {
+            "title": "Include Develop Menu",
+            "description": "Sets availability of the Safari Developer menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "IncludeInternalDebugMenu": {
+            "title": "Include Debug Menu",
+            "description": "Sets availability of the Safari internal debug menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitPreferences.developerExtrasEnabled": {
+            "title": "Enable Developer Extras",
+            "description": "Sets whether to enable Developer extras",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitPreferences.diagnosticLoggingEnabled": {
+            "title": "Enable Diagnostic Logging",
+            "description": "Sets whether to enable diagnostic logging",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
