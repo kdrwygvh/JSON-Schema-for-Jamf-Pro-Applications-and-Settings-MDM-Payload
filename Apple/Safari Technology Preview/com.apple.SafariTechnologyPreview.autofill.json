@@ -1,0 +1,67 @@
+{
+    "title": "Safari Autofill Settings",
+    "description": "Autofill Preferences for the Safari Web Browser",
+    "__preferencedomain": "com.apple.SafariTechnologyPreview",
+    "properties": {
+        "AutoFillCreditCardData": {
+            "title": "Enforce Credit Card Autofill Settings",
+            "description": "Enforces administrator preferred credit card autofill settings. Setting to true or false enables or disables autofill respectively and prevents the user from editing the preference",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutoFillFromAddressBook": {
+            "title": "Enforce Address Book Autofill",
+            "description": "Enforces administrator preferred address book autofill settings. Setting to true or false enables or disables autofill respectively and prevents the user from editing the preference",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutoFillMiscellaneousForms": {
+            "title": "Enforce miscellaneous form autofill",
+            "description": "Enforces administrator preferred miscellaneous autofill settings. Setting to true or false enables or disables autofill respectively and prevents the user from editing the preference",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutoFillPasswords": {
+            "title": "Enforce Password Autofill",
+            "description": "Enforces administrator preferred password autofill settings. Setting to true or false enables or disables autofill respectively and prevents the user from editing the preference",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
