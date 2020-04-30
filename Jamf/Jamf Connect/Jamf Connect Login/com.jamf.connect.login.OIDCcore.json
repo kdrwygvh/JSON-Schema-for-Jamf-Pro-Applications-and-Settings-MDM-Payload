@@ -38,14 +38,23 @@
         },
         "OIDCClientSecret": {
             "title": "OpenID Connect Client Secret",
-            "description": "The client secret known only by Jamf Connect Login and the IdP",
+            "description": "The client secret used by Jamf Connect Login and the IdP",
             "property_order": 3,
-            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "insert-client-secret-here"
                 }
-            }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         },
         "OIDCRedirectURI": {
             "title": "OpenID Connect Redirect URI",
@@ -60,14 +69,23 @@
         },
         "OIDCROPGID": {
             "title": "OpenID Connect Resource Owner Password Grant ID",
-            "description": "The Client ID of the registered app in your IdP used for authenticating the user's password via a resource owner password grant (ROPG) workflow",
+            "description": "The Application ID of the registered app in you IdP used for authenticating the user's password via a resource owner password grant (ROPG) workflow",
             "property_order": 5,
-            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
                 }
-            }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         },
         "OIDCDiscoveryURL": {
             "title": "OpenID Connect Discovery URL",

@@ -1,0 +1,127 @@
+{
+    "title": "Jamf Connect Login Okta Core Preferences",
+    "description": "Required preferences for basic Okta Jamf Connect interoperability",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "AuthServer": {
+            "title": "Okta Domain",
+            "description": "Specifies your Okta authentication domain",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "company.okta.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCAuthServer": {
+            "title": "Okta OpenID Connect Domain",
+            "description": "Specifies a custom authorization server in your Okta tenant which can be used to send custom scopes and claims in a user\u2019s ID token during local account creation",
+            "property_order": 8,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "customopenidconnect.okta.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCAccessClientID": {
+            "title": "Okta OpenID Connect Access Client ID",
+            "description": "Okta OIDC application ID that determines which users can access the computer",
+            "property_order": 9,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "oad0gmia54gn3y8923h1"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCAdminClientID": {
+            "title": "Okta OpenID Connect Access Admin ID",
+            "description": "Okta OIDC application that determines which users are created with local administrator accounts",
+            "property_order": 10,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "0oa0gwese54gn3y9O0h4"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCSecondaryLoginClientID": {
+            "title": "Okta Secondary Login Client Access ID",
+            "description": "Okta OIDC application that determines who can create local user accounts after an initial user has been created",
+            "property_order": 11,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "0oa0grdsrhdsre54gn3y9O0h4"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCShortName": {
+            "title": "Okta OpenID Connect ShortName",
+            "description": "Specifies which attribute from a user's ID token to use as the account short name. The short name is added as an alias to the user's local account",
+            "property_order": 12,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "given_name"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
