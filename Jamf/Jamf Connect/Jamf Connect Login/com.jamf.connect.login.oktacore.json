@@ -7,16 +7,25 @@
             "title": "Okta Domain",
             "description": "Specifies your Okta authentication domain",
             "property_order": 1,
-            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "company.okta.com"
                 }
-            }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         },
         "OIDCAuthServer": {
             "title": "Okta OpenID Connect Domain",
-            "description": "Specifies a custom authorization server in your Okta tenant, which can be used to send custom scopes and claims in a user\u2019s ID token during local account creation",
+            "description": "Specifies a custom authorization server in your Okta tenant which can be used to send custom scopes and claims in a user\u2019s ID token during local account creation",
             "property_order": 8,
             "options": {
                 "inputAttributes": {
