@@ -4,7 +4,7 @@
     "__preferencedomain": "com.jamf.connect.login",
     "properties": {
         "OIDCProvider": {
-            "title": "OIDC Provider",
+            "title": "OpenID Connect Provider",
             "description": "Open ID Connect Provider",
             "property_order": 1,
             "type": "string",
@@ -26,124 +26,70 @@
             ]
         },
         "OIDCClientID": {
-            "title": "Open ID Connect Client ID",
+            "title": "OpenID Connect Client ID",
             "description": "The client ID of the created app in your IdP used to authenticate the user",
             "property_order": 2,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
-                },
-                "anyOf": [
-                    {
-                        "type": "null",
-                        "title": "Not Configured"
-                    },
-                    {
-                        "title": "Configured",
-                        "type": "string"
-                    }
-                ]
+                }
             }
         },
         "OIDCClientSecret": {
-            "title": "Open ID Connect Client Secret",
+            "title": "OpenID Connect Client Secret",
             "description": "The client secret known only by Jamf Connect Login and the IdP",
             "property_order": 3,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "insert-client-secret-here"
-                },
-                "anyOf": [
-                    {
-                        "type": "null",
-                        "title": "Not Configured"
-                    },
-                    {
-                        "title": "Configured",
-                        "type": "string"
-                    }
-                ]
+                }
             }
         },
         "OIDCRedirectURI": {
-            "title": "Open ID Connect Redirect URI",
+            "title": "OpenID Connect Redirect URI",
             "description": "The redirect URI used by your Jamf Connect app in the IdP. https://127.0.0.1/jamfconnect is recommended by default but any valid URI value may be used as long as the configured value in the IdP matches the value in your Jamf Connect Login configuration profile",
             "property_order": 4,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "https://127.0.0.1/jamfconnect"
-                },
-                "anyOf": [
-                    {
-                        "type": "null",
-                        "title": "Not Configured"
-                    },
-                    {
-                        "title": "Configured",
-                        "type": "string"
-                    }
-                ]
+                }
             }
         },
         "OIDCROPGID": {
-            "title": "Open ID Connect Resource Owner Password Grant ID",
+            "title": "OpenID Connect Resource Owner Password Grant ID",
             "description": "The Client ID of the registered app in your IdP used for authenticating the user's password via a resource owner password grant (ROPG) workflow",
             "property_order": 5,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
-                },
-                "anyOf": [
-                    {
-                        "type": "null",
-                        "title": "Not Configured"
-                    },
-                    {
-                        "title": "Configured",
-                        "type": "string"
-                    }
-                ]
+                }
             }
         },
         "OIDCDiscoveryURL": {
-            "title": "Open ID Connect Discovery URL",
+            "title": "OpenID Connect Discovery URL",
             "description": "Location of OpenID Connect metadata document",
             "property_order": 6,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "https://idp.url.com/.well-known/openid-configuration"
-                },
-                "anyOf": [
-                    {
-                        "type": "null",
-                        "title": "Not Configured"
-                    },
-                    {
-                        "title": "Configured",
-                        "type": "string"
-                    }
-                ]
+                }
             }
         },
         "OIDCTenant": {
             "title": "OpenID Connect Tenant",
             "description": "Specifies the Tenant ID for your organization that's used for authentication",
             "property_order": 7,
+            "type": "string",
             "options": {
                 "inputAttributes": {
                     "placeholder": "c27d1b33-59b3-4ab2-a5c9-23jf0093"
                 }
-            },
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "string"
-                }
-            ]
+            }
         }
     },
     "required": [
