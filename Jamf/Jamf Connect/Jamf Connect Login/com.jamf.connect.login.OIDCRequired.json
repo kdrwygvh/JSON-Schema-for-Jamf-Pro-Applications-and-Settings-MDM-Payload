@@ -1,6 +1,6 @@
 {
     "title": "Jamf Connect Login OpenID Connect Core Preferences",
-    "description": "Jamf Connect Login Preferences for OpenID Connect IdPs",
+    "description": "Jamf Connect Login OpenID Connect Required Preferences",
     "__preferencedomain": "com.jamf.connect.login",
     "properties": {
         "OIDCProvider": {
