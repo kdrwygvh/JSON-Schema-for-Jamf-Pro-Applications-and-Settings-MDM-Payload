@@ -1,0 +1,183 @@
+{
+    "title": "Jamf Connect Login Account Creation Preferences",
+    "description": "Preferences to define in what manner accounts are provisioned using Jamf Connect Login",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "CreateAdminUser": {
+            "title": "Provisiong Users as Local Administrators",
+            "description": "If set to true, all users become local admins when created on the computer",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CreateVerifyPasswords": {
+            "title": "Create Jamf Connect Verify Keychain Item",
+            "description": "Determines if a keychain entry is created for Jamf Connect Verify",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CreateSyncPasswords": {
+            "title": "Create Jamf Connect Sync Keychain Item",
+            "description": "Determines if a keychain entry is created for Jamf Connect Sync",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DemobilizeUsers": {
+            "title": "Demobilize Active Directory Mobile Accounts",
+            "description": "Determines if any existing Active Directory mobile accounts are demobilized which is the process of converting a mobile account into a local account. Demobilization also removes the network authentication authority from the account",
+            "property_order": 4,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DenyLocal": {
+            "title": "Require Network Based Login",
+            "description": "Determines if users can bypass network authentication and use the Local Authentication button at the loginwindow",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DenyLocalExcluded": {
+            "title": "Local Users Excluded from the Network Login Requirement",
+            "description": "Specifies which users can still locally authenticate if Require Network Based Login is set to true",
+            "property_order": 6,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "LocalFallback": {
+            "title": "Allow Fallback to Local Authentication if Network is Unavailable",
+            "description": "Force authentication to the IdP first, but then fallback to local authentication if the IdP is unavailable",
+            "property_order": 7,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Migrate": {
+            "title": "Migrate Local Users to IdP based Users",
+            "description": "Allows local accounts to be migrated to network accounts. See Jamf Connect documentation on how associations are performed automatically",
+            "property_order": 8,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MigrateUsersHide": {
+            "title": "Users Ineligible for IdP Migration",
+            "description": "Specifies which local accounts are excluded from the migration pull-down menu",
+            "property_order": 9,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "RightsTmpCache": {
+            "title": "Set Cache Location for Token",
+            "description": "When using the AuthUI rule, determines if the token cache is set to /tmp/cachedata",
+            "property_order": 10,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UIDTool": {
+            "title": "Path to UID Management Tool",
+            "description": "Specifies a path to a UID tool that allows you to set a local user account's UID to a custom value during account creation. This can be used to match a local user account's UID with a user's LDAP UID attribute. Your UID tool must be an executable script",
+            "property_order": 11,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/bin/uidManagement.sh"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
