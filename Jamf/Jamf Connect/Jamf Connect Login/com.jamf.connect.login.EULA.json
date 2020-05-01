@@ -1,0 +1,87 @@
+{
+    "title": "Jamf Connect Login EULA Preferences",
+    "description": "Jamf Connect Login Preferences for displaying a EULA",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "EULAPath": {
+            "title": "EULA User Acknowledgement Path",
+            "description": "Specifies the file path to a directory where user\u2019s end acceptance of a EULA is stored as log files",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/var/tmp/EULA"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULATitle": {
+            "title": "EULA Title",
+            "description": "Title of the EULA text",
+            "property_order": 2,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Insert EULA title here"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULAText": {
+            "title": "EULA Text",
+            "description": "Text used for the EULA",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Insert EULA text here"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULASubTitle": {
+            "title": "EULA Subtitle",
+            "description": "Subtitle of the EULA text",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Terms and Conditions"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
