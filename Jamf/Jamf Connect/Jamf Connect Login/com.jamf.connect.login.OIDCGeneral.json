@@ -1,0 +1,165 @@
+{
+    "title": "Jamf Connect Login OpenID Connect General Preferences",
+    "description": "Jamf Connect Login OpenID Connect General Preference",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "OIDCNewPassword": {
+            "title": "Create New Local Password",
+            "description": "If set to true, this key prompts users to create a new password for their new local account. If set to false, this key prompts users to re-enter their network password, which also becomes the local account password. This ensures a user's network and local password are synced during user creation",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCDefaultLocal": {
+            "title": "Use local authentication only",
+            "description": "When set to true, Jamf Connect Login will use local authentication by default rather than cloud authentication, which ensures users can always log in without a network connection",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCAdmin": {
+            "title": "OpenID Connect Admin Groups",
+            "description": "Specifies which user groups become local admins during account creation. You can specify one user group as a string or multiple user groups in an array of strings",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "OIDCAdminAttribute": {
+            "title": "OpenID Connect Admin Attribute",
+            "description": "Specifies what attribute stored in an ID token is used to determine if a user is created as a standard or admin local user. By default, Jamf Connect Login will read the groups attribute for any values specified with the OIDCAdmin preference key",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "groups"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIgnoreAdmin": {
+            "title": "Igore OpenID Connect Attributes",
+            "description": "When set to true, Jamf Connect Login will ignore any roles that exist in your IdP. This key ensures local user accounts maintain their current status as either an admin or standard account. When set to false or unspecified, Jamf Connect Login will read the OIDCAdmin key for configured roles and will change a local user account status based on any roles in your IdP",
+            "property_order": 5,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCScopes": {
+            "title": "OpenID Connect Scopes",
+            "description": "Specifies custom scopes, which return additional claims in a user\u2019s ID token during authorization. Standard scopes included openid, profile, and offline_access. This key should be configured as a string with space-separated values",
+            "property_order": 6,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "openid, profile, offline_access"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIDTokenPath": {
+            "title": "Path to OpenID Connect Token",
+            "description": "Specifies the file path that can be used to store a user\u2019s formatted ID token",
+            "property_order": 7,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/var/tmp/jamfConnectLoginUserToken"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIDTokenPathRaw": {
+            "title": "Path to unformatted OpenID Connect Token",
+            "description": "Specifies the file path that can be used to store a user\u2019s raw ID token",
+            "property_order": 8,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/var/tmp/jamfConnectLoginUserTokenRaw"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIgnoreCookies": {
+            "title": "Ignore IDP Cookies",
+            "description": "Ignores any cookies stored by the loginwindow",
+            "property_order": 9,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

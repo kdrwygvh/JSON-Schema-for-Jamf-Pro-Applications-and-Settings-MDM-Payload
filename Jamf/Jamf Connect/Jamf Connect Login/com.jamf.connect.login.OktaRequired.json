@@ -1,6 +1,6 @@
 {
-    "title": "Jamf Connect Login Okta Core Preferences",
-    "description": "Required preferences for basic Okta Jamf Connect interoperability",
+    "title": "Jamf Connect Login Okta Required Preferences",
+    "description": "Jamf Connect Login Okta IdP Required Preferences for using either the Okta API or OpenID Connect",
     "__preferencedomain": "com.jamf.connect.login",
     "properties": {
         "AuthServer": {
