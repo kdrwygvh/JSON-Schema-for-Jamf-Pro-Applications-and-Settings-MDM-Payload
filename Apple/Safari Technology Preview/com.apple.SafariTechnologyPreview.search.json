@@ -1,0 +1,35 @@
+{
+    "title": "com.apple.SafariTechnologyPreview.search",
+    "description": "Manageable preferences for Safari's Search Preferences",
+    "__preferencedomain": "com.apple.SafariTechnologyPreview",
+    "properties": {
+        "SuppressSearchSuggestions": {
+            "title": "Suppress Safari Suggestions",
+            "description": "Suppress Safari suggestions in Search",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UniversalSearchEnabled": {
+            "title": "Include Search Engine Suggestions",
+            "description": "Include preferred Search Engine suggestions in Search",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

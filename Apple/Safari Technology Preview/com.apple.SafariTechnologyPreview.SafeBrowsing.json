@@ -1,0 +1,21 @@
+{
+    "title": "com.apple.SafariTechnologyPreview.SafeBrosing",
+    "description": "Safari Safe Browsing Preferences",
+    "__preferencedomain": "com.apple.SafariTechnologyPreview.SafeBrowsing",
+    "properties": {
+        "SafeBrowsingEnabled": {
+            "title": "Enable Safari Safebrowsing",
+            "description": "Sets whether Safari safebrowsing is enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
