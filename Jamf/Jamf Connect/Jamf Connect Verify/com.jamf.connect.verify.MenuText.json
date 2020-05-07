@@ -1,0 +1,177 @@
+{
+    "title": "Jamf Connect Verify Menu Text Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "MenuAbout": {
+            "title": "About Menu Text",
+            "description": "Title of the About menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "About"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuActions": {
+            "title": "Actions Menu Text",
+            "description": "Title of the Actions menu item",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Actions"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuChangePassword": {
+            "title": "Change Password Menu Text",
+            "description": "Title of the Change Password menu item",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Change Password"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuResetPassword": {
+            "title": "Reset Password Menu Text",
+            "description": "Title of the reset password menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Reset Forgotten Password"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuGetHelp": {
+            "title": "Get Help Menu Text",
+            "description": "Title of the Get Help menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Get Help"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuGetSoftware": {
+            "title": "Get Software Menu Text",
+            "description": "Title of the Get Software menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Get Software"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuHomeDirectory": {
+            "title": "Home Directory Menu Text",
+            "description": "Title of the Home share menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Network Home Directory"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuKerberosTickets": {
+            "title": "Kerberos Ticket Menu Text",
+            "description": "Title of the Kerberos Tickets menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Get Single Sign On Ticket"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuShares": {
+            "title": "Shares Menu Text",
+            "description": "Title of the shares menu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Network Shares"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

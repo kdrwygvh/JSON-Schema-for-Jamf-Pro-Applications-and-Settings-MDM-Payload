@@ -1,0 +1,54 @@
+{
+    "title": "Jamf Connect Verify Required Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "OIDCProvider": {
+            "title": "Identity Provider",
+            "property_order": 1,
+            "type": "string",
+            "options": {
+                "enum_titles": [
+                    "Azure",
+                    "PingFederate",
+                    "Custom"
+                ]
+            },
+            "enum": [
+                "Azure",
+                "PingFederate",
+                "Custom"
+            ]
+        },
+        "OIDCDiscoveryURL": {
+            "title": "OpenID Connect Discovery URL",
+            "description": "This key is only required if the OIDCProvider key is set to Custom or PingFederate",
+            "property_order": 2,
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://idp.url.com/.well-known/openid-configuration"
+                }
+            }
+        },
+        "OIDCROPGID": {
+            "title": "Client ID (Password Verification)",
+            "description": "The client ID of the added app in your IdP used for verifying the user's local password via a resource owner password grant (ROPG) workflow",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

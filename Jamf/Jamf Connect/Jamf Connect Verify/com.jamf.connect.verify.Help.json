@@ -1,0 +1,80 @@
+{
+    "title": "Jamf Connect Verify Help Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "FailToolPath": {
+            "title": "Path to Login Failure Remediation Script",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/bin/jamfConnectVerifyLoginRemediate.sh"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "GetHelpType": {
+            "title": "Type of Help Option Offered in Menu",
+            "description": "The type help item users can access via the Get Help menu item, such as a URL, path or app",
+            "property_order": 2,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "URL"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "GetHelpOptions": {
+            "title": "Options for Help Type",
+            "description": "Specifies the URL or path used in with the GetHelpType preference key. The following values are supported as substitutions",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "SelfServicePath": {
+            "title": "Path to Jamf Self Service Application",
+            "description": "Specifies the file path for a Self Service application",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/Applications/Self Service.app"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "title": "Jamf Connect Verify OpenID Connect Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "OIDCChangePasswordURL": {
+            "title": "OpenID Connect Change Password URL",
+            "description": "URL to the password change page in the IdP",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://account.activedirectory.windowsazure.com/ChangePassword.aspx"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCResetPasswordURL": {
+            "title": "OpenID Connect Reset Password URL",
+            "description": "URL to the password reset page in the IdP",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://passwordreset.microsoftonline.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCClientSecret": {
+            "title": "OpenID Connect Client Secret",
+            "description": "Client secret for ROPG operations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCLoginURL": {
+            "title": "OpenID Connect Login URL",
+            "description": "URL to sign in to your IdP",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://login.microsoftonline.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCRedirectURI": {
+            "title": "OpenID Connect Redirect URI",
+            "description": "The redirect URI used by your Jamf Connect app in your IdP. https://127.0.0.1/jamfconnect is recommended by default, but any valid URI value may be used as long as the configured value in your IdP matches the the value in your Jamf Connect Login configuration profile",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://127.0.0.1/jamfconnect"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGSuccessCodes": {
+            "title": "ROPG Password Verification Success Codes",
+            "description": "For possible error codes that may need to be configured in your environment see the following documentation from Microsoft: https://docs.microsoft.com/azure/active-directory/develop/reference-aadsts-error-codes",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "title": "Jamf Connect Sync Keychain Settings",
+    "description": "Keychain Settings",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "KeychainItems": {
+            "type": "object",
+            "title": "Update Keychain Items",
+            "properties": {
+                "AccountItemOne": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemTwo": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemThree": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemFour": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemFive": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemSix": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemSeven": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemEight": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemNine": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                },
+                "AccountItemTen": {
+                    "title": "Keychain Item",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

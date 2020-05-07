@@ -1,0 +1,55 @@
+{
+    "title": "Jamf Connect Sync Custom Display Preferences",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "CenterSignIn": {
+            "title": "Center Sign In Window Onscreen",
+            "description": "Ensures the Sign In window is always centered on the user's screen",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SignInLogo": {
+            "title": "Sign-in Logo",
+            "description": "Specifies the path to image file used as a logo",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/images/customSignInLogo.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ActionsUpdateTime": {
+            "title": "Update Actions Interval",
+            "description": "Specifies an interval, in minutes, between setting and updating the Actions menu item. If unset, the default value is 15 minutes",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-60]",
+                    "default": 15
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "title": "Jamf Connect Sync Required Preferences",
+    "description": "Required preferences for basic Jamf Connect Sync functionality",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "__link": "https://docs.jamf.com/jamf-connect/administrator-guide/Configuring_Jamf_Connect_Sync.html",
+    "properties": {
+        "AuthServer": {
+            "title": "Okta Domain",
+            "description": "Specifies your Okta authentication domain",
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "yourcompany.okta.com"
+                }
+            }
+        }
+    },
+    "required": [
+        "AuthServer"
+    ]
+}
