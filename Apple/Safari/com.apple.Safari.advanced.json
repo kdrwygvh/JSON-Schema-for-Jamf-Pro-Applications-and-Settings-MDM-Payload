@@ -1,6 +1,6 @@
 {
     "title": "Safari Advanced Preferences",
-    "description": "Preferences for the Advanced section of Safari's Preferences sheet",
+    "description": "Preference manifest for the Advanced section of Safari's Preferences",
     "__preferencedomain": "com.apple.Safari",
     "properties": {
         "ShowFullURLInSmartSearchField": {
