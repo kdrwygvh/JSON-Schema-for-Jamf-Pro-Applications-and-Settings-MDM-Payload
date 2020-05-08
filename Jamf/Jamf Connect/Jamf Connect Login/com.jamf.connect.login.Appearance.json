@@ -1,0 +1,125 @@
+{
+    "title": "Jamf Connect Login Messaging & Appearance Preferences",
+    "description": "Messaging & appearance settings for the Jamf Connect Login Screen",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "BackgroundImage": {
+            "title": "Path to Background Image",
+            "description": "Path to a locally stored image to use as a background for the login window",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared/jamfConnectLoginBackground.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "BackgroundImageAlpha": {
+            "title": "Background Image Alpha Value",
+            "description": "The alpha value of the vibrancy layer blur above the background image as an Int from 0-10, representing the alpha value in 10% increments. macOS 10.13 or greater required",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[0-10]",
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10
+                    ],
+                    "enum_titles": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10
+                    ],
+                    "default": 10
+                }
+            ]
+        },
+        "LoginLogo": {
+            "title": "Path to Login Logo Image",
+            "description": "Path to a locally stored image to use as a logo during password validation or local password creation. 250x250px size recommended",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared/jamfConnectLoginImage.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LoginScreen": {
+            "title": "Use Standard macOS Login Screen when using Okta",
+            "description": "Determines if Jamf Connect Login displays a macOS style login screen instead of a Jamf Connect window",
+            "property_order": 4,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MessageOTPEntry": {
+            "title": "One Time Password Entry Text when using Okta",
+            "description": "Text displayed when a user must enter a one time password as a multi-factor authentication method",
+            "property_order": 5,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Enter your verification code"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

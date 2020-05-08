@@ -1,0 +1,92 @@
+{
+    "title": "Jamf Connect Verify Custom Display Settings",
+    "description": "Settings to manage the behavior of the JCV menu bar app",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "MenuIconActive": {
+            "title": "Custom Active Kerberos Tickets Icon",
+            "description": "Custom image to use when the user has a valid Kerberos ticket",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/images/activeKerberosTicket.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MenuIconDark": {
+            "title": "Custom Dark Mode Menu Bar Icon",
+            "description": "Custom image to use for the menu icon in dark mode",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/images/jcvDarkModeActive.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DontShowWelcome": {
+            "title": "Skip About Screen on Launch",
+            "description": "Hides the Jamf Connect Sync splash screen on launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ForceSignInWindow": {
+            "title": "Force Sign In Window",
+            "description": "Determines if the Sign In window should stay open until the user has successfully authenticated",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LoginLogo": {
+            "title": "Custom Sign In Logo",
+            "description": "Specifies a custom image to display in the Sign In window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/images/jcvCustomSignInImage.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

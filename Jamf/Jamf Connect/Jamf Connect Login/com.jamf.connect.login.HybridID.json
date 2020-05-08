@@ -1,0 +1,123 @@
+{
+    "title": "Jamf Connect Login Hybrid Identity Preferences",
+    "description": "These keys can be used to separate the authentication process completed via OpenID Connect from the password verification process completed by the Resource Owner Password Grant (ROPG), which is required to configure Jamf Connect with hybrid identity solutions",
+    "__link": "https://www.jamf.com/jamf-nation/articles/697",
+    "__link2": "https://www.jamf.com/jamf-nation/articles/702",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "ROPGProvider": {
+            "title": "Identity Provider (Hybrid ID)",
+            "description": "Specifies where ROPG authentication will occur. Set this value to Custom if using Azure AD with ADFS. Set this value to Azure Version 2 if you are using password hash synchronization or pass-through authentication",
+            "property_order": 1,
+            "type": "string",
+            "options": {
+                "enum_titles": [
+                    "Azure Version 2",
+                    "Custom"
+                ]
+            },
+            "enum": [
+                "Azure_v2",
+                "Custom"
+            ]
+        },
+        "ROPGTenant": {
+            "title": "Tenant ID (Hybrid ID)",
+            "description": "The tenant ID in your organization to use for ROPG authentication. Required if using Azure Version 2",
+            "property_order": 2,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "15e7196d-8bd5-4034-ae01-7bda4ad0c91e"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGDiscoveryURL": {
+            "title": "Discovery URL (Hybrid ID)",
+            "description": "Specifies your OpenID Connect discovery endpoint. If using ADFS, this value is your AD FS domain combined with /adfs/.well-known/openid-configuration",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://adfs.jamfconnect.com/adfs/.well-known/openid-configuration"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGRedirectURI": {
+            "title": "Redirect URI (Hybrid ID)",
+            "description": "The redirect URI used by the created application in AD FS or Azure AD. https://127.0.0.1/jamfconnect is recommended by default, but any valid URI value may be used as long as the configured value in Azure AD or AD FS matches the the value in your Jamf Connect Login configuration profile",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://127.0.0.1/jamfconnect"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGClientSecret": {
+            "title": "Client Secret (Hybrid ID)",
+            "description": "The client secret of your Jamf Connect application. See https://docs.jamf.com/jamf-connect/administrator-guide/Configuring_Jamf_Connect_Login_with_Microsoft_Azure_AD.html",
+            "property_order": 5,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "your-client-secret"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGSuccessCodes": {
+            "title": "Password Verification Success Codes",
+            "description": "See https://docs.jamf.com/jamf-connect/administrator-guide/Configuring_Jamf_Connect_Login_with_Microsoft_Azure_AD.html",
+            "property_order": 6,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}

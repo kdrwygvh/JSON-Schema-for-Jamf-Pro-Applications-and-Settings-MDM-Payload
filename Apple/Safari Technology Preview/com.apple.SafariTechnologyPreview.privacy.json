@@ -1,0 +1,59 @@
+{
+    "title": "com.apple.SafariTechnologyPreview.privacy",
+    "description": "Preferences for the Privacy tab of Safari",
+    "__preferencedomain": "com.apple.SafariTechnologyPreview",
+    "properties": {
+        "BlockStoragePolicy": {
+            "title": "Cross Site Tracking Settings",
+            "description": "Allow or Prevent Cross Site Tracking. If configuring Safari to block all cookies do not set this preference as it is superceded by the cookie restriction",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-2]",
+                    "options": {
+                        "enum_titles": [
+                            "Prevent",
+                            "Disallow"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "WebKitPreferences.storageBlockingPolicy": {
+            "title": "Block all Cookies",
+            "description": "Sets whether to block all Browser cookies",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[0-2]",
+                    "options": {
+                        "enum_titles": [
+                            "Allow Cookies",
+                            "Block Cross Site Cookies",
+                            "Block all Cookies"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        }
+    }
+}

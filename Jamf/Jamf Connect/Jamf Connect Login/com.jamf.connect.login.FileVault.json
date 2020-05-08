@@ -1,0 +1,43 @@
+{
+    "title": "Jamf Connect Login FileVault Preferences",
+    "description": "Preferences for Filevault first user provisioning",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "EnableFDE": {
+            "title": "Enable FileVault for First User",
+            "description": "If set to true, FileVault will be enabled for the first user that logs in",
+            "property_order": 1,
+            "type": "boolean"
+        },
+        "EnableFDERecoveryKey": {
+            "title": "Store FileVault Personal Recovery Key Locally",
+            "description": "If set to true, Jamf Connect will store the FileVault recovery key to /var/db/NoMADFDE unless otherwise specified",
+            "property_order": 2,
+            "type": "boolean"
+        },
+        "EnableFDERecoveryKeyPath": {
+            "title": "Set Personal Recovery Key Path",
+            "description": "Specifies a custom file path for the FileVault recovery key",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/var/tmp/personalRecoveryKey"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "required": [
+        "EnableFDE",
+        "EnableFDERecoveryKey"
+    ]
+}

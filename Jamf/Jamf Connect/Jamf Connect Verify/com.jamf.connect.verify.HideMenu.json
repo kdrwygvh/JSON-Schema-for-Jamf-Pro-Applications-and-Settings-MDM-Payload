@@ -1,0 +1,175 @@
+{
+    "title": "Jamf Connect Verify Hide Menu Preferences",
+    "description": "Preferences to hide unused Jamf Connect Verify menu options",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "HideAbout": {
+            "title": "Hide About Menu Item",
+            "description": "Hides the About window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideChangePassword": {
+            "title": "Hide Change Passwords Menu Item",
+            "description": "Hides the Change Password menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideGetHelp": {
+            "title": "Hide Get Help Menu Item",
+            "description": "Hides the Get Help menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideGetSoftware": {
+            "title": "Hide Get Software Menu Item",
+            "description": "Hides the Get Software menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideHomeDirectory": {
+            "title": "Hide Home Directory Menu Item",
+            "description": "Hides the home directory menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideLastUser": {
+            "title": "Hide Last User Menu Item",
+            "description": "Hides the last user menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HidePrefs": {
+            "title": "Hide Preferences Menu Item",
+            "description": "Hides the Preferences menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideResetPassword": {
+            "title": "Hide Reset Password Menu Item",
+            "description": "Hides the reset password menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideShares": {
+            "title": "Hide Shares Menu Item",
+            "description": "Hides the shares menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideSignIn": {
+            "title": "Hide Sign In Menu Item",
+            "description": "Hides the Sign in menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideTickets": {
+            "title": "Hide Kerberos Ticket Menu Item",
+            "description": "Hides the Tickets menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideQuit": {
+            "title": "Hide Quit Menu Item",
+            "description": "Hides the Quit menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

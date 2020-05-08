@@ -1,0 +1,52 @@
+{
+    "title": "Jamf Connect Verify Keychain Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "KeychainItemsDebug": {
+            "title": "Update Keychain Items Every Sign-in (Debugging)",
+            "description": "Updates keychain items on every sign in. This key should only be used for debugging purposes",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KeychainItemsCreateSerial": {
+            "title": "Custom Serial Number for Keychain Items",
+            "description": "Serial number for new keychain items created with Jamf Connect",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KeychainItemsInternet": {
+            "title": "Internet Passwords to Update During Jamf Connect Password Change",
+            "description": "Determines which internet accounts Jamf Connect should sync with the local password",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Keychain Item"
+                    }
+                }
+            ]
+        }
+    }
+}

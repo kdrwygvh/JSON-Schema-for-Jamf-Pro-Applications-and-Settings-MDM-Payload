@@ -1,0 +1,112 @@
+{
+    "title": "Safari Advanced Preferences",
+    "description": "Preference manifest for the Advanced section of Safari's Preferences",
+    "__preferencedomain": "com.apple.Safari",
+    "properties": {
+        "ShowFullURLInSmartSearchField": {
+            "title": "Show Full URL in Search Field",
+            "description": "Sets whether to show the full URL in the Search Field",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitMinimumFontSize": {
+            "title": "Set Minimum Font Size",
+            "description": "Sets the minimum font size for web pages",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[9-24]",
+                    "enum": [
+                        9,
+                        10,
+                        11,
+                        12,
+                        14,
+                        18,
+                        24
+                    ],
+                    "default": 9
+                }
+            ]
+        },
+        "WebKitPreferences.minimumFontSize": {
+            "title": "Set Minimum Font Size Webkit",
+            "description": "Sets the minimum font size for web pages",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[9-24]",
+                    "enum": [
+                        9,
+                        10,
+                        11,
+                        12,
+                        14,
+                        18,
+                        24
+                    ],
+                    "default": 9
+                }
+            ]
+        },
+        "WebKitTabToLinksPreferenceKey": {
+            "title": "Press Tab to Highlight Each Item on a Webpage",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WebKitPreferences.plugInSnapshottingEnabled": {
+            "title": "Stop Plug-Ins to Save Power",
+            "description": "Enables Plug-In Snapshotting to lessen CPU Impact",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ReadingListSaveArticlesOfflineAutomatically": {
+            "title": "Save Reading List Articles for Offline Reading",
+            "description": "Enables offline caching of articles saved to the reading list",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

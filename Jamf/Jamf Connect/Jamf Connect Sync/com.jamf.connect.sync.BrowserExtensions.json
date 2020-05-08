@@ -1,0 +1,34 @@
+{
+    "title": "Jamf Connect Sync Browser Extension Preferences",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "CheckSafariExtension": {
+            "title": "Check for Safari Extension",
+            "description": "Determines if an alert displays to users when the Jamf Connect Sync Safari extension is disabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutoAuth": {
+            "title": "Enable Automatic Sign-in",
+            "description": "Determines if web extensions automatically authenticate via the Jamf Connect Sync UI",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

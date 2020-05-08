@@ -1,0 +1,45 @@
+{
+    "title": "Jamf Connect Login Script Preferences",
+    "description": "See https://docs.jamf.com/jamf-connect/1.19.0/administrator-guide/Login_Script.html",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "ScriptArgs": {
+            "title": "Script Arguments",
+            "description": "The arguments used with a specified script run by the RunScript mechanism",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ScriptPath": {
+            "title": "Path to Login Script",
+            "description": "Specifies the path to the script or other executable run by the RunScript mechanism. Only one script can be used with Jamf Connect Login at any time",
+            "property_order": 2,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/bin/jamfConnectLogin.sh"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

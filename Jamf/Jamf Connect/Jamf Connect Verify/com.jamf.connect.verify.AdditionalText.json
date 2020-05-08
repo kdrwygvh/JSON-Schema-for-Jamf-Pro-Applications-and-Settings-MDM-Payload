@@ -1,0 +1,134 @@
+{
+    "title": "Jamf Connect Verify Additional Text Preferences",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "MessageBrowserPasswordChange": {
+            "title": "Password Change via Browser Message",
+            "description": "Text shown after the user closes the in-app browser after changing a password",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Sign in again to complete your password change..."
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MessageLocalSync": {
+            "title": "Sync Passwords Message",
+            "description": "Text shown when the local password is not the same as the network password",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "our Network password is not the same as your local account password. Please enter your local account password so that they can be synced"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MessageNetworkPasswordWrong": {
+            "title": "Incorrect Network Password Message",
+            "description": "Text shown when the network password is incorrect",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Network username or password is incorrect, please try again"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "WindowAbout": {
+            "title": "About Window Title",
+            "description": "Title of the About window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Welcome to Jamf Connect Verify"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "WindowSignIn": {
+            "title": "Sign In Window Title",
+            "description": "Title of the Sign In window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Cloud Identity Sign In"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AlwaysShowSuccess": {
+            "title": "Show Sign-in Success Message",
+            "description": "Determines if a success message is displayed when a user successfully signs in with Jamf Connect Verify",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MessagePasswordSuccess": {
+            "title": "Sign-in Success Message",
+            "description": "Text shown when a user successfully signs in with Jamf Connect Verify",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "You are now signed in"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

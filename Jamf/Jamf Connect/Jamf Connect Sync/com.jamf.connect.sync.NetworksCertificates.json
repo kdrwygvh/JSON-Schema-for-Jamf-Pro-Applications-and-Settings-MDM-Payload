@@ -1,0 +1,139 @@
+{
+    "title": "Jamf Connect Sync Network and Certificates Preferences",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "ExportableKey": {
+            "title": "Allow Private Key Exports",
+            "description": "Allows the private key of the user certificate to be exported",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "GetCertificateAutomatically": {
+            "title": "Get Certificates Automatically",
+            "description": "Enables Jamf Connect Sync to get a certificate from a Windows web certificate authority (CA) automatically on login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "IgnoreDomainReachability": {
+            "title": "Ignore Domain Accessibility",
+            "description": "Determines if SRV record lookups are used to determine if the Active Directory domain is accessible",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "WifiNetworks": {
+            "title": "Associated Wi-Fi Network SSIDs",
+            "description": "A list of wireless networks to associate with the certificate Jamf Connect Sync created",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "SignInCommand": {
+            "title": "Custom Sign-in Script",
+            "description": "Specifies a script or other binary to be run after a successful sign in",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/bin/jamfConnectSyncSignIn.sh"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "Template": {
+            "title": "User Certificate Template",
+            "description": "Certificate template from a Windows CA",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "User Auth"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LDAPServers": {
+            "title": "LDAP Servers",
+            "description": "Specifies domain controllers to use for Active Directory lookups",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "X509CA": {
+            "title": "X.509 Certificate Authority",
+            "description": "Specifies the URL of the Windows web CA for Jamf Connect Sync to use for certificates",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "dc1.nomad.test"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

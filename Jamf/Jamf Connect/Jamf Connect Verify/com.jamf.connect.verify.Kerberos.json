@@ -1,0 +1,133 @@
+{
+    "title": "Jamf Connect Verify Kerberos Preferences",
+    "description": "Common Kerberos Preferences for Jamf Connect",
+    "__preferencedomain": "com.jamf.connect.verify",
+    "properties": {
+        "KerberosRealm": {
+            "title": "Kerberos Realm",
+            "description": "Kerberos Realm",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "COMPANY.COM"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KerberosGetTicketsAutomatically": {
+            "title": "Request Kerberos TGT Automatically",
+            "description": "Determines if Kerberos tickets are automatically retrieved",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KerberosShortName": {
+            "title": "Kerberos Short Name",
+            "description": "The short name to use for Kerberos tickets. If unspecified, the user's sign-in name is used",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KerberosShortNameAsk": {
+            "title": "Ask for UserName when Performing Kerberos Sign-in",
+            "description": "Determines if the user is asked to enter their Kerberos short name on first sign in",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KerberosShortNameAskMessage": {
+            "title": "Display Message for Kerberos UserName Dialog",
+            "description": "The message displayed to users when requesting their Kerberos short name",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Please enter your Active Directory user name"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KerberosShowCountdown": {
+            "title": "Display Active Directory Password Expiration",
+            "description": "Shows the countdown of days remaining until the password expires",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KerberosShowCountdownLimit": {
+            "title": "Number of Days to Display Password Expiration Warning",
+            "description": "An integer, in days remaining, before the password expiration countdown is displayed in the menu bar",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": 14
+                }
+            ]
+        },
+        "TimerKerberosCheck": {
+            "title": "Kerberos Ticket Retrieval Interval",
+            "description": "Specifies the frequency, in minutes, that Kerberos tickets are retrieved",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[15-1440]",
+                    "default": 15
+                }
+            ]
+        }
+    }
+}
