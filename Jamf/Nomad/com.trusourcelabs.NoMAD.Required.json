@@ -1,0 +1,44 @@
+{
+    "title": "NoMAD Required Preferences",
+    "__preferencedomain": "com.trusourcelabs.NoMAD",
+    "properties": {
+        "ADDomain": {
+            "title": "Active Directory Domain",
+            "property_order": 1,
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "company.com"
+                }
+            }
+        },
+        "KerberosRealm": {
+            "title": "Kerberos Realm",
+            "property_order": 2,
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "COMPANY.COM"
+                }
+            }
+        },
+        "Verbose": {
+            "title": "Enable Debugging",
+            "property_order": 3,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    },
+    "required": [
+        "ADDomain",
+        "KerberosRealm"
+    ]
+}
