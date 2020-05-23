@@ -1,0 +1,224 @@
+{
+    "title": "Jamf Connect Sync Kerberos Preferences",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "KerberosRealm": {
+            "title": "Kerberos Realm",
+            "description": "Specifies the Kerberos realm used to get Kerberos tickets. Your kerberos realm should be written in all caps",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "COMPANY.COM"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KerberosRenew": {
+            "title": "Renew Kerberos Tickets Automatically",
+            "description": "Determines if the Kerberos tickets should be auto renewed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KerberosShortName": {
+            "title": "Kerberos UserName",
+            "description": "The UserName to use for Kerberos tickets. If unspecified, the user's sign in name is used",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "$USERNAME"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "KerberosShortNameAsk": {
+            "title": "Ask for UserName for Kerberos Authentication",
+            "description": "Determines if the user is asked to enter their Kerberos short name on first sign in",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KerberosShortNameAskMessage": {
+            "title": "Ask for Kerberos UserName Message",
+            "description": "The message displayed to users when requesting their Kerberos UserName",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Enter your Active Directory username"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "TicketsOnSignIn": {
+            "title": "Retrieve Kerberos Tickets During Sign-in",
+            "description": "Determine if Kerberos tickets are retrieved each time users sign in",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "PasswordPolicy": {
+            "title": "Password Policy",
+            "description": "Defines the password complexity policy for changing the password via Kerberos",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "minLength": {
+                                "title": "Minimum Length",
+                                "type": "string"
+                            },
+                            "minLowerCase": {
+                                "title": "Minimum Number of Lowercase Characters",
+                                "type": "string"
+                            },
+                            "minMatches": {
+                                "title": "Minimum Number of Passwords until Re-Use",
+                                "type": "string"
+                            },
+                            "minNumber": {
+                                "title": "Minimum Number of Digits",
+                                "type": "string"
+                            },
+                            "minSymbol": {
+                                "title": "Minimum Number of Symbols",
+                                "type": "string"
+                            },
+                            "minUpperCase": {
+                                "title": "Minimum Number of Uppercase Characters",
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "PeriodicUpdateTime": {
+            "title": "Kerberos Password Verification Interval",
+            "description": "Specifies how often Jamf Connect Sync checks a user's local Kerberos password and certificates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[5-60]",
+                    "default": "15"
+                }
+            ]
+        },
+        "PasswordExpirationMenu": {
+            "title": "Display Password Expiration Countdown",
+            "description": "Determines if the countdown before password expiration is displayed in the menu bar",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "PasswordExpirationMenuDays": {
+            "title": "Password Expiration Countdown Start Date",
+            "description": "An integer that counts days remaining before the password expiration countdown is displayed in the menu bar",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": "15"
+                }
+            ]
+        },
+        "ExpirationWarningDays": {
+            "title": "Password Expiration Notification",
+            "description": "An integer that counts days remaining before Jamf Connect Sync sends notifications via the Notification Center for an upcoming password expiration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": "15"
+                }
+            ]
+        },
+        "WarnOnPasswordExpiration": {
+            "title": "Password Expiration Warning on Sign-in",
+            "description": "Determines whether Jamf Connect Sync should warn the user on sign in if the password is about to expire",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
