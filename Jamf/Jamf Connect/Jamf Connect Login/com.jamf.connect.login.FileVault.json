@@ -34,6 +34,26 @@
                     "type": "string"
                 }
             ]
+        },
+        "LAPSUser": {
+            "title": "LAPS User Account Name",
+            "description": "Optional LAPS User Account. The Password will match the FileVault Recovery Key",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "lapsadministrator"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         }
     },
     "required": [
