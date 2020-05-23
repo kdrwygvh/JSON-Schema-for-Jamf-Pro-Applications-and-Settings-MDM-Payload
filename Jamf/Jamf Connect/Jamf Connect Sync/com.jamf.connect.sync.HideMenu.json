@@ -1,0 +1,133 @@
+{
+    "title": "Jamf Connect Sync Hide Menu Preferences",
+    "description": "Preferences to hide unused Jamf Connect Sync menu options",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "HideAbout": {
+            "title": "Hide About Menu Item",
+            "description": "Hides the About window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideActions": {
+            "title": "Hide Actions Menu Item",
+            "description": "Hides the Actions menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideLockScreen": {
+            "title": "Hide Lock Screen Menu Item",
+            "description": "Hides the Lock Screen menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideChangePassword": {
+            "title": "Hide Change Passwords Menu Item",
+            "description": "Hides the Change Password menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideGetHelp": {
+            "title": "Hide Get Help Menu Item",
+            "description": "Hides the Get Help menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideGetSoftware": {
+            "title": "Hide Get Software Menu Item",
+            "description": "Hides the Get Software menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HidePrefs": {
+            "title": "Hide Preferences Menu Item",
+            "description": "Hides the Preferences menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideSignIn": {
+            "title": "Hide Sign In Menu Item",
+            "description": "Hides the Sign in menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideQuit": {
+            "title": "Hide Quit Menu Item",
+            "description": "Hides the Quit menu item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

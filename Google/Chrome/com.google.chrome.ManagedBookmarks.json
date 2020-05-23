@@ -1,0 +1,24 @@
+{
+    "title": "Google Chrome Managed Bookmarks",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "ManagedBookmarks": {
+            "title": "Managed Bookmarks",
+            "type": "array",
+            "items": {
+                "id": "BookmarkType",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "URL"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "title": "Jamf Connect Sync Additional Text Preferences",
+    "__preferencedomain": "com.jamf.connect.sync",
+    "properties": {
+        "TitleSignIn": {
+            "title": "Sign In Window Title",
+            "description": "Title of the Sign In window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Cloud Identity Sign In"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MessagePluginDisabled": {
+            "title": "Safari Extension Warning Prompt",
+            "description": "Text displayed to users when the Safari plugin is not enabled",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "The Jamf Connect Sync Safari extension has not been enabled. Enable it now in Safari Preferences..."
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MessagePasswordChangePolicy": {
+            "title": "Password Change Policy Message",
+            "description": "Text displayed to users that communicates the authentication domain's password complexity policy when changing a password via Kerberos",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Password does not meet complexity requirements or was recently used..."
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MessageOTPEntry": {
+            "title": "One-time Password Message",
+            "description": "Text displayed when a user must enter a one time password (OTP) as a multi-factor authentication (MFA) method",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Enter your verification code"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LabelPassword": {
+            "title": "Password Field Label",
+            "description": "The text label for the password field in the Sign In window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Password:"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LabelUsername": {
+            "title": "Username Field Label",
+            "description": "The text label for the username field in the Sign In window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Username:"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

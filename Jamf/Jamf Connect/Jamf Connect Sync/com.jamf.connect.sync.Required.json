@@ -13,6 +13,19 @@
                     "placeholder": "yourcompany.okta.com"
                 }
             }
+        },
+        "AutoPushFactor": {
+            "title": "Push Last Multifactor Code to Jamf Connect Sync",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
         }
     },
     "required": [
