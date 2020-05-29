@@ -72,7 +72,7 @@
             ]
         },
         "OIDCIgnoreAdmin": {
-            "title": "Igore OpenID Connect Attributes",
+            "title": "Ignore OpenID Connect Attributes",
             "description": "When set to true, Jamf Connect Login will ignore any roles that exist in your IdP. This key ensures local user accounts maintain their current status as either an admin or standard account. When set to false or unspecified, Jamf Connect Login will read the OIDCAdmin key for configured roles and will change a local user account status based on any roles in your IdP",
             "property_order": 5,
             "anyOf": [

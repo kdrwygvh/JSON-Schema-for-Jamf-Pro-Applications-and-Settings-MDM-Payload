@@ -1,6 +1,6 @@
 {
     "title": "Jamf Connect Login FileVault Preferences",
-    "description": "Preferences for Filevault first user provisioning",
+    "description": "Preferences for FileVault first user provisioning",
     "__preferencedomain": "com.jamf.connect.login",
     "properties": {
         "EnableFDE": {
