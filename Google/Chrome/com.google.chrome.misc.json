@@ -501,6 +501,33 @@
                 }
             ]
         },
+        "ChromeVariations": {
+            "title": "Availability of Chrome Update Variations",
+            "description": "Configuring this policy allows to specify which variations are allowed to be applied in Google Chrome. Variations provide a mean for offering modifications to Google Chrome without shipping a new version of the browser by selectively enabling or disabling already existing features. Setting the VariationsEnabled (value 0), or leaving the policy not set allows all variations to be applied to the browser. Setting the CriticalFixesOnly (value 1), allows only variations considered critical security or stability fixes to be applied to Google Chrome. Setting the VariationsDisabled (value 2), prevent all variations from being applied to the browser. Please note that this mode can potentially prevent the Google Chrome developers from providing criticial security fixes in a timely manner and is thus not recommended",
+            "property_order": 30,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[0-2]",
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "enum_titles": [
+                        0,
+                        1,
+                        2
+                    ],
+                    "default": 0
+                }
+            ]
+        },
         "ClickToCallEnabled": {
             "title": "Enable the Click to Call Feature",
             "description": "Enable the Click to Call feature which allows users to send phone numbers from Chrome Desktops to an Android device when the user is Signed-in. For more information, see help center article: https://support.google.com/chrome/answer/9430554?hl=en",
