@@ -1,18 +1,736 @@
 {
-    "title": "com.apple.SafariTechnologyPreview.experimental",
+    "title": "com.apple.Safari.experimental",
     "description": "Experimental Settings for the Safari Web Browser",
-    "__preferencedomain": "com.apple.SafariTechnologyPreview",
+    "__preferencedomain": "com.apple.Safari",
     "properties": {
-    	"ExperimentalHTTPSUpgradeEnabled": {
-			"title": "Enable Automatic Upgrade of all websits to HTTPS",
-			"description": "Enables automatic redirect to the encrypted version of a website if available",
-			"anyOf": [
-				{"type": "null", "title": "Not Configured"},
-				{
-					"title": "Configured",
-					"type": "boolean"
-				}
-			]
-		}
-	}
+        "ExperimentalHTTPSUpgradeEnabled": {
+            "title": "Enable Automatic Upgrade of all websites to HTTPS",
+            "description": "Enables automatic redirect to the encrypted version of a website if available",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalAccessibilityObjectModelEnabled": {
+            "title": "Enable Accessibility Object Model",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalAdClickAttributionEnabled": {
+            "title": "Enable Ad Click Attribution",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalAdClickAttributionDebugModeEnabled": {
+            "title": "Enable Ad Click Attribution Debug Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalAsyncClipboardAPIEnabled": {
+            "title": "Enable Asynchronous Clipboard API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalBlankAnchorTargetImpliesNoOpenerEnabled": {
+            "title": "Enable Blank Anchor Target Implies rel=noopener",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalCSSCustomPropertiesAndValuesEnabled": {
+            "title": "Enable Custom CSS Properties and Values",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalCSSPaintingAPIEnabled": {
+            "title": "Enable CSS Painting API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalCSSShadowPartsEnabled": {
+            "title": "Enable CSS Shadow Parts",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalCSSTypedOMEnabled": {
+            "title": "Enable CSS Type Object Model",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalCaptureVideoInUIProcessEnabled": {
+            "title": "Capture Video Within UI Process",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalCoreMathMLEnabled": {
+            "title": "Enable Core MathML",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalDialogElementEnabled": {
+            "title": "Enable Dialog Elements",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalDisallowSyncXHRDuringPageDismissalEnabled": {
+            "title": "Disable Syncing of XHR During Page Dismissal",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalFetchAPIKeepAliveEnabled": {
+            "title": "Enable KeepAlive for Fetch API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalGenericCueAPIEnabled": {
+            "title": "Enable Generic Cue API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalGoogleAntiFlickerOptimizationQuirkEnabled": {
+            "title": "Enable Google Anti Flicker Optimizations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalHDRMediaCapabilitiesEnabled": {
+            "title": "Enable HDR Media Capabilitities",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalHighlightAPIEnabled": {
+            "title": "Enable Highlight API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalImageBitmapEnabled": {
+            "title": "Enable Image Bitmaps",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalIntersectionObserverEnabled": {
+            "title": "Enable Intersection Observer",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalIsFirstPartyWebsiteDataRemovalDisabled": {
+            "title": "Disable First Party Website Data Removal",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalIsLoggedInAPIEnabled": {
+            "title": "Disable isLoggedIn Web API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalIsNSURLSessionWebSocketEnabled": {
+            "title": "Disable NSURL Session Web Sockets",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalIsThirdPartyCookieBlockingDisabled": {
+            "title": "Disable Third Party Cookie Blocking",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalLazyImageLoadingEnabled": {
+            "title": "Enable Lazy Image Loading",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalLinkPrefetchEnabled": {
+            "title": "Enable Link Pre-Fetching",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalLinkPreloadResponsiveImagesEnabled": {
+            "title": "Enable Responsive Image Link Preload",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalMediaCapabilitiesExtensionsEnabled": {
+            "title": "Enable Media Capability Extensions",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalMediaRecorderEnabled": {
+            "title": "Enable Media Recording",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalPageAtRuleSupportEnabled": {
+            "title": "Enable CSS Page at Rule Support",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalPointerEventsEnabled": {
+            "title": "Enable Pointer Events",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalProcessSwapOnCrossSiteNavigationEnabled": {
+            "title": "Enable Process Swap on Cross Site Navigation",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalReferrerPolicyAttributeEnabled": {
+            "title": "Enable Referrer Policy Attribute",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalRemotePlaybackEnabled": {
+            "title": "Enable Remote Playback",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalRequestIdleCallbackEnabled": {
+            "title": "Enable Idle Callback Requests",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalResizeObserverEnabled": {
+            "title": "Enable Resize Observer",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalScreenCaptureEnabled": {
+            "title": "Enable Screen Capture",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalServerTimingEnabled": {
+            "title": "Enable Server Timing",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalSpringTimingFunctionEnabled": {
+            "title": "Enable CSS Spring Timing",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalSyntheticEditingCommandsEnabled": {
+            "title": "Enable Synthetic Editing Commands",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalThirdPartyIframeRedirectBlockingEnabled": {
+            "title": "Enable Third Party IFrame Redirect Blocking",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalVisualViewportAPIEnabled": {
+            "title": "Enable Visual Viewport API",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalWebAnimationsEnabled": {
+            "title": "Enable Web Animations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalWebAnimationsCSSIntegrationEnabled": {
+            "title": "Enable CSS Web Animation Integration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalWebAnimationsCompositeOperationsEnabled": {
+            "title": "Enable Web Animation Composite Operations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalWebAnimationsMutableTimelinesEnabled": {
+            "title": "Enable Mutable Timelines for Web Animations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalWebGL2Enabled": {
+            "title": "Enable WebGL 2.0",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalWebGPUEnabled": {
+            "title": "Enable Web GPU",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false
+        },
+        "ExperimentalWebRTCDTMFEnabled": {
+            "title": "Enable WebRTC DTMF",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalWebRTCMDNSICECandidatesEnabled": {
+            "title": "Enable WebRTC mDNS ICE Candidates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        },
+        "ExperimentalWebSQLDisabled": {
+            "title": "Enable Web SQL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true
+        }
+    }
 }
