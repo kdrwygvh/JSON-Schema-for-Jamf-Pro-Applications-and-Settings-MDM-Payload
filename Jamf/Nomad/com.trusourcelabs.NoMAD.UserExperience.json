@@ -1,0 +1,925 @@
+{
+    "title": "NoMAD User Experience Preferences",
+    "description": "NoMAD User Experience Preferences",
+    "__preferencedomain": "com.trusourcelabs.NoMAD",
+    "properties": {
+        "DontShowWelcome": {
+            "title": "DontShowWelcome",
+            "description": "Determines if the Welcome window is shown on first launch.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: DontShowWelcome"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "DontShowWelcomeDefaultOn": {
+            "title": "DontShowWelcomeDefaultOn",
+            "description": "Shows the Welcome Screen, but checks the \u201cDon\u2019t show again\u201d box by default. Useful for when you want to show the Welcome screen only once.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: DontShowWelcomeDefaultOn"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "GetHelpOptions": {
+            "title": "GetHelpOptions",
+            "description": "URL or Path for GetHelpType (&lt;&lt;serial&gt;&gt;, &lt;&lt;fullname&gt;&gt;, &lt;&lt;shortname&gt;&gt; and &lt;&lt;domain&gt;&gt; are currently supported as substitutions).",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: GetHelpOptions"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "GetHelpType": {
+            "title": "GetHelpType",
+            "description": "Determines type of GetHelp function (Bomgar, URL and App are currently supported).",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: GetHelpType"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideAbout": {
+            "title": "HideAbout",
+            "description": "Removes the About menu from NoMAD.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideAbout"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideExpiration": {
+            "title": "HideExpiration",
+            "description": "Hides the password countdown display in the menu bar.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideExpiration"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideExpirationMessage": {
+            "title": "HideExpirationMessage",
+            "description": "Specifies text to show in the menu bar when the password countdown has been suppressed.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideExpirationMessage"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideGetSoftware": {
+            "title": "HideGetSoftware",
+            "description": "Determines if the Get Software menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideGetSoftware"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideHelp": {
+            "title": "HideHelp",
+            "description": "Determines if the Get Help menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideHelp"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideLockScreen": {
+            "title": "HideLockScreen",
+            "description": "Determines if the Lock Screen menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideLockScreen"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HidePrefs": {
+            "title": "HidePrefs",
+            "description": "Prevents the Preferences menu from being accessible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false,
+            "options": {
+                "infoText": "Key: HidePrefs"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideRenew": {
+            "title": "HideRenew",
+            "description": "Determines if the Renew Tickets menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideRenew"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideSignOut": {
+            "title": "HideSignOut",
+            "description": "Determines if the Sign Out menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideSignOut"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "HideQuit": {
+            "title": "HideQuit",
+            "description": "Determines if the Quit menu is visible.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: HideQuit"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuAbout": {
+            "title": "MenuAbout",
+            "description": "Determines the name of the About menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuAbout"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuChangePassword": {
+            "title": "MenuChangePassword",
+            "description": "Changes the menu text of the Change Password menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuChangePassword"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuGetCertificate": {
+            "title": "MenuGetCertificate",
+            "description": "Changes the menu text of the Get Certificate menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuGetCertificate"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuHomeDirectory": {
+            "title": "MenuHomeDirectory",
+            "description": "Changes the menu text of the Home Directory menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuHomeDirectory"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuGetHelp": {
+            "title": "MenuGetHelp",
+            "description": "Changes the menu text of the Get Help menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuGetHelp"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuGetSoftware": {
+            "title": "MenuGetSoftware",
+            "description": "Changes the menu text of the Software menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuGetSoftware"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuFileServers": {
+            "title": "MenuFileServers",
+            "description": "Changes the menu text of the File Servers menu.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuFileServers"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuPasswordExpires": {
+            "title": "MenuPasswordExpires",
+            "description": "Changes the menu text of the password expiration menu item before a user logs in.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuPasswordExpires"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuRenewTickets": {
+            "title": "MenuRenewTickets",
+            "description": "Changes the menu text of the Renew Tickets menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuRenewTickets"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuUserName": {
+            "title": "MenuUserName",
+            "description": "Changes the menu text of the user name menu item before a user logs in.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuUserName"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MenuWelcome": {
+            "title": "MenuWelcome",
+            "description": "Path to a folder enclosing an index.html file and associated resources for displaying as a Welcome screen when running NoMAD.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuWelcome"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MessageLocalSync": {
+            "title": "MessageLocalSync",
+            "description": "Message text for when a user is asked for their local password to sync their network password to their local account.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MessageLocalSync"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MessageNotConnected": {
+            "title": "MessageNotConnected",
+            "description": "The text in the menu bar to display when NoMAD is not connected to the AD domain.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MessageNotConnected"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MessagePasswordChangePolicy": {
+            "title": "MessagePasswordChangePolicy",
+            "description": "Message text to display in the password change dialog to help the user understand how complext they need to be.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MessagePasswordChangePolicy"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "MessageUPCAlert": {
+            "title": "MessageUPCAlert",
+            "description": "Message to be shown in an UPCAlert notification.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MessageUPCAlert"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SelfServicePath": {
+            "title": "SelfServicePath",
+            "description": "Sets a path for an application to be used with the Get Software menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SelfServicePath"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "ShowHome": {
+            "title": "ShowHome",
+            "description": "Determines whether the AD home share is shown in the menu.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false,
+            "options": {
+                "infoText": "Key: ShowHome"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignInCommand": {
+            "title": "SignInCommand",
+            "description": "Script or command to be run when NoMAD completes a successful sign in to AD.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignInCommand"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignInWindowAlert": {
+            "title": "SignInWindowAlert",
+            "description": "Makes the NoMAD Sign In window the foremost window when a user is not signed in.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignInWindowAlert"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignInWindowAlertTime": {
+            "title": "SignInWindowAlertTime",
+            "description": "Seconds between the SignInWindowAlert making the Sign In window the foremost window.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignInWindowAlertTime"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignInWindowOnLaunch": {
+            "title": "SignInWindowOnLaunch",
+            "description": "This will force the Sign In window to display when NoMAD launches.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignInWindowOnLaunch"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignInWindowOnLaunchExclusions": {
+            "title": "SignInWindowOnLaunchExclusions",
+            "description": "An array of strings for local users that will not be shown the Sign In window automatically.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Username"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignInWindowOnLaunchExclusions"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "SignOutCommand": {
+            "title": "SignOutCommand",
+            "description": "Path to a script or other binary to execute on sign out.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: SignOutCommand"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "TitleSignIn": {
+            "title": "TitleSignIn",
+            "description": "Changes the title of the sign in window.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: TitleSignIn"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        }
+    }
+}

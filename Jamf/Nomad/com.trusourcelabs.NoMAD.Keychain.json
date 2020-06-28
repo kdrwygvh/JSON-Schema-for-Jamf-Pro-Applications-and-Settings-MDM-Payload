@@ -1,0 +1,104 @@
+{
+    "title": "NoMAD Keychain Preferences",
+    "description": "NoMAD Keychain Preferences",
+    "__preferencedomain": "com.trusourcelabs.NoMAD",
+    "properties": {
+        "KeychainItems": {
+            "title": "KeychainItems",
+            "description": "A Dictionary or Keychain Items matching an item name to an account name. On password change, NoMAD will update these items with the user\u2019s new password.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "object"
+                }
+            ],
+            "options": {
+                "infoText": "Key: KeychainItems"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "KeychainItemsDebug": {
+            "title": "KeychainItemsDebug",
+            "description": "Enbables KeychainItems debugging. Will attempt to update passwords on any sign in through the NoMAD UI and log verbosely as to what\u2019s not working.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: KeychainItemsDebug"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "UseKeychain": {
+            "title": "UseKeychain",
+            "description": "Determines whether to store the Kerberos password in the user\u2019s keychain.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false,
+            "options": {
+                "infoText": "Key: UseKeychain"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "UseKeychainPrompt": {
+            "title": "UseKeychainPrompt",
+            "description": "Will cause NoMAD to force a sign in to NoMAD to caputre the password in the Keychain.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: UseKeychainPrompt"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        }
+    }
+}
