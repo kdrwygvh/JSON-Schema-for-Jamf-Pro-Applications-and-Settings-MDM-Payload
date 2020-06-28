@@ -1,0 +1,104 @@
+{
+    "title": "NoMAD Kerberos Preferences",
+    "description": "NoMAD Kerberos Preferences",
+    "__preferencedomain": "com.trusourcelabs.NoMAD",
+    "properties": {
+        "ConfigureChrome": {
+            "title": "ConfigureChrome",
+            "description": "Tells NoMAD to update your Chrome settings to allow for Kerberos auth with your AD domain.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ConfigureChrome"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "ConfigureChromeDomain": {
+            "title": "ConfigureChromeDomain",
+            "description": "Tells NoMAD to update your Chrome settings to allow for Kerberos auth with for the set domain. This allows for Chrome to work with domains other than your AD Domain. Note that the domain will be automatically wildcarded, so setting a domain of \u201cnomad.test\u201d will result in *nomad.test being set. Multiple domains are supported, seperate them by \u201c,\u201d.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: ConfigureChromeDomain"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "DontMatchKerbPrefs": {
+            "title": "DontMatchKerbPrefs",
+            "description": "Determines if the kasspwd server is written out to the com.apple.Kerberos preference domain.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: DontMatchKerbPrefs"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        },
+        "RenewTickets": {
+            "title": "RenewTickets",
+            "description": "Setting to determine if auto ticket renewal is used.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": true,
+            "options": {
+                "infoText": "Key: RenewTickets"
+            },
+            "links": [
+                {
+                    "rel": "More information",
+                    "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+                }
+            ]
+        }
+    }
+}

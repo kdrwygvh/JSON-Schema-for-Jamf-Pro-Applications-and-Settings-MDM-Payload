@@ -1,0 +1,185 @@
+{
+    "title": "Jamf Connect Shares Preferences",
+    "description": "Jamf Connect Shares Preferences",
+    "__preferencedomain": "menu.nomad.shares",
+    "properties": {
+        "HomeMount": {
+            "type": "object",
+            "title": "User Network Profile",
+            "properties": {
+                "Groups": {
+                    "title": "Groups",
+                    "description": "Groups Eligible for Network Profile Mount",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Active Directory Group"
+                    }
+                },
+                "Options": {
+                    "title": "Options",
+                    "description": "Mount Options. MNT_RDONLY, MNT_SYNCHRONOUS, and MNT_NOEXEC are supported",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Mount Option"
+                    }
+                },
+                "Mount": {
+                    "title": "Mount User Network Profile",
+                    "description": "Sets whether to mount the Network Profile",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "Shares": {
+            "title": "Network Shares",
+            "description": "Network Shares",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "AutoMount": {
+                                "title": "Automount Share",
+                                "description": "Sets whether to automount the share",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "boolean"
+                                    }
+                                ]
+                            },
+                            "ConnectedOnly": {
+                                "title": "Only Connect with Domain Connectivity",
+                                "description": "Mounts the Share only when connected to the domain",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "boolean"
+                                    }
+                                ]
+                            },
+                            "Groups": {
+                                "title": "Groups",
+                                "description": "Groups which should mount the share",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "title": "Active Directory Group"
+                                        }
+                                    }
+                                ]
+                            },
+                            "LocalMount": {
+                                "title": "Local Mount Point",
+                                "description": "Filesystem location to mount the share",
+                                "options": {
+                                    "inputAttributes": {
+                                        "placeholder": "/Volumes/Mount"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "string"
+                                    }
+                                ]
+                            },
+                            "Name": {
+                                "title": "Share Name",
+                                "description": "Share Name in Jamf Menu",
+                                "options": {
+                                    "inputAttributes": {
+                                        "placeholder": "ShareName"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "string"
+                                    }
+                                ]
+                            },
+                            "Options": {
+                                "title": "Mount Options",
+                                "description": "Mount Options. MNT_RDONLY, MNT_SYNCHRONOUS, and MNT_NOEXEC are supported",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "title": "Mount Option"
+                                        }
+                                    }
+                                ]
+                            },
+                            "URL": {
+                                "title": "Mount URL",
+                                "description": "Mount URL",
+                                "options": {
+                                    "inputAttributes": {
+                                        "placeholder": "smb://Share"
+                                    }
+                                },
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

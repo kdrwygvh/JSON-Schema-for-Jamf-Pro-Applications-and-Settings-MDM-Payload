@@ -1,0 +1,139 @@
+{
+    "title": "NoMAD Certificate Preferences",
+    "description": "NoMAD Certificate Preferences",
+    "__preferencedomain": "com.trusourcelabs.NoMAD",
+    "properties": {
+            "AutoConfigure": {
+            "title": "AutoConfigure",
+            "description": "Keyword to determine what auto configuration scheme to use.",
+            "propertyOrder": 10,
+            "anyOf": [
+                 {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                 {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: AutoConfigure"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+        "AutoRenewCert": {
+            "title": "AutoRenewCert",
+            "description": "Sets the number of days to go on a cert before automatically renewing it.",
+            "propertyOrder": 10,
+            "anyOf": [
+                 {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                 {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ],
+            "options": {
+                "infoText": "Key: AutoRenewCert"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+        "CleanCerts": {
+            "title": "CleanCerts",
+            "description": "Determines if NoMAD should remove extra certs from user’s Keychain. This will leave the 2 newest and the 2 oldest certs in the keychian.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: CleanCerts"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+        "ExportableKey": {
+            "title": "ExportableKey",
+            "description": "Determines if the private key from any generate certs can be exported.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "default": false,
+            "options": {
+                "infoText": "Key: ExportableKey"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+        "GetCertificateAutomatically": {
+            "title": "GetCertificateAutomatically",
+            "description": "Determines if a certificate is automatically requested for a user when they don’t have a valid existing certificate.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "Key: GetCertificateAutomatically"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+        "MenuGetCertificate": {
+            "title": "MenuGetCertificate",
+            "description": "Changes the menu text of the Get Certificate menu item.",
+            "propertyOrder": 10,
+            "anyOf": [
+                {
+                    "title": "Not Configured",
+                    "type": "null"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "Key: MenuGetCertificate"
+            },
+            "links": [{
+                "rel": "More information",
+                "href": "https://nomad.menu/help/preferences-and-what-they-do/"
+            }]
+        },
+

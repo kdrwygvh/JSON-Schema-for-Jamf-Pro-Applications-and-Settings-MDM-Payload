@@ -12,6 +12,7 @@
                 "enum_titles": [
                     "Azure",
                     "Google ID",
+                    "Custom",
                     "IBM Cloud Identity",
                     "OneLogin",
                     "PingFederate"
@@ -20,6 +21,7 @@
             "enum": [
                 "Azure",
                 "GoogleID",
+                "Custom",
                 "IBMCI",
                 "OneLogin",
                 "PingFederate"

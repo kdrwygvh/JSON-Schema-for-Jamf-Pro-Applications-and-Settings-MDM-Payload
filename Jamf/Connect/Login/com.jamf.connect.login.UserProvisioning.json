@@ -4,7 +4,7 @@
     "__preferencedomain": "com.jamf.connect.login",
     "properties": {
         "CreateAdminUser": {
-            "title": "Provisiong Users as Local Administrators",
+            "title": "Provision Users as Local Administrators",
             "description": "If set to true, all users become local admins when created on the computer",
             "property_order": 1,
             "anyOf": [
