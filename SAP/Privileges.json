@@ -1,0 +1,214 @@
+{
+    "title": "Privileges Preferences",
+    "description": "JSON for SAP's Privileges Application. https://github.com/SAP/macOS-enterprise-privileges",
+    "__preferencedomain": "corp.sap.privileges",
+    "properties": {
+        "DockToggleTimeout": {
+            "title": "Admin Rights Timeout",
+            "description": "Set a fixed timeout, in minutes, for the Dock tile's Toggle Privileges command. After this time, the admin rights are removed and set back to standard user rights. A value of 0 disables the timeout and allows the user to permanently toggle privileges",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "EnforcePrivileges": {
+            "title": "Enforce Privilege Set",
+            "description": "Enforces certain privileges. Whenever Privileges.app or the PrivilegesCLI command line tool are launched,the corresponding privileges are set. admin, user, or none",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "admin"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LimitToGroup": {
+            "title": "Limit to Group",
+            "description": "Limits the usage of Privileges.app to the given user group",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "wheel"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LimitToUser": {
+            "title": "Limit to User",
+            "description": "Limits the usage of Privileges.app to the given user account",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "UserName"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ReasonRequired": {
+            "title": "Reason Required",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ReasonMinLength": {
+            "title": "Minimum Length for Reason",
+            "description": "Specifies the minimum number of characters the user has to enter as the reason for becoming an admin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "RemoteLogging": {
+            "type": "object",
+            "title": "Remote Logging",
+            "properties": {
+                "ServerType": {
+                    "title": "Server Type",
+                    "description": "Server type. syslog is the only supported value",
+                    "type": "string"
+                },
+                "ServerAddress": {
+                    "title": "Server Address",
+                    "description": "IP or Hostname of the Log ingest server",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "logs.company.com"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ServerPort": {
+                    "title": "Server Port",
+                    "description": "Port Log Ingest Server Listens on",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "integer"
+                        }
+                    ]
+                },
+                "EnableTCP": {
+                    "title": "Enable TCP",
+                    "description": "Sets Logs messages to TCP. UDP is the default.",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "SyslogOptions": {
+                    "type": "object",
+                    "title": "Syslog Options",
+                    "properties": {
+                        "LogFacility": {
+                            "title": "Log Facility",
+                            "description": "Log Facility",
+                            "type": "integer"
+                        },
+                        "LogSeverity": {
+                            "title": "Log Severity",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "MaximumMessageSize": {
+                            "title": "Maximum Message Size",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "integer"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "RequireAuthentication": {
+        "title": "Require Authentication",
+        "description": "Requires authentication before using Privileges.app. If set to true, the logged-in user is prompted to authenticate via Touch ID or by entering their account password",
+        "anyOf": [
+            {
+                "type": "null",
+                "title": "Not Configured"
+            },
+            {
+                "title": "Configured",
+                "type": "boolean"
+            }
+        ]
+    }
+}
