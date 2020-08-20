@@ -620,32 +620,36 @@
             ]
         },
         "RegisteredProtocolHandlers": {
-            "type": "object",
+            "type": "array",
             "title": "Register protocol handlers",
+            "description": "Allows you to register a list of protocol handlers. This can only be a recommended policy. The property 'protocol' should be set to the scheme such as 'mailto' and the property 'url' should be set to the URL pattern of the application that handles the scheme. The pattern can include a '%s', which if present will be replaced by the handled URL",
             "property_order": 22,
-            "properties": {
-                "url": {
-                    "title": "URL",
-                    "description": "Allows you to register a list of protocol handlers. This can only be a recommended policy. The property |protocol| should be set to the scheme such as 'mailto' and the property |url| should be set to the URL pattern of the application that handles the scheme. The pattern can include a '%s', which if present will be replaced by the handled URL",
-                    "type": "string",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "[*.]example.com"
+            "items": {
+                "type": "object",
+                "title": "Protocol Handler Preference",
+                "properties": {
+                    "url": {
+                        "title": "URL",
+                        "type": "string",
+                        "options": {
+                            "inputAttributes": {
+                                "placeholder": "[*.]example.com"
+                            }
                         }
-                    }
-                },
-                "default": {
-                    "title": "Default",
-                    "description": "Default Protocol Handler for this URL Type",
-                    "type": "boolean"
-                },
-                "protocol": {
-                    "title": "Protocol",
-                    "description": "Protocol",
-                    "type": "string",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "mailto"
+                    },
+                    "default": {
+                        "title": "Default",
+                        "description": "Default Protocol Handler for this URL Type",
+                        "type": "boolean"
+                    },
+                    "protocol": {
+                        "title": "Protocol",
+                        "description": "Protocol",
+                        "type": "string",
+                        "options": {
+                            "inputAttributes": {
+                                "placeholder": "mailto"
+                            }
                         }
                     }
                 }
