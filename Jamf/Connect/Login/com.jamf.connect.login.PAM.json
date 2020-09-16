@@ -102,6 +102,25 @@
                     "type": "string"
                 }
             ]
+        },
+        "AuthUIOIDCDiscoveryURL": {
+            "title": "Discovery URL (PAM)",
+            "description": "Your IdP's OpenID metadata document that stores OpenID configuration information. This value appears in the following format: https://domain.url.com/.well-known/openid-configuration",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://domain.url.com/.well-known/openid-configuration"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         }
     }
 }
