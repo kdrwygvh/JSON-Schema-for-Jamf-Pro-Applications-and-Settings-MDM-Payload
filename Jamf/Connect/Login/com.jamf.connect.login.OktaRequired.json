@@ -123,5 +123,8 @@
                 }
             ]
         }
-    }
+    },
+    "required": [
+        "AuthServer"
+    ]
 }

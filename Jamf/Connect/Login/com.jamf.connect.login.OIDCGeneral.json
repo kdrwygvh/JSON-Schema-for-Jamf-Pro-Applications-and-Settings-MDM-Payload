@@ -160,6 +160,34 @@
                     "type": "boolean"
                 }
             ]
+        },
+        "OIDCHideRestart": {
+            "title": "Hide Restart",
+            "description": "Hides Restart Button at the Login Window. Undocumented, experimental preference",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCHideShutdown": {
+            "title": "Hide Shutdown",
+            "description": "Hides Shutdown Button at the Login Window. Undocumented, experimental preference",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
         }
     }
 }
