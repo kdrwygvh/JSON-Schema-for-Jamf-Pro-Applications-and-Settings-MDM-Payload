@@ -35,7 +35,6 @@
                 {
                     "title": "Configured",
                     "type": "integer",
-                    "pattern": "[0-10]",
                     "enum": [
                         0,
                         1,
