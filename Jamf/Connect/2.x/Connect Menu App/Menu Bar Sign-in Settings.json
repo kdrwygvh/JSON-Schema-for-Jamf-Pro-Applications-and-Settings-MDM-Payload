@@ -1,0 +1,300 @@
+{
+    "title": "Menu Bar Sign-in Settings",
+    "description": "Used to configure the sign-in user experience and multifactor authentication (MFA) options for Okta",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "SignIn": {
+            "type": "object",
+            "title": "Menu Bar Sign-in Settings",
+            "properties": {
+                "AutoAuthenticate": {
+                    "title": "Enable Automatic Sign-in",
+                    "description": "Determines if Jamf Connect will automatically attempt to sign in the user if there are saved credentials in the user's keychain",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "AutoMFA": {
+                    "title": "Automatically Push Last MFA Method",
+                    "description": "Determines the user's most recently used multifactor authentication (MFA) method is automatically pushed during sign-in",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "RequireSignIn": {
+                    "title": "Require Sign-in",
+                    "description": "Determines if the Sign In window kept open on computers until users successfully authenticate",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "SignInLogo": {
+                    "title": "Sign-in Logo",
+                    "description": "The file path to a locally stored image to use as a logo. Larger images will be automatically scaled down",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/usr/local/images/logo342X90px.png"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "UsernameLabel": {
+                    "title": "Username Field Label",
+                    "description": "Custom text for the Username field in the Sign In window",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Username:"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "PasswordLabel": {
+                    "title": "Password Field Label",
+                    "description": "Custom text for the Password field in the Sign In window",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Password:"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "WindowTitle": {
+                    "title": "Sign In Window Title",
+                    "description": "Custom title for the Sign In window",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Connect"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "MFARename": {
+                    "type": "object",
+                    "title": "Custom MFA Option Names",
+                    "properties": {
+                        "push": {
+                            "title": "Custom Push Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Okta Verify app: Push Notification"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "question": {
+                            "title": "Custom Question Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Okta Security Questions"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "web": {
+                            "title": "Custom Web Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Duo Mobile app"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "sms": {
+                            "title": "Custom SMS Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Okta SMS: Verification Code"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "google:token:software:totp": {
+                            "title": "Custom Google Authenticator Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Google Authenticator app: Verification Code"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "okta:token:software:totp": {
+                            "title": "Custom Okta Authenticator Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Okta Verifiy app: Verification Code"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "token:hardware": {
+                            "title": "Custom Hardware Token Name",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "USB Security Key"
+                                }
+                            },
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "MFAExcluded": {
+                    "title": "Hidden MFA Options",
+                    "description": "A list of MFA options that you do not want to display to users",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "MFA Exclusion"
+                            }
+                        }
+                    ]
+                },
+                "OneTimePasswordMessage": {
+                    "title": "One-time Password Message",
+                    "description": "Text displayed when a user must enter a one-time password (OTP) as a multifactor authentication (MFA) method",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Enter your verification code"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

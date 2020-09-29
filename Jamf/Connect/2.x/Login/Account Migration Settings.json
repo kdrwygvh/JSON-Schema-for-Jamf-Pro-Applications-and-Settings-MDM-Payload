@@ -1,0 +1,53 @@
+{
+    "title": "Account Migration Settings",
+    "description": "Used to configure account connections between existing local accounts and network accounts",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "Migrate": {
+            "title": "Migrate",
+            "description": "Allow existing local accounts to be connected to a network account. This setting is typically used when you want a user's existing local account to have the same username and password as the user\u2019s network account. When enabled, users must log in with their IdP, and then Jamf Connect will look for a matching local account",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MigrateUsersHide": {
+            "title": "Accounts to prohibit migration to",
+            "description": "A list of usernames of local accounts that are excluded from the migration process. These accounts will not be available during to user during the Connect step of the login process",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "UserName"
+                    }
+                }
+            ]
+        },
+        "DemobilizeUsers": {
+            "title": "Demobilize Accounts",
+            "description": "Determines if any existing Active Directory mobile accounts are demobilized, which is the process of converting a mobile account into a local account. Demobilization also removes the network authentication authority from the account",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

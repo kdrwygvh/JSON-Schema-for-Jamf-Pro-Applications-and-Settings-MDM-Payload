@@ -1,0 +1,190 @@
+{
+    "title": "Menu Bar Authentication Settings",
+    "description": "Used to allow Jamf Connect to complete authentication between your IdP and local accounts. Required settings vary by IdP",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "IdPSettings": {
+            "type": "object",
+            "title": "Identity Provider Settings",
+            "properties": {
+                "Provider": {
+                    "title": "Identity Provider",
+                    "description": "(Required) The name of your cloud identity Provider",
+                    "property_order": 1,
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Azure",
+                            "Google ID",
+                            "Custom",
+                            "IBM Cloud Identity",
+                            "Okta",
+                            "OneLogin",
+                            "PingFederate"
+                        ]
+                    },
+                    "enum": [
+                        "Azure",
+                        "GoogleID",
+                        "Custom",
+                        "IBMCI",
+                        "Okta",
+                        "OneLogin",
+                        "PingFederate"
+                    ]
+                },
+                "OktaAuthServer": {
+                    "title": "Okta Auth Server",
+                    "description": "(Required: Okta Only) Your organization's Okta domain. A preceding https:// is optional",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "your-company.okta.com"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ROPGID": {
+                    "title": "Client ID",
+                    "description": "(Required: OpenID Connect Only) The client ID of your Jamf Connect app in your IdP. This value allows Jamf Connect to complete a resource owner password grant (ROPG), which is the process that performs password verification",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "DiscoveryURL": {
+                    "title": "Discovery URL",
+                    "description": "Your IdP's OpenID Connect discovery endpoint",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://domain.url.com/.well-known/openid-configuration"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "TenantID": {
+                    "title": "(Required: IBM Security Verify Only) Tenant ID",
+                    "description": "The Tenant ID for your organization that is used for authentication",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "jamfconnect"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ChangePasswordURL": {
+                    "title": "Change Password URL",
+                    "description": "A URL to a password change web page in your IdP",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://idp.example.com/change-password"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ResetPasswordURL": {
+                    "title": "Reset Password URL",
+                    "description": "A URL to a password reset web page in your IdP",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://idp.example.com/reset-password"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ClientSecret": {
+                    "title": "Client Secret",
+                    "description": "The client secret of your Jamf Connect app in your IdP.",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "yourClientSecret"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "SuccessCodes": {
+                    "title": "Password Verification Success Codes",
+                    "description": "An array of strings that contain error codes from your IdP during an ROPG password verification, which should be interpreted as successful by Jamf Connect. For possible error codes that may need to be configured in your environment, see the following documentation from Microsoft: https://docs.microsoft.com/azure/active-directory/develop/reference-aadsts-error-codes. If using OneLogin, set this key to MFA if multifactor authentication is used in your environment",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Verification Success Code"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

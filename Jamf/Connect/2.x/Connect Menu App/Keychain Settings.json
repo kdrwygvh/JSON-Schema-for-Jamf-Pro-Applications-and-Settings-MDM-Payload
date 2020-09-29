@@ -1,0 +1,33 @@
+{
+    "title": "Keychain Settings",
+    "description": "Used to allow Jamf Connect to sync passwords with keychain items. Pre-populate with your specific keychain entries before adding to Jamf Pro",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "Keychain": {
+            "type": "object",
+            "title": "Keychain Settings",
+            "properties": {
+                "InternetItems": {
+                    "type": "object",
+                    "title": "Internet Keychain Items",
+                    "properties": {
+                        "items": {
+                            "title": "Keychain Item",
+                            "type": "string"
+                        }
+                    }
+                },
+                "PasswordItems": {
+                    "type": "object",
+                    "title": "Password Keychain Items",
+                    "properties": {
+                        "items": {
+                            "title": "Password Item",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

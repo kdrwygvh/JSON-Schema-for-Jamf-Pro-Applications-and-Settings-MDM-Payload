@@ -1,0 +1,211 @@
+{
+    "title": "Menu Item Customization Settings",
+    "description": "Used to customize the names of menu items in Jamf Connect",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "CustomMenuItems": {
+            "type": "object",
+            "title": "Custom Menu Items",
+            "properties": {
+                "About": {
+                    "title": "About Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "About"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Actions": {
+                    "title": "Actions Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Actions"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ChangePassword": {
+                    "title": "Change Password Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Change Password"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ResetPassword": {
+                    "title": "Reset Password Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Reset Password"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "GetHelp": {
+                    "title": "Get Help Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Get Help"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "GetSoftware": {
+                    "title": "Get Software Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Get Software"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "HomeDirectory": {
+                    "title": "Home Directory Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Home Directory"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "KerberosTickets": {
+                    "title": "Kerberos Ticket Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Kerberos Tickets"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Preferences": {
+                    "title": "Preferences Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Preferences"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Shares": {
+                    "title": "Shares Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Shares"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "Connect": {
+                    "title": "Connect Menu Text",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Connect"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

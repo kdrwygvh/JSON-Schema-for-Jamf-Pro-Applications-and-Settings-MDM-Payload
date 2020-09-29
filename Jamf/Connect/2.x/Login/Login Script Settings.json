@@ -1,0 +1,43 @@
+{
+    "title": "Login Script Settings",
+    "description": "Used to execute scripts during the login process. The RunScript mechanism must be enabled via authchanger before configuring script preferences",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "ScriptArgs": {
+            "title": "Script Arguments",
+            "description": "The arguments used with a specified script run by the RunScript mechanism",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ScriptPath": {
+            "title": "Script Path",
+            "description": "Specifies the path to a script or other executable run by the RunScript mechanism. Only one script can be used with Jamf Connect Login at any time",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/bin/loginScript.sh"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

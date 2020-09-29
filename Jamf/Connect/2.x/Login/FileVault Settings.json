@@ -1,0 +1,73 @@
+{
+    "title": "FileVault Settings",
+    "description": "Used to configure how FileVault is enabled with Jamf Connect",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "EnableFDE": {
+            "title": "Enable FileVault",
+            "description": "If set to true, FileVault will be enabled for the first user that logs in to a computer",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKey": {
+            "title": "Save FileVault Recovery Key Locally",
+            "description": "If set to true, Jamf Connect will store the personal recovery key (PRK) in /var/db/NoMADFDE unless otherwise specified",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKeyPath": {
+            "title": "Set Recovery Key Filepath",
+            "description": "Specifies a custom file path for the PRK rather than using /var/db/NoMADFDE by default",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/filevault"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LAPSUser": {
+            "title": "LAPS User",
+            "description": "An existing local administrator account that Jamf Connect can change the password to the personal recovery key. This setting is only used by Jamf Connect to help enable FileVault on standard accounts on macOS 10.15 or later",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "LocalAdmin"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "title": "Certificate Settings",
+    "description": "Used to configure Windows web CA settings",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "Certificate": {
+            "type": "object",
+            "title": "Certificate Settings",
+            "properties": {
+                "WindowsCA": {
+                    "title": "X.509 Certificate Authority",
+                    "description": "Specifies the URL of the Windows web certificate authority (CA) for Jamf Connect to use for certificates",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "dc1.jamfconnect.test"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "CertificateTemplate": {
+                    "title": "Certificate Template",
+                    "description": "Certificate template from a Windows web CA",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "User Auth"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "GetCertificateAutomatically": {
+                    "title": "Get Certificates Automatically",
+                    "description": "Enables Jamf Connect to get a certificate from a Windows web CA automatically on sign-in",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "SecureNetworks": {
+                    "title": "Associated Wi-Fi Networks",
+                    "description": "A list of secure wireless networks to associate with the certificate Jamf Connect created",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Network"
+                            }
+                        }
+                    ]
+                },
+                "ExportableCertificateKey": {
+                    "title": "Allow Private Key Exports",
+                    "description": "Allow the private key of the user certificate to be exported",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "title": "Advanced Login Authentication Settings",
+    "description": "Used to configure advanced authentication settings and features",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "OIDCIgnoreCookies": {
+            "title": "Ignore Cookies",
+            "description": "Ignores any cookies stored by the loginwindow application",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCScopes": {
+            "title": "OpenID Connnect Scopes",
+            "description": "Specifies custom scopes, which return additional claims in a user\u2019s ID token during authorization. Standard scopes include openid, profile, and offline_access. This key should be configured as a string with space-separated values",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "openid profile"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCShortName": {
+            "title": "(Okta Only) Short Name",
+            "description": "Specifies which attribute from a user's ID token to use as the account short name. The short name is added as an alias to the user's local account",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "given_name"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIDTokenPath": {
+            "title": "Formatted ID Token Path",
+            "description": "Specifies the file path that can be used to store a user\u2019s formatted ID token",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/tmp/token"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCIDTokenPathRaw": {
+            "title": "Raw ID Token Path",
+            "description": "Specifies the file path that can be used to store a user\u2019s raw ID token",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/tmp/token-raw"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

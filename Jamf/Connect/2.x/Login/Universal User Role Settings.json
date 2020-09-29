@@ -1,0 +1,21 @@
+{
+    "title": "Universal User Role Settings",
+    "description": "User role setting that can be used by any cloud IdP",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "CreateAdminUser": {
+            "title": "Create Admin Users",
+            "description": "Create all users as local administrators",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

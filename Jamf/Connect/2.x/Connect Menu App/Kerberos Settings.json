@@ -1,0 +1,117 @@
+{
+    "title": "Kerberos Settings",
+    "description": "Used to integrate Jamf Connect with a Kerberos realm for password syncing",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "Kerberos": {
+            "type": "object",
+            "title": "Kerberos Settings",
+            "properties": {
+                "Realm": {
+                    "title": "Kerberos Realm",
+                    "description": "Specifies the Kerberos realm used to get Kerberos tickets. Your Kerberos realm should be written in all caps",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "YOURCOMPANY.NET"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "AutoRenewTickets": {
+                    "title": "Renew Kerberos Tickets",
+                    "description": "Determines if the Kerberos tickets should be renewed",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "ShortName": {
+                    "title": "Custom Short Name",
+                    "description": "A custom short name to use to obtain Kerberos tickets",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "joel"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ShortNameAttribute": {
+                    "title": "Short Name Attribute",
+                    "description": "The Active Directory LDAP attribute to use as a short name. If unspecified, the user's sign-in name is used",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "attribute"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "AskForShortName": {
+                    "title": "Ask for Short Name",
+                    "description": "Determines if the user is asked to enter their Kerberos short name on first sign in",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "AskForShortNameMessage": {
+                    "title": "Ask for Short Name Message",
+                    "description": "The message displayed to users when requesting their Kerberos short name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Enter your Active Directory username"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

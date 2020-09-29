@@ -1,0 +1,67 @@
+{
+    "title": "Local and Network Authentication Management Settings",
+    "description": "Used to determine local and network authentication restrictions",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "DenyLocal": {
+            "title": "Require Network Authentication",
+            "description": "Determines if users can bypass network authentication and use the Local Login button at the login window. If set to true, the Local Login button is not available, and the user must use network authentication. If set to false, the Local Login button is available, and users can choose to authenticate locally",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DenyLocalExcluded": {
+            "title": "Users with local authentication privileges",
+            "description": "Specifies which users can still locally authenticate if DenyLocalis set to true",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "UserName"
+                    }
+                }
+            ]
+        },
+        "LocalFallback": {
+            "title": "Allow Local Fallback",
+            "description": "This key is used with DenyLocal to force authentication to the IdP first, but then fall back to local authentication if a network connection is unavailable",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OIDCDefaultLocal": {
+            "title": "Use Local Authentication by Default",
+            "description": "When set to true, Jamf Connect will use local authentication by default rather than network authentication, which ensures users can always log in without a network connection",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

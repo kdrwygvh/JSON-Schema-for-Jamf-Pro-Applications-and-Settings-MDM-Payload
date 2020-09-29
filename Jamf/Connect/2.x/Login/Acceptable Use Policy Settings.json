@@ -1,0 +1,83 @@
+{
+    "title": "Acceptable Use Policy Settings",
+    "description": "Used to configure an acceptable use policy to users at the Jamf Connect login window",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "EULAPath": {
+            "title": "Audit Filepath",
+            "description": "Specifies the file path to a directory where the user\u2019s acceptance record of the acceptable use policy is stored",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULAText": {
+            "title": "Acceptable Use Policy Text",
+            "description": "Body text of the acceptable use policy",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Insert EULA text here"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULATitle": {
+            "title": "Acceptable Use Policy Title",
+            "description": "Title of the acceptable use policy",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "User Agreement"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "EULASubTitle": {
+            "title": "Acceptable Use Policy Subtitle",
+            "description": "Subtitle of the acceptable use policy",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Terms and Conditions"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
