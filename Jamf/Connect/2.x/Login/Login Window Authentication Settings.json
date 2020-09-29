@@ -1,0 +1,129 @@
+{
+    "title": "Login Window Authentication Settings",
+    "description": "Used to allow Jamf Connect to complete authentication between your IdP and local accounts at the login window. Required settings vary by IdP",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "OIDCProvider": {
+            "title": "OpenID Connect Provider",
+            "description": "Open ID Connect Provider",
+            "property_order": 1,
+            "type": "string",
+            "options": {
+                "enum_titles": [
+                    "Azure",
+                    "Google ID",
+                    "Custom",
+                    "IBM Cloud Identity",
+                    "Okta",
+                    "OneLogin",
+                    "PingFederate"
+                ]
+            },
+            "enum": [
+                "Azure",
+                "GoogleID",
+                "Custom",
+                "IBMCI",
+                "Okta",
+                "OneLogin",
+                "PingFederate"
+            ]
+        },
+        "AuthServer": {
+            "title": "Auth Server",
+            "description": "(Okta Only) Your organization's Okta domain URL",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "yourcompany.okta.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCClientID": {
+            "title": "OpenID Connect Client ID",
+            "description": "The client ID of the created app in your IdP used to authenticate the user",
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
+                }
+            }
+        },
+        "OIDCRedirectURI": {
+            "title": "OpenID Connect Redirect URI",
+            "description": "The redirect URI used by your Jamf Connect app in the IdP. https://127.0.0.1/jamfconnect is recommended by default but any valid URI value may be used as long as the configured value in the IdP matches the value in your Jamf Connect Login configuration profile",
+            "type": "string",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://127.0.0.1/jamfconnect"
+                }
+            }
+        },
+        "OIDCClientSecret": {
+            "title": "OpenID Connect Client Secret",
+            "description": "The client secret used by Jamf Connect Login and the IdP",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "insert-client-secret-here"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCTenant": {
+            "title": "OpenID Connect Tenant",
+            "description": "Specifies the Tenant ID for your organization that's used for authentication",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "c27d1b33-59b3-4ab2-a5c9-23jf0093"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCDiscoveryURL": {
+            "title": "OpenID Connect Discovery URL",
+            "description": "Your IdP's OpenID metadata document that stores OpenID configuration information. This value appears in the following format: https://domain.url.com/.well-known/openid-configuration",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "c27d1b33-59b3-4ab2-a5c9-23jf0093"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

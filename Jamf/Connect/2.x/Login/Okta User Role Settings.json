@@ -1,0 +1,64 @@
+{
+    "title": "Okta User Role Settings",
+    "description": "(Okta Only) Used to configure user roles for new local accounts",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "OIDCAccessClientID": {
+            "title": "Access Client ID",
+            "description": "OIDC application to use for users that are allowed to create an account or log in to computers",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "0oad0gmia54gn3y8923h1"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCAdminClientID": {
+            "title": "Admin Client ID",
+            "description": "OIDC application to use for users who are created as local administrators during account creation",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "0oa0gwese54gn3y9O0h4"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OIDCSecondaryLoginClientID": {
+            "title": "Secondary Login Client ID",
+            "description": "OIDC application to use for users that are allowed to create additional users on computers after the first account is created",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "0oa0grdsrhdsre54gn3y9O0h4"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

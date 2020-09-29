@@ -1,0 +1,64 @@
+{
+    "title": "Login Window Custom Branding Settings",
+    "description": "Used to customize the Jamf Connect login window for your organization",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "BackgroundImage": {
+            "title": "Background Image",
+            "description": "Path to a locally stored image to use as a background for the login window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared/background.jpg"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LoginLogo": {
+            "title": "Login Logo",
+            "description": "Path to a locally stored image to use as a logo during password validation or local password creation",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "usr/local/images/logo250X250px.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LoginWindowMessage": {
+            "title": "Login Window Message",
+            "description": "A custom message to display in the lower-center of the login window",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Log in with your company username and password"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

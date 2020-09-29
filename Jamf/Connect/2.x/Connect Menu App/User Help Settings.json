@@ -1,0 +1,68 @@
+{
+    "title": "User Help Settings",
+    "description": "Used to configure in-app help options for users",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "UserHelp": {
+            "type": "object",
+            "title": "User Help Settings",
+            "properties": {
+                "HelpType": {
+                    "title": "Get Help Type",
+                    "description": "The type of help option used by Jamf Connect",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Bomgar",
+                            "URL",
+                            "App"
+                        ]
+                    },
+                    "enum": [
+                        "Bomgar",
+                        "URL",
+                        "App"
+                    ]
+                },
+                "HelpOptions": {
+                    "title": "Get Help Options",
+                    "description": "A URL or file path that users can access by clicking Get Help in the Jamf Connect menu",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Applications/Google Chrome.app"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "SoftwarePath": {
+                    "title": "Jamf Self Service Application Path",
+                    "description": "The file path for a Self Service application that Jamf Connect does not automatically find. Jamf Connect will automatically detect Jamf Self Service and Munki Managed Software Center",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Applications/Self Service.app"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

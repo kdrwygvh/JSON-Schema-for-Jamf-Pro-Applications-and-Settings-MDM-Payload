@@ -1,0 +1,78 @@
+{
+    "title": "Login Window User Help Settings",
+    "description": "Used to allow users to access resources with a help button and join a Wi-Fi network in the login window",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "AllowNetworkSelection": {
+            "title": "Allow Network Selection",
+            "description": "When set to true, this preference key allows users to configure and confirm their network connection preferences from the login window. To access this feature, users can click the Wi-Fi icon in the top-right of the login window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HelpURL": {
+            "title": "Help URL",
+            "description": "Specify a URL to display at the login window that directs a user to a resource for onboarding or enrollment help",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "yourcompany.help.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "HelpURLLogo": {
+            "title": "Help Icon",
+            "description": "A custom image to use as a help icon",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared/helplogo.png"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LocalHelpFile": {
+            "title": "Backup Help File",
+            "description": "A path to a local file, such as a network troubleshooting or onboarding guide, that users can access by clicking the help icon in the Jamf Connect login window. This file is only displayed if the computer cannot connect to the internet or access the URL specified with the HelpURL key",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "/usr/local/shared/JamfConnectHelp.pdf"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

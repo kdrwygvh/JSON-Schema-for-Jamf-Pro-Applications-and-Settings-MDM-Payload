@@ -1,0 +1,65 @@
+{
+    "title": "Menu Bar Custom Branding Settings",
+    "description": "Use to customize Jamf Connect for your organization",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "Appearance": {
+            "type": "object",
+            "title": "Appearance",
+            "properties": {
+                "MenubarIcon": {
+                    "title": "Light Mode Icon",
+                    "description": "The file path to a custom icon for the Jamf Connect menu bar icon when Light Mode is enabled",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/usr/local/iconlight16X16px.png"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "MenubarIconDark": {
+                    "title": "Dark Mode Icon",
+                    "description": "The file path to a custom icon for the Jamf Connect menu bar icon that displays when Dark Mode is enabled",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/usr/local/icondark16X16px.png"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "ShowWelcomeWindow": {
+                    "title": "Show Welcome Window",
+                    "description": "Display the Welcome window each time Jamf Connect is opened",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

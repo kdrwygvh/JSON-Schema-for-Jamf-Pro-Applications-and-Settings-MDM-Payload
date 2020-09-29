@@ -1,0 +1,98 @@
+{
+    "title": "Azure AD Hybrid ID Settings",
+    "description": "Used configure authentication and password syncing for Azure AD hybrid identity environments",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "ROPGProvider": {
+            "title": "Identity Provider (Hybrid ID)",
+            "description": "Specifies where Jamf Connect should attempt to sync passwords",
+            "type": "string",
+            "options": {
+                "enum_titles": [
+                    "Custom",
+                    "Azure_v2"
+                ]
+            },
+            "enum": [
+                "Custom",
+                "Azure_v2"
+            ]
+        },
+        "ROPGTenant": {
+            "title": "Tenant ID (Hybrid ID)",
+            "description": "The tenant ID in your organization to use for password verification",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "15e7196d-8bd5-4034-ae01-7bda4ad0c91e"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGDiscoveryURL": {
+            "title": "Discovery URL (Hybrid ID)",
+            "description": "Specifies your OpenID Connect discovery endpoint. If using AD FS, this value is your AD FS domain combined with the following: /adfs/.well-known/openid-configuration",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://adfs.jamfconnect.com/adfs/.well-known/openid-configuration"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGRedirectURI": {
+            "title": "Redirect URI (Hybrid ID)",
+            "description": "The redirect URI used by the created application in AD FS or Azure AD. https://127.0.0.1/jamfconnect is recommended by default, but any valid URI value may be used as long as the configured value in Azure AD or AD FS matches the value in your Jamf Connect Login configuration profile",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://127.0.0.1/jamfconnect"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "ROPGClientSecret": {
+            "title": "Client Secret (Hybrid ID)",
+            "description": "The client secret of your Jamf Connect application",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "your-client-secret"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

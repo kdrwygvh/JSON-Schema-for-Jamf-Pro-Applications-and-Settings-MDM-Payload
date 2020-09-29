@@ -1,0 +1,176 @@
+{
+    "title": "Okta Multifactor Authentication Settings",
+    "description": "(Okta Only) Used to customize MFA options and text",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "MessageOTPEntry": {
+            "title": "Custom Message for One Time Password",
+            "description": "(Okta only) Text displayed when a user must enter a one time password (OTP) as a multi-factor authentication (MFA) method",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Enter your verification code"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "MFARename": {
+            "type": "object",
+            "title": "Custom MFA Option Names",
+            "properties": {
+                "push": {
+                    "title": "Custom Push Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Okta Verify app: Push Notification"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "question": {
+                    "title": "Custom Question Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Okta Security Questions"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "web": {
+                    "title": "Custom Web Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Duo Mobile app"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "sms": {
+                    "title": "Custom SMS Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Okta SMS: Verification Code"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "google:token:software:totp": {
+                    "title": "Custom Google Authenticator Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Google Authenticator app: Verification Code"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "okta:token:software:totp": {
+                    "title": "Custom Okta Authenticator Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Okta Verifiy app: Verification Code"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "token:hardware": {
+                    "title": "Custom Hardware Token Name",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "USB Security Key"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                }
+            }
+        },
+        "MFAExcluded": {
+            "title": "Excluded MFA Options",
+            "description": "(Okta only) A list of MFA options that you do not want to display to users",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Okta MFA Option"
+                    }
+                }
+            ]
+        }
+    }
+}
