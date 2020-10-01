@@ -1,0 +1,23 @@
+{
+    "title": "Authchanger Arguments",
+    "description": "Arguments that are passed to authchanger",
+    "__preferencedomain": "com.jamf.connect.authchanger",
+    "properties": {
+        "Arguments": {
+            "title": "Arguments",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}
