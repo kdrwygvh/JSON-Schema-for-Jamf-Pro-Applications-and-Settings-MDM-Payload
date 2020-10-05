@@ -1,0 +1,26 @@
+{
+    "title": "Web Browser Settings",
+    "description": "Web Browser Interaction Settings",
+    "__preferencedomain": "com.jamf.connect",
+    "properties": {
+        "WebBrowser": {
+            "type": "object",
+            "title": "Web Browser Interaction Settings",
+            "properties": {
+                "LaunchBrowser": {
+                    "title": "Launch Browser on Successful Sign-In",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
