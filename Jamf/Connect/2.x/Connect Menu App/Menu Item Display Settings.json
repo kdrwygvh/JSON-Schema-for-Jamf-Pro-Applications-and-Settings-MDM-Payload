@@ -3,6 +3,25 @@
     "description": " An array of strings used to hide Jamf Connect menu items from users",
     "__preferencedomain": "com.jamf.connect",
     "properties": {
+        "Appearance": {
+            "type": "object",
+            "title": "Appearance Settings",
+            "properties": {
+                "ShowWelcomeWindow": {
+                    "title": "Show Welcome Window on Launch",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
         "HiddenMenuItems": {
             "title": "Hidden Menu Items",
             "description": "Items that can be hidden: About, Actions, ChangePassword, GetHelp, GetSoftware, HomeDirectory, KerberosTickets, LastUser, PasswordExpiration, Preferences, ResetPassword, Shares, Connect, Quit",
