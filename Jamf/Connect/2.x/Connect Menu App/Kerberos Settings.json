@@ -40,6 +40,19 @@
                         }
                     ]
                 },
+                "GetTicketsAtSignIn": {
+                    "title": "Request Kerberos Ticket at Sign-In",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
                 "ShortName": {
                     "title": "Custom Short Name",
                     "description": "A custom short name to use to obtain Kerberos tickets",
