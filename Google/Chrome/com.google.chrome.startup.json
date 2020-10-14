@@ -6,7 +6,6 @@
         "NewTabPageLocation": {
             "title": "Landing Home Page for new Tabs",
             "description": "Configures the default New Tab page URL and prevents users from changing it",
-            "property_order": 5,
             "anyOf": [
                 {
                     "type": "null",
@@ -21,7 +20,6 @@
         "ShowHomeButton": {
             "title": "Show Home button on toolbar",
             "description": "Shows the Home button on Google Chrome's toolbar",
-            "property_order": 5,
             "anyOf": [
                 {
                     "type": "null",
@@ -30,6 +28,70 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ]
+        },
+        "HomepageIsNewTabPage": {
+            "title": "Use New Tab Page as homepage",
+            "description": "Configures the type of the default home page in Google Chrome and prevents users from changing home page preferences. The home page can either be set to a URL you specify or set to the New Tab Page",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HomepageLocation": {
+            "title": "Configure the home page URL",
+            "description": "Configures the default home page URL in Google Chrome and prevents users from changing it",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://apple.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "RestoreOnStartup": {
+            "title": "Action on startup",
+            "description": "Allows you to specify the behavior on startup. 5 = Open New Tab Page 1 = Restore the last session 4 = Open a list of URLs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "RestoreOnStartupURLs": {
+            "title": "URLs to open on startup",
+            "description": "If 'Open a list of URLs' is selected as the startup action, this allows you to specify the list of URLs that are opened. If left not set no URL will be opened on start up",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             ]
         }
