@@ -1,0 +1,45 @@
+{
+    "title": "Microsoft Outlook Weather Location Preferences",
+    "description": "Preferences for Microsoft Outlook Weather Location Functionality",
+    "__version": "1.0",
+    "__links": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook",
+    "__preferencedomain": "com.microsoft.Outlook",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "DefaultWeatherLocation": {
+            "title": "Default Weather Location",
+            "description": "(DefaultWeatherLocation)-Set default location for weather in calendar view. Use the format returned by the weather location search within Outlook",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Paris, France"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "Weather_update_automatically": {
+            "title": "Disable Automatic Updating of Weather Location",
+            "description": "(Weather_update_automatically)-Prevent users from choosing Update Location Automatically for weather location",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

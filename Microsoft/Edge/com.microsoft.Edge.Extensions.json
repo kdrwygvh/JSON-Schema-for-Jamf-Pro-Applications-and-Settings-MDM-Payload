@@ -1,0 +1,105 @@
+{
+    "title": "Microsoft Edge Extensions Preferences",
+    "__preferencedomain": "com.microsoft.Edge",
+    "properties": {
+        "ExtensionAllowedTypes": {
+            "title": "Allowed Extension Types",
+            "description": "Controls which extension types can be installed and limits runtime access",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "options": {
+                            "enum_titles": [
+                                "Extension",
+                                "Theme",
+                                "User Script",
+                                "Hosted App"
+                            ]
+                        },
+                        "enum": [
+                            "extension",
+                            "theme",
+                            "user_script",
+                            "hosted_app"
+                        ]
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallAllowlist": {
+            "title": "Allow specific extensions to be installed",
+            "description": "By default, all extensions are allowed. However, if you block all extensions by setting the 'ExtensionInstallBlockList' policy to '*' users can only install extensions defined in this policy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallBlocklist": {
+            "title": "Allow specific extensions to be installed",
+            "description": "List specific extensions that users can NOT install in Microsoft Edge. When you deploy this policy, any extensions on this list that were previously installed will be disabled, and the user won't be able to enable them. If you remove an item from the list of blocked extensions, that extension is automatically re-enabled anywhere it was previously installed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallForcelist": {
+            "title": "Control which extensions are installed silently",
+            "description": "Specifies extensions that are installed silently, without user interaction, and that the users can't uninstall or disable. All permissions requested by the extensions are granted implicitly, without user interaction, including any additional permissions requested by future versions of the extension. Furthermore, permissions are granted for the enterprise.deviceAttributes and enterprise.platformKeys extension APIs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallSources": {
+            "title": "Configure extension and user script install sources",
+            "description": "Each item in this list is an extension-style match pattern (see https://go.microsoft.com/fwlink/?linkid=2095039). Users can easily install items from any URL that matches an item in this list. Both the location of the *.crx file and the page where the download is started from (in other words, the referrer) must be allowed by these patterns",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }
+    }
+}

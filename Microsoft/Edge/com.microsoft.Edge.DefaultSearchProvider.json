@@ -1,0 +1,152 @@
+{
+    "title": "Microsoft Edge Default Search Provider Preferences",
+    "__preferencedomain": "com.microsoft.Edge",
+    "properties": {
+        "DefaultSearchProviderEnabled": {
+            "title": "Enable Default Search Provider",
+            "description": "Enables the ability to use a default search provider. If you enable this policy, a user can search for a term by typing in the address bar as long as what they type isn't a URL. You can specify the default search provider to use by enabling the rest of the default search policies. If these are left empty (not configured) or configured incorrectly, the user can choose the default provider. If you disable this policy, the user can't search from the address bar. If you enable or disable this policy, users can't change or override it. If you don't configure this policy, the default search provider is enabled, and the user can choose the default search provider and set the search provider list.",
+            "property_order": 1,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DefaultSearchProviderEncodings": {
+            "title": "Default Search Provider Encodings",
+            "description": "Specify the character encodings supported by the search provider. Encodings are code page names like UTF-8, GB2312, and ISO-8859-1. They are tried in the order provided",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "DefaultSearchProviderImageURL": {
+            "title": "Default Search Provider Image URL",
+            "description": "Specifies the URL to the search engine used for image search. Search requests are sent using the GET method",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "{google:baseURL}searchbyimage/upload"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderImageURLPostParams": {
+            "title": "Parameters for an image URL that uses POST",
+            "description": "If you enable this policy, it specifies the parameters used when an image search that uses POST is performed",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "coded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderKeyword": {
+            "title": "Default Search Provider Keyword",
+            "description": "Specifies the keyword, which is the shortcut used in the Address Bar to trigger the search for this provider",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "mis"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderName": {
+            "title": "Default Search Provider Name",
+            "description": "Specifies the name of the default search provider",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Intranet Search"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSearchURL": {
+            "title": "Default Search Provider URL",
+            "description": "Specifies the URL of the search engine used for a default search. The URL contains the string '{searchTerms}', which is replaced at query time by the terms the user is searching for",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://search.contoso.com/search?q={searchTerms}"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "DefaultSearchProviderSuggestURL": {
+            "title": "Default search provider URL for suggestions",
+            "description": "Specifies the URL for the search engine used to provide search suggestions. The URL contains the string '{searchTerms}', which is replaced at query time by the text the user has entered so far",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://search.contoso.com/suggest?q={searchTerms}"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

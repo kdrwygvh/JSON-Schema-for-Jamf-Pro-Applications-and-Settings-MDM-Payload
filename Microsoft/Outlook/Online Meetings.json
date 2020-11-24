@@ -1,0 +1,40 @@
+{
+    "title": "Microsoft Outlook Online Meetings Preferences",
+    "description": "Preferences for Microsoft Outlook Online Meeting Functionality",
+    "__version": "1.0",
+    "__links": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook",
+    "__preferencedomain": "com.microsoft.Outlook",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "DisableSkypeMeeting": {
+            "title": "Disable Skype for Business Online Meetings",
+            "description": "(DisableSkypeMeeting)-Prevent users from adding Skype for Business online meeting details to events",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableTeamsMeeting": {
+            "title": "Disable Teams Online Meetings",
+            "description": "(DisableTeamsMeeting)-Prevent users from adding Teams online meeting details to events",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
