@@ -1,0 +1,40 @@
+{
+    "title": "Microsoft Outlook Import/Export Preferences",
+    "description": "Preferences for Microsoft Outlook Import/Export Functionality",
+    "__version": "1.0",
+    "__links": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook",
+    "__preferencedomain": "com.microsoft.Outlook",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "DisableImport": {
+            "title": "Disable Import",
+            "description": "(DisableImport)-Prevent users from being able to import archive files (.olm and .pst) and Outlook 2011 for Mac data",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableExport": {
+            "title": "Disable Export",
+            "description": "(DisableExport)-Prevent users from being able to export archive files (.olm)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "title": "Microsoft Edge Cast Preferences",
+    "description": "Microsoft Edge Cast Preferences",
+    "__preferencedomain": "com.microsoft.Edge",
+    "properties": {
+        "EnableMediaRouter": {
+            "title": "Enable Google Cast",
+            "description": "Enable this policy to enable Google Cast. Users will be able to launch it from the app menu, page context menus, media controls on Cast-enabled websites, and (if shown) the Cast toolbar icon.\n\nDisable this policy to disable Google Cast.\n\nBy default, Google Cast is enabled.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "EnableMediaRouter"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#enablemediarouter"
+                }
+            ]
+        },
+        "ShowCastIconInToolbar": {
+            "title": "Show Cast Icon in Toolbar",
+            "description": "Set this policy to true to show the Cast toolbar icon on the toolbar or the overflow menu. Users won't be able to remove it.\n\nIf you don't configure this policy or if you disable it, users can pin or remove the icon by using its contextual menu.\n\nIf you've also set the \"EnableMediaRouter\" policy to false, then this policy is ignored, and the toolbar icon isn't shown.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "ShowCastIconInToolbar"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#showcasticonintoolbar"
+                }
+            ]
+        }
+    }
+}

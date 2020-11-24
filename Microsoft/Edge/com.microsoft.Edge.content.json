@@ -1,0 +1,919 @@
+{
+    "title": "Microsoft Edge Content Preferences",
+    "description": "Microsoft Edge Content Preferences",
+    "__preferencedomain": "com.microsoft.Edge",
+    "properties": {
+        "AutoSelectCertificateForUrls": {
+            "title": "Automatically select client certificates for these sites",
+            "description": "Specify a list of sites, based on URL patterns, for which Microsoft Edge should automatically select a client certificate, if the site requests one.\n\nThe value must be an array of stringified JSON dictionaries. Each dictionary must have the form { \"pattern\": \"$URL_PATTERN\", \"filter\" : $FILTER }, where $URL_PATTERN is a content setting pattern. $FILTER restricts from which client certificates the browser will automatically select. Independent of the filter, only certificates will be selected that match the server's certificate request. For example, if $FILTER has the form { \"ISSUER\": { \"CN\": \"$ISSUER_CN\" } }, additionally only client certificates are selected that are issued by a certificate with the CommonName $ISSUER_CN. If $FILTER contains an \"ISSUER\" and a \"SUBJECT\" section, a client certificate must satisfy both conditions to be selected. If $FILTER specifies an organization (\"O\"), a certificate must have at least one organization which matches the specified value to be selected. If $FILTER specifies an organization unit (\"OU\"), a certificate must have at least one organization unit which matches the specified value to be selected. If $FILTER is the empty dictionary {}, the selection of client certificates is not additionally restricted.\n\nIf you don't configure this policy, auto-selection isn't done for any site.",
+            "property_order": 100,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "AutoSelectCertificateForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#autoselectcertificateforurls"
+                }
+            ]
+        },
+        "CookiesAllowedForUrls": {
+            "title": "Allow cookies on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that are allowed to set cookies.\n\nIf you don't configure this policy, the global default value from the \"DefaultCookiesSetting\" policy (if set) or the user's personal configuration is used for all sites.\n\nSee the \"CookiesBlockedForUrls\" and \"CookiesSessionOnlyForUrls\" policies for more information.\n\nNote there cannot be conflicting URL patterns set between these three policies:\n\n- \"CookiesBlockedForUrls\"\n\n- CookiesAllowedForUrls\n\n- \"CookiesSessionOnlyForUrls\"",
+            "property_order": 220,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "CookiesAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls"
+                }
+            ]
+        },
+        "CookiesBlockedForUrls": {
+            "title": "Block cookies on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can't set cookies.\n\nIf you don't configure this policy, the global default value from the \"DefaultCookiesSetting\" policy (if set) or the user's personal configuration is used for all sites.\n\nSee the \"CookiesAllowedForUrls\" and \"CookiesSessionOnlyForUrls\" policies for more information.\n\nNote there cannot be conflicting URL patterns set between these three policies:\n\n- CookiesBlockedForUrls\n\n- \"CookiesAllowedForUrls\"\n\n- \"CookiesSessionOnlyForUrls\"",
+            "property_order": 225,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "CookiesBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesblockedforurls"
+                }
+            ]
+        },
+        "CookiesSessionOnlyForUrls": {
+            "title": "Limit cookies from specific websites to the current session",
+            "description": "Cookies created by websites that match a URL pattern you define are deleted when the session ends (when the window closes).\n\nCookies created by websites that don't match the pattern are controlled by the \"DefaultCookiesSetting\" policy (if set) or by the user's personal configuration. This is also the default behavior if you don't configure this policy.\n\nIf Microsoft Edge is running in background mode, the session might not close when the last window is closed, meaning the cookies won't be cleared when the window closes. See the \"BackgroundModeEnabled\" policy for information about configuring what happens when Microsoft Edge runs in background mode.\n\nYou can also use the \"CookiesAllowedForUrls\" and \"CookiesBlockedForUrls\" policies to control which websites can create cookies.\n\nNote there cannot be conflicting URL patterns set between these three policies:\n\n- \"CookiesBlockedForUrls\"\n\n- \"CookiesAllowedForUrls\"\n\n- CookiesSessionOnlyForUrls\n\nIf you set the \"RestoreOnStartup\" policy to restore URLs from previous sessions, this policy is ignored, and cookies are stored permanently for those sites.",
+            "property_order": 230,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "CookiesSessionOnlyForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiessessiononlyforurls"
+                }
+            ]
+        },
+        "DefaultCookiesSetting": {
+            "title": "DefaultCookiesSetting - Configure cookies",
+            "description": "Control whether websites can create cookies on the user's device. This policy is all or nothing - you can let all websites create cookies, or no websites create cookies. You can't use this policy to enable cookies from specific websites.\n\nSet the policy to 'SessionOnly' (4) to clear cookies when the session closes. If Microsoft Edge is running in background mode, the session might not close when the last window is closed, meaning the cookies won't be cleared when the window closes. See \"BackgroundModeEnabled\" policy for information about configuring what happens when Microsoft Edge runs in background mode.\n\nIf you don't configure this policy, the default 'AllowCookies' (1) is used, and users can change this setting in Microsoft Edge Settings. (If you don't want users to be able to change this setting, set the policy.)\n\n* 1 = Let all sites create cookies\n\n* 2 = Don't let any site create cookies\n\n* 4 = Keep cookies for the duration of the session",
+            "property_order": 250,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowCookies - Let all sites create cookies",
+                            "BlockCookies - Don't let any site create cookies",
+                            "SessionOnly - Keep cookies for the duration of the session"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        4
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultCookiesSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultcookiessetting"
+                }
+            ]
+        },
+        "DefaultGeolocationSetting": {
+            "title": "Default geolocation setting",
+            "description": "Set whether websites can track users' physical locations. You can allow tracking by default (1), deny it by default (2), or ask the user each time a website requests their location (3).\n\nIf you don't configure this policy, 'AskGeolocation' policy is used and the user can change it.\n\n* 1 = Allow sites to track users' physical location\n\n* 2 = Don't allow any site to track users' physical location\n\n* 3 = Ask whenever a site wants to track users' physical location",
+            "property_order": 255,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowGeolocation - Allow sites to track users' physical location",
+                            "BlockGeolocation - Don't allow any site to track users' physical location",
+                            "AskGeolocation - Ask whenever a site wants to track users' physical location"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultGeolocationSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultgeolocationsetting"
+                }
+            ]
+        },
+        "DefaultImagesSetting": {
+            "title": "Default images setting",
+            "description": "Set whether websites can display images. You can allow images on all sites (1) or block them on all sites (2).\n\nIf you don't configure this policy, images are allowed by default, and the user can change this setting.\n\n* 1 = Allow all sites to show all images\n\n* 2 = Don't allow any site to show images",
+            "property_order": 260,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowImages - Allow all sites to show all images",
+                            "BlockImages - Don't allow any site to show images"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultImagesSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultimagessetting"
+                }
+            ]
+        },
+        "DefaultInsecureContentSetting": {
+            "title": "Control use of insecure content exceptions",
+            "description": "Allows you to set whether users can add exceptions to allow mixed content for specific sites.\n\nThis policy can be overridden for specific URL patterns using the \"InsecureContentAllowedForUrls\" and \"InsecureContentBlockedForUrls\" policies.\n\nIf this policy isn't set, users will be allowed to add exceptions to allow blockable mixed content and disable autoupgrades for optionally blockable mixed content.\n\n* 2 = Do not allow any site to load blockable mixed content\n\n* 3 = Allow users to add exceptions to allow blockable mixed content",
+            "property_order": 265,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "BlockInsecureContent - Do not allow any site to load blockable mixed content",
+                            "AllowExceptionsInsecureContent - Allow users to add exceptions to allow blockable mixed content"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultInsecureContentSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultinsecurecontentsetting"
+                }
+            ]
+        },
+        "DefaultJavaScriptSetting": {
+            "title": "Default JavaScript setting",
+            "description": "Set whether websites can run JavaScript. You can allow it for all sites (1) or block it for all sites (2).\n\nIf you don't configure this policy, all sites can run JavaScript by default, and the user can change this setting.\n\n* 1 = Allow all sites to run JavaScript\n\n* 2 = Don't allow any site to run JavaScript",
+            "property_order": 270,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowJavaScript - Allow all sites to run JavaScript",
+                            "BlockJavaScript - Don't allow any site to run JavaScript"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultJavaScriptSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultjavascriptsetting"
+                }
+            ]
+        },
+        "DefaultNotificationsSetting": {
+            "title": "Default notification setting",
+            "description": "Set whether websites can display desktop notifications. You can allow them by default (1), deny them by default (2), or have the user be asked each time a website wants to show a notification (3).\n\nIf you don't configure this policy, notifications are allowed by default, and the user can change this setting.\n\n* 1 = Allow sites to show desktop notifications\n\n* 2 = Don't allow any site to show desktop notifications\n\n* 3 = Ask every time a site wants to show desktop notifications",
+            "property_order": 275,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowNotifications - Allow sites to show desktop notifications",
+                            "BlockNotifications - Don't allow any site to show desktop notifications",
+                            "AskNotifications - Ask every time a site wants to show desktop notifications"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultNotificationsSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultnotificationssetting"
+                }
+            ]
+        },
+        "DefaultPluginsSetting": {
+            "title": "Default Adobe Flash setting",
+            "description": "Determines whether websites that aren't covered by \"PluginsAllowedForUrls\" or \"PluginsBlockedForUrls\" can automatically run the Adobe Flash plug-in. You can select 'BlockPlugins' (2) to block Adobe Flash on all sites, or you can select 'ClickToPlay' (3) to let Adobe Flash run but require the user to click the placeholder to start it. In any case, the \"PluginsAllowedForUrls\" and \"PluginsBlockedForUrls\" policies take precedence over 'DefaultPluginsSetting'.\n\nAutomatic playback is only allowed for domains explicitly listed in the \"PluginsAllowedForUrls\" policy. If you want to enable automatic playback for all sites, consider adding http://* and https://* to this list.\n\nIf you don't configure this policy, the user can change this setting manually.\n\n* 2 = Block the Adobe Flash plug-in\n\n* 3 = Click to play\n\nThe former '1' option set allow-all, but this functionality is now only handled by the \"PluginsAllowedForUrls\" policy.  Existing policies using '1' will operate in Click-to-play mode.",
+            "property_order": 280,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "BlockPlugins - Block the Adobe Flash plugin",
+                            "ClickToPlay - Click to play"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultPluginsSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultpluginssetting"
+                }
+            ]
+        },
+        "DefaultPopupsSetting": {
+            "title": "Default pop-up window setting",
+            "description": "Set whether websites can show pop-up windows. You can allow them on all websites (1) or block them on all sites (2).\n\nIf you don't configure this policy, pop-up windows are blocked by default, and users can change this setting.\n\n* 1 = Allow all sites to show pop-ups\n\n* 2 = Don't allow any site to show pop-up windows",
+            "property_order": 285,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "AllowPopups - Allow all sites to show pop-ups",
+                            "BlockPopups - Do not allow any site to show popups"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultPopupsSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultpopupssetting"
+                }
+            ]
+        },
+        "DefaultWebBluetoothGuardSetting": {
+            "title": "Control use of the Web Bluetooth API",
+            "description": "Control whether websites can access nearby Bluetooth devices. You can completely block access or require the site to ask the user each time it wants to access a Bluetooth device.\n\nIf you don't configure this policy, the default value (3, meaning users are asked each time) is used and users can change it.\n\n* 2 = Don't allow any site to request access to Bluetooth devices by using the Web Bluetooth API\n\n* 3 = Allow sites to ask the user to grant access to a nearby Bluetooth device",
+            "property_order": 335,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "BlockWebBluetooth - Do not allow any site to request access to Bluetooth devices via the Web Bluetooth API",
+                            "AskWebBluetooth - Allow sites to ask the user to grant access to a nearby Bluetooth device"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultWebBluetoothGuardSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultwebbluetoothguardsetting"
+                }
+            ]
+        },
+        "DefaultWebUsbGuardSetting": {
+            "title": "Control use of the WebUSB API",
+            "description": "Set whether websites can access connected USB devices. You can completely block access or ask the user each time a website wants to get access to connected USB devices.\n\nYou can override this policy for specific URL patterns by using the \"WebUsbAskForUrls\" and \"WebUsbBlockedForUrls\" policies.\n\nIf you don't configure this policy, sites can ask users whether they can access the connected USB devices (3) by default, and users can change this setting.\n\n* 2 = Don't allow any site to request access to USB devices via the WebUSB API\n\n* 3 = Allow sites to ask the user to grant access to a connected USB device",
+            "property_order": 340,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "BlockWebUsb - Do not allow any site to request access to USB devices via the WebUSB API",
+                            "AskWebUsb - Allow sites to ask the user to grant access to a connected USB device"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "DefaultWebUsbGuardSetting"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultwebusbguardsetting"
+                }
+            ]
+        },
+        "ImagesAllowedForUrls": {
+            "title": "Allow images on these sites",
+            "description": "Define a list of sites, based on URL patterns, that can display images.\n\nIf you don't configure this policy, the global default value is used for all sites either from the \"DefaultImagesSetting\" policy (if set) or the user's personal configuration.",
+            "property_order": 550,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "ImagesAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#imagesallowedforurls"
+                }
+            ]
+        },
+        "ImagesBlockedForUrls": {
+            "title": "Block images on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that aren't allowed to display images.\n\nIf you don't configure this policy, the global default value from the \"DefaultImagesSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 555,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "ImagesBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#imagesblockedforurls"
+                }
+            ]
+        },
+        "InsecureContentAllowedForUrls": {
+            "title": "Allow insecure content on specified sites",
+            "description": "Create a list of URL patterns to specify sites that can display insecure mixed content (that is, HTTP content on HTTPS sites).\n\nIf you don't configure this policy, blockable mixed content will be blocked and optionally blockable mixed content will be upgraded. However, users will be allowed to set exceptions to allow insecure mixed content for specific sites.",
+            "property_order": 625,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "InsecureContentAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#insecurecontentallowedforurls"
+                }
+            ]
+        },
+        "InsecureContentBlockedForUrls": {
+            "title": "Block insecure content on specified sites",
+            "description": "Create a list of URL patterns to specify sites that aren't allowed to display blockable (i.e. active) mixed content (that is, HTTP content on HTTPS sites) and for which optionally blockable mixed content upgrades will be disabled.\n\nIf you don't configure this policy, blockable mixed content will be blocked and optionally blockable mixed content will be upgraded. However, users will be allowed to set exceptions to allow insecure mixed content for specific sites.",
+            "property_order": 630,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "InsecureContentBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#insecurecontentblockedforurls"
+                }
+            ]
+        },
+        "JavaScriptAllowedForUrls": {
+            "title": "Allow JavaScript on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that are allowed to run JavaScript.\n\nIf you don't configure this policy, the global default value from the \"DefaultJavaScriptSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 640,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "JavaScriptAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#javascriptallowedforurls"
+                }
+            ]
+        },
+        "JavaScriptBlockedForUrls": {
+            "title": "Block JavaScript on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that aren't allowed to run JavaScript.\n\nIf you don't configure this policy, the global default value from the \"DefaultJavaScriptSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 645,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "JavaScriptBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#javascriptblockedforurls"
+                }
+            ]
+        },
+        "LegacySameSiteCookieBehaviorEnabled": {
+            "title": "Enable default legacy SameSite cookie behavior setting",
+            "description": "Lets you revert all cookies to legacy SameSite behavior. Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were \"SameSite=None\", and removes the requirement for \"SameSite=None\" cookies to carry the \"Secure\" attribute.\n\nYou can set the following values for this policy:\n\n* 1 = Revert to legacy SameSite behavior for cookies on all sites\n\n* 2 = Use SameSite-by-default behavior for cookies on all sites\n\nIf you don't set this policy, the default behavior for cookies that don't specify a SameSite attribute will depend on other configuration sources for the SameSite-by-default feature. This feature might be set by a field trial or by enabling the same-site-by-default-cookies flag in edge://flags.",
+            "property_order": 650,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "DefaultToLegacySameSiteCookieBehavior - Revert to legacy SameSite behavior for cookies on all sites",
+                            "DefaultToSameSiteByDefaultCookieBehavior - Use SameSite-by-default behavior for cookies on all sites"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "LegacySameSiteCookieBehaviorEnabled"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled"
+                }
+            ]
+        },
+        "LegacySameSiteCookieBehaviorEnabledForDomainList": {
+            "title": "Revert to legacy SameSite behavior for cookies on specified sites",
+            "description": "Cookies set for domains match specified patterns will revert to legacy SameSite behavior.\n\nReverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were \"SameSite=None\", and removes the requirement for \"SameSite=None\" cookies to carry the \"Secure\" attribute.\n\nIf you don't set this policy, the global default value will be used. The global default will also be used for cookies on domains not covered by the patterns you specify.\n\nThe global default value can be configured using the \"LegacySameSiteCookieBehaviorEnabled\" policy. If \"LegacySameSiteCookieBehaviorEnabled\" is unset, the global default value falls back to other configuration sources.\n\nNote that patterns you list in this policy are treated as domains, not URLs, so you should not specify a scheme or port.",
+            "property_order": 655,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "LegacySameSiteCookieBehaviorEnabledForDomainList"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#legacysamesitecookiebehaviorenabledfordomainlist"
+                }
+            ]
+        },
+        "NotificationsAllowedForUrls": {
+            "title": "Allow notifications on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can display notifications.\n\nIf you don't configure this policy, the global default value from the \"DefaultNotificationsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 735,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "NotificationsAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#notificationsallowedforurls"
+                }
+            ]
+        },
+        "NotificationsBlockedForUrls": {
+            "title": "Block notifications on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that are blocked from displaying notifications.\n\nIf you don't configure this policy, the global default value from the \"DefaultNotificationsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 740,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "NotificationsBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#notificationsblockedforurls"
+                }
+            ]
+        },
+        "PluginsAllowedForUrls": {
+            "title": "PluginsAllowedForUrls - Allow the Adobe Flash plug-in on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can run the Adobe Flash plug-in.\n\nIf you don't configure this policy, the global default value from the \"DefaultPluginsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 785,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "PluginsAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#pluginsallowedforurls"
+                }
+            ]
+        },
+        "PluginsBlockedForUrls": {
+            "title": "PluginsBlockedForUrls - Block the Adobe Flash plug-in on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that are blocked from running Adobe Flash.\n\nIf you don't configure this policy, the global default value from the \"DefaultPluginsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 790,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "PluginsBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#pluginsblockedforurls"
+                }
+            ]
+        },
+        "PopupsAllowedForUrls": {
+            "title": "Allow pop-up windows on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can open pop-up windows.\n\nIf you don't configure this policy, the global default value from the \"DefaultPopupsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 795,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "PopupsAllowedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#popupsallowedforurls"
+                }
+            ]
+        },
+        "PopupsBlockedForUrls": {
+            "title": "Block pop-up windows on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that are blocked from opening pop-up windows.\n\nIf you don't configure this policy, the global default value from the \"DefaultPopupsSetting\" policy (if set) or the user's personal configuration is used for all sites.",
+            "property_order": 800,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "PopupsBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#popupsblockedforurls"
+                }
+            ]
+        },
+        "WebUsbAskForUrls": {
+            "title": "Allow WebUSB on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can ask the user for access to a USB device.\n\nIf you don't configure this policy, the global default value from the \"DefaultWebUsbGuardSetting\" policy (if set) or the user's personal configuration is used for all sites.\n\nThe URL patterns defined in this policy can't conflict with those configured in the \"WebUsbBlockedForUrls\" policy - you can't both allow and block a URL.",
+            "property_order": 1120,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "WebUsbAskForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#webusbaskforurls"
+                }
+            ]
+        },
+        "WebUsbBlockedForUrls": {
+            "title": "Block WebUSB on specific sites",
+            "description": "Define a list of sites, based on URL patterns, that can't ask the user to grant them access to a USB device.\n\nIf you don't configure this policy, the global default value from the \"DefaultWebUsbGuardSetting\" policy (if set) or the user's personal configuration is used for all sites.\n\nURL patterns in this policy can't conflict with those configured in the \"WebUsbAskForUrls\" policy. You can't both allow and block a URL.",
+            "property_order": 1125,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "WebUsbBlockedForUrls"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#webusbblockedforurls"
+                }
+            ]
+        }
+    }
+}

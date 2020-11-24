@@ -1,0 +1,156 @@
+{
+    "title": "Microsoft Outlook Weather Location Preferences",
+    "description": "Preferences for Microsoft Outlook Weather Location Functionality",
+    "__version": "1.0",
+    "__links": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook",
+    "__preferencedomain": "com.microsoft.Outlook",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "HideFoldersOnMyComputerRootInFolderList": {
+            "title": "Hide local folders",
+            "description": "(HideFoldersOnMyComputerRootInFolderList)-Prevent users from viewing local On My Computer folders in the sidebar",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AutomaticallyDownloadExternalContent": {
+            "title": "Specify when pictures are downloaded for email",
+            "description": "(AutomaticallyDownloadExternalContent)-Set when pictures are automatically downloaded from the internet for email. Found under Outlook > Preferences > Email > Reading > Security",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Never (default)",
+                            "In messages from My Contacts",
+                            "In all messages"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "DisableSignatures": {
+            "title": "Disable Signatures",
+            "description": "(DisableSignatures)-Prevent users from being able to create, edit, and add client-side signatures",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CalendarFirstDayOfWeek": {
+            "title": "Specify First Day of Calendar Week",
+            "description": "(CalendarFirstDayOfWeek)-Set the first day of week in calendar view",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Sunday (default)",
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday",
+                            "Saturday"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                    ]
+                }
+            ]
+        },
+        "EnableNewOutlook": {
+            "title": "Enable New Outlook",
+            "description": "(EnableNewOutlook)-Set the availability and default position of the New Outlook switch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Switch hidden and New Look Disabled (default)",
+                            "Switch displayed, default off",
+                            "Switch displayed, default on",
+                            "New Outlook enabled with switch hidden"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "DisableEncryptOnly": {
+            "title": "Disable Encrypt-Only",
+            "description": "(DisableEncryptOnly)-Prevent users from applying the Encrypt-Only option to emails when using Microsoft 365 Message Encryption",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableDoNotForward": {
+            "title": "Disable 'Do Not Forward'",
+            "description": "(DisableDoNotForward)-Prevent users from applying the Do Not Forward option to emails when using Microsoft 365 Message Encryption",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "title": "Microsoft Outlook Mailbox Preferences",
+    "description": "Preferences for Microsoft Outlook Mailboxes",
+    "__version": "1.0",
+    "__links": "https://docs.microsoft.com/en-us/deployoffice/mac/preferences-outlook",
+    "__preferencedomain": "com.microsoft.Outlook",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "DefaultEmailAddressOrDomain": {
+            "title": "Office 365 mailbox to be added on first launch",
+            "description": "(DefaultEmailAddressOrDomain)-Set the domain or full email address of Office 365 mailbox to be added on first launch. The full email address or domain specified will be added in Outlook instead of the Office activation email address",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "contoso.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AllowedEmailDomains": {
+            "title": "Permitted Email Domains",
+            "description": "(AllowedEmailDomains)-Specify one or more domains users are allowed to add in Outlook. Format strings as regular expressions. Doesn't remove or disconnect accounts already added in Outlook",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "'contoso\\.com$'"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "HideCanAddOtherAccountTypesTipText": {
+            "title": "Hide Personal Mailbox Notifications",
+            "description": "(HideCanAddOtherAccountTypesTipText)-Hide the \u201cDid you know? Outlook supports\u2026\u201d text in the Set Up Your Email success dialog box. Only hides text. Doesn't impact ability to add non-corporate mailboxes",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

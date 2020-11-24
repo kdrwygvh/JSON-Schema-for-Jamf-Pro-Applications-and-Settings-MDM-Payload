@@ -1,0 +1,226 @@
+{
+    "title": "Microsoft OneDrive Preferences",
+    "__preferencedomain": "com.microsoft.OneDrive",
+    "properties": {
+        "DefaultFolderPath": {
+            "title": "Default Folder Path",
+            "description": "DefaultFolderPath",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "~/OneDrive"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AutomaticUploadBandwidthPercentage": {
+            "title": "Percentage of Upload Bandwidth to Use",
+            "description": "AutomaticUploadBandwidthPercentage",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-99]",
+                    "default": 100
+                }
+            ]
+        },
+        "DownloadBandwidthLimited": {
+            "title": "Maximum Download Bandwidth in Kb/s",
+            "description": "DownloadBandwidthLimited",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[50-100000]",
+                    "default": 100000
+                }
+            ]
+        },
+        "DisablePersonalSync": {
+            "title": "Disable Personal Account Sync",
+            "description": "DisablePersonalSync",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "FilesOnDemandEnabled": {
+            "title": "Enable Files on Demand",
+            "description": "FilesOnDemandEnabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideDockIcon": {
+            "title": "Hide Dock Icon",
+            "description": "HideDockIcon",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HydrationDisallowedApps": {
+            "title": "Apps Disallowed from Using Files on Demand",
+            "description": "https://docs.google.com/spreadsheets/d/1ESX5td0y0OP3jdzZ-C2SItm-TUi-iA_bcHCBvaoCumw/edit#gid=0&range=H89",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "Applications in JSON Format"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "OpenAtLogin": {
+            "title": "Open at Login",
+            "description": "OpenAtLogin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SharePointOnPremFrontDoorUrl": {
+            "title": "SharePoint Front Door Server URL",
+            "description": "SharePointOnPremFrontDoorUrl",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://frontdoor.sharepoint.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "SharePointOnPremPrioritizationPolicy": {
+            "title": "SharePoint On Premises Prioritization Policy",
+            "description": "SharePoint OnPrem Prioritization. For hybrid scenarios where the email is the same for both SharePoint Server on-premises and SharePoint Online, determines whether or not the client should set up sync for SharePoint Server or SharePoint Online first during the first-run scenario. This parameter determines which service to attempt to authenticate against for setting up sync. 1 indicates OneDrive should setup SharePoint Server on-premises first, followed by SharePoint Online.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1]",
+                    "enum": [
+                        1
+                    ],
+                    "enum_titles": [
+                        1
+                    ]
+                }
+            ]
+        },
+        "SharePointOnPremTenantName": {
+            "title": "SharePoint On Premises Tenant Name",
+            "description": "SharePointOnPremTenantName",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "TenantName"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "TenantID": {
+            "title": "Tenant ID",
+            "description": "TenantID",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "27cb8ac7-794b-44d8-becf-853784533e6e"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "UploadBandwidthLimited": {
+            "title": "Maximum Upload Bandwidth in Kb/s",
+            "description": "UploadBandwidthLimited",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[50-100000]",
+                    "default": 100000
+                }
+            ]
+        }
+    }
+}
