@@ -1,6 +1,12 @@
 {
     "title": "Authchanger Arguments",
-    "description": "Arguments that are passed to authchanger",
+    "description": "Arguments that are passed to authchanger during Jamf Connect Installation",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.jamf.com/jamf-connect/administrator-guide/authchanger.html"
+        }
+    ],
     "__preferencedomain": "com.jamf.connect.authchanger",
     "properties": {
         "Arguments": {
@@ -14,7 +20,8 @@
                     "title": "Configured",
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "title": "authchanger Argument"
                     }
                 }
             ]

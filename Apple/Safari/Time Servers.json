@@ -1,0 +1,49 @@
+{
+    "title": "Time Server Preferences",
+    "description": "Managed NTP Servers",
+    "__version": "1.0",
+    "__preferencedomain": "com.apple.MCX",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "timeServer": {
+            "title": "Time Server Address(es)",
+            "description": "(timeServer)-The NTP server to connect to. Use commas to separate multiple time servers",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "time.apple.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "timeZone": {
+            "title": "Time Zone",
+            "description": "(timeZone)-The time zone path location string in /usr/share/zoneinfo/; for example, America/Denver or Zulu",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "America/New_York"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}
