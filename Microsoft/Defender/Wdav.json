@@ -204,30 +204,113 @@
                             }
                         }
                     }
-                },
-                "cloudService": {
-                    "type": "object",
-                    "title": "Cloud-delivered Protection Preferences",
-                    "properties": {
-                        "enabled": {
-                            "title": "Enable Cloud Services",
-                            "anyOf": [
-                                {
-                                    "type": "null",
-                                    "title": "Not Configured"
-                                },
-                                {
-                                    "title": "Configured",
-                                    "type": "boolean"
-                                }
-                            ]
+                }
+            }
+        },
+        "cloudService": {
+            "type": "object",
+            "title": "Cloud-delivered Protection Preferences",
+            "properties": {
+                "enabled": {
+                    "title": "Enable Cloud Services",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
                         },
-                        "diagnosticLevel": {
-                            "title": "Diagnostic Level",
-                            "description": "Diagnostic data is used to keep Microsoft Defender ATP secure and up-to-date, detect, diagnose and fix problems, and also make product improvements. This setting determines the level of diagnostics sent by Microsoft Defender ATP to Microsoft",
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "diagnosticLevel": {
+                    "title": "Diagnostic Level",
+                    "description": "Diagnostic data is used to keep Microsoft Defender ATP secure and up-to-date, detect, diagnose and fix problems, and also make product improvements. This setting determines the level of diagnostics sent by Microsoft Defender ATP to Microsoft",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "optional or required are supported"
+                        }
+                    },
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "automaticSampleSubmission": {
+                    "title": "Enable Automatic Sample Submission",
+                    "description": "Determines whether suspicious samples (that are likely to contain threats) are sent to Microsoft. You are prompted if the submitted file is likely to contain personal information",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "automaticDefinitionUpdateEnabled": {
+                    "title": "Enable Automatic Definition Updates",
+                    "description": "Determines whether security intelligence updates are installed automatically",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "userInterface": {
+            "type": "object",
+            "title": "User Interface Preferences",
+            "properties": {
+                "hideStatusMenuIcon": {
+                    "title": "Hide Status Menu Icon",
+                    "description": "Specify whether to show or hide the status menu icon in the top-right corner of the screen",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "edr": {
+            "type": "object",
+            "title": "Endpoint Detection Response Preferences",
+            "properties": {
+                "tags": {
+                    "type": "object",
+                    "title": "Tags",
+                    "properties": {
+                        "key": {
+                            "title": "Type of Tag. GROUP is supported",
+                            "type": "string"
+                        },
+                        "value": {
+                            "title": "Value",
+                            "description": "Specifies the value of tag",
                             "options": {
                                 "inputAttributes": {
-                                    "placeholder": "optional or required are supported"
+                                    "placeholder": "value"
                                 }
                             },
                             "anyOf": [
@@ -240,89 +323,6 @@
                                     "type": "string"
                                 }
                             ]
-                        },
-                        "automaticSampleSubmission": {
-                            "title": "Enable Automatic Sample Submission",
-                            "description": "Determines whether suspicious samples (that are likely to contain threats) are sent to Microsoft. You are prompted if the submitted file is likely to contain personal information",
-                            "anyOf": [
-                                {
-                                    "type": "null",
-                                    "title": "Not Configured"
-                                },
-                                {
-                                    "title": "Configured",
-                                    "type": "boolean"
-                                }
-                            ]
-                        },
-                        "automaticDefinitionUpdateEnabled": {
-                            "title": "Enable Automatic Definition Updates",
-                            "description": "Determines whether security intelligence updates are installed automatically",
-                            "anyOf": [
-                                {
-                                    "type": "null",
-                                    "title": "Not Configured"
-                                },
-                                {
-                                    "title": "Configured",
-                                    "type": "boolean"
-                                }
-                            ]
-                        }
-                    }
-                },
-                "userInterface": {
-                    "type": "object",
-                    "title": "User Interface Preferences",
-                    "properties": {
-                        "hideStatusMenuIcon": {
-                            "title": "Hide Status Menu Icon",
-                            "description": "Specify whether to show or hide the status menu icon in the top-right corner of the screen",
-                            "anyOf": [
-                                {
-                                    "type": "null",
-                                    "title": "Not Configured"
-                                },
-                                {
-                                    "title": "Configured",
-                                    "type": "boolean"
-                                }
-                            ]
-                        }
-                    }
-                },
-                "edr": {
-                    "type": "object",
-                    "title": "Endpoint Detection Response Preferences",
-                    "properties": {
-                        "tags": {
-                            "type": "object",
-                            "title": "Tags",
-                            "properties": {
-                                "key": {
-                                    "title": "Type of Tag. GROUP is supported",
-                                    "type": "string"
-                                },
-                                "value": {
-                                    "title": "Value",
-                                    "description": "Specifies the value of tag",
-                                    "options": {
-                                        "inputAttributes": {
-                                            "placeholder": "value"
-                                        }
-                                    },
-                                    "anyOf": [
-                                        {
-                                            "type": "null",
-                                            "title": "Not Configured"
-                                        },
-                                        {
-                                            "title": "Configured",
-                                            "type": "string"
-                                        }
-                                    ]
-                                }
-                            }
                         }
                     }
                 }
