@@ -1,0 +1,340 @@
+{
+    "title": "com.google.chrome.extensions",
+    "description": "Google Chrome Extensions Preferences",
+    "__extensionsdocumentation": "https://developer.chrome.com/apps/external_extensions",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "BlockExternalExtensions": {
+            "title": "Blocks external extensions from being installed",
+            "description": "Controls external extensions installation",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=BlockExternalExtensions"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ExtensionAllowedTypes": {
+            "title": "Configure allowed app/extension types",
+            "description": " The value is a list of strings, each of which should be one of the following: extension, theme, user_script, hosted_app, legacy_packaged_app, platform_app. See the Google Chrome extensions documentation for more information on these types",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionAllowedTypes"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallAllowlist": {
+            "title": "Configure extension installation allow list",
+            "description": "(ExtensionInstallAllowlist)-etting the policy specifies which extensions are not subject to the blocklist. A blocklist value of * means all extensions are blocked and users can only install extensions listed in the allow list. By default, all extensions are allowed. But, if you prohibited extensions by policy, use the list of allowed extensions to change that policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallAllowlist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Extension ID"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallBlacklist": {
+            "title": "Configure extension installation blacklist (Deprecated)",
+            "description": "Allows you to specify which extensions the users can NOT install. Extensions already installed will be disabled if blacklisted, without a way for the user to enable them. Once an extension disabled due to the blacklist is removed from it, it will automatically get re-enabled. A blacklist value of '*' means all extensions are blacklisted unless they are explicitly listed in the whitelis",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallBlocklist": {
+            "title": "Configure extension installation blocklist",
+            "description": "(ExtensionInstallBlocklist)-Allows you to specify which extensions the users can NOT install. Extensions already installed will be disabled if blocked, without a way for the user to enable them. Once an extension disabled due to the blocklist is removed from it, it will automatically get re-enabled. A blocklist value of '*' means all extensions are blocked unless they are explicitly listed in the allowlist. If this policy is left not set the user can install any extension in Google Chrome",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallBlocklist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Extension ID"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallForcelist": {
+            "title": "Configure the list of force-installed apps and extensions",
+            "description": "Specifies a list of apps and extensions that are installed silently, without user interaction, and which cannot be uninstalled nor disabled by the user",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallForcelist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallSources": {
+            "title": "Configure extension, app, and user script install sources",
+            "description": "Each item in this list is an extension-style match pattern (see https://developer.chrome.com/extensions/match_patterns). Users will be able to easily install items from any URL that matches an item in this list. Both the location of the *.crx file and the page where the download is started from (i.e. the referrer) must be allowed by these patterns",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ExtensionInstallSources"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionInstallWhitelist": {
+            "title": "Configure extension installation whitelist (Deprecated)",
+            "description": "Allows you to specify which extensions are not subject to the blacklist",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        },
+        "ExtensionSettings": {
+            "title": "Extensions Settings",
+            "type": "object",
+            "properties": {
+                "aomjjhallfgjeglblehebfpbcfeobpgk": {
+                    "properties": {
+                        "allowed_types": {
+                            "title": "Allowed Extension Types",
+                            "description": "extension, hosted_app, legacy_packaged_app, platform_app, theme, user_script are supported",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Extension Type"
+                                    }
+                                }
+                            ]
+                        },
+                        "blocked_install_message": {
+                        	"title": "Blocked Install Message",
+                            "type": "string"
+                        },
+                        "blocked_permissions": {
+                            "title": "Blocked API Permissions",
+                            "links": [
+                                {
+                                    "rel": "Documentation Link",
+                                    "href": "https://developer.chrome.com/docs/extensions/mv2/declare_permissions/"
+                                }
+                            ],
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Permission"
+                                    }
+                                }
+                            ]
+                        },
+                        "install_sources": {
+                            "title": "Extension Install Sources",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        },
+                        "installation_mode": {
+                        "title": "Installation Mode",
+                            "enum": [
+                                "blocked",
+                                "allowed",
+                                "removed",
+                                "force_installed",
+                                "normal_installed"
+                            ],
+                            "type": "string"
+                        },
+                        "toolbar_pin": {
+                        	"title": "Toolbar Pin Style",
+     						            "enum": [
+      							        "force_pinned",
+      							        "default_unpinned"
+      					      	],
+      						"type": "string"
+      					},
+                        "minimum_version_required": {
+                            "title": "Minimum Version Required",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string",
+                                    "options": {
+                                        "inputAttributes": {
+                                            "placeholder": "1.1"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "update_url": {
+                            "title": "Update URL",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string",
+                                    "options": {
+                                        "inputAttributes": {
+                                            "placeholder": "https://clients2.google.com/service/update2/crx"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "runtime_allowed_hosts": {
+                            "title": "Allow Extension Interaction with Websites",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        },
+                        "runtime_blocked_hosts": {
+                            "title": "Prevent Extension Interaction with Websites",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "title": "Native Messaging Preferences",
+    "description": "Native Messaging Preferences for Google Chrome",
+    "__version": "1.0",
+    "__preferencedomain": "com.google.Chrome",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "NativeMessagingAllowlist": {
+            "title": "Configure native messaging allowlist",
+            "description": "(NativeMessagingAllowlist)-Setting the policy specifies which native messaging hosts aren't subject to the deny list. A deny list value of * means all native messaging hosts are denied, unless they're explicitly allowed. All native messaging hosts are allowed by default. But, if all native messaging hosts are denied by policy, the admin can use the allow list to change that policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingAllowlist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Native Messaging Host"
+                    }
+                }
+            ]
+        },
+        "NativeMessagingBlocklist": {
+            "title": "Configure native messaging blockllist",
+            "description": "(NativeMessagingBlocklist)-Setting the policy specifies which native messaging hosts are subject to the deny list. A deny list value of * means all native messaging hosts are denied, unless they're explicitly allowed. All native messaging hosts are allowed by default. But, if all native messaging hosts are denied by policy, the admin can use the allow list to change that policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingBlocklist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Native Messaging Host"
+                    }
+                }
+            ]
+        },
+        "NativeMessagingUserLevelHosts": {
+            "title": "Allow user-level Native Messaging hosts",
+            "description": "(NativeMessagingUserLevelHosts)-Setting the policy to Enabled or leaving it unset means Google Chrome can use native messaging hosts installed at the user level. Setting the policy to Disabled means Google Chrome can only use these hosts if installed at the system level",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NativeMessagingUserLevelHosts"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

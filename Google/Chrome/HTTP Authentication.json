@@ -6,7 +6,12 @@
         "AllowCrossOriginAuthPrompt": {
             "title": "Cross-origin HTTP Basic Auth prompts",
             "description": "Controls whether third-party sub-content on a page is allowed to pop-up an HTTP Basic Auth dialog box. Typically this is disabled as a phishing defense. If this policy is not set, this is disabled and third-party sub-content will not be allowed to pop up a HTTP Basic Auth dialog box",
-            "property_order": 1,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowCrossOriginAuthPrompt"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -21,7 +26,12 @@
         "AuthNegotiateDelegateByKdcPolicy": {
             "title": "Use KDC policy to delegate credentials",
             "description": "Controls whether approval by KDC policy is respected to decide whether to delegate Kerberos tickets",
-            "property_order": 2,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthNegotiateDelegateByKdcPolicy"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -33,10 +43,29 @@
                 }
             ]
         },
-        "AuthNegotiateDelegateWhitelist": {
-            "title": "Kerberos delegation server whitelist",
+        "AuthNegotiateDelegateAllowlist": {
+            "title": "Kerberos delegation server allow list",
             "description": "Servers that Google Chrome may delegate to. Separate multiple server names with commas. Wildcards (*) are allowed",
-            "property_order": 3,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthNegotiateDelegateAllowlist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthNegotiateDelegateWhitelist": {
+            "title": "Kerberos delegation server whitelist (Deprecated)",
+            "description": "Servers that Google Chrome may delegate to. Separate multiple server names with commas. Wildcards (*) are allowed",
             "anyOf": [
                 {
                     "type": "null",
@@ -51,7 +80,32 @@
         "AuthSchemes": {
             "title": "Supported authentication schemes",
             "description": "Specifies which HTTP authentication schemes are supported by Google Chrome. Example: basic,digest,ntlm,negotiate",
-            "property_order": 4,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthSchemes"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthServerAllowlist": {
+            "title": "Authentication server allow list",
+            "description": "Specifies which servers should be whitelisted for integrated authentication. Integrated authentication is only enabled when Google Chrome receives an authentication challenge from a proxy or from a server which is in this permitted list. Separate multiple server names with commas. Wildcards (*) are allowed",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AuthServerAllowlist"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -64,9 +118,8 @@
             ]
         },
         "AuthServerWhitelist": {
-            "title": "Authentication server whitelist",
+            "title": "Authentication server whitelist (Deprecated)",
             "description": "Specifies which servers should be whitelisted for integrated authentication. Integrated authentication is only enabled when Google Chrome receives an authentication challenge from a proxy or from a server which is in this permitted list. Separate multiple server names with commas. Wildcards (*) are allowed",
-            "property_order": 5,
             "anyOf": [
                 {
                     "type": "null",
@@ -81,7 +134,12 @@
         "DisableAuthNegotiateCnameLookup": {
             "title": "Disable CNAME lookup when negotiating Kerberos authentication",
             "description": "Specifies whether the generated Kerberos SPN is based on the canonical DNS name or the original name entered.If you enable this setting, CNAME lookup will be skipped and the server name will be used as entered",
-            "property_order": 6,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DisableAuthNegotiateCnameLookup"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -96,7 +154,12 @@
         "EnableAuthNegotiatePort": {
             "title": "Include non-standard port in Kerberos SPN",
             "description": "Specifies whether the generated Kerberos SPN should include a non-standard port. If you enable this setting, and a non-standard port (i.e., a port other than 80 or 443) is entered, it will be included in the generated Kerberos SPN",
-            "property_order": 7,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableAuthNegotiatePort"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -111,7 +174,12 @@
         "NtlmV2Enabled": {
             "title": "Enable NTLMv2 authentication",
             "description": "Controls whether NTLMv2 is enabled. All recent versions of Samba and Windows servers support NTLMv2. This should only be disabled for backwards compatibility and reduces the security of authentication",
-            "property_order": 8,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NtlmV2Enabled"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",

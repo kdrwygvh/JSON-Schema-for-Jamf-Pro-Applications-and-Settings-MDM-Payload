@@ -5,8 +5,13 @@
     "properties": {
         "EnableMediaRouter": {
             "title": "Enable Google Cast",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnableMediaRouter"
+                }
+            ],
             "description": "If this policy is set to true or is not set, Google Cast will be enabled, and users will be able to launch it from the app menu, page context menus, media controls on Cast-enabled websites, and (if shown) the Cast toolbar icon",
-            "property_order": 1,
             "anyOf": [
                 {
                     "type": "null",
@@ -20,8 +25,13 @@
         },
         "ShowCastIconInToolbar": {
             "title": "Show the Google Cast toolbar icon",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ShowCastIconInToolbar"
+                }
+            ],
             "description": "If this policy is set to true, the Cast toolbar icon will always be shown on the toolbar or the overflow menu, and users will not be able to remove it",
-            "property_order": 2,
             "anyOf": [
                 {
                     "type": "null",

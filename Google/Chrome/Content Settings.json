@@ -1,12 +1,18 @@
 {
     "title": "com.google.chrome.contentpreferences",
     "description": "Google Chrome Content Preferences",
+    "__urlpatterndocumentation": "https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns",
     "__preferencedomain": "com.google.Chrome",
     "properties": {
         "AutoSelectCertificateForUrls": {
             "title": "Automatically select client certificates for these sites",
             "description": "Allows you to specify a list of url patterns that specify sites for which Google Chrome should automatically select a client certificate if the site requests a certificate. Example: see https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoSelectCertificateForUrls",
-            "property_order": 1,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AutoSelectCertificateForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -24,7 +30,12 @@
         "CookiesAllowedForUrls": {
             "title": "Allow cookies on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to set cookies. If this policy is left not set the global default value will be used for all sites either from the 'DefaultCookiesSetting' policy if it is set, or the user's personal configuration otherwise. See also policies 'CookiesBlockedForUrls' and 'CookiesSessionOnlyForUrls'. Note that there must be no conflicting URL patterns between these three policies - it is unspecified which policy takes precedence.",
-            "property_order": 2,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesAllowedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -48,7 +59,12 @@
         "CookiesBlockedForUrls": {
             "title": "Block cookies on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to set cookies. If this policy is left not set the global default value will be used for all sites either from the 'DefaultCookiesSetting' policy if it is set, or the user's personal configuration otherwise. See also policies 'CookiesAllowedForUrls' and 'CookiesSessionOnlyForUrls'. Note that there must be no conflicting URL patterns between these three policies - it is unspecified which policy takes precedence.",
-            "property_order": 3,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -72,7 +88,12 @@
         "CookiesSessionOnlyForUrls": {
             "title": "Limit cookies from matching URLs to the current session",
             "description": "Cookies set by pages matching these URL patterns will be limited to the current session, i.e. they will be deleted when the browser exits.",
-            "property_order": 4,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CookiesSessionOnlyForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -96,7 +117,12 @@
         "DefaultCookiesSetting": {
             "title": "Default cookies setting",
             "description": "Allows you to set whether websites are allowed to set local data. Setting local data can be either allowed for all websites or denied for all websites. 1 = Allow all sites to set local data 2 = Do not allow any site to set local data 4 = Keep cookies for the duration of the session",
-            "property_order": 5,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultCookiesSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -119,10 +145,75 @@
                 }
             ]
         },
+        "DefaultFileSystemReadGuardSetting": {
+            "title": "Control use of the File System API for reading",
+            "description": "(DefaultFileSystemReadGuardSetting)-Setting the policy to 3 lets websites ask for read access to files and directories in the host operating system's file system via the File System API. Setting the policy to 2 denies access. Leaving it unset lets websites ask for access, but users can change this setting",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultFileSystemReadGuardSetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "2",
+                            "3"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "DefaultFileSystemWriteGuardSetting": {
+            "title": "Control use of the File System API for writing",
+            "description": "(DefaultFileSystemWriteGuardSetting)-Setting the policy to 3 lets websites ask for write access to files and directories in the host operating system's file system. Setting the policy to 2 denies access. Leaving it unset lets websites ask for access, but users can change this setting",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultFileSystemWriteGuardSetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "2",
+                            "3"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
         "DefaultGeolocationSetting": {
             "title": "Default Geolocation Setting",
             "description": "Allows you to set whether websites are allowed to track the users' physical location. 1 = Allow sites to track the users' physical location 2 = Do not allow any site to track the users' physical location 3 = Ask whenever a site wants to track the users' physical location",
-            "property_order": 6,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultGeolocationSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -148,7 +239,12 @@
         "DefaultImagesSetting": {
             "title": "Default images setting",
             "description": "Allows you to set whether websites are allowed to display images. Displaying images can be either allowed for all websites or denied for all websites. 1 = Allow all sites to show all images 2 = Do not allow any site to show images",
-            "property_order": 7,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultImagesSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -172,7 +268,12 @@
         "DefaultInsecureContentSetting": {
             "title": "Control use of insecure content exceptions",
             "description": "Allows you to set whether users can add exceptions to allow mixed content for specific sites. This policy can be overridden for specific URL patterns using the 'InsecureContentAllowedForUrls' and 'InsecureContentBlockedForUrls' policies. If this policy is left not set, users will be allowed to add exceptions to allow blockable mixed content and disable autoupgrades for optionally blockable mixed content. 2 = Do not allow any site to load blockable mixed content 3 = Allow users to add exceptions to allow blockable mixed content",
-            "property_order": 8,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultInsecureContentSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -196,7 +297,12 @@
         "DefaultJavaScriptSetting": {
             "title": "Default JavaScript setting",
             "description": "Allows you to set whether websites are allowed to run JavaScript. Running JavaScript can be either allowed for all websites or denied for all websites. 1 = Allow all sites to run JavaScript 2 = Do not allow any site to run JavaScript",
-            "property_order": 9,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultJavaScriptSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -220,7 +326,12 @@
         "DefaultNotificationsSetting": {
             "title": "Default Notifications setting",
             "description": "Allows you to set whether websites are allowed to display desktop notifications. 1 = Allow sites to show desktop notifications 2 = Do not allow any site to show desktop notifications 3 = Ask every time a site wants to show desktop notifications",
-            "property_order": 10,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultNotificationsSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -244,9 +355,8 @@
             ]
         },
         "DefaultPluginsSetting": {
-            "title": "Default Flash Setting",
+            "title": "Default Flash Setting (Deprecated)",
             "description": "Allows you to set whether websites are allowed to automatically run the Flash plugin. 1 = Allow all sites to automatically run the Flash plugin 2 = Block the Flash plugin 3 = Click to play",
-            "property_order": 11,
             "anyOf": [
                 {
                     "type": "null",
@@ -272,7 +382,12 @@
         "DefaultPopupsSetting": {
             "title": "Default popups setting",
             "description": "Allows you to set whether websites are allowed to show pop-ups. Showing popups can be either allowed for all websites or denied for all websites. If this policy is left not set, 'BlockPopups' will be used and the user will be able to change it. 1 = Allow all sites to show pop-ups 2 = Do not allow any site to show popups",
-            "property_order": 12,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultPopupsSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -293,10 +408,45 @@
                 }
             ]
         },
+        "DefaultSerialGuardSetting": {
+            "title": "Control use of the Serial API",
+            "description": "(DefaultSerialGuardSetting)-Setting the policy to 3 lets websites ask for access to serial ports. Setting the policy to 2 denies access to serial ports. Leaving it unset lets websites ask for access, but users can change this setting",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultSerialGuardSetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "2",
+                            "3"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
         "DefaultWebBluetoothGuardSetting": {
             "title": "Control use of the Web Bluetooth API",
             "description": "Allows you to set whether websites are allowed to get access to nearby Bluetooth devices. Access can be completely blocked, or the user can be asked every time a website wants to get access to nearby Bluetooth devices. If this policy is left not set, '3' will be used, and the user will be able to change it. 2 = Do not allow any site to request access to Bluetooth devices via the Web Bluetooth API 3 = Allow sites to ask the user to grant access to a nearby Bluetooth device",
-            "property_order": 13,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultWebBluetoothGuardSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -320,7 +470,12 @@
         "DefaultWebUsbGuardSetting": {
             "title": "Control use of the WebUSB API",
             "description": "Allows you to set whether websites are allowed to get access to connected USB devices. Access can be completely blocked, or the user can be asked every time a website wants to get access to connected USB devices. This policy can be overridden for specific URL patterns using the 'WebUsbAskForUrls' and 'WebUsbBlockedForUrls' policies. If this policy is left not set, '3' will be used, and the user will be able to change it. 2 = Do not allow any site to request access to USB devices via the WebUSB API 3 = Allow sites to ask the user to grant access to a connected USB device",
-            "property_order": 14,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=DefaultWebUsbGuardSetting"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -341,10 +496,111 @@
                 }
             ]
         },
+        "FileSystemReadAskForUrls": {
+            "title": "Allow read access via the File System API on these sites",
+            "description": "(FileSystemReadAskForUrls)-Setting the policy lets you list the URL patterns that specify which sites can ask users to grant them read access to files or directories in the host operating system's file system via the File System API. Leaving the policy unset means DefaultFileSystemReadGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns must not conflict with FileSystemReadBlockedForUrls. Neither policy takes precedence if a URL matches with both",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=FileSystemReadAskForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "FileSystemReadBlockedForUrls": {
+            "title": "Block read access via the File System API on these sites",
+            "description": "(FileSystemReadBlockedForUrls)-Setting the policy lets you list the URL patterns that specify which sites can't ask users to grant them read access to files or directories in the host operating system's file system via the File System API. Leaving the policy unset means DefaultFileSystemReadGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns can't conflict with FileSystemReadAskForUrls. Neither policy takes precedence if a URL matches with both",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=FileSystemReadBlockedForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "FileSystemWriteAskForUrls": {
+            "title": "Allow write access to files and directories on these sites",
+            "description": "(FileSystemWriteAskForUrls)-Setting the policy lets you list the URL patterns that specify which sites can ask users to grant them write access to files or directories in the host operating system's file system. Leaving the policy unset means DefaultFileSystemWriteGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns must not conflict with FileSystemWriteBlockedForUrls. Neither policy takes precedence if a URL matches with both",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=FileSystemWriteAskForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "FileSystemWriteBlockedForUrls": {
+            "title": "Block write access to files and directories on these sites",
+            "description": "(FileSystemWriteBlockedForUrls)-Setting the policy lets you list the URL patterns that specify which sites can't ask users to grant them write access to files or directories in the host operating system's file system. Leaving the policy unset means DefaultFileSystemWriteGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns can't conflict with FileSystemWriteAskForUrls. Neither policy takes precedence if a URL matches with both",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=FileSystemWriteBlockedForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
         "ImagesAllowedForUrls": {
             "title": "Allow images on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to display images",
-            "property_order": 15,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImagesAllowedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -368,7 +624,12 @@
         "ImagesBlockedForUrls": {
             "title": "Block images on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to display images",
-            "property_order": 16,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ImagesBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -386,7 +647,12 @@
         "InsecureContentAllowedForUrls": {
             "title": "Allow insecure content on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to display blockable (i.e. active) mixed content (i.e. HTTP content on HTTPS sites) and for which optionally blockable mixed content upgrades will be disabled",
-            "property_order": 17,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=InsecureContentAllowedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -410,7 +676,12 @@
         "InsecureContentBlockedForUrls": {
             "title": "Block insecure content on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to display blockable (i.e. active) mixed content (i.e. HTTP content on HTTPS sites), and for which optionally blockable (i.e. passive) mixed content will be upgraded",
-            "property_order": 18,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=InsecureContentBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -434,7 +705,12 @@
         "JavaScriptAllowedForUrls": {
             "title": "Allow JavaScript on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to run JavaScript",
-            "property_order": 19,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=JavaScriptAllowedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -458,7 +734,12 @@
         "JavaScriptBlockedForUrls": {
             "title": "lock JavaScript on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to run JavaScript.",
-            "property_order": 20,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=JavaScriptBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -482,7 +763,12 @@
         "LegacySameSiteCookieBehaviorEnabled": {
             "title": "Default legacy SameSite cookie behavior setting",
             "description": "llows you to revert all cookies to legacy SameSite behavior. Reverting to legacy behavior causes cookies that don't specify a SameSite attribute to be treated as if they were SameSite=None, and removes the requirement for SameSite=None cookies to carry the Secure attribute. See https://www.chromium.org/administrators/policy-list-3/cookie-legacy-samesite-policies for full description. 1 = Revert to legacy SameSite behavior for cookies on all sites 2 = Use SameSite-by-default behavior for cookies on all sites",
-            "property_order": 20,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=LegacySameSiteCookieBehaviorEnabled"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -506,7 +792,12 @@
         "LegacySameSiteCookieBehaviorEnabledForDomainList": {
             "title": "Revert to legacy SameSite behavior for cookies on these sites",
             "description": "Cookies set for domains matching these patterns will revert to legacy SameSite behavior.",
-            "property_order": 20,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=LegacySameSiteCookieBehaviorEnabledForDomainList"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -530,7 +821,12 @@
         "NotificationsAllowedForUrls": {
             "title": "Allow notifications on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to display notifications.",
-            "property_order": 20,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NotificationsAllowedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -554,7 +850,12 @@
         "NotificationsBlockedForUrls": {
             "title": "Block notifications on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to display notifications.",
-            "property_order": 20,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NotificationsBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -576,9 +877,8 @@
             ]
         },
         "PluginsAllowedForUrls": {
-            "title": "Allow the Flash plugin on these sites",
+            "title": "Allow the Flash plugin on these sites (Deprecated)",
             "description": "Allows you to set a list of url patterns that specify sites which are allowed to run the Flash plugin.",
-            "property_order": 20,
             "anyOf": [
                 {
                     "type": "null",
@@ -595,10 +895,44 @@
                 }
             ]
         },
+        "PopupsAllowedForUrls": {
+            "title": "Allow popups on these sites",
+            "description": "Allows you to set a list of url patterns that specify sites which are allowed to open popups",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PopupsAllowedForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern",
+                        "options": {
+                            "inputAttributes": {
+                                "placeholder": "[*.]example.com"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
         "PopupsBlockedForUrls": {
             "title": "Block popups on these sites",
             "description": "Allows you to set a list of url patterns that specify sites which are not allowed to open popups",
-            "property_order": 21,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PopupsBlockedForUrls"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -623,7 +957,12 @@
             "type": "array",
             "title": "Register protocol handlers",
             "description": "Allows you to register a list of protocol handlers. This can only be a recommended policy. The property 'protocol' should be set to the scheme such as 'mailto' and the property 'url' should be set to the URL pattern of the application that handles the scheme. The pattern can include a '%s', which if present will be replaced by the handled URL",
-            "property_order": 22,
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RegisteredProtocolHandlers"
+                }
+            ],
             "items": {
                 "type": "object",
                 "title": "Protocol Handler Preference",
@@ -656,10 +995,63 @@
             }
         }
     },
+    "SerialAskForUrls": {
+        "title": "Allow the Serial API on these sites",
+        "description": "(SerialAskForUrls)-Setting the policy lets you list the URL patterns that specify which sites can ask users to grant them access to a serial port. Leaving the policy unset means DefaultSerialGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. For URL patterns which do not match the policy SerialBlockedForUrls (if there is a match), DefaultSerialGuardSetting (if set), or the users' personal settings take precedence, in that order. URL patterns must not conflict with SerialBlockedForUrls. Neither policy takes precedence if a URL matches with both",
+        "links": [
+            {
+                "rel": "Documentation Link",
+                "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SerialAskForUrls"
+            }
+        ],
+        "anyOf": [
+            {
+                "type": "null",
+                "title": "Not Configured"
+            },
+            {
+                "title": "Configured",
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "title": "URL Pattern"
+                }
+            }
+        ]
+    },
+    "SerialBlockedForUrls": {
+        "title": "Block the Serial API on these sites",
+        "description": "(SerialBlockedForUrls)-Setting the policy lets you list the URL patterns that specify which sites can't ask users to grant them access to a serial port. Leaving the policy unset means DefaultSerialGuardSetting applies for all sites, if it's set. If not, the user's personal setting applies. For URL patterns which do not match the policy SerialAskForUrls (if there is a match), DefaultSerialGuardSetting (if set), or the users' personal settings take precedence, in that order. URL patterns can't conflict with SerialAskForUrls. Neither policy takes precedence if a URL matches with both",
+        "links": [
+            {
+                "rel": "Documentation Link",
+                "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SerialBlockedForUrls"
+            }
+        ],
+        "anyOf": [
+            {
+                "type": "null",
+                "title": "Not Configured"
+            },
+            {
+                "title": "Configured",
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "title": "URL Pattern"
+                }
+            }
+        ]
+    },
     "WebUsbAllowDevicesForUrls": {
         "type": "object",
         "title": "Automatically grant permission to these sites to connect to USB devices with the given vendor and product IDs",
-        "property_order": 23,
+        "links": [
+            {
+                "rel": "Documentation Link",
+                "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbAllowDevicesForUrls"
+            }
+        ],
         "anyOf": [
             {
                 "type": "null",
@@ -697,7 +1089,12 @@
     "WebUsbAskForUrls": {
         "title": "Allow WebUSB on these sites",
         "description": "Allows you to set a list of url patterns that specify sites which are allowed to ask the user to grant them access to a USB device",
-        "property_order": 24,
+        "links": [
+            {
+                "rel": "Documentation Link",
+                "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbAskForUrls"
+            }
+        ],
         "anyOf": [
             {
                 "type": "null",
@@ -715,7 +1112,12 @@
     "WebUsbBlockedForUrls": {
         "title": "Block WebUSB on these sites",
         "description": "Allows you to set a list of url patterns that specify sites which are prevented from asking the user to grant them access to a USB device",
-        "property_order": 25,
+        "links": [
+            {
+                "rel": "Documentation Link",
+                "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbBlockedForUrls"
+            }
+        ],
         "anyOf": [
             {
                 "type": "null",
