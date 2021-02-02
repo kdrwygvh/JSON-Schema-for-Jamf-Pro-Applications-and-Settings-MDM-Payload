@@ -1,0 +1,204 @@
+{
+    "title": "Microsoft Edge HTTP Authentication Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.Edge",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#default-search-provider"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AllowCrossOriginAuthPrompt": {
+            "title": "AllowCrossOriginAuthPrompt - Allow cross-origin HTTP Authentication prompts",
+            "description": "Controls whether third-party images on a page can show an authentication prompt.\n\nTypically, this is disabled as a phishing defense. If you don't configure this policy, it's disabled and third-party images can't show an authentication prompt.",
+            "property_order": 20,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "AllowCrossOriginAuthPrompt"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#allowcrossoriginauthprompt"
+                }
+            ]
+        },
+        "AuthNegotiateDelegateAllowlist": {
+            "title": "AuthNegotiateDelegateAllowlist - Specifies a list of servers that Microsoft Edge can delegate user credentials to",
+            "description": "Configure the list of servers that Microsoft Edge can delegate to.\n\nSeparate multiple server names with commas. Wildcards (*) are allowed.\n\nIf you don't configure this policy Microsoft Edge won't delegate user credentials even if a server is detected as Intranet.",
+            "property_order": 85,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "AuthNegotiateDelegateAllowlist"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#authnegotiatedelegateallowlist"
+                }
+            ]
+        },
+        "AuthSchemes": {
+            "title": "AuthSchemes - Supported authentication schemes",
+            "description": "Specifies which HTTP authentication schemes are supported.\n\nYou can configure the policy by using these values: 'basic', 'digest', 'ntlm', and 'negotiate'. Separate multiple values with commas.\n\nIf you don't configure this policy, all four schemes are used.",
+            "property_order": 90,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "AuthSchemes"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#authschemes"
+                }
+            ]
+        },
+        "AuthServerAllowlist": {
+            "title": "AuthServerAllowlist - Configure list of allowed authentication servers",
+            "description": "Specifies which servers to enable for integrated authentication. Integrated authentication is only enabled when Microsoft Edge receives an authentication challenge from a proxy or from a server in this list.\n\nSeparate multiple server names with commas. Wildcards (*) are allowed.\n\nIf you don't configure this policy, Microsoft Edge tries to detect if a server is on the intranet - only then will it respond to IWA requests. If the server is on the internet, IWA requests from it are ignored by Microsoft Edge.",
+            "property_order": 95,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "AuthServerAllowlist"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#authserverallowlist"
+                }
+            ]
+        },
+        "BasicAuthOverHttpEnabled": {
+            "title": "BasicAuthOverHttpEnabled - Allow Basic authentication for HTTP",
+            "description": "If you enable this policy or leave it unset, Basic authentication challenges received over non-secure HTTP will be allowed.\n\nIf you disable this policy,  non-secure HTTP requests from the Basic authentication scheme are blocked, and only secure HTTPS is allowed.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "BasicAuthOverHttpEnabled"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#basicauthoverhttpenabled"
+                }
+            ]
+        },
+        "DisableAuthNegotiateCnameLookup": {
+            "title": "DisableAuthNegotiateCnameLookup - Disable CNAME lookup when negotiating Kerberos authentication",
+            "description": "Determines whether the generated Kerberos SPN is based on the canonical DNS name (CNAME) or on the original name entered.\n\nIf you enable this policy, CNAME lookup is skipped and the server name (as entered) is used.\n\nIf you disable this policy or don't configure it, the canonical name of the server is used.  This is determined through CNAME lookup.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "DisableAuthNegotiateCnameLookup"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#disableauthnegotiatecnamelookup"
+                }
+            ]
+        },
+        "EnableAuthNegotiatePort": {
+            "title": "EnableAuthNegotiatePort - Include non-standard port in Kerberos SPN",
+            "description": "Specifies whether the generated Kerberos SPN should include a non-standard port.\n\nIf you enable this policy, and a user includes a non-standard port (a port other than 80 or 443) in a URL, that port is included in the generated Kerberos SPN.\n\nIf you don't configure or disable this policy, the generated Kerberos SPN won't include a port in any case.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "EnableAuthNegotiatePort"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#enableauthnegotiateport"
+                }
+            ]
+        },
+        "NtlmV2Enabled": {
+            "title": "NtlmV2Enabled - Control whether NTLMv2 authentication is enabled",
+            "description": "Controls whether NTLMv2 is enabled.\n\nAll recent versions of Samba and Windows servers support NTLMv2. You should only disable NTLMv2 to address issues with backwards compatibility as it reduces the security of authentication.\n\nIf you don't configure this policy, NTLMv2 is enabled by default.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "NtlmV2Enabled"
+            },
+            "links": [
+                {
+                    "rel": "Documentation for Policy",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#ntlmv2enabled"
+                }
+            ]
+        }
+    }
+}

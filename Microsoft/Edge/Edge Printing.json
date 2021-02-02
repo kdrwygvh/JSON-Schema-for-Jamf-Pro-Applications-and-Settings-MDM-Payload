@@ -1,0 +1,154 @@
+{
+    "title": "Microsoft Edge Printing Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.Edge",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#printing"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "DefaultPrinterSelection": {
+            "title": "DefaultPrinterSelection - Default printer selection rules",
+            "description": "Overrides Microsoft Edge default printer selection rules. This policy determines the rules for selecting the default printer in Microsoft Edge, which happens the first time a user tries to print a page.\n\nWhen this policy is set, Microsoft Edge tries to find a printer that matches all of the specified attributes and uses it as default printer. If there are multiple printers that meet the criteria, the first printer that matches is used.\n\nIf you don't configure this policy or no matching printers are found within the timeout, the printer defaults to the built-in PDF printer or no printer, if the PDF printer isn't available.\n\nThe value is parsed as a JSON object, conforming to the following schema: { \"type\": \"object\", \"properties\": { \"idPattern\": { \"description\": \"Regular expression to match printer id.\", \"type\": \"string\" }, \"namePattern\": { \"description\": \"Regular expression to match printer display name.\", \"type\": \"string\" } } }\n\nOmitting a field means all values match; for example, if you don't specify connectivity Print Preview starts discovering all kinds of local printers. Regular expression patterns must follow the JavaScript RegExp syntax and matches are case sensitive.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "DefaultPrinterSelection"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultprinterselection"
+                }
+            ]
+        },
+        "PrintHeaderFooter": {
+            "title": "PrintHeaderFooter - Print headers and footers",
+            "description": "Force 'headers and footers' to be on or off in the printing dialog.\n\nIf you don't configure this policy, users can decide whether to print headers and footers.\n\nIf you disable this policy, users can't print headers and footers.\n\nIf you enable this policy, users always print headers and footers.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "PrintHeaderFooter"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#printheaderfooter"
+                }
+            ]
+        },
+        "PrintPreviewUseSystemDefaultPrinter": {
+            "title": "PrintPreviewUseSystemDefaultPrinter - Set the system default printer as the default printer",
+            "description": "Tells Microsoft Edge to use the system default printer as the default choice in Print Preview instead of the most recently used printer.\n\nIf you disable this policy or don't configure it, Print Preview uses the most recently used printer as the default destination choice.\n\nIf you enable this policy, Print Preview uses the OS system default printer as the default destination choice.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "PrintPreviewUseSystemDefaultPrinter"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#printpreviewusesystemdefaultprinter"
+                }
+            ]
+        },
+        "PrinterTypeDenyList": {
+            "title": "PrinterTypeDenyList - Disable printer types on the deny list",
+            "description": "The printer types on the deny list won't be discovered or have their capabilities fetched.\n\nPlacing all printer types on the deny list effectively disables printing, because there's no print destination for documents.\n\nIf you don't configure this policy, or the printer list is empty, all printer types are discoverable.\n\nPrinter destinations include extension printers and local printers. Extension printers are also known as print provider destinations, and include any destination that belongs to a Microsoft Edge extension.\nLocal printers are also known as native printing destinations, and include destinations available to the local machine and shared network printers.\n\nPolicy options mapping:\n\n* privet (privet) = Zeroconf-based (mDNS + DNS-SD) protocol destinations\n\n* extension (extension) = Extension-based destinations\n\n* pdf (pdf) = The 'Save as PDF' destination\n\n* local (local) = Local printer destinations\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "PrinterTypeDenyList"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#printertypedenylist"
+                }
+            ]
+        },
+        "PrintingEnabled": {
+            "title": "PrintingEnabled - Enable printing",
+            "description": "Enables printing in Microsoft Edge and prevents users from changing this setting.\n\nIf you enable this policy or don't configure it, users can print.\n\nIf you disable this policy, users can't print from Microsoft Edge. Printing is disabled in the wrench menu, extensions, JavaScript applications, and so on. Users can still print from plug-ins that bypass Microsoft Edge while printing. For example, certain Adobe Flash applications have the print option in their context menu, which isn't covered by this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "PrintingEnabled"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled"
+                }
+            ]
+        },
+        "PrintingPaperSizeDefault": {
+            "title": "PrintingPaperSizeDefault - not configurable in UI, please craft plist",
+            "description": "Overrides default printing page size.\n\nname should contain one of the listed formats or 'custom' if required paper size is not in the list. If 'custom' value is provided custom_size property should be specified. It describes the desired height and width in micrometers. Otherwise custom_size property shouldn't be specified. Policy that violates these rules is ignored.\n\nIf the page size is unavailable on the printer chosen by the user this policy is ignored.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                }
+            ],
+            "options": {
+                "infoText": "PrintingPaperSizeDefault"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingpapersizedefault"
+                }
+            ]
+        }
+    }
+}

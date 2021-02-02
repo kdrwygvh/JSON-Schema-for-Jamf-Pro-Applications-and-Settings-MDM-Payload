@@ -21,7 +21,7 @@
             },
             "links": [
                 {
-                    "rel": "Documentation for Policy",
+                    "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#enablemediarouter"
                 }
             ]
@@ -44,7 +44,7 @@
             },
             "links": [
                 {
-                    "rel": "Documentation for Policy",
+                    "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#showcasticonintoolbar"
                 }
             ]

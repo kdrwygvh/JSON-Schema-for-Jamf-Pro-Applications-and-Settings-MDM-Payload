@@ -1,0 +1,336 @@
+{
+    "title": "Microsoft Edge Startup, Homepage, and New Tab Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.Edge",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#startup-home-page-and-new-tab-page"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "HomepageIsNewTabPage": {
+            "title": "HomepageIsNewTabPage - Set the new tab page as the home page",
+            "description": "Configures the default home page in Microsoft Edge. You can set the home page to a URL you specify or to the new tab page.\n\nIf you enable this policy, the new tab page is always used for the home page, and the home page URL location is ignored.\n\nIf you disable this policy, the user's home page can't be the new tab page, unless the URL is set to 'edge://newtab'.\n\nIf not configured users can choose whether the new tab page is their home page.\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "HomepageIsNewTabPage"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage"
+                }
+            ]
+        },
+        "HomepageLocation": {
+            "title": "HomepageLocation - Configure the home page URL",
+            "description": "Configures the default home page URL in Microsoft Edge.\n\nThe home page is the page opened by the Home button. The pages that open on startup are controlled by the \"RestoreOnStartup\" policies.\n\nYou can either set a URL here or set the home page to open the new tab page. If you select to open the new tab page, then this policy doesn't take effect.\n\nIf you enable this policy, users can't change their home page URL, but they can choose to use the new tab page as their home page.\n\nIf you disable or don't configure this policy, users can choose their own home page, as long as the \"HomepageIsNewTabPage\" policy isn't enabled.\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "HomepageLocation"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepagelocation"
+                }
+            ]
+        },
+        "NewTabPageAllowedBackgroundTypes": {
+            "title": "NewTabPageAllowedBackgroundTypes - Configure the background types allowed for the new tab page layout",
+            "description": "You can configure which types of background image that are allowed on the new tab page layout in Microsoft Edge.\n\nIf you don't configure this policy, all background image types on the new tab page are enabled.\n\nPolicy options mapping:\n\n* DisableImageOfTheDay (1) = Disable daily background image type\n\n* DisableCustomImage (2) = Disable custom background image type\n\n* DisableAll (3) = Disable all background image types\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "DisableImageOfTheDay - Disable daily background image type",
+                            "DisableCustomImage - Disable custom background image type",
+                            "DisableAll - Disable all background image types"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageAllowedBackgroundTypes"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpageallowedbackgroundtypes"
+                }
+            ]
+        },
+        "NewTabPageHideDefaultTopSites": {
+            "title": "NewTabPageHideDefaultTopSites - Hide the default top sites from the new tab page",
+            "description": "Hides the default top sites from the new tab page in Microsoft Edge.\n\nIf you set this policy to true, the default top site tiles are hidden.\n\nIf you set this policy to false or don't configure it, the default top site tiles remain visible.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageHideDefaultTopSites"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagehidedefaulttopsites"
+                }
+            ]
+        },
+        "NewTabPageLocation": {
+            "title": "NewTabPageLocation - Configure the new tab page URL",
+            "description": "Configures the default URL for the new tab page.\n\nThe recommended version of this policy does not currently work and functions exactly like the mandatory version.\n\nThis policy determines the page that's opened when new tabs are created (including when new windows are opened). It also affects the startup page if that's set to open to the new tab page.\n\nThis policy doesn't determine which page opens on startup; that's controlled by the \"RestoreOnStartup\" policy. It also doesn't affect the home page if that's set to open to the new tab page.\n\nIf you don't configure this policy, the default new tab page is used.\n\nIf you configure this policy *and* the \"NewTabPageSetFeedType\" policy, this policy has precedence.\n\nIf an invalid URL is provided, new tabs will open about://blank.\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageLocation"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagelocation"
+                }
+            ]
+        },
+        "NewTabPageManagedQuickLinks": {
+            "title": "NewTabPageManagedQuickLinks - not configurable in UI, please craft plist",
+            "description": "By default, Microsoft Edge displays quick links on the new tab page from user-added shortcuts and top sites based on browsing history. With this policy, you can configure up to three quick link tiles on the new tab page, expressed as a JSON object:\n\n[ { \"url\": \"https://www.contoso.com\", \"title\": \"Contoso Portal\", \"pinned\": true/false }, ... ]\n\nThe 'url' field is required; 'title' and 'pinned' are optional. If 'title' is not provided, the URL is used as the default title. If 'pinned' is not provided, the default value is false.\n\nMicrosoft Edge presents these in the order listed, from left to right, with all pinned tiles displayed ahead of non-pinned tiles.\n\nIf the policy is set as mandatory, the 'pinned' field will be ignored and all tiles will be pinned. The tiles can't be deleted by the user and will always appear at the front of the quick links list.\n\nIf the policy is set as recommended, pinned tiles will remain in the list but the user has the ability to edit and delete them. Quick link tiles that aren't pinned behave like default top sites and are pushed off the list if other websites are visited more frequently. When applying non-pinned links via this policy to an existing browser profile, the links may not appear at all, depending on how they rank compared to the user's browsing history.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageManagedQuickLinks"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagemanagedquicklinks"
+                }
+            ]
+        },
+        "NewTabPagePrerenderEnabled": {
+            "title": "NewTabPagePrerenderEnabled - Enable preload of the new tab page for faster rendering",
+            "description": "If you configure this policy, preloading the New tab page is enabled, and users can't change this setting. If you don't configure this policy, preloading is enabled and a user can change this setting.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPagePrerenderEnabled"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpageprerenderenabled"
+                }
+            ]
+        },
+        "NewTabPageSearchBox": {
+            "title": "NewTabPageSearchBox - Configure the new tab page search box experience",
+            "description": "You can configure the new tab page search box to use \"Search box (Recommended)\" or \"Address bar\" to search on new tabs. This policy only works if you set the search engine to a value other than Bing by setting the following two policies: \"DefaultSearchProviderEnabled\" and \"DefaultSearchProviderSearchURL\".\n\n If you disable or don't configure this policy and:\n\n- If the address bar default search engine is Bing, the new tab page uses the search box to search on new tabs.\n- If the address bar default search engine is not Bing, users are offered an additional choice (use \"Address bar\") when searching on new tabs.\n\n\nIf you enable this policy and set it to:\n\n- \"Search box (Recommended)\" ('bing'), the new tab page uses the search box to search on new tabs.\n- \"Address bar\" ('redirect'), the new tab page search box uses the address bar to search on new tabs.\n\nPolicy options mapping:\n\n* bing (bing) = Search box (Recommended)\n\n* redirect (redirect) = Address bar\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "bing - Search box (Recommended)",
+                            "redirect - Address bar"
+                        ]
+                    },
+                    "enum": [
+                        "bing",
+                        "redirect"
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageSearchBox"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagesearchbox"
+                }
+            ]
+        },
+        "NewTabPageSetFeedType": {
+            "title": "NewTabPageSetFeedType - Configure the Microsoft Edge new tab page experience",
+            "description": "We are deprecating this policy because the new version of the enterprise new tab page no longer requires choosing between different content types. Instead, the content that is presented to the user can be controlled via the Microsoft 365 admin center. To get to the Microsoft 365 admin center, sign in at https://admin.microsoft.com with your admin account. The policy will be made obsolete after Microsoft Edge version 90.\n\nLets you choose either the Microsoft News or Office 365 feed experience for the new tab page.\n\nWhen you set this policy to 'News', users will see the Microsoft News feed experience on the new tab page.\n\nWhen you set this policy to 'Office', users with an Azure Active Directory browser sign-in will see the Office 365 feed experience on the new tab page.\n\nIf you disable or don't configure this policy:\n\n- Users with an Azure Active Directory browser sign-in are offered the Office 365 new tab page feed experience, as well as the standard new tab page feed experience.\n\n- Users without an Azure Active Directory browser sign-in will see the standard new tab page experience.\n\nIf you configure this policy *and* the \"NewTabPageLocation\" policy, \"NewTabPageLocation\" has precedence.\n\nDefault setting:  Disabled or not configured.\n\nPolicy options mapping:\n\n* News (0) = Microsoft News feed experience\n\n* Office (1) = Office 365 feed experience\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "News - Microsoft News feed experience",
+                            "Office - Office 365 feed experience"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "NewTabPageSetFeedType"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#newtabpagesetfeedtype"
+                }
+            ]
+        },
+        "RestoreOnStartup": {
+            "title": "RestoreOnStartup - Action to take on startup",
+            "description": "Specify how Microsoft Edge behaves when it starts.\n\nIf you want a new tab to always open on startup, choose 'RestoreOnStartupIsNewTabPage'.\n\nIf you want to reopen URLs that were open the last time Microsoft Edge closed, choose 'RestoreOnStartupIsLastSession'. The browsing session will be restored as it was. Note that this option disables some settings that rely on sessions or that perform actions on exit (such as Clear browsing data on exit or session-only cookies).\n\nIf you want to open a specific set of URLs, choose 'RestoreOnStartupIsURLs'.\n\nDisabling this setting is equivalent to leaving it not configured. Users will be able to change it in Microsoft Edge.\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.\n\nPolicy options mapping:\n\n* RestoreOnStartupIsNewTabPage (5) = Open a new tab\n\n* RestoreOnStartupIsLastSession (1) = Restore the last session\n\n* RestoreOnStartupIsURLs (4) = Open a list of URLs\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "RestoreOnStartupIsLastSession - Restore the last session",
+                            "RestoreOnStartupIsURLs - Open a list of URLs",
+                            "RestoreOnStartupIsNewTabPage - Open a new tab"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        4,
+                        5
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "RestoreOnStartup"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#restoreonstartup"
+                }
+            ]
+        },
+        "RestoreOnStartupURLs": {
+            "title": "RestoreOnStartupURLs - Sites to open when the browser starts",
+            "description": "Specify a list of websites to open automatically when the browser starts. If you don't configure this policy, no site is opened on startup.\n\nThis policy only works if you also set the \"RestoreOnStartup\" policy to 'Open a list of URLs' (4).\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Entries"
+                    }
+                }
+            ],
+            "options": {
+                "infoText": "RestoreOnStartupURLs"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#restoreonstartupurls"
+                }
+            ]
+        },
+        "ShowHomeButton": {
+            "title": "ShowHomeButton - Show Home button on toolbar",
+            "description": "Shows the Home button on Microsoft Edge's toolbar.\n\nEnable this policy to always show the Home button. Disable it to never show the button.\n\nIf you don't configure the policy, users can choose whether to show the home button.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ],
+            "options": {
+                "infoText": "ShowHomeButton"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#showhomebutton"
+                }
+            ]
+        }
+    }
+}

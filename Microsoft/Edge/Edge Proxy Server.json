@@ -1,0 +1,143 @@
+{
+    "title": "Microsoft Edge Proxy Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.Edge",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#proxy-server"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "ProxyBypassList": {
+            "title": "ProxyBypassList - Configure proxy bypass rules",
+            "description": "This policy is deprecated, use \"ProxySettings\" instead. It won't work in Microsoft Edge version 91.\n\nDefines a list of hosts for which Microsoft Edge bypasses any proxy.\n\nThis policy is applied only if the \"ProxySettings\" policy isn't specified and you have selected fixed_servers in the \"ProxyMode\" policy. If you selected any other mode for configuring proxy policies, don't enable or configure this policy.\n\nIf you enable this policy, you can create a list of hosts for which Microsoft Edge doesn't use a proxy.\n\nIf you don't configure this policy, no list of hosts is created for which Microsoft Edge bypasses a proxy. Leave this policy unconfigured if you've specified any other method for setting proxy policies.\n\nFor more detailed examples go to https://go.microsoft.com/fwlink/?linkid=2094936.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "ProxyBypassList"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#proxybypasslist"
+                }
+            ]
+        },
+        "ProxyMode": {
+            "title": "ProxyMode - Configure proxy server settings",
+            "description": "This policy is deprecated, use \"ProxySettings\" instead. It won't work in Microsoft Edge version 91.\n\nIf you set this policy to Enabled you can specify the proxy server Microsoft Edge uses and prevents users from changing proxy settings. Microsoft Edge ignores all proxy-related options specified from the command line. The policy is only applied if the \"ProxySettings\" policy isn't specified.\n\nOther options are ignored if you choose one of the following options:\n  * direct = Never use a proxy server and always connect directly\n  * system = Use system proxy settings\n  * auto_detect = Auto detect the proxy server\n\nIf you choose to use:\n  * fixed_servers = Fixed proxy servers. You can specify further options with \"ProxyServer\" and \"ProxyBypassList\".\n  * pac_script =  A .pac proxy script. Use \"ProxyPacUrl\" to set the URL to a proxy .pac file.\n\nFor detailed examples, go to https://go.microsoft.com/fwlink/?linkid=2094936.\n\nIf you don't configure this policy, users can choose their own proxy settings.\n\nPolicy options mapping:\n\n* ProxyDisabled (direct) = Never use a proxy\n\n* ProxyAutoDetect (auto_detect) = Auto detect proxy settings\n\n* ProxyPacScript (pac_script) = Use a .pac proxy script\n\n* ProxyFixedServers (fixed_servers) = Use fixed proxy servers\n\n* ProxyUseSystem (system) = Use system proxy settings\n\nUse the preceding information when configuring this policy.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "ProxyAutoDetect - Auto detect proxy settings",
+                            "ProxyDisabled - Never use a proxy",
+                            "ProxyFixedServers - Use fixed proxy servers",
+                            "ProxyPacScript - Use a .pac proxy script",
+                            "ProxyUseSystem - Use system proxy settings"
+                        ]
+                    },
+                    "enum": [
+                        "auto_detect",
+                        "direct",
+                        "fixed_servers",
+                        "pac_script",
+                        "system"
+                    ]
+                }
+            ],
+            "options": {
+                "infoText": "ProxyMode"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#proxymode"
+                }
+            ]
+        },
+        "ProxyPacUrl": {
+            "title": "ProxyPacUrl - Set the proxy .pac file URL",
+            "description": "This policy is deprecated, use \"ProxySettings\" instead. It won't work in Microsoft Edge version 91.\n\nSpecifies the URL for a proxy auto-config (PAC) file.\n\nThis policy is applied only if the \"ProxySettings\" policy isn't specified and you have selected pac_script in the \"ProxyMode\" policy. If you selected any other mode for configuring proxy policies, don't enable or configure this policy.\n\nIf you enable this policy, you can specify the URL for a PAC file, which defines how the browser automatically chooses the appropriate proxy server for fetching a particular website.\n\nIf you disable or don't configure this policy, no PAC file is specified. Leave this policy unconfigured if you've specified any other method for setting proxy policies.\n\nFor detailed examples, see https://go.microsoft.com/fwlink/?linkid=2094936.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "ProxyPacUrl"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#proxypacurl"
+                }
+            ]
+        },
+        "ProxyServer": {
+            "title": "ProxyServer - Configure address or URL of proxy server",
+            "description": "This policy is deprecated, use \"ProxySettings\" instead. It won't work in Microsoft Edge version 91.\n\nSpecifies the URL of the proxy server.\n\nThis policy is applied only if the \"ProxySettings\" policy isn't specified and you have selected fixed_servers in the \"ProxyMode\" policy. If you selected any other mode for configuring proxy policies, don't enable or configure this policy.\n\nIf you enable this policy, the proxy server configured by this policy will be used for all URLs.\n\nIf you disable or don't configure this policy, users can choose their own proxy settings while in this proxy mode. Leave this policy unconfigured if you've specified any other method for setting proxy policies.\n\nFor more options and detailed examples, see https://go.microsoft.com/fwlink/?linkid=2094936.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ],
+            "options": {
+                "infoText": "ProxyServer"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#proxyserver"
+                }
+            ]
+        },
+        "ProxySettings": {
+            "title": "ProxySettings - not configurable in UI, please craft plist",
+            "description": "Configures the proxy settings for Microsoft Edge.\n\nIf you enable this policy, Microsoft Edge ignores all proxy-related options specified from the command line.\n\nIf you don't configure this policy, users can choose their own proxy settings.\n\nThis policy overrides the following individual policies:\n\n\"ProxyMode\"\n\"ProxyPacUrl\"\n\"ProxyServer\"\n\"ProxyBypassList\"\n\nSetting the \"ProxySettings\" policy accepts the following fields:\n  * ProxyMode, which lets you specify the proxy server used by Microsoft Edge and prevents users from changing proxy settings\n  * ProxyPacUrl, a URL to a proxy .pac file\n  * ProxyServer, a URL for the proxy server\n  * ProxyBypassList, a list of proxy hosts that Microsoft Edge bypasses\n\nFor ProxyMode, if you choose the value:\n  * direct, a proxy is never used and all other fields are ignored.\n  * system, the systems's proxy is used and all other fields are ignored.\n  * auto_detect, all other fields are ignored.\n  * fixed_server, the ProxyServer and ProxyBypassList fields are used.\n  * pac_script, the ProxyPacUrl and ProxyBypassList fields are used.\n\nFor more detailed examples go to https://go.microsoft.com/fwlink/?linkid=2094936.",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                }
+            ],
+            "options": {
+                "infoText": "ProxySettings"
+            },
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#proxysettings"
+                }
+            ]
+        }
+    }
+}
