@@ -19,26 +19,44 @@
                             "type": "boolean"
                         }
                     ]
+                },
+                "MenubarIcon": {
+                    "title": "Menu Bar Icon (Light Mode)",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/icon.png"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "MenubarIconDark": {
+                    "title": "Menu Bar Icon (Dark Mode)",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/icondark.png"
+                                }
+                            }
+                        }
+                    ]
                 }
             }
-        },
-        "HiddenMenuItems": {
-            "title": "Hidden Menu Items",
-            "description": "Items that can be hidden: About, Actions, ChangePassword, GetHelp, GetSoftware, HomeDirectory, KerberosTickets, LastUser, PasswordExpiration, Preferences, ResetPassword, Shares, Connect, Quit",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "title": "Hidden Item"
-                    }
-                }
-            ]
         }
     }
 }
