@@ -81,6 +81,25 @@
                             "title": "Target Version Prefix",
                             "description": "Set the version of Chrome to pin to (ex. 80.)",
                             "type": "string"
+                        },
+                        "RollbackToTargetVersion": {
+                            "title": "Allow Rollback to Target Version",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "links": [
+                                        {
+                                            "rel": "Documentation Link",
+                                            "href": "https://support.google.com/chrome/a/answer/7591084?hl=en#zippy=%2Cschedule-auto-updates-outside-work-hours%2Cset-app-specific-policies%2Cpin-chrome-browser-updates-to-a-specific-version%2Croll-back-chrome-browser-to-a-previous-version"
+                                        }
+                                    ],
+                                    "type": "boolean"
+                                }
+                            ]
                         }
                     }
                 },
