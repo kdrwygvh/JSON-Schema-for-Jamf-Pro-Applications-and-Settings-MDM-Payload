@@ -1,0 +1,67 @@
+{
+    "title": "Jamf Azure Active Directory Retry Count Settings",
+    "description": "Customizes the Retry Count and Retry Wait Time Settings for clients enrolled in Jamf and registered in Microsoft InTune",
+    "__version": "1.0",
+    "__preferencedomain": "com.jamf.management.jamfAAD",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://www.jamf.com/jamf-nation/articles/790/customizing-the-jamfaad-retry-logic-for-the-microsoft-authentication-library-token-authentication"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "tokenRetryCount": {
+            "title": "Token Retry Count",
+            "description": "(tokenRetryCount)-the interval in hours between token retries",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "8",
+                            "9",
+                            "10"
+                        ]
+                    },
+                    "enum": [
+                        8,
+                        9,
+                        10
+                    ]
+                }
+            ]
+        },
+        "tokenRetryWaitTime": {
+            "title": "Token Retry Wait Time",
+            "description": "(tokenRetryWaitTime)-The number of seconds between token retries",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "1800",
+                            "3600"
+                        ]
+                    },
+                    "enum": [
+                        1800,
+                        3600
+                    ]
+                }
+            ]
+        }
+    }
+}
