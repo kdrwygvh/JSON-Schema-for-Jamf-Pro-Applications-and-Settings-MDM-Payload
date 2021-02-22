@@ -1,7 +1,17 @@
 {
     "title": "Menu Bar Script Settings",
-    "description": "Used to run custom scripts that are triggered by Jamf Connect authentication events",
+    "description": "Jamf Connect 2.x Menu Bar Script Settings",
+    "__version": "1.0",
     "__preferencedomain": "com.jamf.connect",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://docs.jamf.com/jamf-connect/2.2.1/administrator-guide/Menu_Bar_App_Preferences.html"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
     "properties": {
         "Scripting": {
             "type": "object",
@@ -9,12 +19,7 @@
             "properties": {
                 "OnPasswordChange": {
                     "title": "Password Change Script",
-                    "description": "The file path to a script or other binary to run after successful password change",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "/usr/local/bin/PasswordChange.sh"
-                        }
-                    },
+                    "description": "(OnPasswordChange)-The file path to a script or other binary to run after successful password change",
                     "anyOf": [
                         {
                             "type": "null",
@@ -22,18 +27,18 @@
                         },
                         {
                             "title": "Configured",
-                            "type": "string"
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/bin/PasswordChange.sh"
+                                }
+                            }
                         }
                     ]
                 },
                 "OnAuthSuccess": {
                     "title": "Successful Sign-in Script",
-                    "description": "The file path to a script or other binary to run after a successful Jamf Connect authentication",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "/usr/local/bin/JamfConnectAuth.sh"
-                        }
-                    },
+                    "description": "(OnAuthSuccess)-The file path to a script or other binary to run after a successful Jamf Connect authentication",
                     "anyOf": [
                         {
                             "type": "null",
@@ -41,18 +46,18 @@
                         },
                         {
                             "title": "Configured",
-                            "type": "string"
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/bin/JamfConnectAuth.sh"
+                                }
+                            }
                         }
                     ]
                 },
                 "OnAuthFailure": {
                     "title": "Failed Sign-in Script",
-                    "description": "The file path to a script or other binary to run after an unsuccessful Jamf Connect authentication attempt",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "/usr/local/bin/JamfConnectAuthFailure.sh"
-                        }
-                    },
+                    "description": "(OnAuthFailure)-The file path to a script or other binary to run after an unsuccessful Jamf Connect authentication attempt",
                     "anyOf": [
                         {
                             "type": "null",
@@ -60,18 +65,18 @@
                         },
                         {
                             "title": "Configured",
-                            "type": "string"
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/bin/JamfConnectAuthFailure.sh"
+                                }
+                            }
                         }
                     ]
                 },
                 "OnNetworkChange": {
                     "title": "Network Change Script",
-                    "description": "The file path to a script or other binary to execute after a network change is detected",
-                    "options": {
-                        "inputAttributes": {
-                            "placeholder": "/usr/local/bin/JamfConnectAuthFailure.sh"
-                        }
-                    },
+                    "description": "(OnNetworkChange)-The file path to a script or other binary to execute after a network change is detected",
                     "anyOf": [
                         {
                             "type": "null",
@@ -79,7 +84,12 @@
                         },
                         {
                             "title": "Configured",
-                            "type": "string"
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "/usr/local/bin/JamfConnectAuthFailure.sh"
+                                }
+                            }
                         }
                     ]
                 }
