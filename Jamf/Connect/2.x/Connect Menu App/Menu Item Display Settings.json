@@ -1,62 +1,57 @@
 {
     "title": "Menu Item Display Settings",
-    "description": " An array of strings used to hide Jamf Connect menu items from users",
     "__preferencedomain": "com.jamf.connect",
     "properties": {
-        "Appearance": {
-            "type": "object",
-            "title": "Appearance Settings",
-            "properties": {
-                "ShowWelcomeWindow": {
-                    "title": "Show Welcome Window on Launch",
-                    "anyOf": [
-                        {
-                            "type": "null",
-                            "title": "Not Configured"
-                        },
-                        {
-                            "title": "Configured",
-                            "type": "boolean"
-                        }
-                    ]
+        "HiddenMenuItems": {
+            "title": "Hidden Menu Items",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
                 },
-                "MenubarIcon": {
-                    "title": "Menu Bar Icon (Light Mode)",
-                    "anyOf": [
-                        {
-                            "type": "null",
-                            "title": "Not Configured"
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Hidden Menu Item",
+                        "options": {
+                            "enum_titles": [
+                                "About Menu",
+                                "Actions Menu",
+                                "Change Password Menu",
+                                "Get Help Menu",
+                                "Get Software Menu",
+                                "Network Home Directory Menu",
+                                "Kerberos Ticket Menu",
+                                "Last User Menu",
+                                "Password Expiration Menu",
+                                "Preferences Menu",
+                                "Reset Password Menu",
+                                "Shares Menu",
+                                "Connect Menu",
+                                "Quit Menu"
+                            ]
                         },
-                        {
-                            "title": "Configured",
-                            "type": "string",
-                            "options": {
-                                "inputAttributes": {
-                                    "placeholder": "/usr/local/icon.png"
-                                }
-                            }
-                        }
-                    ]
-                },
-                "MenubarIconDark": {
-                    "title": "Menu Bar Icon (Dark Mode)",
-                    "anyOf": [
-                        {
-                            "type": "null",
-                            "title": "Not Configured"
-                        },
-                        {
-                            "title": "Configured",
-                            "type": "string",
-                            "options": {
-                                "inputAttributes": {
-                                    "placeholder": "/usr/local/icondark.png"
-                                }
-                            }
-                        }
-                    ]
+                        "enum": [
+                            "about",
+                            "actions",
+                            "changepassword",
+                            "gethelp",
+                            "getsoftware",
+                            "home",
+                            "tickets",
+                            "lastuser",
+                            "passwordexpiration",
+                            "preferences",
+                            "resetpassword",
+                            "shares",
+                            "connect",
+                            "quitjamfconnect"
+                        ]
+                    }
                 }
-            }
+            ]
         }
     }
 }
