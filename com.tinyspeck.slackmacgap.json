@@ -1,0 +1,25 @@
+{
+    "title": "Slack Standalone Preferences",
+    "description": "Preferences for Managing pkg based installs of Slack",
+    "__version": "1.0",
+    "__preferencedomain": "com.tinyspeck.slackmacgap",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "SlackNoAutoUpdates": {
+            "title": "Disable Auto Updates",
+            "description": "(SlackNoAutoUpdates)-Disables Auto Updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
