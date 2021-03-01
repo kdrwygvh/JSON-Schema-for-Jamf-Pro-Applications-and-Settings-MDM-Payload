@@ -4,7 +4,7 @@
     "__preferencedomain": "com.apple.applicationaccess",
     "properties": {
         "enforcedSoftwareUpdateDelay": {
-            "title": "Number of Day to Defer Apple Software Updates",
+            "title": "Number of Days to Defer Apple Software Updates",
             "anyOf": [
                 {
                     "type": "null",
