@@ -1,0 +1,239 @@
+{
+    "title": "Google Chrome Remote Access Preferences",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "RemoteAccessHostAllowClientPairing": {
+            "title": "Enable or disable PIN-less authentication for remote access hosts",
+            "description": "(RemoteAccessHostAllowClientPairing)-Setting the policy to Enabled or leaving it unset lets users pair clients and hosts at connection time, eliminating the need to enter a PIN every time. Setting the policy to Disabled makes this feature unavailable",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowClientPairing"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostAllowFileTransfer": {
+            "title": "Allow remote access users to transfer files to/from the host",
+            "description": "(RemoteAccessHostAllowFileTransfer)-Setting the policy to Enabled or leaving it unset allows users connected to a remote access host to transfer files between the client and the host. This doesn't apply to remote assistance connections, which don't support file transfer",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowFileTransfer"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostAllowRelayedConnection": {
+            "title": "Enable the use of relay servers by the remote access host",
+            "description": "(RemoteAccessHostAllowRelayedConnection)-f RemoteAccessHostFirewallTraversal is set to Enabled, setting RemoteAccessHostAllowRelayedConnectionto Enabled or leaving it unset allows the use of remote clients to use relay servers to connect to this machine when a direct connection is not available, for example, because of firewall restrictions. Setting the policy to Disabled doesn't turn remote access off, but only allows connections from the same network (not NAT traversal or relay)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowRelayedConnection"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostAllowRemoteAccessConnections": {
+            "title": "Allow remote access connections to this machine",
+            "description": "(RemoteAccessHostAllowRemoteAccessConnections)-If this policy is disabled, the remote access host service cannot be started or configured to accept incoming connections. This policy does not affect remote support scenarios",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostAllowRemoteAccessConnections"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostClientDomainList": {
+            "title": "Configure the required domain names for remote access clients",
+            "description": "(RemoteAccessHostClientDomainList)-Setting the policy specifies the client domain names that are imposed on remote access clients, and users can't change them. Only clients from one of the specified domains can connect to the host. Setting the policy to an empty list or leaving it unset applies the default policy for the connection type. For remote assistance, this allows clients from any domain to connect to the host. For anytime remote access, only the host owner can connect",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostClientDomainList"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Remote Access Domain"
+                    }
+                }
+            ]
+        },
+        "RemoteAccessHostDomainList": {
+            "title": "Configure the required domain names for remote access hosts",
+            "description": "(RemoteAccessHostDomainList)-Setting the policy specifies the host domain names that are imposed on remote access hosts, and users can't change them. Hosts can be shared only using accounts registered on one of the specified domain names",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostDomainList"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Remote Access Host Domain"
+                    }
+                }
+            ]
+        },
+        "RemoteAccessHostFirewallTraversal": {
+            "title": "Enable firewall traversal from remote access host",
+            "description": "(RemoteAccessHostFirewallTraversal)-Setting the policy to Enabled or leaving it unset allows the usage of STUN servers, letting remote clients discover and connect to this machine, even if separated by a firewall",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostFirewallTraversal"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostMatchUsername": {
+            "title": "Require that the name of the local user and the remote access host owner match",
+            "description": "(RemoteAccessHostMatchUsername)-Setting the policy to Enabled has the remote access host compare the name of the local user the host is associated with and the name of the Google Account registered as the host owner",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostMatchUsername"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostMaximumSessionDurationMinutes": {
+            "title": "Maximum session duration allowed for remote access connections",
+            "description": "(RemoteAccessHostMaximumSessionDurationMinutes)-If this policy is set, remote access connections will automatically disconnect after the number of minutes defined in the policy have elapsed. This does not prevent the client from reconnecting after the maximum session duration has been reached. Setting the policy to a value that is not within the min/max range may prevent the host from starting. This policy does not affect remote support scenarios",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostMaximumSessionDurationMinutes"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "RemoteAccessHostRequireCurtain": {
+            "title": "Enable curtaining of remote access hosts",
+            "description": "(RemoteAccessHostRequireCurtain)-Setting the policy to Enabled turns off remote access hosts' physical input and output devices during a remote connection",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostRequireCurtain"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemoteAccessHostUdpPortRange": {
+            "title": "Restrict the UDP port range used by the remote access host",
+            "description": "(RemoteAccessHostUdpPortRange)-Setting the policy restricts the UDP port range used by the remote access host in this machine. Leaving the policy unset or set to an empty string means the remote access host can use any available port. Note: If RemoteAccessHostFirewallTraversal is Disabled, the remote access host will use UDP ports in the 12400-12409 range",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=RemoteAccessHostUdpPortRange"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "12400-12409"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

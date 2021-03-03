@@ -1,0 +1,173 @@
+{
+    "title": "Google Chrome Safe Browsing Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.google.Chrome",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "PasswordProtectionChangePasswordURL": {
+            "title": "Configure the change password URL",
+            "description": "(PasswordProtectionChangePasswordURL)-Setting the policy sets the URL for users to change their password after seeing a warning in the browser. The password protection service sends users to the URL (HTTP and HTTPS protocols only) you designate through this policy.",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordProtectionChangePasswordURL"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://mydomain.com/change_password.html"
+                        }
+                    }
+                }
+            ]
+        },
+        "PasswordProtectionLoginURLs": {
+            "title": "Configure the list of enterprise login URLs where password protection service should capture salted hashes of passwords",
+            "description": "(PasswordProtectionLoginURLs)-Setting the policy sets the list of enterprise login URLs (HTTP and HTTPS protocols only). Password protection service will capture salted hashes of passwords on these URLs and use them for password reuse detection",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordProtectionLoginURLs"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL"
+                    }
+                }
+            ]
+        },
+        "PasswordProtectionWarningTrigger": {
+            "title": "Password protection warning trigger",
+            "description": "(PasswordProtectionWarningTrigger)-Setting the policy lets you control the triggering of password protection warning. Password protection alerts users when they reuse their protected password on potentially suspicious sites",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=PasswordProtectionWarningTrigger"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Password Protection Warning Turned Off",
+                            "Password protection warning is triggered by password reuse",
+                            "Password protection warning is triggered by password reuse on phishing page"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "SafeBrowsingAllowlistDomains": {
+            "title": "Configure the list of domains on which Safe Browsing will not trigger warnings",
+            "description": "(SafeBrowsingAllowlistDomains)-Setting the policy to Enabled means Safe Browsing will trust the domains you designate. It won't check them for dangerous resources such as phishing, malware, or unwanted software. Safe Browsing's download protection service won't check downloads hosted on these domains. Its password protection service won't check for password reuse",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingAllowlistDomains"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Domain"
+                    }
+                }
+            ]
+        },
+        "SafeBrowsingExtendedReportingEnabled": {
+            "title": "Enable Safe Browsing Extended Reporting",
+            "description": "(SafeBrowsingExtendedReportingEnabled)-Setting the policy to Enabled turns on Google Chrome's Safe Browsing Extended Reporting, which sends some system information and page content to Google servers to help detect dangerous apps and sites",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingExtendedReportingEnabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SafeBrowsingProtectionLevel": {
+            "title": "Safe Browsing Protection Level",
+            "description": "(SafeBrowsingProtectionLevel)-Allows you to control whether Google Chrome's Safe Browsing feature is enabled and the mode it operates in. If this policy is set to 'NoProtection' (value 0), Safe Browsing is never active. If this policy is set to 'StandardProtection' (value 1, which is the default), Safe Browsing is always active in the standard mode. If this policy is set to 'EnhancedProtection' (value 2), Safe Browsing is always active in the enhanced mode, which provides better security, but requires sharing more browsing information with Google",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=SafeBrowsingProtectionLevel"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Safe Browsign is Never Active",
+                            "Safe Browsing Active in Standard Mode",
+                            "Safe Browsing Active in Enhanced Mode"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        }
+    }
+}

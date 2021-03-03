@@ -1,0 +1,107 @@
+{
+    "title": "com.google.chrome.cloudmanagement",
+    "description": "Google Chrome Cloud Management Settings",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "CloudManagementEnrollmentMandatory": {
+            "title": "Enable mandatory cloud management enrollment",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudManagementEnrollmentMandatory"
+                }
+            ],
+            "description": "(CloudManagementEnrollmentMandatory)-If this policy is set to True, cloud management enrollment is mandatory and blocks Chrome launch process if failed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CloudManagementEnrollmentToken": {
+            "title": "The enrollment token of cloud policy on desktop",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudManagementEnrollmentToken"
+                }
+            ],
+            "description": "If this policy is set, Google Chrome will try to register itself and apply associated cloud policy for all profiles",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "CloudPolicyOverridesPlatformPolicy": {
+            "title": "Google Chrome cloud policy overrides Platform policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudPolicyOverridesPlatformPolicy"
+                }
+            ],
+            "description": "If the policy is set to true, cloud policy takes precedence if it conflicts with platform policy. If the policy is set to false or not configured, platform policy takes precedence if it conflicts with cloud policy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CloudExtensionRequestEnabled": {
+            "title": "Enable Chrome Extension Installation Requests",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudExtensionRequestEnabled"
+                }
+            ],
+            "description": "(CloudExtensionRequestEnabled)-This policy controls Google Chrome extension installation requests which allows users to send the requests to the Google Admin console for approval. When the policy CloudReportingEnabled is left unset or set to disabled, this policy will be ignored, extension installation requests are not created or uploaded. When this policy is left unset or set to disabled, extension installation requests are not created or uploaded. When this policy is set to enabled, extension installation requests are created and uploaded to Google Admin console. Extension installation requests are created when users try to install an extension that is not whitelisted by ExtesionInstallWhitelist or ExtensionSettings. This policy is only effective when the machine is enrolled with CloudManagementEnrollmentToken for Google Chrome",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CloudReportingEnabled": {
+            "title": "Enable Google Chrome Cloud Reporting",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=CloudReportingEnabled"
+                }
+            ],
+            "description": "(CloudReportingEnabled)-This policy controls Google Chrome cloud reporting which uploads information about the browser operation to Google Admin console. When this policy is left unset or set to False, there is no data collected or uploaded. When this policy is set to True, the data is collected and uploaded to Google Admin console. For Google Chrome, this policy is only effective when the machine is enrolled with CloudManagementEnrollmentToken",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
