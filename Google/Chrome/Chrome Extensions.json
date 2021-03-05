@@ -179,7 +179,7 @@
             "title": "Extensions Settings",
             "type": "object",
             "properties": {
-                "aomjjhallfgjeglblehebfpbcfeobpgk": {
+                "*": {
                     "properties": {
                         "allowed_types": {
                             "title": "Allowed Extension Types",
