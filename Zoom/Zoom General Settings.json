@@ -1,0 +1,408 @@
+{
+    "title": "Zoom General Settings",
+    "__version": "1.0",
+    "__preferencedomain": "us.zoom.config",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://support.zoom.us/hc/en-us/articles/115001799006"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "ZAutoSSOLogin": {
+            "title": "Default to Login with SSO",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ZSSOHost": {
+            "title": "Preconfigured SSO URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "company.zoom.us"
+                        }
+                    }
+                }
+            ]
+        },
+        "forcessourl": {
+            "title": "Lock SSO URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "nogoogle": {
+            "title": "Disable Sign in with Google",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "nofacebook": {
+            "title": "Disable Sign in with Facebook",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "disableloginwithemail": {
+            "title": "Disable Sign in with Email Address",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "nosso": {
+            "title": "Disable SSO Login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithSSO": {
+            "title": "Require SSO Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithGoogle": {
+            "title": "Require Google Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithFacebook": {
+            "title": "Require Facebook Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "enableembedbrowserforsso": {
+            "title": "Launch SSO Login in App",
+            "description": "(enableembedbrowserforsso)-Launches the SSO Sign in in App rather than the user's default browser",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "setwebdomain": {
+            "title": "Sign in Web Domain",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://zoom.us"
+                        }
+                    }
+                }
+            ]
+        },
+        "LastLoginType": {
+            "title": "Remember the last Login Type Used",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "keepsignedin": {
+            "title": "Automatically Login to Last Account Used",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ZAutoUpdate": {
+            "title": "Allow User Initiated Updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "login_domain": {
+            "title": "Login Domain for Email Addresses",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "company.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "DefaultUsePortraitView": {
+            "title": "Default to Portrait Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "disabledirectshare": {
+            "title": "Disable Direct Share",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "presenttoroomwithaudio": {
+            "title": "Allow Audio when Presenting to a Zoom Room",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "enablehidcontrol": {
+            "title": "Enable HID Control of USB Audio Devices",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "min2tray": {
+            "title": "Automatically Minimize Zoom to Dock when App is Closed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "enablestartmeetingwithroomsystem": {
+            "title": "Display Call Room System Button on Zoom Home Screen",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "appendcallernameforroomsystem": {
+            "title": "Add Participant Names when Viewing Video Feed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "account": {
+            "title": "Account IDs Restricted to Join Meetings Hosted by Specific Accounts",
+            "description": "(account)-Please have an account admin or owner contact https://support.zoom.us/hc/en-us/requests/new to acquire your account ID",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "ID"
+                        }
+                    }
+                }
+            ]
+        },
+        "alwaysshowvideopreviewdialog": {
+            "title": "Show Video Previews when Joining a Meeting",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "legacycapturemode": {
+            "title": "Disable GPU Acceleration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "blockuntrustedsslcert": {
+            "title": "Block Untrusted SSL Connections",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "embeduseragentstring": {
+            "title": "Embedded User Agent String",
+            "description": "(embeduseragentstring)-Allows embedding text in the Zoom using a user agent string",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "User Agent String"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
