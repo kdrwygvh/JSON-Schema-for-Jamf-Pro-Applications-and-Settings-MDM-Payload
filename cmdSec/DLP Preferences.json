@@ -1,0 +1,131 @@
+{
+    "title": "cmdReporter DLP",
+    "description": "Schema for cmdReporter DLP Subsystem",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000075571-defining-sensitive-data"
+        }
+    ],
+    "__preferencedomain": "com.cmdsec.cmdreporter.dlp",
+    "properties": {
+        "SensitivePaths": {
+            "title": "Sensitive Folders",
+            "description": "List of folders to mark as sensitive",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Folder Path"
+                    }
+                }
+            ]
+        },
+        "SensitiveApplications": {
+            "type": "object",
+            "title": "Sensitive Applications",
+            "properties": {
+                "DLPExecutableNames": {
+                    "title": "Executable Names",
+                    "description": "Application to Mark as Sensitive",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Application"
+                            }
+                        }
+                    ]
+                },
+                "DLPSigningIdentifiers": {
+                    "title": "Bundle Identifiers",
+                    "description": "Sensitive Applications by BundleID",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "BundleID"
+                            }
+                        }
+                    ]
+                },
+                "DLPTeamIdentifiers": {
+                    "title": "Team Identifiers",
+                    "description": "Sensitive Applications by TeamID",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "TeamID"
+                            }
+                        }
+                    ]
+                },
+                "SensitiveUTIs": {
+                    "title": "Sensitive Universal Type Identifiers",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "UTI"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "AllowedDomains": {
+            "title": "Permitted Outbound Domains for File Uploads",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000075574-defining-approved-destinations"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Domain"
+                    }
+                }
+            ]
+        }
+    }
+}
