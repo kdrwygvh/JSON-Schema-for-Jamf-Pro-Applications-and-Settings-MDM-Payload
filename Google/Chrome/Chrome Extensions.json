@@ -178,6 +178,7 @@
         "ExtensionSettings": {
             "title": "Extensions Settings",
             "type": "object",
+            "description": "By default, this defines Extension settings for all extensions. If you need to specificy specific extension permissions add them as unique JSON objects",
             "properties": {
                 "*": {
                     "properties": {
@@ -200,7 +201,7 @@
                             ]
                         },
                         "blocked_install_message": {
-                        	"title": "Blocked Install Message",
+                            "title": "Blocked Install Message",
                             "type": "string"
                         },
                         "blocked_permissions": {
@@ -244,7 +245,7 @@
                             ]
                         },
                         "installation_mode": {
-                        "title": "Installation Mode",
+                            "title": "Installation Mode",
                             "enum": [
                                 "blocked",
                                 "allowed",
@@ -255,13 +256,13 @@
                             "type": "string"
                         },
                         "toolbar_pin": {
-                        	"title": "Toolbar Pin Style",
-     						            "enum": [
-      							        "force_pinned",
-      							        "default_unpinned"
-      					      	],
-      						"type": "string"
-      					},
+                            "title": "Toolbar Pin Style",
+                            "enum": [
+                                "force_pinned",
+                                "default_unpinned"
+                            ],
+                            "type": "string"
+                        },
                         "minimum_version_required": {
                             "title": "Minimum Version Required",
                             "anyOf": [
