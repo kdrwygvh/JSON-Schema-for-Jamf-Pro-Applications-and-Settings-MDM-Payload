@@ -1,0 +1,3191 @@
+{
+    "title": "Firefox Settings",
+    "description": "Policies for Firefox",
+    "__version": "1.0",
+    "__preferencedomain": "org.mozilla.firefox",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://github.com/mozilla/policy-templates"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "EnterprisePoliciesEnabled": {
+            "title": "Enable Enterprise Policies",
+            "description": "(EnterprisePoliciesEnabled)-Enable policy support on macOS",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#enterprisepoliciesenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AppAutoUpdate": {
+            "title": "Enable Auto Updates",
+            "description": "(AppAutoUpdate)-Enable or disable automatic application update. If set to true, application updates are installed without user approval within Firefox. The operating system might still require approval. If set to false, application updates are downloaded but the user can choose when to install the update. If you have disabled updates via DisableAppUpdate, this policy has no effect",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#appautoupdate"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AppUpdateURL": {
+            "title": "Custom App Update URL",
+            "description": "(AppUpdateURL)-Change the URL for application update if you are providing Firefox updates from a custom update server",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#appupdateurl"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://yoursite.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "Authentication": {
+            "type": "object",
+            "title": "Integrated Authentication sites",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#authentication"
+                }
+            ],
+            "properties": {
+                "SPNEGO": {
+                    "title": "SPNEGO",
+                    "description": "SPNEGO Based Sites",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Site"
+                            }
+                        }
+                    ]
+                },
+                "Delegated": {
+                    "title": "Delegated",
+                    "description": "Delegated Authentication Based Sites",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Site"
+                            }
+                        }
+                    ]
+                },
+                "NTLM": {
+                    "title": "NTLM",
+                    "description": "NTLM Based Sites",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Site"
+                            }
+                        }
+                    ]
+                },
+                "AllowNonFQDN": {
+                    "type": "object",
+                    "title": "Allow non Fully Qualified Domain Names",
+                    "properties": {
+                        "SPNEGO": {
+                            "title": "SPNEGO",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "NTLM": {
+                            "title": "NTLM",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    },
+                    "AllowProxies": {
+                        "type": "object",
+                        "title": "Allow Proxies",
+                        "properties": {
+                            "SPNEGO": {
+                                "title": "SPNEGO",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "boolean"
+                                    }
+                                ]
+                            },
+                            "NTLM": {
+                                "title": "NTLM",
+                                "anyOf": [
+                                    {
+                                        "type": "null",
+                                        "title": "Not Configured"
+                                    },
+                                    {
+                                        "title": "Configured",
+                                        "type": "boolean"
+                                    }
+                                ]
+                            }
+                        },
+                        "Locked": {
+                            "title": "Lock Authentication Settings",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "PrivateBrowsing": {
+                            "title": "Allow Integrated Authentication in Private Browsing",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "BlockAboutAddons": {
+            "title": "Block Add-on Manager",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#blockaboutaddons"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BlockAboutConfig": {
+            "title": "Block about:config",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#blockaboutconfig"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BlockAboutProfiles": {
+            "title": "Block About Profiles",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#blockaboutprofiles"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BlockAboutSupport": {
+            "title": "Block Access to Troubleshooting Information",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ManagedBookmarks": {
+            "title": "Managed Bookmarks",
+            "type": "array",
+            "items": {
+                "id": "BookmarkType",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "url": {
+                        "type": "string",
+                        "title": "URL"
+                    }
+                }
+            }
+        },
+        "CaptivePortal": {
+            "title": "Detect Captive Portals",
+            "description": "(CaptivePortal)-Enable or disable the detection of captive portals",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#captiveportal"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Certificates": {
+            "type": "object",
+            "title": "Certificates",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#certificates"
+                }
+            ],
+            "properties": {
+                "ImportEnterpriseRoots": {
+                    "title": "Import Enterprise Root Certificates",
+                    "type": "boolean"
+                },
+                "Install": {
+                    "title": "Certificates to Install",
+                    "description": "(Install)-Install certificates into the Firefox certificate store. If only a filename is specified, Firefox searches for the file in /Library/Application Support/Mozilla/Certificates and ~/Library/Application Support/Mozilla/Certificates",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#certificates--install"
+                        }
+                    ],
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Certificate Name or Path"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "Cookies": {
+            "type": "object",
+            "title": "Cookies",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#cookies"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "title": "Allow URLs",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Allow URL"
+                            }
+                        }
+                    ]
+                },
+                "AllowSession": {
+                    "title": "Allow Within Browser Session",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Allow Within Browser Session URL"
+                            }
+                        }
+                    ]
+                },
+                "Block": {
+                    "title": "Blocked URLS",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Blocked URL"
+                            }
+                        }
+                    ]
+                },
+                "Default": {
+                    "title": "Allow Cookies by Default",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "AcceptThirdParty": {
+                    "title": "Accept Third Party Cookies",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "enum_titles": [
+                                    "Always",
+                                    "Never",
+                                    "Only from Visited Sites"
+                                ]
+                            },
+                            "enum": [
+                                "always",
+                                "never",
+                                "from-visited"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "DisableSetDesktopBackground": {
+            "title": "Disable Set As Desktop Background Feature",
+            "description": "(DisableSetDesktopBackground)-Remove the Set As Desktop Background... menuitem when right clicking on an image",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablesetdesktopbackground"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableMasterPasswordCreation": {
+            "title": "Disable Master Password Creation",
+            "description": "(DisableMasterPasswordCreation)-If this value is true, it works the same as setting PrimaryPassword to false and removes the primary password functionality. If both DisableMasterPasswordCreation and PrimaryPassword are used, DisableMasterPasswordCreation takes precedent",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablemasterpasswordcreation"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableAppUpdate": {
+            "title": "Disable Application Updates Within Firefox",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableappupdate"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableBuiltinPDFViewer": {
+            "title": "Disable Built-in PDF Viewer",
+            "description": "(DisableBuiltinPDFViewer)-Disable the built in PDF viewer. PDF files are downloaded and sent externally",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablebuiltinpdfviewer"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisabledCiphers": {
+            "type": "object",
+            "title": "Disablec Ciphers",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#disabledciphers"
+                }
+            ],
+            "properties": {
+                "TLS_DHE_RSA_WITH_AES_128_CBC_SHA": {
+                    "title": "TLS_DHE_RSA_WITH_AES_128_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_DHE_RSA_WITH_AES_256_CBC_SHA": {
+                    "title": "TLS_DHE_RSA_WITH_AES_256_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA": {
+                    "title": "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA": {
+                    "title": "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256": {
+                    "title": "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256": {
+                    "title": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_RSA_WITH_AES_128_CBC_SHA": {
+                    "title": "TLS_RSA_WITH_AES_128_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_RSA_WITH_AES_256_CBC_SHA": {
+                    "title": "TLS_RSA_WITH_AES_256_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_RSA_WITH_3DES_EDE_CBC_SHA": {
+                    "title": "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_RSA_WITH_AES_128_GCM_SHA256": {
+                    "title": "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TLS_RSA_WITH_AES_256_GCM_SHA384": {
+                    "title": "TLS_RSA_WITH_AES_256_GCM_SHA384",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "DisableDeveloperTools": {
+            "title": "Disable Developer Tools",
+            "description": "(DisableDeveloperTools)-Remove access to all developer tools",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disabledevelopertools"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableFeedbackCommands": {
+            "title": "Disable Reporting Site Feedback",
+            "description": "(DisableFeedbackCommands)-Disable the menus for reporting sites (Submit Feedback, Report Deceptive Site)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablefeedbackcommands"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableFirefoxScreenshots": {
+            "title": "Disable In Browser Screenshots",
+            "description": "(DisableFirefoxScreenshots)-Remove access to Firefox Screenshots",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablefirefoxscreenshots"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableFirefoxAccounts": {
+            "title": "Disable Firefox Accounts",
+            "description": "(DisableFirefoxAccounts)-Disable Firefox Accounts integration (Sync)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablefirefoxaccounts"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableFirefoxStudies": {
+            "title": "Disable Firefox Studies (Shield)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablefirefoxstudies"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableForgetButton": {
+            "title": "Disable Forget Button",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableforgetbutton"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableFormHistory": {
+            "title": "Disable Form History",
+            "description": "(DisableFormHistory)-Turn off saving information on web forms and the search bar",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableformhistory"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisablePasswordReveal": {
+            "title": "Disable Password Reveal",
+            "description": "(DisablePasswordReveal)-Do not allow passwords to be shown in saved logins",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablepasswordreveal"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisablePocket": {
+            "title": "Disable Pocket",
+            "description": "(DisablePocket)-Remove Pocket in the Firefox UI. It does not remove it from the new tab page",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablepocket"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisablePrivateBrowsing": {
+            "title": "Disable Private Browsing",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableprivatebrowsing"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableProfileImport": {
+            "title": "Disable Import Profile",
+            "description": "(DisableProfileImport)-Disables the Import data from another browser option in the bookmarks window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableprofileimport"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableProfileRefresh": {
+            "title": "Disable Profile Refresh",
+            "description": "(DisableProfileRefresh)-Disable the Refresh Firefox button on about:support and support.mozilla.org, as well as the prompt that displays offering to refresh Firefox when you haven't used it in a while",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disableprofilerefresh"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableSafeMode": {
+            "title": "Disable Safe Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablesafemode"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableSecurityBypass": {
+            "type": "object",
+            "title": "Disable Security Bypass",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#disablesecuritybypass"
+                }
+            ],
+            "properties": {
+                "InvalidCertificate": {
+                    "title": "Prevent Invalid Certificate Exceptions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "SafeBrowsing": {
+                    "title": "Prevent Ignore Risk Exceptions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "DisableSystemAddonUpdate": {
+            "title": "Disable System Add-Ons",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disablesystemaddonupdate"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableTelemetry": {
+            "title": "Disable Telemetry Upload",
+            "description": "(DisableTelemetry)-Prevent the upload of telemetry data",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#disabletelemetry"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisplayBookmarksToolbar": {
+            "title": "Display Bookmarks Toolbar",
+            "description": "(DisplayBookmarksToolbar)-Set the initial state of the bookmarks toolbar. A user can still hide it and it will stay hidden",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#displaybookmarkstoolbar"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisplayMenuBar": {
+            "title": "Display Menu Bar",
+            "description": "(DisplayMenuBar)-",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#displaymenubar"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "always",
+                            "never",
+                            "default-on",
+                            "default-off"
+                        ]
+                    },
+                    "enum": [
+                        "Always",
+                        "Never",
+                        "Default On",
+                        "Default Off"
+                    ]
+                }
+            ]
+        },
+        "DNSOverHTTPS": {
+            "type": "object",
+            "title": "DNS Over HTTPS",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#dnsoverhttps"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "title": "Enabled",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "ProviderURL": {
+                    "title": "Provider URL",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "https://dnsoverhttpsprovider"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Setting Locked",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "ExcludedDomains": {
+                    "title": "Excluded Domains",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Excluded Domain"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "DontCheckDefaultBrowser": {
+            "title": "Do Not Check Default Browser Settings",
+            "description": "(DontCheckDefaultBrowser)-Don't check if Firefox is the default browser at startup",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#dontcheckdefaultbrowser"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DefaultDownloadDirectory": {
+            "title": "Default Download Directory",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#defaultdownloaddirectory"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "${home}/Downloads"
+                        }
+                    }
+                }
+            ]
+        },
+        "DownloadDirectory": {
+            "title": "Download Directory",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#downloaddirectory"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "${home}/Downloads"
+                        }
+                    }
+                }
+            ]
+        },
+        "EnableTrackingProtection": {
+            "type": "object",
+            "title": "Enable Tracking Protection",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#enabletrackingprotection"
+                }
+            ],
+            "properties": {
+                "Value": {
+                    "title": "Enabled",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Setting Locked",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Cryptomining": {
+                    "title": "Enable Cryptomining Protections",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Fingerprinting": {
+                    "title": "Enable Fingerprinting Protections",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Exceptions": {
+                    "title": "Site Exceptions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Exempt Site"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "EncryptedMediaExtensions": {
+            "type": "object",
+            "title": "Encrypt Media Extensions",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#encryptedmediaextensions"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "title": "Enable",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Lock Setting",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "Extensions": {
+            "type": "object",
+            "title": "Extensions",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#extensions"
+                }
+            ],
+            "properties": {
+                "Install": {
+                    "title": "Installed Extensions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Extension Filepath or URL"
+                            }
+                        }
+                    ]
+                },
+                "Uninstall": {
+                    "title": "Blocked Extensions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Add-on ID"
+                            }
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Locked Extensions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Locked Extension ID"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "ExtensionUpdate": {
+            "title": "Allow Extension Updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#extensionupdate"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "FirefoxHome": {
+            "type": "object",
+            "title": "Firefox Home",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#firefoxhome"
+                }
+            ],
+            "properties": {
+                "Search": {
+                    "title": "Search",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "TopSites": {
+                    "title": "Top Sites",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Highlights": {
+                    "title": "Highlights",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Pocket": {
+                    "title": "Pocket",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Snippets": {
+                    "title": "Snippets",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Lock Settings",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "HardwareAcceleration": {
+            "title": "Enable Hardware Acceleration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#hardwareacceleration"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Homepage": {
+            "type": "object",
+            "title": "Homepage",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#homepage"
+                }
+            ],
+            "properties": {
+                "URL": {
+                    "title": "URL",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "https://apple.com"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Setting Locked",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Additional": {
+                    "title": "Additional URLs",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Additional URL"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "InstallAddonsPermission": {
+            "type": "object",
+            "title": "Install Add-Ons Permission",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#installaddonspermission"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "title": "Allow",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Allow Domain"
+                            }
+                        }
+                    ]
+                },
+                "Default": {
+                    "title": "Default",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "LocalFileLinks": {
+            "title": "Local File Links",
+            "description": "(LocalFileLinks)-Enable linking to local files by origin",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#localfilelinks"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Local File Link Domain"
+                    }
+                }
+            ]
+        },
+        "PrimaryPassword": {
+            "title": "Require Primary Password",
+            "description": "(PrimaryPassword)-If this value is true, a primary password is required. If this value is false, it works the same as if DisableMasterPasswordCreation was true and removes the primary password functionality",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#primarypassword"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NetworkPrediction": {
+            "title": "Enable Network Prediction",
+            "description": "(NetworkPrediction)-Enables DNS Prefetching",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#networkprediction"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NewTabPage": {
+            "title": "Enable New Tab Page",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#newtabpage"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NoDefaultBookmarks": {
+            "title": "Disable the Creation of Default Bookmarks",
+            "description": "(NoDefaultBookmarks)-This policy is only effective if the user profile has not been created yet",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#nodefaultbookmarks"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OfferToSaveLogins": {
+            "title": "Offer to Save Logins",
+            "description": "(OfferToSaveLogins)-Control whether or not Firefox offers to save passwords",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#offertosavelogins"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OfferToSaveLoginsDefault": {
+            "title": "Offer to Save Logins Default Value (Mutable)",
+            "description": "(OfferToSaveLoginsDefault)-",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#offertosaveloginsdefault"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OverrideFirstRunPage": {
+            "title": "Override First Run Page",
+            "description": "(OverrideFirstRunPage)-Override the first run page. If the value is an empty string the first run page is not displayed. Starting with Firefox 83, Firefox ESR 78.5, you can also specify multiple URLS separated by a vertical bar (|)",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#overridefirstrunpage"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "http://example.org"
+                        }
+                    }
+                }
+            ]
+        },
+        "OverridePostUpdatePage": {
+            "title": "Override Post Update Page",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#overridepostupdatepage"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "http://example.org"
+                        }
+                    }
+                }
+            ]
+        },
+        "PasswordManagerEnabled": {
+            "title": "Enable Password Manager",
+            "description": "(PasswordManagerEnabled)-Remove access to the password manager via preferences and blocks about:logins on Firefox 70",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#passwordmanagerenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "PDFjs": {
+            "type": "object",
+            "title": "Disable or Confgiure PDF.js",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#pdfjs"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "title": "Enabled",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "EnablePermissions": {
+                    "title": "Enable Permissions",
+                    "description": "(EnablePermissions)-If EnablePermissions is set to true, the built-in PDF viewer will honor document permissions like preventing the copying of text",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "Permissions": {
+            "type": "object",
+            "title": "Permissions",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#permissions"
+                }
+            ],
+            "properties": {
+                "Camera": {
+                    "type": "object",
+                    "title": "Camera",
+                    "properties": {
+                        "Allow": {
+                            "title": "Allow Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Allow Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Block": {
+                            "title": "Block Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Block Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "BlockNewRequests": {
+                            "title": "Block New Requests",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "Locked": {
+                            "title": "Setting Locked",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Microphone": {
+                    "type": "object",
+                    "title": "Microphone",
+                    "properties": {
+                        "Allow": {
+                            "title": "Allow Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Allow Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Block": {
+                            "title": "Block Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Block Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "BlockNewRequests": {
+                            "title": "Block New Requests",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "Locked": {
+                            "title": "Setting Locked",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Location": {
+                    "type": "object",
+                    "title": "Location",
+                    "properties": {
+                        "Allow": {
+                            "title": "Allow Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Allow Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Block": {
+                            "title": "Block Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Block Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "BlockNewRequests": {
+                            "title": "Block New Requests",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "Locked": {
+                            "title": "Setting Locked",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Notifications": {
+                    "type": "object",
+                    "title": "Notifications",
+                    "properties": {
+                        "Allow": {
+                            "title": "Allow Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Allow Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Block": {
+                            "title": "Block Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Block Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "BlockNewRequests": {
+                            "title": "Block New Requests",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        },
+                        "Locked": {
+                            "title": "Setting Locked",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "boolean"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "Autoplay": {
+                    "type": "object",
+                    "title": "Autoplay",
+                    "properties": {
+                        "Allow": {
+                            "title": "Allow Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Allow Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Block": {
+                            "title": "Block Domains",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Block Domain"
+                                    }
+                                }
+                            ]
+                        },
+                        "Default": {
+                            "title": "Default",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string",
+                                    "options": {
+                                        "enum_titles": [
+                                            "Allow Audio and Video",
+                                            "Block Audio",
+                                            "Block Audio and Video"
+                                        ]
+                                    },
+                                    "enum": [
+                                        "allow-audio-video",
+                                        "block-audio",
+                                        "block-audio-video"
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "PictureInPicture": {
+            "type": "object",
+            "title": "Enable Picture in Picture",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#pictureinpicture"
+                }
+            ],
+            "properties": {
+                "Enabled": {
+                    "title": "Enabled",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Lock Setting",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "PopupBlocking": {
+            "type": "object",
+            "title": "Pop up Blocking",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#popupblocking"
+                }
+            ],
+            "properties": {
+                "Allow": {
+                    "title": "Allow URLs",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "URL"
+                            }
+                        }
+                    ]
+                },
+                "Default": {
+                    "title": "Allow by Default",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Setting Locked",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "Preferences": {
+            "type": "object",
+            "title": "Preferences",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#preferences"
+                }
+            ],
+            "properties": {}
+        },
+        "PromptForDownloadLocation": {
+            "title": "Prompt for Download Location",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#promptfordownloadlocation"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Proxy": {
+            "type": "object",
+            "title": "Proxy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#proxy"
+                }
+            ],
+            "properties": {
+                "Mode": {
+                    "title": "Mode",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "enum_titles": [
+                                    "None",
+                                    "System",
+                                    "Manual",
+                                    "Auto Detect",
+                                    "Automatic Configuration"
+                                ]
+                            },
+                            "enum": [
+                                "none",
+                                "system",
+                                "manual",
+                                "autoDetect",
+                                "autoConfig"
+                            ]
+                        }
+                    ]
+                },
+                "Locked": {
+                    "title": "Lock Setting",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "HTTPProxy": {
+                    "title": "HTTP Proxy",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "http://proxy.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "UseHTTPProxyForAllProtocols": {
+                    "title": "Use HTTP Proxy for all Protocols",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "SSLProxy": {
+                    "title": "SSL Proxy",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "https://proxy.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "FTPProxy": {
+                    "title": "FTP Proxy",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "http://proxy.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "SOCKSProxy": {
+                    "title": "SOCKS Proxy",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "http://proxy.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "SOCKSVersion": {
+                    "title": "SOCKS Version",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "enum_titles": [
+                                    "4",
+                                    "5"
+                                ]
+                            },
+                            "enum": [
+                                4,
+                                5
+                            ]
+                        }
+                    ]
+                },
+                "Passthrough": {
+                    "title": "Passthrough",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "&lt;local>&gt;"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "AutoConfigURL": {
+                    "title": "Automatic Configuration URL",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "https://autoconfig.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "AutoLogin": {
+                    "title": "Automatic Login",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "UseProxyForDNS": {
+                    "title": "Use Proxy for DNS",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "RequestedLocales": {
+            "title": "Requested Localizations",
+            "description": "(RequestedLocales)-Set the the list of requested locales for the application in order of preference. It will cause the corresponding language pack to become active",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#requestedlocales"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Locale"
+                    }
+                }
+            ]
+        },
+        "SanitizeOnShutdown": {
+            "title": "Santize on Shutdown (All)",
+            "description": "(SanitizeOnShutdown)-Clear all data on shutdown, including Browsing & Download History, Cookies, Active Logins, Cache, Form & Search History, Site Preferences and Offline Website Data",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#sanitizeonshutdown-all"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SearchBar": {
+            "title": "Search Bar",
+            "description": "(SearchBar)-Set whether or not search bar is displayed.",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#searchbar"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Unified",
+                            "Separate"
+                        ]
+                    },
+                    "enum": [
+                        "unified",
+                        "separate"
+                    ]
+                }
+            ]
+        },
+        "SearchEngines": {
+            "type": "object",
+            "title": "Search Engines (ESR Only)",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#searchengines-this-policy-is-only-available-on-the-esr"
+                }
+            ],
+            "properties": {
+                "Default": {
+                    "title": "Default",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "SEARCH ENGINE NAME"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "PreventInstalls": {
+                    "title": "Prevent installing search engines from webpages",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "links": [
+                                {
+                                    "rel": "Documentation Link",
+                                    "href": "https://github.com/mozilla/policy-templates#searchengines--preventinstalls"
+                                }
+                            ],
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "Remove": {
+                    "title": "Hide built-in search engines (ESR Only)",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--remove"
+                        }
+                    ],
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Search Engine"
+                            }
+                        }
+                    ]
+                },
+                "Add": {
+                    "title": "Add up to five search engines (ESR Only)",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#searchengines--add"
+                        }
+                    ],
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "title": "Search Engine",
+                                "properties": {
+                                    "Name": {
+                                        "title": "Name",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "Search Engine Name"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "URLTemplate": {
+                                        "title": "URL Template",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "https://www.example.org/q={searchTerms}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Method": {
+                                        "title": "Method",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "enum_titles": [
+                                                        "Get",
+                                                        "Post"
+                                                    ]
+                                                },
+                                                "enum": [
+                                                    "GET",
+                                                    "POST"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "IconURL": {
+                                        "title": "Icon URL",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "https://www.example.org/favicon.ico"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Alias": {
+                                        "title": "Alias",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": ""
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "Description": {
+                                        "title": "Description",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "Description"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "SuggestURLTemplate": {
+                                        "title": "Suggestion URL Template",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "https://www.example.org/suggestions/q={searchTerms}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "PostData": {
+                                        "title": "Post Data",
+                                        "anyOf": [
+                                            {
+                                                "type": "null",
+                                                "title": "Not Configured"
+                                            },
+                                            {
+                                                "title": "Configured",
+                                                "type": "string",
+                                                "options": {
+                                                    "inputAttributes": {
+                                                        "placeholder": "name=value&q={searchTerms}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "SearchSuggestEnabled": {
+            "title": "Enable Search Suggestions",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/mozilla/policy-templates#searchsuggestenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SecurityDevices": {
+            "type": "object",
+            "title": "PKCS #11 Modules",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#securitydevices"
+                }
+            ],
+            "properties": {
+                "HARD_CODED_NAME_OF_DEVICE": {
+                    "title": "Device Name",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "PATH_TO_LIBRARY_FOR_DEVICE"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "SSLVersionMax": {
+            "title": "Maxmimum SSL Version",
+            "description": "(SSLVersionMax)-Set and lock the maximum version of TLS",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#sslversionmax"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "TLS 1",
+                            "TLS 1.1",
+                            "TLS 1.2",
+                            "TLS 1.3"
+                        ]
+                    },
+                    "enum": [
+                        "tls1",
+                        "tls1.1",
+                        "tls1.2",
+                        "tls1.3"
+                    ]
+                }
+            ]
+        },
+        "SupportMenu": {
+            "type": "object",
+            "title": "Support Menu",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#supportmenu"
+                }
+            ],
+            "properties": {
+                "Title": {
+                    "title": "Title",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "Support"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "URL": {
+                    "title": "URL",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "https://support.url"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "AccessKey": {
+                    "title": "Access Key",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "S"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "UserMessaging": {
+            "type": "object",
+            "title": "Prevent Firefox Messaging",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#usermessaging"
+                }
+            ],
+            "properties": {
+                "WhatsNew": {
+                    "title": "What's New",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "ExtensionRecommendations": {
+                    "title": "Extension Recommendations",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "FeatureRecommendations": {
+                    "title": "Feature Recommendations",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                "UrlbarInterventions": {
+                    "title": "URL Bar Interventions",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "boolean"
+                        }
+                    ]
+                }
+            }
+        },
+        "WebsiteFilter": {
+            "type": "object",
+            "title": "Website Filter",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/mozilla/policy-templates#websitefilter"
+                }
+            ],
+            "properties": {
+                "Block": {
+                    "title": "Blocked URLS",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns"
+                        }
+                    ],
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Block Pattern"
+                            }
+                        }
+                    ]
+                },
+                "Exceptions": {
+                    "title": "URL Exeptions",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns"
+                        }
+                    ],
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "title": "Exception Pattern"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
