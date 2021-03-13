@@ -4,7 +4,7 @@
     "__preferencedomain": "com.apple.applicationaccess",
     "properties": {
         "enforcedSoftwareUpdateDelay": {
-            "title": "Number of Days to Defer Apple Software Updates",
+            "title": "Number of Days to Defer Apple Software Updates (10.13-10.15)",
             "anyOf": [
                 {
                     "type": "null",
@@ -31,8 +31,66 @@
                 }
             ]
         },
+        "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
+            "title": "Number of Days to Defer Major Software Upgrades (11.3-\u221e)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": 14
+                }
+            ]
+        },
+        "forceDelayedMajorSoftwareUpdates": {
+            "title": "Respect Deferred Major Software Upgrade Settings (11.3-\u221e)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
+            "title": "Number of Days to Defer Minor Software Updates (11.3-\u221e)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": 14
+                }
+            ]
+        },
+        "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
+            "title": "Number of Days to Defer Non OS Software Updates (11.3-\u221e)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "pattern": "[1-90]",
+                    "default": 14
+                }
+            ]
+        },
         "forceDelayedAppSoftwareUpdates": {
-            "title": "Respect Deferred Software Settings for Non OS Updates (Safari etc...)",
+            "title": "Respect Deferred Software Settings for Non OS Updates (Safari etc...) (11.0-\u221e)",
             "description": "(forceDelayedAppSoftwareUpdates)-If true, delays user visibility of non-OS Software Updates. Requires a supervised device",
             "anyOf": [
                 {
