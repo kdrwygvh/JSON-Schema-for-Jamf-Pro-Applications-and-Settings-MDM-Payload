@@ -31,6 +31,19 @@
                 }
             ]
         },
+        "DebugDisableTabHoverPreview": {
+            "title": "Disable Preview when Hovering over Tabs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
         "Command1Through9SwitchesTabs": {
             "title": "Use Cmd-1 Throgh Cmd-9 to Switch Tabs",
             "anyOf": [
