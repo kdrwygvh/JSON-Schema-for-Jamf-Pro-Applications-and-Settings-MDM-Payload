@@ -8,7 +8,7 @@
             "description": "Path to a locally stored image to use as a background for the login window",
             "options": {
                 "inputAttributes": {
-                    "placeholder": "/usr/local/shared/background.jpg"
+                    "placeholder": "/System/Library/PrivateFrameworks/SystemDesktopAppearance.framework/Versions/A/Resources/DefaultBackground.jpg"
                 }
             },
             "anyOf": [
