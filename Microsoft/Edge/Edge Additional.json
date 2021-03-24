@@ -1747,6 +1747,26 @@
                 }
             ]
         },
+        "FetchKeepaliveDurationOnShutdown": {
+            "title": "Fetch keepalive duration on shutdown",
+            "description": "(FetchKeepaliveDurationOnShutdown)-Controls the duration (in seconds) that keepalive requests are allowed to prevent the browser from completing its shutdown",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#fetchkeepalivedurationonshutdown"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
         "ForceBingSafeSearch": {
             "title": "ForceBingSafeSearch - Enforce Bing SafeSearch",
             "description": "Ensure that queries in Bing web search are done with SafeSearch set to the value specified. Users can't change this setting.\n\nIf you configure this policy to 'BingSafeSearchNoRestrictionsMode', SafeSearch in Bing search falls back to the bing.com value.\n\nIf you configure this policy to 'BingSafeSearchModerateMode', the moderate setting is used in SafeSearch. The moderate setting filters adult videos and images but not text from search results.\n\nIf you configure this policy to 'BingSafeSearchStrictMode', the strict setting in SafeSearch is used. The strict setting filters adult text, images, and videos.\n\nIf you disable this policy or don't configure it, SafeSearch in Bing search isn't enforced, and users can set the value they want on bing.com.\n\nPolicy options mapping:\n\n* BingSafeSearchNoRestrictionsMode (0) = Don't configure search restrictions in Bing\n\n* BingSafeSearchModerateMode (1) = Configure moderate search restrictions in Bing\n\n* BingSafeSearchStrictMode (2) = Configure strict search restrictions in Bing\n\nUse the preceding information when configuring this policy.",
@@ -3645,6 +3665,35 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#translateenabled"
+                }
+            ]
+        },
+        "UpdatePolicyOverride": {
+            "title": "Microsoft Edge Auto Update Behavior",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#updatepolicyoverride"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Automatic Silent Updates Only",
+                            "Manual Check Only"
+                        ]
+                    },
+                    "enum": [
+                        "automatic-silent-only",
+                        "manual-only"
+                    ]
                 }
             ]
         },
