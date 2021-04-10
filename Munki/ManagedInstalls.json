@@ -1,0 +1,743 @@
+{
+    "title": "Munki Client Settings",
+    "__version": "1.0",
+    "__preferencedomain": "ManagedInstalls",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://github.com/munki/munki/wiki/Preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AppleSoftwareUpdatesOnly": {
+            "title": "Deliver Updates from Apple Only",
+            "description": "(AppleSoftwareUpdatesOnly)-If true, only install updates from an Apple Software Update server. No Munki repository is needed or used",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AggressiveUpdateNotificationDays": {
+            "title": "Number of Days Until Aggressive Updates Notifications Begin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "InstallAppleSoftwareUpdates": {
+            "title": "Install Apple Software updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UnattendedAppleUpdates": {
+            "title": "Perform Unattended Apple Updates When Possible",
+            "description": "(UnattendedAppleUpdates)-If true, updates that declare no must-close applications, or have one or more must-close applications, none of which is running, and do not require a logout or restart will be installed as part of a normal periodic background run without notifying the user. (OS X 10.10+, Munki 2.5+)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SoftwareRepoURL": {
+            "title": "Munki Software Repository URL",
+            "description": "(SoftwareRepoURL)-Base URL for Munki repository",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.repo"
+                        }
+                    }
+                }
+            ]
+        },
+        "PackageURL": {
+            "title": "Packages URL",
+            "description": "(PackageURL)-Unique URL for Packages",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.packages.repo"
+                        }
+                    }
+                }
+            ]
+        },
+        "CatalogURL": {
+            "title": "Catalog URL",
+            "description": "(CatalogURL)-Unique URL for Catalogs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.catalog.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "ManifestURL": {
+            "title": "Manifest URL",
+            "description": "(ManifestURL)-Unique URL for Manifests",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.manifest.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "IconURL": {
+            "title": "Icon URL",
+            "description": "(IconURL)-Unique URL for Icons",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.icons.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "ClientResourceURL": {
+            "title": "Client Resource URL",
+            "description": "(ClientResourceURL)-Unique URL for Client Resources",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://munki.resource.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "ClientResourcesFilename": {
+            "title": "Client Resources File Name",
+            "description": "(ClientResourcesFilename)-Specific filename to use when requesting custom client resources",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "manifest.zip"
+                        }
+                    }
+                }
+            ]
+        },
+        "HelpURL": {
+            "title": "Help URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://help.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "ClientIdentifier": {
+            "title": "Client Identifider",
+            "description": "(ClientIdentifier)-Identifier for Munki client. Usually is the same as a manifest name on the Munki server. If this is empty or undefined, Munki will attempt the following identifiers, in order: fully-qualified hostname, short hostname, serial number and finally, site_default",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/munki/munki/wiki/Default-Manifest-Resolution"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "site_default"
+                        }
+                    }
+                }
+            ]
+        },
+        "ManagedInstallDir": {
+            "title": "Managed Install Directory",
+            "description": "(ManagedInstallDir)-Folder where Munki keeps its data on the client",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Library/Managed Installs"
+                        }
+                    }
+                }
+            ]
+        },
+        "LogFile": {
+            "title": "Log File",
+            "description": "(LogFile)-Primary log is written to this file. Other logs are written into the same directory as this file",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Library/Managed Installs/Logs/ManagedSoftwareUpdate.log"
+                        }
+                    }
+                }
+            ]
+        },
+        "LogToSyslog": {
+            "title": "Log to syslog",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LoggingLevel": {
+            "title": "Log Level",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "1",
+                            "2",
+                            "3"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "SuppressUserNotification": {
+            "title": "Suppress all Managed Software Notifications",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DaysBetweenNotifications": {
+            "title": "Number of Days Between Notifications",
+            "description": "(DaysBetweenNotifications)-Number of days between user notifications from Managed Software Center. Set to 0 to have Managed Software Center notify every time a background check runs if there are available updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "UseNotificationCenterDays": {
+            "title": "Number of Days to use macOS Style Notifications",
+            "description": "(UseNotificationCenterDays)-Number of days Notification Center notifications should be used before switching to launching Managed Software Center",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/munki/munki/wiki/Notification-Center-Support"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "UseClientCertificate": {
+            "title": "Use Client Certificate Authentication",
+            "description": "(UseClientCertificate)-If true, use an SSL client certificate when communicating with the Munki server. Requires an https:// URL for the Munki repo. See ClientCertificatePath for details",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UseClientCertificateCNAsClientIdentifier": {
+            "title": "Use Client Certificate CN as Munki Client Identifier",
+            "description": "(UseClientCertificateCNAsClientIdentifier)-If true, use the CN of the client certificate as the Client Identifier.Used in combination with the UseClientCertificate key",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SoftwareRepoCAPath": {
+            "title": "Software Repo CA Path",
+            "description": "(SoftwareRepoCAPath)-Path to the directory that stores your CA certificate(s). See the curl man page for more details on this parameter",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": ""
+                        }
+                    }
+                }
+            ]
+        },
+        "SoftwareRepoCACertificate": {
+            "title": "Path to Software Repo CA Certificate",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Library/Managed Installs/certs/ca.pem"
+                        }
+                    }
+                }
+            ]
+        },
+        "ClientCertificatePath": {
+            "title": "Path to Client Certificate",
+            "description": "(ClientCertificatePath)-Absolute path to a client certificate. There are 3 defaults for this key. Concatenated cert/key PEM file accepted",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Library/Managed Installs/certs/[munki.pem|client.pem|cert.pem]"
+                        }
+                    }
+                }
+            ]
+        },
+        "ClientKeyPath": {
+            "title": "Path to Client Certificate Private Key",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": ""
+                        }
+                    }
+                }
+            ]
+        },
+        "AdditionalHttpHeaders": {
+            "title": "Additional HTTP Headers",
+            "description": "(AdditionalHttpHeaders)-This key provides the ability to specify custom HTTP headers to be sent with all curl() HTTP requests. AdditionalHttpHeaders must be an array of strings with valid HTTP header format",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "HTTP Header"
+                    }
+                }
+            ]
+        },
+        "PackageVerificationMode": {
+            "title": "Package Verification Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "none",
+                            "Hash if Available",
+                            "Hash Required"
+                        ]
+                    },
+                    "enum": [
+                        "none",
+                        "hash",
+                        "hash_strict"
+                    ]
+                }
+            ]
+        },
+        "SuppressAutoInstall": {
+            "title": "Suppress all Auto Installation",
+            "description": "(SuppressAutoInstall)-If true, Munki will not automatically install or remove items",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SuppressLoginwindowInstall": {
+            "title": "Suppress Installs at LoginWindow",
+            "description": "(SuppressLoginwindowInstall)-If true, Munki will not install items while idle at the loginwindow except for those marked for unattended_install or unattended_uninstall",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SuppressStopButtonOnInstall": {
+            "title": "Suppress Stop Button in Managed Software Center",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "InstallRequiresLogout": {
+            "title": "Logout for all Managed Software Installs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MSULogEnabled": {
+            "title": "Enable Managed Software Update Logging",
+            "description": "(MSULogEnabled)-Log user actions in the GUI. See [MSU-Logging]",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MSUDebugLogEnabled": {
+            "title": "Enable Managed Software Update Debug Logging",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LocalOnlyManifest": {
+            "title": "Local Only Manifest Name",
+            "description": "(LocalOnlyManifest)-Defines the name of your LocalOnlyManifest. Setting this activates the feature. Unsetting it means Munki will remove the file on the next run",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#localonlymanifest"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "local_manifest"
+                        }
+                    }
+                }
+            ]
+        },
+        "FollowHTTPRedirects": {
+            "title": "Follow HTTP Redirects",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/munki/munki/wiki/Preferences#followhttpredirects"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "None",
+                            "HTTPS Only",
+                            "All"
+                        ]
+                    },
+                    "enum": [
+                        "none",
+                        "https",
+                        "all"
+                    ]
+                }
+            ]
+        },
+        "IgnoreSystemProxies": {
+            "title": "Ignore System Proxies",
+            "description": "(IgnoreSystemProxies)-If true, HTTP and/or HTTPS proxies set system-wide will be ignored, connections will be made directly",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "PerformAuthRestarts": {
+            "title": "Perform Filevault Authenticated Restarts",
+            "description": "(PerformAuthRestarts)-If true, Munki will attempt to perform a filevault auth restart",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/munki/munki/wiki/Authorized-Restarts"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RecoveryKeyFile": {
+            "title": "Filevault Recovery Key Path for Authenticated Restarts",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/munki/munki/wiki/Authorized-Restarts"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/var/root/FilevaultInfo.plist"
+                        }
+                    }
+                }
+            ]
+        },
+        "ShowOptionalInstallsForHigherOSVersions": {
+            "title": "Show Installs for OS Versions Higher than Current Client Version",
+            "description": "(ShowOptionalInstallsForHigherOSVersions)-",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EmulateProfileSupport": {
+            "title": "Emulate Managed Preferences via MDM",
+            "description": "(EmulateProfileSupport)-If true, Munki will attempt to emulate the functionality of Managed Preferences from configuration profiles on Big Sur",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/munki/munki/wiki/Configuration-Profile-Emulation"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
