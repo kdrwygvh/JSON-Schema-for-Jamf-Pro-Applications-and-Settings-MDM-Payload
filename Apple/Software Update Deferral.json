@@ -32,7 +32,7 @@
             ]
         },
         "enforcedSoftwareUpdateMajorOSDeferredInstallDelay": {
-            "title": "Number of Days to Defer Major Software Upgrades (11.3-\u221e)",
+            "title": "Number of Days to Defer Major Software Upgrades (11.3+)",
             "anyOf": [
                 {
                     "type": "null",
@@ -47,7 +47,7 @@
             ]
         },
         "forceDelayedMajorSoftwareUpdates": {
-            "title": "Respect Deferred Major Software Upgrade Settings (11.3-\u221e)",
+            "title": "Respect Deferred Major Software Upgrade Settings (11.3+)",
             "anyOf": [
                 {
                     "type": "null",
@@ -60,7 +60,7 @@
             ]
         },
         "enforcedSoftwareUpdateMinorOSDeferredInstallDelay": {
-            "title": "Number of Days to Defer Minor Software Updates (11.3-\u221e)",
+            "title": "Number of Days to Defer Minor Software Updates (11.3+)",
             "anyOf": [
                 {
                     "type": "null",
@@ -75,7 +75,7 @@
             ]
         },
         "enforcedSoftwareUpdateNonOSDeferredInstallDelay": {
-            "title": "Number of Days to Defer Non OS Software Updates (11.3-\u221e)",
+            "title": "Number of Days to Defer Non OS Software Updates (11.3+)",
             "anyOf": [
                 {
                     "type": "null",
@@ -90,7 +90,7 @@
             ]
         },
         "forceDelayedAppSoftwareUpdates": {
-            "title": "Respect Deferred Software Settings for Non OS Updates (Safari etc...) (11.0-\u221e)",
+            "title": "Respect Deferred Software Settings for Non OS Updates (Safari etc...) (11.0+)",
             "description": "(forceDelayedAppSoftwareUpdates)-If true, delays user visibility of non-OS Software Updates. Requires a supervised device",
             "anyOf": [
                 {
