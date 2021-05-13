@@ -1701,6 +1701,30 @@
                 }
             ]
         },
+        "ExplicitlyAllowedNetworkPorts": {
+            "title": "Explicitly allowed network ports",
+            "description": "(ExplicitlyAllowedNetworkPorts)-This policy allows bypassing the restricted port list built into Microsoft Edge. The set of ports is defined as a comma-separated list that outgoing connections should be permitted on",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#explicitlyallowednetworkports"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Port"
+                    }
+                }
+            ]
+        },
         "ExternalProtocolDialogShowAlwaysOpenCheckbox": {
             "title": "ExternalProtocolDialogShowAlwaysOpenCheckbox - Show an \"Always open\" checkbox in external protocol dialog",
             "description": "This policy controls whether the \"Always allow this site to open links of this type\" checkbox is shown on external protocol launch confirmation prompts. This policy only applies to https:// links.\n\nIf you enable this policy, when an external protocol confirmation prompt is shown, the user can select \"Always allow\" to skip all future confirmation prompts for the protocol on this site.\n\nIf you disable this policy, the \"Always allow\" checkbox isn't displayed. The user will be prompted for confirmation every time an external protocol is invoked.\n\nPrior to Microsoft Edge 83, if you don't configure this policy, the \"Always allow\" checkbox isn't displayed. The user will be prompted for confirmation every time an external protocol is invoked.\n\nOn Microsoft Edge 83, if you don't configure this policy, the checkbox visibility is controlled by the \"Enable remembering protocol launch prompting preferences\" flag in edge://flags\n\nAs of Microsoft Edge 84, if you don't configure this policy, when an external protocol confirmation prompt is shown, the user can select \"Always allow\" to skip all future confirmation prompts for the protocol on this site.",
@@ -2045,6 +2069,25 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#hardwareaccelerationmodeenabled"
+                }
+            ]
+        },
+        "HeadlessModeEnabled": {
+            "title": "Allow Headless Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#headlessmodeenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -2546,6 +2589,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#managedsearchengines"
+                }
+            ]
+        },
+        "MathSolverEnabled": {
+            "title": "Let users snip a Math problem and get the solution with a step-by-step explanation in Microsoft Edge",
+            "description": "(MathSolverEnabled)-This policy lets you manage whether users can use the Math Solver tool in Microsoft Edge or not",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#mathsolverenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -3252,6 +3315,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#serialblockedforurls"
+                }
+            ]
+        },
+        "SharedArrayBufferUnrestrictedAccessAllowed": {
+            "title": "Allow SharedArrayBuffers in a non cross-origin-isolated context",
+            "description": "(SharedArrayBufferUnrestrictedAccessAllowed)-Specifies whether SharedArrayBuffers can be used in a non cross-origin-isolated context. A SharedArrayBuffer is a binary data buffer that can be used to create views on shared memory. SharedArrayBuffers have a memory access vulnerability in several popular CPUs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#sharedarraybufferunrestrictedaccessallowed"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
