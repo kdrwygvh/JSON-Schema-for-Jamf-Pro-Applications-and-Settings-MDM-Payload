@@ -44,6 +44,17 @@
                 }
             ]
         },
+        "DebugDisablePerTabWebProcesses": {
+          "title": "Disable Per Tab Web Processes",
+          "description": "(DebugDisablePerTabWebProcesses)-Disables isolating tabs to their own process",
+          "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+              "title": "Configured",
+              "type": "boolean"
+            }
+          ]
+        },
         "Command1Through9SwitchesTabs": {
             "title": "Use Cmd-1 Throgh Cmd-9 to Switch Tabs",
             "anyOf": [

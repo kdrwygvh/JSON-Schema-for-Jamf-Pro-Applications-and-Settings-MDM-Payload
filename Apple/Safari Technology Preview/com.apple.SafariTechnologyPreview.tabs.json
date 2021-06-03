@@ -44,6 +44,17 @@
                 }
             ]
         },
+        "DebugDisablePerTabWebProcesses": {
+          "title": "Disable Per Tab Web Processes",
+          "description": "(DebugDisablePerTabWebProcesses)-Disables isolating tabs to their own process",
+          "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+              "title": "Configured",
+              "type": "boolean"
+            }
+          ]
+        },
         "CommandClickMakesTabs": {
             "title": "Cmd-click Open Link in a New Tab",
             "anyOf": [
