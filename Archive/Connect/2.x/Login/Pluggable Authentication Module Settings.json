@@ -1,0 +1,126 @@
+{
+    "title": "Jamf Connect Login Pluggable Authentication Module Settings",
+    "description": "Keys to allow Jamf Connect to interoperate with local authentication schemes",
+    "__preferencedomain": "com.jamf.connect.login",
+    "properties": {
+        "AuthUIOIDCProvider": {
+            "title": "Identity Provider (PAM)",
+            "description": "Specifies the identity provider to use for authentication via the Pluggable Authentication Module ",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "insert-identity-provider"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthUIOIDCClientID": {
+            "title": "Client ID (PAM)",
+            "description": "The client ID of the created Jamf Connect app in your identity provider used for authentication via PAM",
+            "property_order": 2,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthUIOIDCRedirectURI": {
+            "title": "Redirect URI (PAM)",
+            "description": "The redirect URI used by the created Jamf Connect app in your identity provider",
+            "property_order": 3,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://127.0.0.1/jamfconnect"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthUIOIDCTenant": {
+            "title": "Tenant ID (PAM)",
+            "description": "The tenant in your identity provider used for authentication via PAM. If Okta is your IdP this key is required",
+            "property_order": 4,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "dev-123456"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthUIOIDCClientSecret": {
+            "title": "Client Secret (PAM)",
+            "description": "The client secret of your Jamf Connect app in your IdP. This value is only known by Jamf Connect and your IdP",
+            "property_order": 5,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "9fcc52c7-ee36-4889-8517-lkjslkjoe23"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AuthUIOIDCDiscoveryURL": {
+            "title": "Discovery URL (PAM)",
+            "description": "Your IdP's OpenID metadata document that stores OpenID configuration information. This value appears in the following format: https://domain.url.com/.well-known/openid-configuration",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "https://domain.url.com/.well-known/openid-configuration"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        }
+    }
+}

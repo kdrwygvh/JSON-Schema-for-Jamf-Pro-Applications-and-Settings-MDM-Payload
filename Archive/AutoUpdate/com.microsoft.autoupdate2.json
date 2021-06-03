@@ -1,0 +1,29 @@
+{
+    "title": "Microsoft AutoUpdate Preferences",
+    "__preferencedomain": "com.microsoft.autoupdate2",
+    "properties": {
+        "AcknowledgedDataCollectionPolicy": {
+            "title": "Pre-Acknowledge Data Collection Policy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Required Data Only",
+                            "Required and Optional Data"
+                        ]
+                    },
+                    "enum": [
+                        "RequiredDataOnly",
+                        "RequiredAndOptionalData"
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -27,7 +27,7 @@
             "description": "Path to a locally stored image to use as a logo during password validation or local password creation",
             "options": {
                 "inputAttributes": {
-                    "placeholder": "usr/local/images/logo250X250px.png"
+                    "placeholder": "/System/Library/PrivateFrameworks/SystemDesktopAppearance.framework/Versions/A/Resources/DefaultBackground.jpg"
                 }
             },
             "anyOf": [

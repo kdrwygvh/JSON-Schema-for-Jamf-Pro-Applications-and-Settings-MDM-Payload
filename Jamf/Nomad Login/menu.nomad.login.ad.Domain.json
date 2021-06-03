@@ -1,0 +1,94 @@
+{
+    "title": "menu.nomad.login.ad.DomainPreferences",
+    "description": "NoMAD Login AD Domain Preferences",
+    "__preferencedomain": "menu.nomad.login.ad",
+    "properties": {
+        "ADDomain": {
+            "title": "Active Directory Domain",
+            "property_order": 1,
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "domain.com"
+                }
+            },
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "AdditionalADDomains": {
+            "title": "Additional Domains",
+            "description": "Additional Domains to Present at Login Window",
+            "property_order": 2,
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Additional Domain"
+                    }
+                }
+            ]
+        },
+        "DenyLocal": {
+            "title": "Deny Local Only Accounts from Logging In",
+            "description": "Determines if any local accounts can sign in, or if all accounts have to authenticate to AD first",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DenyLocalExcluded": {
+            "title": "Local Only Accounts Permitted to Log In",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "UserName"
+                    }
+                }
+            ]
+        },
+        "DenyLoginUnlessGroupMember": {
+            "title": "Security Groups Permitted to Log In",
+            "description": "Security Groups that define which users may log into macOS",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Security Group"
+                    }
+                }
+            ]
+        }
+    }
+}
