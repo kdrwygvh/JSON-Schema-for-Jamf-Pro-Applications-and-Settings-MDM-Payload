@@ -1427,6 +1427,66 @@
                 }
             }
         },
+        "ExtensionSettings": {
+            "title": "Extensions Settings",
+            "type": "object",
+            "description": "By default, this defines Extension settings for all extensions. If you need to specificy specific extension permissions add them as unique JSON objects",
+            "properties": {
+                "*": {
+                    "properties": {
+                        "allowed_types": {
+                            "title": "Allowed Extension Types",
+                            "description": "extension, theme, dictionary, locale are supported",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Extension Type"
+                                    }
+                                }
+                            ]
+                        },
+                        "blocked_install_message": {
+                            "title": "Blocked Install Message",
+                            "type": "string"
+                        },
+                        "install_sources": {
+                            "title": "Extension Install Sources",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        },
+                        "installation_mode": {
+                            "title": "Installation Mode",
+                            "enum": [
+                                "blocked",
+                                "allowed",
+                                "force_installed",
+                                "normal_installed"
+                            ],
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "ExtensionUpdate": {
             "title": "Allow Extension Updates",
             "anyOf": [
