@@ -1,0 +1,193 @@
+{
+    "title": "macOS LAPS Settings",
+    "description": "Preferences for Open Source macOS LAPS Project",
+    "__version": "1.0",
+    "__preferencedomain": "edu.psu.macoslaps",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://github.com/joshua-d-miller/macOSLAPS"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "LocalAdminAccount": {
+            "title": "Local Admin Account Username",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "admin"
+                        }
+                    }
+                }
+            ]
+        },
+        "DaysTillExpiration": {
+            "title": "Days Until Password Expiration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "PasswordLength": {
+            "title": "Password Length",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "PasswordGrouping": {
+            "title": "Number of Characters Between Separator",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
+        "RemoveKeyChain": {
+            "title": "Remove Keychain after Password Change",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RemovePassChars": {
+            "title": "Characters to Exclude in Password",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "(){}"
+                        }
+                    }
+                }
+            ]
+        },
+        "ExclusionSets": {
+            "title": "Character Classes to Exclude in Password",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Character Class",
+                        "options": {
+                            "enum_titles": [
+                                "Symbols",
+                                "Letters",
+                                "Numbers"
+                            ]
+                        },
+                        "enum": [
+                            "symbols",
+                            "letters",
+                            "numbers"
+                        ]
+                    }
+                }
+            ]
+        },
+        "PreferredDC": {
+            "title": "Preferred Domain Controller",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "dc.example.private"
+                        }
+                    }
+                }
+            ]
+        },
+        "FirstPass": {
+            "title": "Initial Password for secureToken Admin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "password"
+                        }
+                    }
+                }
+            ]
+        },
+        "Method": {
+            "title": "LAPS Password Storage Method",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Active Directory",
+                            "Local"
+                        ]
+                    },
+                    "enum": [
+                        "AD",
+                        "Local"
+                    ]
+                }
+            ]
+        }
+    }
+}
