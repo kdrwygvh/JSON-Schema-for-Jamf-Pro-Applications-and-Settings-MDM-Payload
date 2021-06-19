@@ -1,0 +1,29 @@
+{
+    "title": "Microsoft OneDrive Preferences",
+    "__preferencedomain": "com.microsoft.OneDriveUpdater",
+    "properties": {
+        "Tier": {
+            "title": "Tier",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Production",
+                            "Enterprise"
+                        ]
+                    },
+                    "enum": [
+                        "Production",
+                        "Enterprise"
+                    ]
+                }
+            ]
+        }
+    }
+}
