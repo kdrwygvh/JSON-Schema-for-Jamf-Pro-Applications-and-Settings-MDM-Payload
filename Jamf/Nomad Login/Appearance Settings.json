@@ -1,0 +1,126 @@
+{
+    "title": "NoMAD Login Appearance Settings",
+    "__version": "1.0",
+    "__preferencedomain": "menu.nomad.login.ad",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD/-/wikis/Configuration/preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "BackgroundImage": {
+            "title": "Background Image",
+            "description": "(BackgroundImage)-A path to the background image to use as a String. If set, this key will attempt to load the given image as a desktop image on the login screen. Any format supported by macOS may be used. You do not need to escape the path to the image",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/System/Library/PrivateFrameworks/SystemDesktopAppearance.framework/Versions/A/Resources/DefaultBackground.jpg"
+                        }
+                    }
+                }
+            ]
+        },
+        "BackgroundImageAlpha": {
+            "title": "Background Image Alpha",
+            "description": "(BackgroundImageAlpha)-The alpha value of the vibrancy layer blur above the background image as an Int from 0-10 which represent the alpha value in 10% increments",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10
+                    ]
+                }
+            ]
+        },
+        "LoginLogo": {
+            "title": "Login Logo",
+            "description": "(LoginLogo)-A path to the login logo image to use as a String. The LoginLogo key allows you to change the logo presented above the username and password fields on the login screen",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/usr/local/loginimage.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "LoginScreen": {
+            "title": "Use macOS Style Login Screen",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UsernameFieldPlaceholder": {
+            "title": "Username Field Placeholder",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "AD Username"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

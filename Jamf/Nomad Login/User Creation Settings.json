@@ -1,0 +1,77 @@
+{
+    "title": "NoMAD Login AD User Creation Settings",
+    "__version": "1.0",
+    "__preferencedomain": "menu.nomad.login.ad",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD/-/wikis/Configuration/preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "CreateAdminUser": {
+            "title": "Create Admin User",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CreateAdminIfGroupMember": {
+            "title": "AD Groups to create as Admin Users",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "AD Group"
+                    }
+                }
+            ]
+        },
+        "DemobilizeUsers": {
+            "title": "Demobilize Account",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "UserProfileImage": {
+            "title": "User Profile Image",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/usr/local/userProfileImage.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "title": "NoMAD Login AD Filevault Settings",
+    "__version": "1.0",
+    "__preferencedomain": "menu.nomad.login.ad",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD/-/wikis/Configuration/preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "EnableFDE": {
+            "title": "Enable Filevault on First Login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKey": {
+            "title": "Enable Local Escrow of Filevault Recovery Key",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKeyPath": {
+            "title": "Custom Path for Filevault Recovery Key Local Escrow",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/private/var/fvkey"
+                        }
+                    }
+                }
+            ]
+        },
+        "EnableFDERekey": {
+            "title": "Rotate Filevault Recovery Key on Sign-in",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LDAPOverSSL": {
+            "title": "Enable LDAP over SSL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LDAPServers": {
+            "title": "Custom LDAP Servers",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "LDAP Server"
+                    }
+                }
+            ]
+        }
+    }
+}
