@@ -1,0 +1,55 @@
+{
+    "title": "NoMAD Login AD Keychain Settings",
+    "__version": "1.0",
+    "__preferencedomain": "menu.nomad.login.ad",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://gitlab.com/orchardandgrove-oss/NoMADLogin-AD/-/wikis/Configuration/preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "KeychainCreate": {
+            "title": "Create a Keychain if one does not exist",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KeychainAddNoMAD": {
+            "title": "Add NoMAD Keychain Item",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KeychainReset": {
+            "title": "Reset Keychain if Password does not match",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
