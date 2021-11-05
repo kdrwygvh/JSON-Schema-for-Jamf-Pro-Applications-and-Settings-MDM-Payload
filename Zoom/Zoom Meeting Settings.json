@@ -12,7 +12,7 @@
         "remove_empty_properties": true
     },
     "properties": {
-        "usepmi": {
+        "UsePMI": {
             "title": "Always use PMI for Instant Meetings",
             "anyOf": [
                 {
@@ -38,7 +38,7 @@
                 }
             ]
         },
-        "zdisablesendvideo": {
+        "zDisableSendVideo": {
             "title": "Disable Sending Video",
             "anyOf": [
                 {
@@ -51,7 +51,7 @@
                 }
             ]
         },
-        "zdisablerecvvideo": {
+        "zDisableRecvVideo": {
             "title": "Disable Receiving Video",
             "anyOf": [
                 {
@@ -64,7 +64,7 @@
                 }
             ]
         },
-        "disablecomputeraudio": {
+        "DisableComputerAudio": {
             "title": "Disable Computer Audio",
             "anyOf": [
                 {
@@ -77,7 +77,20 @@
                 }
             ]
         },
-        "enableoriginalsound": {
+        "MuteWhenLockScreen": {
+            "title": "Mute when Screen is Locked",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableOriginalSound": {
             "title": "Enable Original Sound for Audio",
             "anyOf": [
                 {
@@ -103,7 +116,7 @@
                 }
             ]
         },
-        "audioautoadjust": {
+        "AudioAutoAdjust": {
             "title": "Automatically Adjust Microphone Levels",
             "anyOf": [
                 {
@@ -129,7 +142,7 @@
                 }
             ]
         },
-        "setusesystemdefaultspeakerforvoip": {
+        "SetUseSystemDefaultSpeakerForVOIP": {
             "title": "Use System Default Speaker when Using Computer Audio",
             "anyOf": [
                 {
@@ -142,7 +155,7 @@
                 }
             ]
         },
-        "setusesystemdefaultmicforvoip": {
+        "SetUseSystemDefaultMicForVOIP": {
             "title": "Use System Default Speaker when Using Microphone Audio",
             "anyOf": [
                 {
@@ -194,7 +207,7 @@
                 }
             ]
         },
-        "zdisableannotation": {
+        "zDisableAnnotation": {
             "title": "Disable Annotation When Screen Sharing or Viewing a Screen Share",
             "anyOf": [
                 {
@@ -220,7 +233,7 @@
                 }
             ]
         },
-        "disablewhiteboard": {
+        "DisableWhiteboard": {
             "title": "Disable White Board",
             "anyOf": [
                 {
@@ -233,7 +246,7 @@
                 }
             ]
         },
-        "enablesharevideo": {
+        "EnableShareVideo": {
             "title": "Allow Sharing of Video Clips",
             "anyOf": [
                 {
@@ -242,11 +255,17 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/202954249"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
         },
-        "enableshareaudio": {
+        "EnableShareAudio": {
             "title": "Allow Sharing of Audio Only when Screen Sharing",
             "anyOf": [
                 {
@@ -376,8 +395,8 @@
                 }
             ]
         },
-        "disableremotecontrol": {
-            "title": "Disable Remote Control When Screen Sharing",
+        "zDisableFT": {
+            "title": "Disable In-Meeting File Transfers",
             "anyOf": [
                 {
                     "type": "null",
@@ -389,7 +408,39 @@
                 }
             ]
         },
-        "disableremotesupport": {
+        "DisableMeeting3rdPartyFileStorage": {
+            "title": "Disable In-Meeting Third Party File Transfers",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableRemoteControl": {
+            "title": "Disable Remote Control When Screen Sharing",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/201362673"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableRemoteSupport": {
             "title": "Disable 1-1 Remote Support when Screen Sharing",
             "anyOf": [
                 {
@@ -398,6 +449,69 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/208072316"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableClosedCaptioning": {
+            "title": "Disable Closed Captioning",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/4403492514829"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableQnA": {
+            "title": "Disable Q&A",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/203686015"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableSlideControl": {
+            "title": "Disable Slide Control",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/4411656450701"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
@@ -415,7 +529,7 @@
                 }
             ]
         },
-        "enablesplitscreen": {
+        "EnableSplitScreen": {
             "title": "Enable Side by Side Mode by Default",
             "anyOf": [
                 {
@@ -428,7 +542,7 @@
                 }
             ]
         },
-        "zdisablelocalrecord": {
+        "zDisableLocalRecord": {
             "title": "Disable Local Recording",
             "anyOf": [
                 {
@@ -437,11 +551,17 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/201362473"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
         },
-        "zdisablecmr": {
+        "zDisableCMR": {
             "title": "Disable Cloud Recording",
             "anyOf": [
                 {
@@ -450,11 +570,17 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/203741855"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
         },
-        "disablevirtualbkgnd": {
+        "DisableVirtualBkgnd": {
             "title": "Disable Virtual Backgrounds",
             "anyOf": [
                 {
@@ -463,6 +589,12 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/210707503"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
@@ -476,7 +608,42 @@
                 },
                 {
                     "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://support.zoom.us/hc/en-us/articles/115002595343#h_01EEEKW5C9492RGWQ6KN55WQJ7"
+                        }
+                    ],
                     "type": "boolean"
+                }
+            ]
+        },
+        "SetScreenCaptureMode": {
+            "title": "Screen Capture Mode",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Auto",
+                            "Legacy OS",
+                            "Share with Window Filtering",
+                            "Advanced Share with Window Filtering",
+                            "Advanced Share without Window Filtering"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                    ]
                 }
             ]
         },
@@ -547,7 +714,7 @@
                 }
             ]
         },
-        "bandwidthlimitup": {
+        "BandwidthLimitUp": {
             "title": "Limit Maximum Upstream Bandwidth",
             "anyOf": [
                 {
@@ -565,7 +732,7 @@
                 }
             ]
         },
-        "bandwidthlimitdown": {
+        "BandwidthLimitDown": {
             "title": "Limit Maximum Downstream Bandwidth",
             "anyOf": [
                 {
@@ -583,7 +750,7 @@
                 }
             ]
         },
-        "recordpath": {
+        "RecordPath": {
             "title": "Local Path to Meeting Recordings",
             "anyOf": [
                 {
@@ -601,7 +768,7 @@
                 }
             ]
         },
-        "proxybypass": {
+        "ProxyBypass": {
             "title": "Set Proxy Bypass Rule",
             "anyOf": [
                 {
@@ -619,7 +786,7 @@
                 }
             ]
         },
-        "proxy": {
+        "ProxyServer": {
             "title": "Proxy Server",
             "anyOf": [
                 {
@@ -637,7 +804,7 @@
                 }
             ]
         },
-        "proxypac": {
+        "ProxyPAC": {
             "title": "Proxy Server PAC URL",
             "anyOf": [
                 {

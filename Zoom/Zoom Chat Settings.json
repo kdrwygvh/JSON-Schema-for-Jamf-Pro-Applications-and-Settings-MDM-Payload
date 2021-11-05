@@ -12,7 +12,7 @@
         "remove_empty_properties": true
     },
     "properties": {
-        "zdisablechat": {
+        "zDisableChat": {
             "title": "Disable Group Chat",
             "anyOf": [
                 {
@@ -38,18 +38,35 @@
                 }
             ]
         },
-        "zdisableft": {
-            "title": "Disable File Transfer",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
+        "PlaySoundForIMMessage": {
+          "title": "Play Sound for IM Messsages",
+          "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+              "title": "Configured",
+              "type": "boolean"
+            }
+          ]
+        },
+        "ShowIMMessagePreview": {
+          "title": "Show IM Message Preview",
+          "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+              "title": "Configured",
+              "type": "boolean"
+            }
+          ]
+        },
+        "MuteIMNotificationWhenInMeeting": {
+          "title": "Mute IM Notifications when In Meeting",
+          "anyOf": [
+            {"type": "null", "title": "Not Configured"},
+            {
+              "title": "Configured",
+              "type": "boolean"
+            }
+          ]
         },
         "ShowVoiceMessageButton": {
             "title": "Disable Sending Voice Messages",
