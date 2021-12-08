@@ -20,6 +20,20 @@
                     "type": "boolean"
                 }
             ]
+                },
+        "SlackDefaultSignInWorkspace": {
+            "title": "Slack Default Workspace",
+            "description": "(SlackDefaultSignInWorkspace)-Set the default workspace",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
         }
     }
 }
