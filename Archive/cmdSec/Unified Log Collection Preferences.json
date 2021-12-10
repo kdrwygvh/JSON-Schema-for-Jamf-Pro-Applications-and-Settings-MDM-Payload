@@ -1,0 +1,35 @@
+{
+    "title": "cmdReporter Unified Log Collection Preferences",
+    "description": "cmdReporter Unified Log Collection Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.cmdsec.cmdReporter",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000067239-unified-log-collection"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "UnifiedLogPredicates": {
+            "title": "Unified Log Predicates",
+            "description": "(UnifiedLogPredicates)- Each string defines a search predicate that defines which unified log events will be collected and transmitted. Multiple searches can be defined but caution should be used to not overly impact system performance, a maximum of 5 searches is recommended",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Unified Log Predicate"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "title": "cmdReporter Log Level Preferences",
+    "description": "Log Level Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.cmdsec.cmdReporter",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AuditLevel": {
+            "title": "Audit Level",
+            "description": "(AuditLevel)-Set Verbosity of cmdReporter Audit Logs",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000060399-log-level-documentation"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Log Level 1",
+                            "Log Level 2",
+                            "Log Level 3"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "AuditEventLogVerboseMessages": {
+            "title": "Log Verbose Messages",
+            "description": "(AuditEventLogVerboseMessages)-",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000071110-verbose-logs-auditeventlogverbosemessages-"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AuditEventExcludedUsers": {
+            "title": "Excluded Users from Auditing",
+            "description": "(AuditEventExcludedUsers)-",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Excluded UserName"
+                    }
+                }
+            ]
+        },
+        "AuditEventExcludedProcesses": {
+            "title": "Excluded Processes from Auditing",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000060411-process-event-filter-preferences"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Excluded Process Path"
+                    }
+                }
+            ]
+        }
+    }
+}

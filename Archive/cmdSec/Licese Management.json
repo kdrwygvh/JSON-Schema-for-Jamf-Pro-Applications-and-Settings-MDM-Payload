@@ -1,0 +1,102 @@
+{
+    "title": "cmdReporter License Management Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.cmdsec.cmdReporter",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000060409-license-management"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "LicenseEmail": {
+            "title": "License Email",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "user@domain.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "LicenseExpirationDate": {
+            "title": "License Expiration Date",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "12/01/2019"
+                        }
+                    }
+                }
+            ]
+        },
+        "LicenseKey": {
+            "title": "License Key",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string"
+                }
+            ]
+        },
+        "LicenseType": {
+            "title": "License Type",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Annual"
+                        }
+                    }
+                }
+            ]
+        },
+        "LicenseVersion": {
+            "title": "License Version",
+            "description": "(LicenseVersion)-1 is the only supported option currently",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "1"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "title": "cmdReporter Process Event Filter Preferences",
+    "description": "Process Event Filter Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.cmdsec.cmdReporter",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000060411-process-event-filter-preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AuditEventExcludedProcesses": {
+            "title": "Excluded Processes from Auditing",
+            "description": "(AuditEventExcludedProcesses)-Exclude specific process paths based on the subject.process_name field in cmdReporter logs. Multiple values can be defined to filter 3rd party programs",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Excluded Process Path"
+                    }
+                }
+            ]
+        },
+        "AuditEventLogVerboseMessages": {
+            "title": "Log Verbose Messages",
+            "description": "(AuditEventLogVerboseMessages)-Log all terminal, script, and other verbose events not included in default log output",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

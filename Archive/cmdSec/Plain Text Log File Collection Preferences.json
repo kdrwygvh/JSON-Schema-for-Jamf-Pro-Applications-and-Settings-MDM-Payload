@@ -1,0 +1,35 @@
+{
+    "title": "cmdReporter Plaintext Log File Collection Preferences",
+    "description": "cmdReporter Plaintext Log File Collection Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.cmdsec.cmdReporter",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://wiki.cmdreporter.com/support/solutions/articles/12000076265-plaintext-log-file-collection"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "PlaintextLogCollectionPaths": {
+            "title": "Plain Text Log File Collection Paths",
+            "description": "A cmdReporter log event will be created for every line in the specified log file as well as any data appended after the initial collection. The ongoing logging behavior is similar to the /usr/bin/tail -f command",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Log File Collection Path"
+                    }
+                }
+            ]
+        }
+    }
+}
