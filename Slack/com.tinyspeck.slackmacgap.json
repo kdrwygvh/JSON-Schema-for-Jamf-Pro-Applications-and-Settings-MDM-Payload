@@ -20,10 +20,16 @@
                     "type": "boolean"
                 }
             ]
-                },
+        },
         "SlackDefaultSignInWorkspace": {
-            "title": "Slack Default Workspace",
-            "description": "(SlackDefaultSignInWorkspace)-Set the default workspace",
+            "title": "Default Sign-in Workspace",
+            "description": "(SlackDefaultSignInWorkspace)-Default Workspae ID",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://slack.com/help/articles/360041725993-Share-a-default-sign-in-file-with-members"
+                }
+            ],
             "anyOf": [
                 {
                     "type": "null",
@@ -31,7 +37,12 @@
                 },
                 {
                     "title": "Configured",
-                    "type": "string"
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Workspace ID From Sign-in File"
+                        }
+                    }
                 }
             ]
         }
