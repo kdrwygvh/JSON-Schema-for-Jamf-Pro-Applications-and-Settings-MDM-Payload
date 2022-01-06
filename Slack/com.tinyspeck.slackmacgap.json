@@ -23,7 +23,7 @@
         },
         "SlackDefaultSignInWorkspace": {
             "title": "Default Sign-in Workspace",
-            "description": "(SlackDefaultSignInWorkspace)-Default Workspae ID",
+            "description": "(SlackDefaultSignInWorkspace)-Default Workspace ID",
             "links": [
                 {
                     "rel": "Documentation Link",
