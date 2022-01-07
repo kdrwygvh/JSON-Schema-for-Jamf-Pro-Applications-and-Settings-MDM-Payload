@@ -1,0 +1,132 @@
+{
+    "title": "Google Chrome Screen Capture Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.google.Chrome",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://chromeenterprise.google/policies/"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "SameOriginTabCaptureAllowedByOrigins": {
+            "title": "Allow Same Origin Tab capture by these origins",
+            "description": "(SameOriginTabCaptureAllowedByOrigins)-Setting the policy lets you set a list of URL patterns that can capture tabs with their same Origin",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#SameOriginTabCaptureAllowedByOrigins"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "ScreenCaptureAllowedByOrigins": {
+            "title": "Allow Desktop, Window, and Tab capture by these origins",
+            "description": "(ScreenCaptureAllowedByOrigins)-Setting the policy lets you set a list of URL patterns that can use Desktop, Window, and Tab Capture",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#ScreenCaptureAllowedByOrigins"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "TabCaptureAllowedByOrigins": {
+            "title": "Allow Tab capture by these origins",
+            "description": "(TabCaptureAllowedByOrigins)-Setting the policy lets you set a list of URL patterns that can use Tab Capture",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#TabCaptureAllowedByOrigins"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "WindowCaptureAllowedByOrigins": {
+            "title": "Allow Window and Tab capture by these origins",
+            "description": "(WindowCaptureAllowedByOrigins)-Setting the policy lets you set a list of URL patterns that can use Window and Tab Capture",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#WindowCaptureAllowedByOrigins"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "ScreenCaptureAllowed": {
+            "title": "Allow or deny screen capture",
+            "description": "(ScreenCaptureAllowed)-If enabled or not configured (default), a Web page can use screen-share APIs (e.g., getDisplayMedia() or the Desktop Capture extension API) to prompt the user to select a tab, window or desktop to capture. When this policy is disabled, any calls to screen-share APIs will fail with an error",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ScreenCaptureAllowed"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
