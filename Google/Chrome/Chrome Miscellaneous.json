@@ -43,6 +43,26 @@
                 }
             ]
         },
+        "AdditionalDnsQueryTypesEnabled": {
+            "title": "Allow DNS queries for additional DNS record types",
+            "description": "(AdditionalDnsQueryTypesEnabled)-This policy controls whether Google Chrome may query additional DNS record types when making insecure DNS requests. This policy has no effect on DNS queries made via Secure DNS, which may always query additional DNS types",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#AdditionalDnsQueryTypesEnabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "AdsSettingForIntrusiveAdsSites": {
             "title": "Ads setting for sites with intrusive ads",
             "description": "Allows you to set whether ads should be blocked on sites with intrusive ads. 1 = Allow ads on all sites 2 = Do not allow ads on sites with intrusive ads",
@@ -141,34 +161,6 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AllowFileSelectionDialogs"
                 }
             ],
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "AllowOutdatedPlugins": {
-            "title": "Allow running plugins that are outdated (Deprecated)",
-            "description": "If you enable this setting, outdated plugins are used as normal plugins. If you disable this setting, outdated plugins will not be used and users will not be asked for permission to run them",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "AllowPopupsDuringPageUnload": {
-            "title": "Allows a page to show popups during its unloading (Deprecated)",
-            "description": "This policy allows an admin to specify that a page may show popups during its unloading. When the policy is set to enabled, pages are allowed to show popups while they are being unloaded",
             "anyOf": [
                 {
                     "type": "null",
@@ -290,26 +282,6 @@
                         3
                     ],
                     "default": 1
-                }
-            ]
-        },
-        "AppCacheForceEnabled": {
-            "title": "Allows the AppCache feature to be re-enabled even if it is off by default",
-            "description": "(AppCacheForceEnabled)-If set to true, this will force AppCache to be enabled, even when AppCache in Chrome is not available by default. If unset or set to false, AppCache will follow Chrome's defaults",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "links": [
-                        {
-                            "rel": "Documentation Link",
-                            "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=AppCacheForceEnabled"
-                        }
-                    ],
-                    "type": "boolean"
                 }
             ]
         },
@@ -738,6 +710,31 @@
                 }
             ]
         },
+        "BrowserThemeColor": {
+            "title": "Configure the color of the browser's theme",
+            "description": "(BrowserThemeColor)-This policy allows admins to configure the color of Google Chrome's theme. The input string should be a valid hex color string matching the format #RRGGBB",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#BrowserThemeColor"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "#RRGGBB"
+                        }
+                    }
+                }
+            ]
+        },
         "BrowsingDataLifetime": {
             "type": "array",
             "title": "Browsing Data Lifetiime",
@@ -828,6 +825,26 @@
                 },
                 {
                     "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "CECPQ2Enabled": {
+            "title": "CECPQ2 post-quantum key-agreement enabled for TLS",
+            "description": "(CECPQ2Enabled)-If this policy is not configured, or is set to enabled, then Google Chrome will follow the default rollout process for CECPQ2, a post-quantum key-agreement algorithm in TLS",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#CECPQ2Enabled"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
@@ -935,6 +952,51 @@
                 }
             ]
         },
+        "ClearBrowsingDataOnExitList": {
+            "title": "Clear Browsing Data on Exit",
+            "description": "(ClearBrowsingDataOnExitList)-Configures a list of browsing data types that should be deleted when the user closes all browser windows. The available data types are browsing history (browsing_history), download history (download_history), cookies (cookies_and_other_site_data), cache(cached_images_and_files), autofill (autofill), passwords (password_signin), site settings (site_settings) and hosted apps data (hosted_app_data). This policy does not take precedence over AllowDeletingBrowserHistory",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#ClearBrowsingDataOnExitList"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "options": {
+                            "enum_titles": [
+                                "Browsing History",
+                                "Download History",
+                                "Cookies and other Site Data",
+                                "Cached Imagesa and Files",
+                                "Password Sign-in",
+                                "Autofill",
+                                "Site Settings",
+                                "Hosted App Data"
+                            ]
+                        },
+                        "enum": [
+                            "browsing_history",
+                            "download_history",
+                            "cookies_and_other_site_data",
+                            "cached_images_and_files",
+                            "password_signin",
+                            "autofill",
+                            "site_settings",
+                            "hosted_app_data"
+                        ]
+                    }
+                }
+            ]
+        },
         "ClickToCallEnabled": {
             "title": "Enable the Click to Call Feature",
             "description": "Enable the Click to Call feature which allows users to send phone numbers from Chrome Desktops to an Android device when the user is Signed-in. For more information, see help center article: https://support.google.com/chrome/answer/9430554?hl=en",
@@ -992,6 +1054,30 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ]
+        },
+        "ContextAwareAccessSignalsAllowlist": {
+            "title": "Enable attestation flow for a list of URLs",
+            "description": "(ContextAwareAccessSignalsAllowlist)-Enable Chrome Enterprise Platform Identity Connector for a list of URLs",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#ContextAwareAccessSignalsAllowlist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
                 }
             ]
         },
@@ -1327,23 +1413,6 @@
                 }
             ]
         },
-        "EnableDeprecatedWebPlatformFeatures": {
-            "title": "Enable deprecated web platform features for a limited time (Deprecated)",
-            "description": "Specify a list of deprecated web platform features to re-enable temporarily. The general format of the string tag will be [DeprecatedFeatureName]_EffectiveUntil[yyyymmdd]. As reference, you can find the intent behind the Web Platform feature changes at https://bit.ly/blinkintents",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            ]
-        },
         "EnableExperimentalPolicies": {
             "title": "Enable Experimental Policies",
             "description": "(EnableExperimentalPolicies)-Allows Google Chrome to load experimental policies. WARNING: Experimental policies are unsupported and subject to change or be removed without notice in future version of the browser! An experimental policy may not be finished or still have known or unknown defects. It may be changed or even removed without any notification. By enabling experimental policies, you could lose browser data or compromise your security or privacy. If a policy is not in the list and it's not officially released, its value will be ignored on Beta and Stable channel. If a policy is in the list and it's not officially released, its value will be applied. This policy has no effect on already released policies",
@@ -1428,6 +1497,59 @@
                 }
             ]
         },
+        "EnterpriseRealTimeUrlCheckMode": {
+            "title": "Check Safe Browsing status of URLs in real time",
+            "description": "(EnterpriseRealTimeUrlCheckMode)-This policy controls checking URLs in real time to identify unsafe URLs",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#EnterpriseRealTimeUrlCheckMode"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Real time URL check is disabled",
+                            "Real time check for main frame URLs is enabled"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
+        "FetchKeepaliveDurationSecondsOnShutdown": {
+            "title": "Fetch keepalive duration on Shutdown",
+            "description": "(FetchKeepaliveDurationSecondsOnShutdown)-Controls the duration (in seconds) allowed for keepalive requests on browser shutdown",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#FetchKeepaliveDurationSecondsOnShutdown"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 5,
+                    "default": 0
+                }
+            ]
+        },
         "ForceEphemeralProfiles": {
             "title": "Ephemeral profile",
             "description": "If set to enabled this policy forces the profile to be switched to ephemeral mode. If this policy is specified as an OS policy (e.g. GPO on Windows) it will apply to every profile on the system; if the policy is set as a Cloud policy it will apply only to a profile signed in with a managed account",
@@ -1468,13 +1590,12 @@
                 }
             ]
         },
-        "ForceLegacyDefaultReferrerPolicy": {
-            "title": "Use a default referrer policy of no-referrer-when-downgrade",
-            "description": "(ForceLegacyDefaultReferrerPolicy)-This enterprise policy is for short-term adaptation and will be removed in Google Chrome version 88. Chrome's default referrer policy is being strengthened from its current value of no-referrer-when-downgrade to the more secure strict-origin-when-cross-origin through a gradual rollout targeting Chrome 85 stable. Before the rollout, this enterprise policy will have no effect. After the rollout, when this enterprise policy is enabled, Chrome's default referrer policy will be set to its previous value of no-referrer-when-downgrade",
+        "ForcedLanguages": {
+            "title": "Configure the content and order of preferred languages",
             "links": [
                 {
                     "rel": "Documentation Link",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ForceLegacyDefaultReferrerPolicy"
+                    "href": "https://chromeenterprise.google/policies/#ForcedLanguages"
                 }
             ],
             "anyOf": [
@@ -1484,7 +1605,11 @@
                 },
                 {
                     "title": "Configured",
-                    "type": "boolean"
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Language"
+                    }
                 }
             ]
         },
@@ -1582,6 +1707,35 @@
                 }
             ]
         },
+        "HeadlessMode": {
+            "title": "Control use of the Headless Mode",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#HeadlessMode"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Allow the use of headless mode",
+                            "Do not allow the use of headless mode"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
         "HideWebStoreIcon": {
             "title": "Hide the web store from the New Tab Page and app launcher",
             "description": "Hide the Chrome Web Store app and footer link from the New Tab Page and Google Chrome OS app launcher",
@@ -1599,6 +1753,57 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ]
+        },
+        "HistoryClustersVisible": {
+            "title": "Show history clusters on the Chrome history page",
+            "description": "(HistoryClustersVisible)-This policy controls the visibility of history clusters on the Chrome history page",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#HistoryClustersVisible"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HttpsOnlyMode": {
+            "title": "Allow HTTPS-Only Mode to be enabled",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#HttpsOnlyMode"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Allowed",
+                            "Disallowed",
+                            "Force Enabled (Not Currently Supported)"
+                        ]
+                    },
+                    "enum": [
+                        "allowed",
+                        "disallowed",
+                        "force_enabled"
+                    ]
                 }
             ]
         },
