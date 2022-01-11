@@ -1,0 +1,43 @@
+{
+    "title": "Brave Browser Settings",
+    "description": "Brave Specific Browser Settings not included in the default Chrome manifest",
+    "__version": "1.0",
+    "__preferencedomain": "com.brave.Browser",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://support.brave.com/hc/en-us/articles/360039248271-Group-Policy"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "TorDisabled": {
+            "title": "Disable Tor",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "IPFSEnabled": {
+            "title": "Enable IPFS",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
