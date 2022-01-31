@@ -1,0 +1,170 @@
+{
+    "title": "com.google.chrome.extensions",
+    "description": "Google Chrome Extensions Preferences",
+    "__extensionsdocumentation": "https://developer.chrome.com/apps/external_extensions",
+    "__preferencedomain": "com.google.Chrome",
+    "properties": {
+        "ExtensionSettings": {
+            "title": "Extensions Settings",
+            "type": "object",
+            "description": "By default, this defines Extension settings for all extensions. If you need to specificy specific extension permissions add them as unique JSON objects",
+            "properties": {
+                "*": {
+                    "properties": {
+                        "allowed_types": {
+                            "title": "Allowed Extension Types",
+                            "description": "extension, hosted_app, legacy_packaged_app, platform_app, theme, user_script are supported",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Extension Type"
+                                    }
+                                }
+                            ]
+                        },
+                        "blocked_install_message": {
+                            "title": "Blocked Install Message",
+                            "type": "string"
+                        },
+                        "blocked_permissions": {
+                            "title": "Blocked API Permissions",
+                            "links": [
+                                {
+                                    "rel": "Documentation Link",
+                                    "href": "https://developer.chrome.com/docs/extensions/mv2/declare_permissions/"
+                                }
+                            ],
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "Permission"
+                                    }
+                                }
+                            ]
+                        },
+                        "install_sources": {
+                            "title": "Extension Install Sources",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        },
+                        "installation_mode": {
+                            "title": "Installation Mode",
+                            "enum": [
+                                "blocked",
+                                "allowed",
+                                "removed",
+                                "force_installed",
+                                "normal_installed"
+                            ],
+                            "type": "string"
+                        },
+                        "toolbar_pin": {
+                            "title": "Toolbar Pin Style",
+                            "enum": [
+                                "force_pinned",
+                                "default_unpinned"
+                            ],
+                            "type": "string"
+                        },
+                        "minimum_version_required": {
+                            "title": "Minimum Version Required",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string",
+                                    "options": {
+                                        "inputAttributes": {
+                                            "placeholder": "1.1"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "update_url": {
+                            "title": "Update URL",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "string",
+                                    "options": {
+                                        "inputAttributes": {
+                                            "placeholder": "https://clients2.google.com/service/update2/crx"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "runtime_allowed_hosts": {
+                            "title": "Allow Extension Interaction with Websites",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        },
+                        "runtime_blocked_hosts": {
+                            "title": "Prevent Extension Interaction with Websites",
+                            "anyOf": [
+                                {
+                                    "type": "null",
+                                    "title": "Not Configured"
+                                },
+                                {
+                                    "title": "Configured",
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "title": "URL Pattern"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
