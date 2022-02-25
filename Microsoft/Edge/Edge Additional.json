@@ -1,6 +1,6 @@
 {
     "title": "Microsoft Edge Additional Settings",
-    "__version": "1.0",
+    "__version": "Microsoft Edge 92 or later",
     "__preferencedomain": "com.microsoft.Edge",
     "links": [
         {
@@ -12,6 +12,46 @@
         "remove_empty_properties": true
     },
     "properties": {
+        "AADWebSiteSSOUsingThisProfileEnabled": {
+            "title": "Single sign-on for work or school sites using this profile enabled",
+            "description": "(AADWebSiteSSOUsingThisProfileEnabled)-'Allow single sign-on for work or school sites using this profile' option allows non-AAD profiles to be able to use single sign-on for work or school sites using work or school credentials present on the machine. This option shows up for end-users as a toggle in Settings -> Profiles -> Profile Preferences for non-AAD profiles only",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#aadwebsitessousingthisprofileenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AccessibilityImageLabelsEnabled": {
+            "title": "Let screen readers get image descriptions from Microsoft",
+            "description": "(AccessibilityImageLabelsEnabled)-Lets screen reader users get descriptions of unlabeled images on the web. If you enable or don't configure this policy, users have the option of using an anonymous Microsoft service. This service provides automatic descriptions for unlabeled images users encounter on the web when they're using a screen reader",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#accessibilityimagelabelsenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "AddressBarMicrosoftSearchInBingProviderEnabled": {
             "title": "AddressBarMicrosoftSearchInBingProviderEnabled - Enable Microsoft Search in Bing suggestions in the address bar",
             "description": "Enables the display of relevant Microsoft Search in Bing suggestions in the address bar's suggestion list when the user types a search string in the address bar. If you enable or don't configure this policy, users can see internal results powered by Microsoft Search in Bing in the Microsoft Edge address bar suggestion list. To see the Microsoft Search in Bing results, the user must be signed into Microsoft Edge with their Azure AD account for that organization.\nIf you disable this policy, users can't see internal results in the Microsoft Edge address bar suggestion list.\nIf you have enabled the set of policies which forces a default search provider (\"DefaultSearchProviderEnabled\", \"DefaultSearchProviderName\" and \"DefaultSearchProviderSearchURL\"), and the search provider specified is not Bing, then this policy is not applicable and there will be no Microsoft Search in Bing suggestions in the address bar's suggestion list.",
@@ -421,6 +461,26 @@
                 }
             ]
         },
+        "AutoLaunchProtocolsComponentEnabled": {
+            "title": "AutoLaunchProtocolsComponentEnabled",
+            "description": "(AutoLaunchProtocolsComponentEnabled)-Specifies whether the AutoLaunch Protocols component should be enabled. This component allows Microsoft to provide a list similar to that of the AutoLaunchProtocolsFromOrigins policy, allowing certain external protocols to launch without prompt or blocking certain protocols (on specified origins). By default, this component is enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autolaunchprotocolscomponentenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "AutoLaunchProtocolsFromOrigins": {
             "title": "AutoLaunchProtocolsFromOrigins - not configurable in UI, please craft plist",
             "description": "Allows you to set a list of protocols, and for each protocol an associated list of allowed origin patterns, that can launch an external application without prompting the user. The trailing separator should not be included when listing the protocol. For example, list \"skype\" instead of \"skype:\" or \"skype://\".\n\nIf you configure this policy, a protocol will only be permitted to launch an external application without prompting by policy if:\n\n- the protocol is listed\n\n- the origin of the site trying to launch the protocol matches one of the origin patterns in that protocol's allowed_origins list.\n\nIf either condition is false, the external protocol launch prompt will not be omitted by policy.\n\nIf you don't configure this policy, no protocols can launch without a prompt. Users can opt out of prompts on a per-protocol/per-site basis unless the \"ExternalProtocolDialogShowAlwaysOpenCheckbox\" policy is set to Disabled. This policy has no impact on per-protocol/per-site prompt exemptions set by users.\n\nThe origin matching patterns use a similar format to those for the \"URLBlocklist\" policy, which are documented at https://go.microsoft.com/fwlink/?linkid=2095322.\n\nHowever, origin matching patterns for this policy cannot contain \"/path\" or \"@query\" elements. Any pattern that does contain a \"/path\" or \"@query\" element will be ignored.",
@@ -540,6 +600,38 @@
                 }
             ]
         },
+        "AutomaticHttpsDefault": {
+            "title": "Configure Automatic HTTPS",
+            "description": "(AutomaticHttpsDefault)-This policy lets you manage settings for AutomaticHttpsDefault, which switches connections from HTTP to HTTPS. This feature helps protect against man-in-the-middle attacks by enforcing more secure connections, but users might experience more connection errors",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#automatichttpsdefault"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Automatic HTTPS functionality is disabled",
+                            "Navigations delivered over HTTP are switched to HTTPS, only on domains likely to support HTTPS",
+                            "All navigations delivered over HTTP are switched to HTTPS"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
         "AutoplayAllowed": {
             "title": "AutoplayAllowed - Allow media autoplay for websites",
             "description": "This policy sets the media autoplay policy for websites.\n\nThe default setting, \"Not configured\" respects the current media autoplay settings and lets users configure their autoplay settings.\n\nSetting to \"Enabled\" sets media autoplay to \"Allow\".  All websites are allowed to autoplay media. Users can't override this policy.\n\nSetting to \"Disabled\" sets media autoplay to \"Block\".  No websites are allowed to autoplay media. Users can't override this policy.\n\nA tab will need to be closed and re-opened for this policy to take effect.",
@@ -560,6 +652,30 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#autoplayallowed"
+                }
+            ]
+        },
+        "AutoplayAllowlist": {
+            "title": "Allow media autoplay on specific sites",
+            "description": "(AutoplayAllowlist)-Define a list of sites, based on URL patterns, that are allowed to autoplay media",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#autoplayallowlist"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
                 }
             ]
         },
@@ -1063,6 +1179,56 @@
                 }
             ]
         },
+        "ConfigureShare": {
+            "title": "Configure the Share experience",
+            "description": "(ConfigureShare)-If you set this policy to 'ShareAllowed' (the default), users will be able to access the Share experience from the Settings and More Menu in Microsoft Edge to share with other apps on the system",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#configureshare"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Allow Share Experience",
+                            "Disallow Share Experience"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
+        "CrossOriginWebAssemblyModuleSharingEnabled": {
+            "title": "Allow cross-origin Web Assembly Modules",
+            "description": "(CrossOriginWebAssemblyModuleSharingEnabled)-Specifies whether WebAssembly modules can be sent to another window or worker cross-origin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#crossoriginwebassemblymodulesharingenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "CustomHelpLink": {
             "title": "CustomHelpLink - Specify custom help link",
             "description": "Specify a link for the Help menu or the F1 key.\n\nIf you enable this policy, an admin can specify a link for the Help menu or the F1 key.\n\nIf you disable or don't configure this policy, the default link for the Help menu or the F1 key is used.\n\nThis policy is available only on Windows instances that are joined to a Microsoft Active Directory domain, Windows 10 Pro or Enterprise instances that enrolled for device management, or macOS instances that are that are managed via MDM or joined to a domain via MCX.",
@@ -1218,6 +1384,31 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultserialguardsetting"
+                }
+            ]
+        },
+        "DefinePreferredLanguages": {
+            "title": "Ordered List of Preferred Languages",
+            "description": "(DefinePreferredLanguages)-Configures the language variants that Microsoft Edge sends to websites as part of the Accept-Language request HTTP header and prevents users from adding, removing, or changing the order of preferred languages in Microsoft Edge settings",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#definepreferredlanguages"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "en-US,fr,es"
+                        }
+                    }
                 }
             ]
         },
@@ -1383,6 +1574,26 @@
                 }
             ]
         },
+        "DisplayCapturePermissionsPolicyEnabled": {
+            "title": "Specifies whether the display-capture permissions-policy is checked or skipped",
+            "description": "(DisplayCapturePermissionsPolicyEnabled)-The display-capture permissions-policy gates access to getDisplayMedia(), as per this spec: https://www.w3.org/TR/screen-capture/#feature-policy-integration However, if this policy is Disabled, this requirement is not enforced, and getDisplayMedia() is allowed from contexts that would otherwise be forbidden",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#displaycapturepermissionspolicyenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "DnsOverHttpsMode": {
             "title": "DnsOverHttpsMode - Control the mode of DNS-over-HTTPS",
             "description": "Control the mode of the DNS-over-HTTPS resolver. Note that this policy will only set the default mode for each query. The mode can be overridden for special types of queries such as requests to resolve a DNS-over-HTTPS server hostname.\n\nThe \"off\" mode will disable DNS-over-HTTPS.\n\nThe \"automatic\" mode will send DNS-over-HTTPS queries first if a DNS-over-HTTPS server is available and may fallback to sending insecure queries on error.\n\nThe \"secure\" mode will only send DNS-over-HTTPS queries and will fail to resolve on error.\n\nIf you don't configure this policy, the browser might send DNS-over-HTTPS requests to a resolver associated with the user's configured system resolver.\n\nPolicy options mapping:\n\n* off (off) = Disable DNS-over-HTTPS\n\n* automatic (automatic) = Enable DNS-over-HTTPS with insecure fallback\n\n* secure (secure) = Enable DNS-over-HTTPS without insecure fallback\n\nUse the preceding information when configuring this policy.",
@@ -1521,6 +1732,66 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled"
+                }
+            ]
+        },
+        "EdgeDiscoverEnabled": {
+            "title": "Discover feature In Microsoft Edge",
+            "description": "(EdgeDiscoverEnabled)-This policy lets you configure the Discover feature in Microsoft Edge",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#edgediscoverenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EdgeEnhanceImagesEnabled": {
+            "title": "Enable Enhance Images",
+            "description": "(EdgeEnhanceImagesEnabled)-Set whether Microsoft Edge can automatically enhance images to show you sharper images with better color, lighting, and contrast",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#edgeenhanceimagesenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EdgeFollowEnabled": {
+            "title": "Enable Follow service in Microsoft Edge",
+            "description": "(EdgeFollowEnabled)-Allows the Microsoft Edge browser to enable Follow service and apply it to users",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#edgefollowenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -1938,6 +2209,50 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#forcesync"
+                }
+            ]
+        },
+        "ForceSyncTypes": {
+            "title": "Configure the list of types that are included for synchronization",
+            "description": "(ForceSyncTypes)-If you enable this policy all the specified data types will be included for synchronization for Azure AD/Azure AD-Degraded user profiles",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#forcesynctypes"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "options": {
+                            "enum_titles": [
+                                "Favorites",
+                                "Settings",
+                                "Passwords",
+                                "Addresses & More",
+                                "Extensions",
+                                "History",
+                                "Open Tabs",
+                                "Collections"
+                            ]
+                        },
+                        "enum": [
+                            "favorites",
+                            "settings",
+                            "passwords",
+                            "addressesAndMore",
+                            "extensions",
+                            "history",
+                            "openTabs",
+                            "collections"
+                        ]
+                    }
                 }
             ]
         },
@@ -2390,6 +2705,26 @@
                 }
             ]
         },
+        "InAppSupportEnabled": {
+            "title": "In-app support Enabled",
+            "description": "(InAppSupportEnabled)-Microsoft Edge uses the in-app support feature (enabled by default) to allow users to contact our support agents directly from the browser",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#inappsupportenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "InPrivateModeAvailability": {
             "title": "InPrivateModeAvailability - Configure InPrivate mode availability",
             "description": "Specifies whether the user can open pages in InPrivate mode in Microsoft Edge.\n\nIf you don't configure this policy or set it to 'Enabled', users can open pages in InPrivate mode.\n\nSet this policy to 'Disabled' to stop users from using InPrivate mode.\n\nSet this policy to 'Forced' to always use InPrivate mode.\n\nPolicy options mapping:\n\n* Enabled (0) = InPrivate mode available\n\n* Disabled (1) = InPrivate mode disabled\n\n* Forced (2) = InPrivate mode forced\n\nUse the preceding information when configuring this policy.",
@@ -2554,6 +2889,46 @@
                 }
             ]
         },
+        "MAUEnabled": {
+            "title": "Always use Microsoft AutoUpdate as the updater for Microsoft Edge",
+            "description": "(MAUEnabled)-This policy lets you configure the updater that Microsoft Edge uses",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#always-use-microsoft-autoupdate-as-the-updater-for-microsoft-edge"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "MSAWebSiteSSOUsingThisProfileAllowed": {
+            "title": "Allow single sign-on for Microsoft personal sites using this profile",
+            "description": "(MSAWebSiteSSOUsingThisProfileAllowed)-Allows non-MSA profiles to be able to use single sign-on for Microsoft sites using MSA credentials present on the machine",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#msawebsitessousingthisprofileallowed"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "ManagedFavorites": {
             "title": "ManagedFavorites - not configurable in UI, please craft plist",
             "description": "Configures a list of managed favorites.\n\nThe policy creates a list of favorites. Each favorite contains the keys \"name\" and \"url,\" which hold the favorite's name and its target. You can configure a subfolder by defining a favorites without an \"url\" key but with an additional \"children\" key that contains a list of favorites as defined above (some of which may be folders again). Microsoft Edge amends incomplete URLs as if they were submitted via the Address Bar, for example \"microsoft.com\" becomes \"https://microsoft.com/\".\n\nThese favorites are placed in a folder that can't be modified by the user (but the user can choose to hide it from the favorites bar). By default the folder name is \"Managed favorites\" but you can change it by adding to the list of favorites a dictionary containing the key \"toplevel_name\" with the desired folder name as the value.\n\nManaged favorites are not synced to the user account and can't be modified by extensions.",
@@ -2678,6 +3053,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#metricsreportingenabled"
+                }
+            ]
+        },
+        "MicrosoftEdgeInsiderPromotionEnabled": {
+            "title": "Microsoft Edge Insider Promotion Enabled",
+            "description": "(MicrosoftEdgeInsiderPromotionEnabled)-Shows content promoting the Microsoft Edge Insider channels on the About Microsoft Edge settings page",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#microsoftedgeinsiderpromotionenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -2878,6 +3273,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#quicallowed"
+                }
+            ]
+        },
+        "QuickViewOfficeFilesEnabled": {
+            "title": "Manage QuickView Office files capability in Microsoft Edge",
+            "description": "(QuickViewOfficeFilesEnabled)-Allows you to set whether users can view Office files on the web that aren't on OneDrive or SharePoint",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#quickviewofficefilesenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
