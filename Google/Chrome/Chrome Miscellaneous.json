@@ -1978,6 +1978,50 @@
                 }
             ]
         },
+        "InsecurePrivateNetworkRequestsAllowed": {
+            "title": "Allow insecure requests to private networks",
+            "description": "(InsecurePrivateNetworkRequestsAllowed)-Controls whether websites are allowed to make requests to more-private network endpoints in an insecure manner. This policy relates to the Private Network Access specification. See https://wicg.github.io/private-network-access/ for more details",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#InsecurePrivateNetworkRequestsAllowed"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "InsecurePrivateNetworkRequestsAllowedForUrls": {
+            "title": "Private insecure network allow list",
+            "description": "(InsecurePrivateNetworkRequestsAllowedForUrls)-List of URL patterns. Requests initiated from websites served by matching origins are not subject to Private Network Access checks",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#InsecurePrivateNetworkRequestsAllowedForUrls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
         "IntensiveWakeUpThrottlingEnabled": {
             "title": "Enable Intensive Wakeup Throttling for Javascript",
             "description": "(IntensiveWakeUpThrottlingEnabled)-When enabled the IntensiveWakeUpThrottling feature causes Javascript timers in background tabs to be aggressively throttled and coalesced, running no more than once per minute after a page has been backgrounded for 5 minutes or more. This is a web standards compliant feature, but it may break functionality on some websites by causing certain actions to be delayed by up to a minute. However, it results in significant CPU and battery savings when enabled. See https://bit.ly/30b1XR4 for more details. If this policy is set to enabled then the feature will be force enabled, and users will not be able to override this. If this policy is set to disabled then the feature will be force disabled, and users will not be able to override this. If this policy is left unset then the feature will be controlled by its own internal logic, which can be manually configured by users. Note that the policy is applied per renderer process, with the most recent value of the policy setting in force when a renderer process starts. A full restart is required to ensure that all loaded tabs receive a consistent policy setting. It is harmless for processes to be running with different values of this policy",
@@ -2018,6 +2062,46 @@
                 }
             ]
         },
+        "LensRegionSearchEnabled": {
+            "title": "Allow Google Lens region search menu item to be shown in context menu if supported",
+            "description": "(LensRegionSearchEnabled)-Leaving the policy unset or setting it to Enabled allows users to view and use the Google Lens region search menu item in the context menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#LensRegionSearchEnabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "LockIconInAddressBarEnabled": {
+            "title": "Enable lock icon in the omnibox for secure connections",
+            "description": "(LockIconInAddressBarEnabled)-This policy controls the treatment for lock icon in the omnibox. From Chrome M93, there is a new omnibox icon for secure connections. If the policy is Enabled, Chrome will use the existing lock icon for secure connections",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#LockIconInAddressBarEnabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "LookalikeWarningAllowlistDomains": {
             "title": "Suppress lookalike domain warnings on domains",
             "description": "(LookalikeWarningAllowlistDomains)-This policy prevents the display of lookalike URL warnings on the sites listed. These warnings are typically shown on sites that Google Chrome believes might be trying to spoof another site the user is familiar with. If the policy is enabled and set to one or more domains, no lookalike warnings pages will be shown when the user visits pages on that domain. If the policy is disabled, not set, or set to an empty list, warnings may appear on any site the user visits. A hostname can be allowed with a complete host match, or any domain match. For example, a URL like https://foo.example.com/bar may have warnings suppressed if this list includes either foo.example.com or example.com",
@@ -2039,6 +2123,38 @@
                         "type": "string",
                         "title": "Domain"
                     }
+                }
+            ]
+        },
+        "ManagedAccountsSigninRestriction": {
+            "title": "Add restrictions on managed accounts",
+            "description": "(ManagedAccountsSigninRestriction)-This policy requires SigninInterceptionEnabled to be set to True to take effect. If this policy is set to 'primary_account' at the machine level, all managed accounts will be forced to be primary. If this policy is set to 'primary_account' on an account, that account will always be a primary account, but may have secondary accounts in its profile",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#ManagedAccountsSigninRestriction"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Primary Account",
+                            "Strict Primary Account",
+                            "None"
+                        ]
+                    },
+                    "enum": [
+                        "primary_account",
+                        "primary_account_strict",
+                        "none"
+                    ]
                 }
             ]
         },
@@ -2143,6 +2259,34 @@
                 }
             ]
         },
+        "NTPCardsVisible": {
+            "title": "Show cards on the New Tab Page",
+            "description": "(NTPCardsVisible)-This policy controls the visibility of cards on the New Tab Page. Cards surface entry points to launch common user journeys based on the user's browsing behavior",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NTPContentSuggestionsEnabled": {
+            "title": "Show content suggestions on the New Tab page",
+            "description": "(NTPContentSuggestionsEnabled)-Setting the policy to True or leaving it unset displays autogenerated content suggestions on the New Tab page, based on the user's browsing history, interests, or location",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
         "NTPCustomBackgroundEnabled": {
             "title": "Allow users to customize the background on the New Tab page",
             "description": "If the policy is set to false, the New Tab page won't allow users to customize the background. Any existing custom background will be permanently removed even if the policy is set to true later",
@@ -2152,6 +2296,20 @@
                     "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=NTPCustomBackgroundEnabled"
                 }
             ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NearbyShareAllowed": {
+            "title": "Allow Nearby Share to be enabled",
+            "description": "(NearbyShareAllowed)-If this setting is enabled, users will be allowed to opt in to Nearby Share, which allows them to send and receive files from people closeby",
             "anyOf": [
                 {
                     "type": "null",
@@ -2191,6 +2349,347 @@
                         2
                     ],
                     "default": 0
+                }
+            ]
+        },
+        "OnBulkDataEntryEnterpriseConnector": {
+            "title": "Configuration policy for the OnBulkDataEntry Chrome Enterprise Connector",
+            "description": "(OnBulkDataEntryEnterpriseConnector)-List of Chrome Enterprise Connectors services settings to be applied to the OnBulkDataEntry Enterprise Connector, which triggers when data is entered in Chrome from the clipboard or by drag and dropping web content",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#OnBulkDataEntryEnterpriseConnector"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "block_until_verdict": {
+                                "type": "integer"
+                            },
+                            "custom_messages": {
+                                "items": {
+                                    "properties": {
+                                        "language": {
+                                            "type": "string"
+                                        },
+                                        "learn_more_url": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "tag": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "disable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "enable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "minimum_data_size": {
+                                "minimum": 0,
+                                "type": "integer"
+                            },
+                            "require_justification_tags": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "service_provider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            ]
+        },
+        "OnFileAttachedEnterpriseConnector": {
+            "title": "Configuration policy for the OnFileAttached Chrome Enterprise Connector",
+            "description": "(OnFileAttachedEnterpriseConnector)-List of Chrome Enterprise Connectors services settings to be applied to the OnFileAttached Enterprise Connector, which triggers when a file is attached to Chrome",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#OnFileAttachedEnterpriseConnector"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "block_large_files": {
+                                "type": "boolean"
+                            },
+                            "block_password_protected": {
+                                "type": "boolean"
+                            },
+                            "block_until_verdict": {
+                                "type": "integer"
+                            },
+                            "custom_messages": {
+                                "items": {
+                                    "properties": {
+                                        "language": {
+                                            "type": "string"
+                                        },
+                                        "learn_more_url": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "tag": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "disable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "enable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "require_justification_tags": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "service_provider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            ]
+        },
+        "OnFileDownloadedEnterpriseConnector": {
+            "title": "Configuration policy for the OnFileDownloaded Chrome Enterprise Connector",
+            "description": "(OnFileDownloadedEnterpriseConnector)-List of Chrome Enterprise Connectors services settings to be applied to the OnFileDownloaded Enterprise Connector, which triggers when a file is downloaded in Chrome",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#OnFileDownloadedEnterpriseConnector"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "block_large_files": {
+                                "type": "boolean"
+                            },
+                            "block_password_protected": {
+                                "type": "boolean"
+                            },
+                            "block_until_verdict": {
+                                "type": "integer"
+                            },
+                            "custom_messages": {
+                                "items": {
+                                    "properties": {
+                                        "language": {
+                                            "type": "string"
+                                        },
+                                        "learn_more_url": {
+                                            "type": "string"
+                                        },
+                                        "message": {
+                                            "type": "string"
+                                        },
+                                        "tag": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "disable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "enable": {
+                                "items": {
+                                    "properties": {
+                                        "tags": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "url_list": {
+                                            "items": {
+                                                "type": "string"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "require_justification_tags": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "service_provider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            ]
+        },
+        "OnSecurityEventEnterpriseConnector": {
+            "title": "Configuration policy for the OnSecurityEvent Chrome Enterprise Connector",
+            "description": "(OnSecurityEventEnterpriseConnector)-List of Chrome Enterprise Connectors services settings to be applied to the OnSecurityEvent Enterprise Connector, which triggers when a security event occurs in Chrome. This includes negative verdicts from analysis Enterprise Connectors, password reuse, navigations to unsafe pages and other security sensitive user actions",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#OnSecurityEventEnterpriseConnector"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "properties": {
+                            "enabled_event_names": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "service_provider": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
                 }
             ]
         },
@@ -2320,6 +2819,38 @@
                 {
                     "title": "Configured",
                     "type": "integer"
+                }
+            ]
+        },
+        "ProfilePickerOnStartupAvailability": {
+            "title": "Profile picker availability on startup",
+            "description": "(ProfilePickerOnStartupAvailability)-Specifies whether the profile picker is enabled, disabled or forced at the browser startup",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#ProfilePickerOnStartupAvailability"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Profile picker available at startup",
+                            "Profile picker disabled at startup",
+                            "Profile picker forced at startup"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
                 }
             ]
         },
@@ -2470,6 +3001,122 @@
                 }
             ]
         },
+        "RelaunchWindow": {
+            "type": "object",
+            "title": "Set the time interval for relaunch",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#RelaunchWindow"
+                }
+            ],
+            "properties": {
+                "entries": {
+                    "items": {
+                        "properties": {
+                            "duration_mins": {
+                                "description": "Time period (minutes) that specifies the length of the relaunch window.",
+                                "maximum": 1440,
+                                "minimum": 1,
+                                "type": "integer"
+                            },
+                            "start": {
+                                "description": "Time interpreted in local wall-clock 24h format.",
+                                "id": "Time",
+                                "properties": {
+                                    "hour": {
+                                        "maximum": 23,
+                                        "minimum": 0,
+                                        "type": "integer"
+                                    },
+                                    "minute": {
+                                        "maximum": 59,
+                                        "minimum": 0,
+                                        "type": "integer"
+                                    }
+                                },
+                                "required": [
+                                    "hour",
+                                    "minute"
+                                ],
+                                "type": "object"
+                            }
+                        },
+                        "required": [
+                            "start",
+                            "duration_mins"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            }
+        },
+        "RemoteDebuggingAllowed": {
+            "title": "Allow remote debugging",
+            "description": "(RemoteDebuggingAllowed)-Controls whether users may use remote debugging",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#RemoteDebuggingAllowed"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "RoamingProfileLocation": {
+            "title": "Set the roaming profile directory",
+            "description": "(RoamingProfileLocation)-Configures the directory that Google Chrome will use for storing the roaming copy of the profiles",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#RoamingProfileLocation"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/Users/Shared/ChromeRoamingProfiles"
+                        }
+                    }
+                }
+            ]
+        },
+        "RoamingProfileSupportEnabled": {
+            "title": "Enable the creation of roaming copies for Google Chrome profile data",
+            "description": "(RoamingProfileSupportEnabled)-If you enable this setting, the settings stored in Google Chrome profiles like bookmarks, autofill data, passwords, etc. will also be written to a file stored in the Roaming user profile folder or a location specified by the Administrator through the RoamingProfileLocation policy. Enabling this policy disables cloud sync",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#RoamingProfileSupportEnabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "RestrictSigninToPattern": {
             "title": "Restrict which Google accounts are allowed to be set as browser primary accounts in Google Chrome",
             "description": "Contains a regular expression which is used to determine which Google accounts can be set as browser primary accounts in Google Chrome (i.e. the account that is chosen during the Sync opt-in flow)",
@@ -2530,6 +3177,30 @@
                 }
             ]
         },
+        "SSLErrorOverrideAllowedForOrigins": {
+            "title": "Allow proceeding from the SSL warning page on specific origins",
+            "description": "(SSLErrorOverrideAllowedForOrigins)-If SSLErrorOverrideAllowed is Disabled, setting the policy lets you set a list of origin patterns that specify the sites where a user can click through warning pages Google Chrome shows when users navigate to sites that have SSL errors",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#SSLErrorOverrideAllowedForOrigins"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
         "SSLVersionMin": {
             "title": "Minimum SSL version enabled",
             "description": "If this policy is not configured then Google Chrome uses a default minimum version which is TLS 1.0. Otherwise it may be set to one of the following values: tls1, tls1.1 or tls1.2",
@@ -2576,6 +3247,26 @@
                         1
                     ],
                     "default": 0
+                }
+            ]
+        },
+        "SandboxExternalProtocolBlocked": {
+            "title": "Allow Chrome to block navigations toward external protocols in sandboxed iframes",
+            "description": "(SandboxExternalProtocolBlocked)-Chrome will block navigations toward external protocols inside sandboxed iframe",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#SandboxExternalProtocolBlocked"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
@@ -2662,6 +3353,26 @@
                 }
             ]
         },
+        "SharedArrayBufferUnrestrictedAccessAllowed": {
+            "title": "Specifies whether SharedArrayBuffers can be used in a non cross-origin-isolated context",
+            "description": "(SharedArrayBufferUnrestrictedAccessAllowed)-Specifies whether SharedArrayBuffers can be used in a non cross-origin-isolated context",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#SharedArrayBufferUnrestrictedAccessAllowed"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
         "SharedClipboardEnabled": {
             "title": "Enable the Shared Clipboard Feature",
             "description": "Enable the Shared Clipboard feature which allows users to send text between Chrome Desktops and an Android device when Sync is enabled and the user is Signed-in",
@@ -2738,6 +3449,26 @@
                 },
                 {
                     "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SigninInterceptionEnabled": {
+            "title": "Enable signin interception",
+            "description": "(SigninInterceptionEnabled)-This settings enables or disables signin interception",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://chromeenterprise.google/policies/#SigninInterceptionEnabled"
+                        }
+                    ],
                     "type": "boolean"
                 }
             ]
@@ -3033,13 +3764,13 @@
                 }
             ]
         },
-        "UserAgentClientHintsEnabled": {
-            "title": "Control the User-Agent Client Hints feature",
-            "description": "(UserAgentClientHintsEnabled)-When enabled the User-Agent Client Hints feature sends granular request headers providing information about the user browser and environment. This is an additive feature, but the new headers may break some websites that restrict the characters that requests may contain. If this policy is enabled or not set the User-Agent Client Hints feature is enabled. If the policy is disabled the feature is unavailable. This enterprise policy is for short-term adaptation and will be removed in Chrome 88",
+        "UserAgentClientHintsGREASEUpdateEnabled": {
+            "title": "Control the User-Agent Client Hints GREASE Update feature",
+            "description": "(UserAgentClientHintsEnabled)-When enabled the User-Agent Client Hints GREASE Update feature aligns the User-Agent GREASE algorithm with the latest spec",
             "links": [
                 {
                     "rel": "Documentation Link",
-                    "href": "https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserAgentClientHintsEnabled"
+                    "href": "https://chromeenterprise.google/policies/#UserAgentClientHintsGREASEUpdateEnabled"
                 }
             ],
             "anyOf": [
@@ -3050,6 +3781,38 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ]
+        },
+        "UserAgentReduction": {
+            "title": "Enable or disable the User-Agent Reduction",
+            "description": "(UserAgentReduction)-The User-Agent HTTP request header is scheduled to be reduced. In order to facilitate testing and compatibility, this policy can enable the reduction feature for all websites, or disable the ability for origin trials or field trials to enable the feature",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#UserAgentReduction"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "User Agent reduction will be controllable via Field-Trials and Origin-Trials",
+                            "User Agent reduction disabled, and not enabled by Field-Trials or Origin-Trials",
+                            "User Agent reduction will be enabled for all origins"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1,
+                        2
+                    ]
                 }
             ]
         },
@@ -3278,6 +4041,31 @@
                     "type": "array",
                     "items": {
                         "type": "string"
+                    }
+                }
+            ]
+        },
+        "WebRtcIPHandling": {
+            "title": "The IP handling policy of WebRTC",
+            "description": "(WebRtcIPHandling)-This policy allows restricting which IP addresses and interfaces WebRTC uses when attempting to find the best available connection. See RFC 8828 section 5.2 (https://tools.ietf.org/html/rfc8828.html#section-5.2). When unset, defaults to using all available interfaces",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://chromeenterprise.google/policies/#WebRtcIPHandling"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "default"
+                        }
                     }
                 }
             ]
