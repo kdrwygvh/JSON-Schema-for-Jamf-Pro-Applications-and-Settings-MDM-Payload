@@ -205,7 +205,21 @@
                 }
             ]
         },
-        "ShowSidebarInNewWindows": {
+    "ShowOverlayStatusBar": {
+      "title": "Show Overlay Status Bar",
+      "description": "Shows the Overlay Status bar if set to true",
+      "anyOf": [
+        {
+          "type": "null",
+          "title": "Not Configured"
+        },
+        {
+          "title": "Configured",
+          "type": "boolean"
+        }
+      ]
+    },
+    "ShowSidebarInNewWindows": {
             "title": "Show Sidebar in New Windows",
             "description": "Sets whether to show the sidebar in new browser windows",
             "anyOf": [
