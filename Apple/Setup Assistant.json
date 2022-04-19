@@ -1,0 +1,155 @@
+{
+    "title": "macOS Setup Assistant Preferences",
+    "description": "macOS Setup Assistant Preferences for all users, irrespective of ABM enrollment status",
+    "__version": "1.0",
+    "__preferencedomain": "com.apple.setupAssistant.managed",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://developer.apple.com/documentation/devicemanagement/setupassistant"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "SkipAppearance": {
+            "title": "Skip Choose your Look",
+            "description": "(SkipAppearance)-If true, skips the Choose Your Look window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipCloudSetup": {
+            "title": "Skip AppleID Setup",
+            "description": "(SkipCloudSetup)-If true, skips the Apple ID setup window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipiCloudStorageSetup": {
+            "title": "Skip iCloud Storage",
+            "description": "(SkipiCloudStorageSetup)-If true, skips the iCloud Storage window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipPrivacySetup": {
+            "title": "Skip Privacy Consent",
+            "description": "(SkipPrivacySetup)-If true, skips the Privacy consent window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipScreenTime": {
+            "title": "Skip Screen Time",
+            "description": "(SkipScreenTime)-If true, skips the Screen Time window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipSiriSetup": {
+            "title": "Skip Siri Setup",
+            "description": "(SkipSiriSetup)-If true, skips the Siri setup window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipTouchIDSetup": {
+            "title": "Skip TouchID Setup",
+            "description": "(SkipTouchIDSetup)-If true, skips the Touch ID setup window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipTrueTone": {
+            "title": "Skip TrueTone Setup",
+            "description": "(SkipTrueTone)-If true, skips the True Tone Display window",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipUnlockWithWatch": {
+            "title": "Skip Unlock with Apple Watch Setup",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SkipAccessibility": {
+            "title": "Skip Accessibility Setup",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}
