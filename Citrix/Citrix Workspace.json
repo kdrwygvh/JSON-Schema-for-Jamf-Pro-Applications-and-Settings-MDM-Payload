@@ -1,0 +1,57 @@
+{
+    "title": "Citrix Workspace Settings",
+    "description": "Citrix Workspace Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.citrix.receiver.nomas",
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AutoUpdateState": {
+            "title": "Auto Update State",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Automatic",
+                            "Manual"
+                        ]
+                    },
+                    "enum": [
+                        "Auto",
+                        "Manual"
+                    ]
+                }
+            ]
+        },
+        "AutoUpdateChannel": {
+            "title": "Update Channel",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Production",
+                            "Beta"
+                        ]
+                    },
+                    "enum": [
+                        "Prod",
+                        "EAR"
+                    ]
+                }
+            ]
+        }
+    }
+}
