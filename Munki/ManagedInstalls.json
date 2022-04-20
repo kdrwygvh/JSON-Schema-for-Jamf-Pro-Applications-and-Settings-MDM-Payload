@@ -510,6 +510,42 @@
                 }
             ]
         },
+        "SharedAccessSignature": {
+            "title": "Azure Shared Access Signature",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Shared Access Signature"
+                        }
+                    }
+                }
+            ]
+        },
+        "AzureEndpoint": {
+            "title": "Azure Endpoint",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://your.azure.endpoint"
+                        }
+                    }
+                }
+            ]
+        },
         "SuppressAutoInstall": {
             "title": "Suppress all Auto Installation",
             "description": "(SuppressAutoInstall)-If true, Munki will not automatically install or remove items",
