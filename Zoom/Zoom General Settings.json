@@ -288,6 +288,30 @@
                 }
             ]
         },
+        "SetUpdatingChannel": {
+            "title": "Update Channel",
+            "description": "(SetUpdatingChannel)-Control the cadence of updates applied to the desktop client (version 5.6.8 or higher)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Slow",
+                            "Fast"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
         "disableDaemonInstall": {
             "title": "Disable Auto Update Daemon",
             "description": "(disableDaemonInstall)-Controls the use of the daemon helper to install updates, which bypasses the need to enter admin credentials when upgrading. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
