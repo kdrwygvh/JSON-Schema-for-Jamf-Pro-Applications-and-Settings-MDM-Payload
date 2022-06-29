@@ -101,6 +101,20 @@
                 }
             ]
         },
+        "ReasonMaxLength": {
+            "title": "Maximum Length for Reason",
+            "description": "(ReasonMaxLength)-If the ReasonRequired key's value is set to true, this optional key specifies the maximum number of characters the user can enter as the reason for becoming an admin. If not set, the value defaults to 100",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer"
+                }
+            ]
+        },
         "RemoteLogging": {
             "type": "object",
             "title": "Remote Logging",
