@@ -1,0 +1,213 @@
+{
+    "title": "Zoom Network Settings",
+    "__version": "1.0",
+    "__preferencedomain": "us.zoom.config",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://support.zoom.us/hc/en-us/articles/115001799006"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "IgnoreBandwidthLimits": {
+            "title": "Ignore Bandwidth Limits set via Web Settings",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BlockUntrustedSSLCert": {
+            "title": "Block Untrusted SSL Certificates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableCertPin": {
+            "title": "Disable Certificate Pinning",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "ProxyPAC": {
+            "title": "Proxy PAC URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "http://proxy.url"
+                        }
+                    }
+                }
+            ]
+        },
+        "ProxyServer": {
+            "title": "Proxy Server",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://proxy.server"
+                        }
+                    }
+                }
+            ]
+        },
+        "ProxyBypass": {
+            "title": "Proxy Bypass Rule",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "proxy_bypass_rule"
+                        }
+                    }
+                }
+            ]
+        },
+        "DisableAudioOverProxy": {
+            "title": "Disable Audio over Proxy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableVideoOverProxy": {
+            "title": "Disable Video over Proxy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableSharingOverProxy": {
+            "title": "Disable Sharing over Proxy",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "BandwidthLimitUp": {
+            "title": "Bandwidth Upstream Limit",
+            "description": "(BandwidthLimitUp)-Upstream Bandwidth Limit in Kbps",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Limit in Kbps"
+                        }
+                    }
+                }
+            ]
+        },
+        "BandwidthLimitDown": {
+            "title": "Bandwidth Downstream Limit",
+            "description": "(BandwidthLimitUp)-Downstream Bandwidth Limit in Kbps",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Limit in Kbps"
+                        }
+                    }
+                }
+            ]
+        },
+        "EnableIndependentDataPort": {
+            "title": "Enable Independent Data Ports",
+            "description": "(EnableIndependentDataPort)-If enabled, the client will use the following ports for media transmission: Audio: 8803 Screen share: 8802 Video: 8801",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableDirectConnection2Web": {
+            "title": "Disable Direct Connections to Zoom Web Service",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+    }
+}

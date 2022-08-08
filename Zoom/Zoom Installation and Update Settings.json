@@ -1,0 +1,120 @@
+{
+    "title": "Zoom Installation and Update Settings",
+    "__version": "1.0",
+    "__preferencedomain": "us.zoom.config",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://support.zoom.us/hc/en-us/articles/115001799006"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "ZAutoUpdate": {
+            "title": "Allow User Initiated Updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableSilentAutoUpdate": {
+            "title": "Enable Silent Updates",
+            "description": "(EnableSilentAutoUpdate)-Allows the desktop client to silently check for available stable-version updates. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AlwaysCheckLatestVersion": {
+            "title": "Always Check for Available Updates on Launch",
+            "description": "(AlwaysCheckLatestVersion)-Allows the desktop client to check for any available updates. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SetUpdatingChannel": {
+            "title": "Update Channel",
+            "description": "(SetUpdatingChannel)-Control the cadence of updates applied to the desktop client (version 5.6.8 or higher)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Slow",
+                            "Fast"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
+        "disableDaemonInstall": {
+            "title": "Disable Auto Update Daemon",
+            "description": "(disableDaemonInstall)-Controls the use of the daemon helper to install updates, which bypasses the need to enter admin credentials when upgrading. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SetEnrollToken4CloudMDM": {
+            "title": "Zoom Device Management Token",
+            "description": "(SetEnrollToken4CloudMDM)-Enroll your device into Zoom Device Management with a token provided from the web portal",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://support.zoom.us/hc/en-us/articles/4406133137933"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "token"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

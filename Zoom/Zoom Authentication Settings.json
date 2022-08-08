@@ -1,0 +1,383 @@
+{
+    "title": "Zoom Authentication Settings",
+    "__version": "1.0",
+    "__preferencedomain": "us.zoom.config",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://support.zoom.us/hc/en-us/articles/115001799006"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "ZAutoSSOLogin": {
+            "title": "Default to Login with SSO",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "zSSOHost": {
+            "title": "Preconfigured SSO URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "company.zoom.us"
+                        }
+                    }
+                }
+            ]
+        },
+        "ForceSSOURL": {
+            "title": "Lock SSO URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableAutoLaunchSSO": {
+            "title": "Do not launch previously used SSO URL",
+            "description": "(DisableAutoLaunchSSO)-Prevent Zoom from automatically launching the previously used SSO URL. This is useful for users with multiple accounts, each having their own SSO URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NoGoogle": {
+            "title": "Disable Sign in with Google",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NoFacebook": {
+            "title": "Disable Sign in with Facebook",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "NoSSO": {
+            "title": "Disable SSO Login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithSSO": {
+            "title": "Require SSO Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithGoogle": {
+            "title": "Require Google Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableKeepSignedInWithFacebook": {
+            "title": "Require Facebook Sign in on Application Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableEmbedBrowserForSSO": {
+            "title": "Launch SSO Login in App",
+            "description": "(enableembedbrowserforsso)-Launches the SSO Sign in in App rather than the user's default browser",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SetWebDomain": {
+            "title": "Sign in Web Domain",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://zoom.us"
+                        }
+                    }
+                }
+            ]
+        },
+        "KeepSignedIn": {
+            "title": "Automatically Login to Last Account Used (email only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnablePhoneLogin": {
+            "title": "Enable Phone Authentication (China Only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableAlipayLogin": {
+            "title": "Enable Alipay Authentication (China Only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnablQQLogin": {
+            "title": "Enable QQ Authentication (China Only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableWeChatLogin": {
+            "title": "Enable WeChat Authentication (China Only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Account": {
+            "title": "Restricted Account ID",
+            "description": "(Account)-Account ID that the client is restricted to join meetings hosted by specific accounts",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://support.zoom.us/hc/en-us/articles/115001799006#note"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "1234567"
+                        }
+                    }
+                }
+            ]
+        },
+        "Login_Domain": {
+            "title": "Login Email Domains",
+            "description": "(Login_Domain)-Set the email address domain that users can login with, each separated by '&'",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "zoom.us&hooli.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "EnableCloudSwitch": {
+            "title": "Enable Switching Between Zoom Commercial and Government Cloud",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnforceSignInToJoin": {
+            "title": "Require User to be Signed In for Meetings",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnforceAppSignInToJoin": {
+            "title": "Require User to be Signed into Desktop App",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnforceSignInToJoinForWebinar": {
+            "title": "Require User to be Signed into Desktop App for Webinars",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnforceAppSignInToJoinForWebinar": {
+            "title": "Require Authentication on the Desktop App for Webinars",
+            "description": "(EnforceAppSignInToJoinForWebinar)-",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SetDevicePolicyToken": {
+            "title": "Internal Meeting Authentication Token",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://support.zoom.us/hc/en-us/articles/115001799006#note"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Token"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
