@@ -146,6 +146,138 @@
                 }
             ]
         },
+        "DefaultFileSystemReadGuardSetting": {
+            "title": "Control use of the File System API for Reading",
+            "description": "(DefaultFileSystemReadGuardSetting)-If you set this policy to 3, websites can ask for read access to the host operating system's filesystem using the File System API. If you set this policy to 2, access is denied",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultfilesystemreadguardsetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Block File System Read (2)",
+                            "Ask for Permission for File System Read (3)"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "FileSystemReadAskForUrls": {
+            "title": "Allow read access via the File System API on these sites",
+            "description": "(FileSystemReadAskForUrls)-Setting the policy lets you list the URL patterns that specify which sites can ask users to grant them read access to files or directories in the host operating system's file system via the File System API. Leaving the policy unset means DefaultFileSystemReadGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns can't conflict with FileSystemReadBlockedForUrls. Neither policy takes precedence if a URL matches with both. For detailed information about valid url patterns, see https://go.microsoft.com/fwlink/?linkid=2095322. * is not an accepted value for this policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#filesystemreadaskforurls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "FileSystemReadBlockedForUrls": {
+            "title": "Block read access via the File System API on these sites",
+            "description": "(FileSystemReadAskForUrls)-If you set this policy, you can list the URL patterns that specify which sites can't ask users to grant them read access to files or directories in the host operating system's file system via the File System API. If you don't set this policy, DefaultFileSystemReadGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns can't conflict with FileSystemReadAskForUrls. Neither policy takes precedence if a URL matches with both. For detailed information about valid url patterns, see https://go.microsoft.com/fwlink/?linkid=2095322. * is not an accepted value for this policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#filesystemreadblockedforurls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
+        "DefaultFileSystemWriteGuardSetting": {
+            "title": "Control use of the File System API for Writing",
+            "description": "(DefaultFileSystemReadGuardSetting)-If you set this policy to 3, websites can ask for write access to the host operating system's filesystem using the File System API. If you set this policy to 2, access is denied",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultfilesystemwriteguardsetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Block File System Write (2)",
+                            "Ask for Permission for File System Write (3)"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "FileSystemWriteBlockedForUrls": {
+            "title": "Block write access to files and directories on these sites",
+            "description": "(FileSystemReadAskForUrls)-If you set this policy, you can list the URL patterns that specify which sites can't ask users to grant them write access to files or directories in the host operating system's file system. If you don't set this policy, DefaultFileSystemWriteGuardSetting applies for all sites, if it's set. If not, users' personal settings apply. URL patterns can't conflict with FileSystemWriteAskForUrls. Neither policy takes precedence if a URL matches with both. For detailed information about valid url patterns, see https://go.microsoft.com/fwlink/?linkid=2095322. * is not an accepted value for this policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#filesystemwriteblockedforurls"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "URL Pattern"
+                    }
+                }
+            ]
+        },
         "DefaultGeolocationSetting": {
             "title": "Default geolocation setting",
             "description": "Set whether websites can track users' physical locations. You can allow tracking by default (1), deny it by default (2), or ask the user each time a website requests their location (3).\n\nIf you don't configure this policy, 'AskGeolocation' policy is used and the user can change it.\n\n* 1 = Allow sites to track users' physical location\n\n* 2 = Don't allow any site to track users' physical location\n\n* 3 = Ask whenever a site wants to track users' physical location",
@@ -244,6 +376,114 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#defaultinsecurecontentsetting"
+                }
+            ]
+        },
+        "DefaultJavaScriptJitSetting": {
+            "title": "Control use of JavaScript JIT",
+            "description": "(DefaultJavaScriptJitSetting)-Allows you to set whether Microsoft Edge will run the v8 JavaScript engine with JIT (Just In Time) compiler enabled or not. Disabling the JavaScript JIT will mean that Microsoft Edge may render web content more slowly, and may also disable parts of JavaScript including WebAssembly. Disabling the JavaScript JIT may allow Microsoft Edge to render web content in a more secure configuration",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultjavascriptjitsetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Allow Javascript JIT",
+                            "Disallow Javascript JIT"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "DefaultWebHidGuardSetting": {
+            "title": "Control use of the WebHID API",
+            "description": "(DefaultWebHidGuardSetting)-Setting the policy to 3 lets websites ask for access to HID devices. Setting the policy to 2 denies access to HID devices. This policy can be overridden for specific url patterns using the WebHidAskForUrls and WebHidBlockedForUrls policies",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#defaultwebhidguardsetting"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Block HID Devices",
+                            "Allow Asking for Permission to HID Devices"
+                        ]
+                    },
+                    "enum": [
+                        2,
+                        3
+                    ]
+                }
+            ]
+        },
+        "JavaScriptJitAllowedForSites": {
+            "title": "Allow JavaScript to use JIT on these sites",
+            "description": "(JavaScriptJitAllowedForSites)-Allows you to set a list of site url patterns that specify sites which are allowed to run JavaScript with JIT (Just In Time) compiler enabled. For detailed information on valid site url patterns, please see https://go.microsoft.com/fwlink/?linkid=2095322. * is not an accepted value for this policy",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#javascriptjitallowedforsites"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Allowed Site"
+                    }
+                }
+            ]
+        },
+        "JavaScriptJitBlockedForSites": {
+            "title": "Block JavaScript from using JIT on these sites",
+            "description": "(JavaScriptJitBlockedForSites)-Allows you to set a list of site url patterns that specify sites which are not allowed to run JavaScript JIT (Just In Time) compiler enabled",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#javascriptjitblockedforsites"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Disallowed Site"
+                    }
                 }
             ]
         },
@@ -828,6 +1068,26 @@
                 {
                     "rel": "Documentation Link",
                     "href": "https://docs.microsoft.com/deployedge/microsoft-edge-policies#popupsblockedforurls"
+                }
+            ]
+        },
+        "ShowPDFDefaultRecommendationsEnabled": {
+            "title": "Allow notifications to set Microsoft Edge as default PDF reader",
+            "description": "(ShowPDFDefaultRecommendationsEnabled)-This policy setting lets you decide whether employees should receive recommendations to set Microsoft Edge as PDF handler",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://docs.microsoft.com/en-us/deployedge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled"
+                        }
+                    ],
+                    "type": "boolean"
                 }
             ]
         },
