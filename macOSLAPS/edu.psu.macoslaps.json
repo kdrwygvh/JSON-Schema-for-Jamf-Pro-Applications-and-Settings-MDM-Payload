@@ -188,6 +188,68 @@
                     ]
                 }
             ]
+        },
+        "PasswordRequirements": {
+            "type": "object",
+            "title": "Password Requirements",
+            "properties": {
+                "Lowercase": {
+                    "title": "Number of Lowercase Characters",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "integer",
+                            "default": 1
+                        }
+                    ]
+                },
+                "Uppercase": {
+                    "title": "Number of Uppercase Characters",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "integer",
+                            "default": 1
+                        }
+                    ]
+                },
+                "Number": {
+                    "title": "Number of Digits",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "integer",
+                            "default": 1
+                        }
+                    ]
+                },
+                "Symbol": {
+                    "title": "Number of Symbols",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "integer",
+                            "default": 1
+                        }
+                    ]
+                }
+            }
         }
     }
 }
