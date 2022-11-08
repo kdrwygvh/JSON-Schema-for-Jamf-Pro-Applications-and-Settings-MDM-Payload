@@ -1,0 +1,60 @@
+{
+    "title": "Microsoft OneDrive Updater Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.OneDriveUpdater",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://learn.microsoft.com/en-us/sharepoint/deploy-and-configure-on-macos"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "EnableFasterRingUpdate": {
+            "title": "Enable Fast Ring Updates",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "Tier": {
+            "title": "Update Ring",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#tier"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "enum_titles": [
+                            "Insiders",
+                            "Production",
+                            "Enterprise"
+                        ]
+                    },
+                    "enum": [
+                        "Insiders",
+                        "Production",
+                        "Enterprise"
+                    ]
+                }
+            ]
+        }
+    }
+}

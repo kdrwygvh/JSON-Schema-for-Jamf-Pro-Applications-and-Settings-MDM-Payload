@@ -1,0 +1,615 @@
+{
+    "title": "Microsoft OneDrive Settings",
+    "__version": "1.0",
+    "__preferencedomain": "com.microsoft.OneDrive",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "AllowTenantList": {
+            "type": "object",
+            "title": "Allowed Tenant List",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#allowtenantlist"
+                }
+            ]
+        },
+        "AutomaticUploadBandwidthPercentage": {
+            "title": "Upload Bandwidth Pertentage Limit",
+            "description": "(AutomaticUploadBandwidthPercentage)-This setting enables the sync app to automatically set the amount of bandwidth that can be used for uploading files, based on available bandwidth. To enable this setting, you must define a number between 1 and 99 that determines the percentage of bandwidth the sync app can use out of the total available bandwidth",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#automaticuploadbandwidthpercentage"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 99
+                }
+            ]
+        },
+        "BlockExternalSync": {
+            "title": "Block External Sync",
+            "description": "(BlockExternalSync)-This setting prevents the sync app from syncing libraries and folders shared from other organizations",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#blockexternalsync"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DefaultFolder": {
+            "type": "object",
+            "title": "Default Folder Location",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#defaultfolderlocation"
+                }
+            ],
+            "properties": {
+                "Path": {
+                    "title": "Folder Path",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "DefaultFolderPath"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "TenantId": {
+                    "title": "Tenant ID",
+                    "anyOf": [
+                        {
+                            "type": "null",
+                            "title": "Not Configured"
+                        },
+                        {
+                            "title": "Configured",
+                            "type": "string",
+                            "options": {
+                                "inputAttributes": {
+                                    "placeholder": "TenantID"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "DisableAutoConfig": {
+            "title": "Disable Auto Configuration",
+            "description": "(DisableAutoConfig)-This setting determines whether or not the sync app can automatically sign in. If you set this setting's value to 1, the sync app is prevented from automatically signing with an existing Microsoft Azure Active Directory (Azure AD) credential that is made available to Microsoft applications",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#disableautoconfig"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "True",
+                            "False"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        0
+                    ]
+                }
+            ]
+        },
+        "DisableHydrationToast": {
+            "title": "Disable Hydration Toast Graphics",
+            "description": "(DisableHydrationToast)-This setting prevents toasts from appearing when applications cause file contents to be downloaded",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#disablehydrationtoast"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisablePersonalSync": {
+            "title": "Disable Personal Microsoft Accounts",
+            "description": "(DisablePersonalSync)-This setting blocks users from signing in and syncing files in personal OneDrive accounts. If this setting has been configured after a user has set up sync with a personal account, the user gets signed out",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#disablepersonalsync"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DisableTutorial": {
+            "title": "Disable Tutorial",
+            "description": "(DisableTutorial)-This setting prevents the tutorial from being shown to the users after they set up OneDrive",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#disabletutorial"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "DownloadBandwidthLimited": {
+            "title": "Download Bandwidth Limit",
+            "description": "(DownloadBandwidthLimited)-This setting sets the maximum download throughput rate in kilobytes (KB)/sec",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#downloadbandwidthlimited"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "minimum": 50,
+                    "maximum": 100000
+                }
+            ]
+        },
+        "EnableAllOcsiClients": {
+            "title": "Allow Office Files Collaboration",
+            "description": "(EnableAllOcsiClients)-This setting lets multiple users use the Microsoft 365 Apps for enterprise, Office 2019, or Office 2016 desktop apps to simultaneously edit an Office file stored in OneDrive. It also lets users share files from the Office desktop apps",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#enableallocsiclients"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableODIgnore": {
+            "title": "Igore Keywords for OneDrive Sync",
+            "description": "(EnableODIgnore)-This setting lets you enter keywords to prevent the OneDrive sync app from uploading certain files to OneDrive or SharePoint. You can enter complete names, such as setup.exe or use the asterisk (*) as a wildcard character to represent a series of characters, such as *.pst. Keywords aren't case-sensitive",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#enableodignore"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "title": "Ignore Keyword"
+                    }
+                }
+            ]
+        },
+        "FilesOnDemandEnabled": {
+            "title": "Enable Files on Demand",
+            "description": "(FilesOnDemandEnabled)-This setting specifies whether Files On-Demand is enabled (macOS 12.0 or older only)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#filesondemandenabled"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HideDockIcon": {
+            "title": "Hide Dock Icon",
+            "description": "(HideDockIcon)-This setting specifies whether a dock icon for OneDrive is shown",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#hidedockicon"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "HydrationDisallowedApps": {
+            "title": "Apps to not trigger Hydration",
+            "description": "(HydrationDisallowedApps)-This setting prevents apps from automatically downloading online-only files. You can use this setting to lock down apps that don't work correctly with your deployment of Files On-Demand",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#hydrationdisallowedapps"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "See JSON example in documentation"
+                        }
+                    }
+                }
+            ]
+        },
+        "KFMBlockOptIn": {
+            "title": "Prevent Moving Documents and Desktop to OneDrive",
+            "description": "(KFMBlockOptIn)-This setting prevents users from moving their Documents and Desktop folders to any OneDrive account. If you enable KFMBlockOptIn, users aren't prompted to protect their Desktop and Documents folders, and the Manage backup command is disabled. If the user has already moved their Desktop and Documents folders, the files in those folders will remain in OneDrive. This setting doesn't take effect if you've enabled KFMOptInWithWizard or KFMSilentOptIn",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmblockoptin"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Block",
+                            "Revert to Local Folders"
+                        ]
+                    },
+                    "enum": [
+                        1,
+                        2
+                    ]
+                }
+            ]
+        },
+        "KFMBlockOptOut": {
+            "title": "Force Documents and Desktop to OneDrive",
+            "description": "(KFMBlockOptOut)-This setting forces users to keep their Documents and Desktop folders directed to OneDrive. If you enable this setting, the Stop Backup button in the Manage Folder Backup window is disabled, and users receive an error if they try to stop syncing their Desktop or Documents folder",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmblockoptout"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KFMOptInWithWizard": {
+            "title": "Tenant ID to Enable Migrate Documents and Desktop to OneDrive Wizard",
+            "description": "(KFMOptInWithWizard)-This setting displays a wizard that prompts users to move their Documents and Desktop folders to OneDrive. If you enable this setting and provide your tenant ID, users who are syncing their OneDrive will see the Folder Backup wizard window when they're signed in. If they close the window, a reminder notification appears in the Sync Activity Center until they move their Desktop and Documents folders",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmoptinwithwizard"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Tenant ID"
+                        }
+                    }
+                }
+            ]
+        },
+        "KFMSilentOptIn": {
+            "title": "Tenant ID to Enable Silent Opt in for Documents and Desktop to OneDrive Migration",
+            "description": "(KFMSilentOptIn)-Use this setting to redirect and move your users' Documents and/or Desktop folders to OneDrive without any user interaction",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmsilentoptin"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Tenant ID"
+                        }
+                    }
+                }
+            ]
+        },
+        "KFMSilentOptInWithNotification": {
+            "title": "Enable Notifications for Silent Opt in of Documents and Desktop to OneDrive Migration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmsilentoptin"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KFMSilentOptInDesktop": {
+            "title": "Enable Only Silent Opt in of Desktop Folder to OneDrive Migration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmsilentoptin"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "KFMSilentOptInDocuments": {
+            "title": "Enable Only Silent Opt in of Documents Folder to OneDrive Migration",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#kfmsilentoptin"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "OpenAtLogin": {
+            "title": "Open OneDrive at Login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "links": [
+                        {
+                            "rel": "Documentation Link",
+                            "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#openatlogin"
+                        }
+                    ],
+                    "type": "boolean"
+                }
+            ]
+        },
+        "SharePointOnPremFrontDoorUrl": {
+            "title": "On Prem Sharepoint Front Door URL",
+            "description": "(SharePointOnPremFrontDoorUrl)-This setting specifies the SharePoint Server 2019 on-premises URL that the OneDrive sync app must try to authenticate and sync against",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#sharepointonpremfrontdoorurl"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://Contoso.SharePoint.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "SharePointOnPremPrioritizationPolicy": {
+            "title": "Sharepoint Initialization Prioritization Policy",
+            "description": "(SharePointOnPremPrioritizationPolicy)-This setting determines whether or not the sync app should set up sync for SharePoint Server on-premises or SharePoint in Microsoft 365 first during the first-run scenario when the account is the same for both SharePoint Server and SharePoint in Microsoft 365 in a hybrid scenario",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#sharepointonpremprioritizationpolicy"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "options": {
+                        "enum_titles": [
+                            "Proritize Microsoft 365",
+                            "Prioritize On Prem Sharepoint"
+                        ]
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
+        "SharePointOnPremTenantName": {
+            "title": "Sharepoint On Prem Tenant Name",
+            "description": "(SharePointOnPremTenantName)-This setting enables you to specify the name of the folder created for syncing the SharePoint Server 2019 files specified in the Front Door URL",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#sharepointonpremtenantname"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Contoso"
+                        }
+                    }
+                }
+            ]
+        },
+        "UploadBandwidthLimited": {
+            "title": "Upload Bandwidth Limit",
+            "description": "(UploadBandwidthLimited)-This setting defines the maximum upload throughput rate for computers running the OneDrive sync app. To enable this setting, set a value between 50 and 100000 that is the upload throughput rate in KB/sec the sync app can use",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/MicrosoftDocs/OfficeDocs-SharePoint/blob/public/SharePoint/SharePointOnline/deploy-and-configure-on-macos.md#uploadbandwidthlimited"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "minimum": 50,
+                    "maximum": 100000
+                }
+            ]
+        }
+    }
+}
