@@ -102,6 +102,32 @@
                     "type": "boolean"
                 }
             ]
+        },
+        "allowRapidSecurityResponseInstallation": {
+            "title": "Allow Rapid Security Response Installation (13.0+)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "allowRapidSecurityResponseRemoval": {
+            "title": "Allow Rapid Security Response Removal (13.0+)",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
         }
     }
 }
