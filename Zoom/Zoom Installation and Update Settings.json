@@ -1,19 +1,19 @@
 {
     "title": "Zoom Installation and Update Settings",
-    "__version": "1.0",
+    "__version": "5.10.3",
     "__preferencedomain": "us.zoom.config",
     "links": [
         {
             "rel": "Documentation Link",
-            "href": "https://support.zoom.us/hc/en-us/articles/115001799006"
+            "href": "https://support.zoom.us/hc/en-us/articles/10365151862285"
         }
     ],
     "options": {
         "remove_empty_properties": true
     },
     "properties": {
-        "ZAutoUpdate": {
-            "title": "Allow User Initiated Updates",
+        "AU2_EnableAutoUpdate": {
+            "title": "Enable auto updates through the client. This must be enabled to use any of the following options",
             "anyOf": [
                 {
                     "type": "null",
@@ -25,37 +25,10 @@
                 }
             ]
         },
-        "EnableSilentAutoUpdate": {
-            "title": "Enable Silent Updates",
-            "description": "(EnableSilentAutoUpdate)-Allows the desktop client to silently check for available stable-version updates. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "AlwaysCheckLatestVersion": {
-            "title": "Always Check for Available Updates on Launch",
-            "description": "(AlwaysCheckLatestVersion)-Allows the desktop client to check for any available updates. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
-            "anyOf": [
-                {
-                    "type": "null",
-                    "title": "Not Configured"
-                },
-                {
-                    "title": "Configured",
-                    "type": "boolean"
-                }
-            ]
-        },
-        "SetUpdatingChannel": {
+        
+        "AU2_SetUpdateChannel": {
             "title": "Update Channel",
-            "description": "(SetUpdatingChannel)-Control the cadence of updates applied to the desktop client (version 5.6.8 or higher)",
+            "description": "(AU2_SetUpdateChannel)-Control the cadence of updates applied to the desktop client (version 5.6.8 or higher)",
             "anyOf": [
                 {
                     "type": "null",
@@ -77,9 +50,8 @@
                 }
             ]
         },
-        "disableDaemonInstall": {
-            "title": "Disable Auto Update Daemon",
-            "description": "(disableDaemonInstall)-Controls the use of the daemon helper to install updates, which bypasses the need to enter admin credentials when upgrading. This option requires AutoUpdate option to be enabled, and will fail if not enabled",
+        "AU2_EnableShowZoomUpdates": {
+            "title": "Show the Zoom Updates section of the General tab in client settings",
             "anyOf": [
                 {
                     "type": "null",
@@ -88,6 +60,128 @@
                 {
                     "title": "Configured",
                     "type": "boolean"
+                }
+            ]
+        },
+        "AU2_EnableUpdateAvailableBanner": {
+            "title": "Show the Update Available banner on the Home tab of the client",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AU2_EnablePromptUpdateForAU2": {
+            "title": "Prompt users to update when exiting a meeting or webinar, when an update is available",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AU2_EnableUpdateSuccessNotification": {
+            "title": "Show notification indicating an update has been successfully installed",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AU2_EnableManualUpdate": {
+            "title": "Control the visibility of the Check for Updates option in the client",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AU2_DeploySpecificVersion": {
+            "title": "Download and install the specified version",
+            "description": "(AU2_DeploySpecificVersion)-Format should be the official version without spaces or parentheses, ie 5.10.4 (5035) would be entered as 5.10.4.5035",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "5.10.4.5035"
+                        }
+                    }
+                }
+            ]
+        },
+        "AU2_SetUpdateSchedule": {
+            "title": "Set Update Schedule",
+            "description": "(AU2_SetUpdateSchedule)-Set to download an available update version. Update is then initiated by the user through prompt, or during idle time or the specified safe upgrade period. Values are formatted as HHMM-HHMM, such that 1:00 to 2:30 is coded as 0100-0230. Time frames spanning into the next day are supported, such as 1800-0400 meaning 18:00 to 04:00 the next day",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "0100-0230"
+                        }
+                    }
+                }
+            ]
+        },
+        "AU2_InstallAtIdleTime": {
+            "title": "Auto install an available update when the device is idle",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "AU2_SafeUpgradePeriod": {
+            "title": "Set to install updates within a given time period",
+            "description": "(AU2_SafeUpgradePeriod)-This policy depends on AU2_InstallAtIdleTime being enabled. Values are formatted as HHMM-HHMM, such that 1:00 to 2:30 is coded as 0100-0230",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "1800-0400"
+                        }
+                    }
                 }
             ]
         },
