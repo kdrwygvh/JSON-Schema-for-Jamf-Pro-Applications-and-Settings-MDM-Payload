@@ -31,6 +31,31 @@
                 }
             ]
         },
+        "discoveryURL": {
+            "title": "Discovery URL",
+            "description": "(discoveryURL)-The discovery URL provided by your OIDC / Cloud provider",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#discoveryurl"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://login.microsoftonline.com/common/.well-known/openid-configuration"
+                        }
+                    }
+                }
+            ]
+        },
         "clientSecret": {
             "title": "Client Secret",
             "description": "(clientSecret)-Client Secret sometimes required by identity provider",
