@@ -1,0 +1,479 @@
+{
+    "title": "XCreds Preferences",
+    "__version": "1.0",
+    "__preferencedomain": "com.twocanoes.xcreds",
+    "links": [
+        {
+            "rel": "Documentation Link",
+            "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#preferences"
+        }
+    ],
+    "options": {
+        "remove_empty_properties": true
+    },
+    "properties": {
+        "clientID": {
+            "title": "Client ID",
+            "description": "(clientID)-The OIDC client id public identifier for the app",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Client ID"
+                        }
+                    }
+                }
+            ]
+        },
+        "clientSecret": {
+            "title": "Client Secret",
+            "description": "(clientSecret)-Client Secret sometimes required by identity provider",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "Client Secret"
+                        }
+                    }
+                }
+            ]
+        },
+        "CreateAdminUser": {
+            "title": "Create Admin User",
+            "description": "(CreateAdminUser)-When set to true and the user account is created, the user will be a local admin",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDE": {
+            "title": "Enable Filevault",
+            "description": "(EnableFDE)-Enabled FDE enabled at first login on APFS disks",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKey": {
+            "title": "Enable Local Filevault Recovery Key Storage",
+            "description": "(EnableFDERecoveryKey)-Save the Personal Recovery Key (PRK) to disk for the MDM Escrow Service to collect",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "EnableFDERecoveryKeyPath": {
+            "title": "Filevault Recovery Key Storage Path",
+            "description": "(EnableFDERecoveryKeyPath)-Specify a custom path for the recovery key",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "/private/var/root/recoverykey"
+                        }
+                    }
+                }
+            ]
+        },
+        "EnableFDERekey": {
+            "title": "Enable Filevault Personal Recovery Key Rotation",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "scopes": {
+            "title": "IdP Scopes",
+            "description": "(scopes)-Scopes tell the identify provider what information to return. Note that the values are provided with a single space between them",
+            "links": [
+                {
+                    "rel": "Documentation Link",
+                    "href": "https://github.com/twocanoes/xcreds/wiki/AdminGuide#scopes"
+                }
+            ],
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "profile openid offline_access"
+                        }
+                    }
+                }
+            ]
+        },
+        "shouldSetGoogleAccessTypeToOffline": {
+            "title": "Offline Google Access",
+            "description": "(shouldSetGoogleAccessTypeToOffline)-When using Google IdP, a refresh token may need be requested in a non-standard way",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowCloudLoginByDefault": {
+            "title": "Show Cloud IDP Login by Default",
+            "description": "(shouldShowCloudLoginByDefault)-When not set or set to true, show cloud login. If false, shows mac login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowConfigureWifiButton": {
+            "title": "Show the Configure WiFi Button at Login",
+            "description": "(shouldShowConfigureWifiButton)-Show Configure WiFi button in XCreds Login",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowMacLoginButton": {
+            "title": "Show Mac Login Window Button",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowSupportStatus": {
+            "title": "Show Purchase Support Reminder",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowQuitMenu": {
+            "title": "Show Quit Menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowVersionInfo": {
+            "title": "Show Version Info",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "redirectURI": {
+            "title": "Redirect URI",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "xcreds://auth/"
+                        }
+                    }
+                }
+            ]
+        },
+        "refreshRateHours": {
+            "title": "Refresh Rate in Hours",
+            "description": "(refreshRateHours)-The number of hours between checks. Default value: 3. Minimum value: 1. Max value: 168",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 168,
+                    "default": 3
+                }
+            ]
+        },
+        "showDebug": {
+            "title": "Show Debug Notifications",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "verifyPassword": {
+            "title": "Verify Cloud and Local Password Match",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "loginWindowBackgroundImageURL": {
+            "title": "Login Window Background Image File URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "file:///System/Library/Desktop Pictures/Monterey Graphic.heic"
+                        }
+                    }
+                }
+            ]
+        },
+        "shouldShowAboutMenu": {
+            "title": "Show About Menu",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "shouldShowPreferencesOnStart": {
+            "title": "Show Preferences on Launch",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "username": {
+            "title": "Local UserName",
+            "description": "(username)-When a user uses cloud login, XCreds will try and figure out the local username based on the email or other data returned for the IdP. Use this value to force the local username for any cloud login. Provide only the shortname",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "$USERNAME"
+                        }
+                    }
+                }
+            ]
+        },
+        "passwordChangeURL": {
+            "title": "Password Change URL",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://passwordreset.microsoftonline.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "idpHostName": {
+            "title": "IdP Hostname",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "https://adfs.microsoft.com"
+                        }
+                    }
+                }
+            ]
+        },
+        "map_firstname": {
+            "title": "Local DS to OIDC Mapping for First Name",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "given_name"
+                        }
+                    }
+                }
+            ]
+        },
+        "map_lastname": {
+            "title": "Local DS to OIDC Mapping for Last Name",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "family_name"
+                        }
+                    }
+                }
+            ]
+        },
+        "map_fullname": {
+            "title": ":Local DS to OIDC Mapping for Full Name",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "name"
+                        }
+                    }
+                }
+            ]
+        },
+        "map_username": {
+            "title": "Local DS to OIDC Mapping for Username",
+            "anyOf": [
+                {
+                    "type": "null",
+                    "title": "Not Configured"
+                },
+                {
+                    "title": "Configured",
+                    "type": "string",
+                    "options": {
+                        "inputAttributes": {
+                            "placeholder": "name"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
